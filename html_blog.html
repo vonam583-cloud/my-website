@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="30 bài về chuẩn bị, quyền riêng tư và hiểu dịch vụ."><meta name="theme-color" content="#0077b6"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Góc đọc | Kể Nè</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/fontawesome.min.css"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css_trangchu.css"><style>
+
+
+#read-progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#1a1f6e,#0077b6,#00b4d8);z-index:99999;pointer-events:none;transition:width .1s linear}
+
+
+.blog-hero{
+  background:linear-gradient(135deg,#1a1f6e 0%,#0077b6 55%,#00b4d8 100%);
+  padding:72px 0 56px;position:relative;overflow:hidden;
+}
+.blog-hero::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:56px;
+  background:#f4f7fc;clip-path:ellipse(55% 100% at 50% 100%);
+}
+.blog-hero-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.07) 1.5px,transparent 1.5px);
+  background-size:28px 28px;pointer-events:none;
+}
+.blog-hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800;
+  letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.8);
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  padding:6px 18px;border-radius:30px;margin-bottom:18px;
+}
+.blog-hero-title{
+  font-size:clamp(28px,4.5vw,58px);font-weight:900;color:#fff;
+  line-height:1.1;letter-spacing:-1.5px;margin-bottom:14px;
+}
+.blog-hero-title span{color:#00e5ff}
+.blog-hero-sub{font-size:14px;color:rgba(255,255,255,.78);line-height:1.75;max-width:420px;margin-bottom:26px}
+.blog-search-bar{
+  display:flex;background:#fff;border-radius:50px;overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,.22);max-width:460px;
+}
+.blog-search-bar input{
+  flex:1;border:none;outline:none;padding:13px 18px;font-size:14px;color:#1a1f6e;background:transparent;
+}
+.blog-search-bar button{
+  background:linear-gradient(135deg,#1a1f6e,#0077b6);border:none;color:#fff;
+  padding:13px 22px;font-weight:800;font-size:13px;cursor:pointer!important;white-space:nowrap;transition:opacity .2s;
+}
+.blog-search-bar button:hover{opacity:.88}
+.blog-hero-stats{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
+.bhero-stat-num{font-size:26px;font-weight:900;color:#fff;line-height:1}
+.bhero-stat-lbl{font-size:11px;color:rgba(255,255,255,.65);margin-top:2px}
+
+
+.blog-cats-wrap{background:#fff;border-bottom:1px solid #eee;padding:16px 0;position:sticky;top:70px;z-index:100}
+.blog-chip{
+  padding:9px 20px;border-radius:100px;border:1px solid #e5e5e5;
+  font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px;
+  transition:all .3s;color:#6c757d;cursor:pointer!important;background:#fff;white-space:nowrap;
+}
+.blog-chip:hover{border-color:#0077b6;color:#0077b6;background:rgba(0,119,182,.05)}
+.blog-chip.active{background:#1a1f6e;border-color:#1a1f6e;color:#fff;box-shadow:0 8px 20px rgba(26,31,110,.2)}
+
+
+.blog-home-main{background:#f4f7fc;padding:48px 0 80px;min-height:50vh}
+.blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media(max-width:1200px){.blog-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:576px){.blog-grid{grid-template-columns:1fr}}
+
+
+.bcard{
+  border-radius:20px;overflow:hidden;background:#fff;
+  box-shadow:0 4px 20px rgba(0,119,182,.07);
+  border:1px solid rgba(0,119,182,.09);
+  transition:all .4s cubic-bezier(.34,1.2,.64,1);
+  cursor:pointer!important;display:flex;flex-direction:column;
+}
+.bcard:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 28px 60px rgba(0,119,182,.17);border-color:rgba(0,119,182,.22)}
+.bcard__img{
+  height:200px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#1a1f6e,#00b4d8);
+}
+.bcard__img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.bcard:hover .bcard__img img{transform:scale(1.08)}
+.bcard__cat{
+  position:absolute;top:12px;left:12px;
+  background:linear-gradient(135deg,#1a1f6e,#0077b6);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+  padding:3px 10px;border-radius:20px;z-index:2;
+}
+.bcard__featured{position:absolute;top:12px;right:12px;background:#ff4d4d;color:#fff;font-size:10px;font-weight:800;padding:3px 10px;border-radius:20px;z-index:2}
+.bcard__body{padding:18px;flex:1;display:flex;flex-direction:column;gap:8px}
+.bcard__title{
+  font-size:14px;font-weight:800;color:#1a1f6e;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0;
+  transition:color .2s;
+}
+.bcard:hover .bcard__title{color:#0077b6}
+.bcard__excerpt{
+  font-size:12px;color:#6c757d;line-height:1.6;flex:1;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0;
+}
+.bcard__meta{
+  display:flex;align-items:center;gap:10px;font-size:11px;color:#9baab8;font-weight:500;
+  border-top:1px solid rgba(0,119,182,.07);padding-top:10px;margin-top:auto;
+}
+.bcard__meta i{color:#00b4d8}
+.bcard__btn{
+  display:inline-flex;align-items:center;gap:5px;color:#0077b6!important;
+  font-size:11px;font-weight:800;transition:gap .2s;background:none;border:none;
+  cursor:pointer!important;padding:0;
+}
+.bcard:hover .bcard__btn{gap:9px}
+
+
+.blog-pag{display:flex;justify-content:center;gap:8px;margin-top:44px}
+.bpag-btn{
+  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:2px solid rgba(0,119,182,.18);font-size:13px;font-weight:700;
+  color:#1a1f6e;background:#fff;cursor:pointer!important;transition:all .25s;
+}
+.bpag-btn:hover,.bpag-btn.active{
+  background:linear-gradient(135deg,#1a1f6e,#0077b6);border-color:transparent;
+  color:#fff;box-shadow:0 4px 14px rgba(0,119,182,.3);
+}
+
+
+.no-results{grid-column:1/-1;text-align:center;padding:60px 20px;color:#6c757d}
+.no-results i{font-size:44px;color:#d0d8e4;display:block;margin-bottom:14px}
+
+
+#blog-home-view{display:block}
+#blog-detail-view{display:none}
+
+.bdetail-wrap{background:#fff;min-height:100vh;padding-bottom:80px}
+
+
+.bdetail-hero{
+  height:480px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#1a1f6e,#00b4d8);
+}
+@media(max-width:576px){.bdetail-hero{height:300px}}
+.bdetail-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.bdetail-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,14,50,.9) 0%,rgba(10,14,50,.3) 55%,transparent 100%);
+}
+.bdetail-hero-content{position:absolute;bottom:0;left:0;right:0;padding:32px 40px}
+@media(max-width:576px){.bdetail-hero-content{padding:20px}}
+.bdetail-cat-badge{
+  display:inline-block;background:linear-gradient(135deg,#1a1f6e,#0077b6);color:#fff;
+  font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;
+  padding:4px 12px;border-radius:20px;margin-bottom:10px;
+}
+.bdetail-title{
+  font-size:clamp(22px,4vw,40px);font-weight:900;color:#fff;
+  line-height:1.15;margin:0 0 14px;max-width:760px;
+}
+.bdetail-hero-meta{
+  display:flex;flex-wrap:wrap;gap:14px;font-size:12px;
+  color:rgba(255,255,255,.78);align-items:center;
+}
+.bdetail-hero-meta img{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.35);object-fit:cover}
+.bdetail-hero-meta i{color:#00b4d8}
+
+
+.bdetail-back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:900;color:#0077b6;text-transform:uppercase;letter-spacing:2px;
+  background:#e8f4fd;padding:10px 22px;border-radius:30px;border:none;
+  cursor:pointer!important;transition:all .25s;margin-bottom:36px;
+}
+.bdetail-back-btn:hover{background:#1a1f6e;color:#fff}
+
+
+.bdetail-body{max-width:780px}
+.bdetail-body h2{
+  font-size:22px;font-weight:900;color:#1a1f6e;
+  margin:32px 0 14px;padding-bottom:8px;
+  border-bottom:2px solid rgba(0,119,182,.1);
+}
+.bdetail-body h3{font-size:18px;font-weight:800;color:#1a1f6e;margin:24px 0 10px}
+.bdetail-body p{font-size:15px;line-height:1.85;color:#3a4460;margin-bottom:16px}
+.bdetail-body ul,.bdetail-body ol{margin:10px 0 18px 22px}
+.bdetail-body li{font-size:15px;line-height:1.75;color:#3a4460;margin-bottom:8px}
+.bdetail-body blockquote{
+  border-left:4px solid #0077b6;background:rgba(0,119,182,.05);
+  border-radius:0 12px 12px 0;padding:16px 22px;margin:24px 0;
+  font-style:italic;font-size:15px;color:#1a1f6e;
+}
+.bdetail-body blockquote cite{display:block;margin-top:6px;font-size:12px;font-style:normal;color:#6c757d;font-weight:700}
+.tip-box{
+  background:linear-gradient(135deg,rgba(0,119,182,.06),rgba(0,180,216,.06));
+  border:1px solid rgba(0,119,182,.18);border-radius:14px;padding:18px 22px;margin:22px 0;
+}
+.tip-box-title{font-size:12px;font-weight:900;color:#0077b6;margin-bottom:7px;display:flex;align-items:center;gap:7px}
+.tip-box p{margin:0;font-size:14px;color:#3a4460}
+
+
+.bdetail-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+.bdetail-img-grid img{width:100%;height:220px;object-fit:cover;border-radius:14px}
+@media(max-width:576px){.bdetail-img-grid{grid-template-columns:1fr}}
+.bdetail-single-img{width:100%;max-height:380px;object-fit:cover;border-radius:16px;margin:24px 0;display:block;box-shadow:0 6px 24px rgba(0,0,0,.12)}
+.bdetail-img-caption{text-align:center;font-size:12px;color:#6c757d;margin:-16px 0 22px;font-style:italic}
+
+
+.bdetail-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+.bdetail-tag{
+  padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;
+  background:rgba(0,119,182,.07);color:#0077b6;border:1px solid rgba(0,119,182,.15);
+  cursor:pointer!important;transition:all .2s;
+}
+.bdetail-tag:hover{background:linear-gradient(135deg,#1a1f6e,#0077b6);color:#fff;border-color:transparent}
+
+
+.bdetail-share{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+  padding:18px 0;border-top:1px solid rgba(0,119,182,.08);
+  border-bottom:1px solid rgba(0,119,182,.08);margin-bottom:28px;
+}
+.bdetail-share-label{font-size:12px;font-weight:800;color:#1a1f6e}
+.share-btn{
+  display:inline-flex;align-items:center;gap:6px;padding:7px 14px;
+  border-radius:30px;font-size:12px;font-weight:700;
+  color:#fff!important;text-decoration:none!important;
+  transition:all .25s;cursor:pointer!important;border:none;
+}
+.share-btn--fb{background:#1877f2}
+.share-btn--link{background:linear-gradient(135deg,#1a1f6e,#0077b6)}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(0,0,0,.2)}
+
+
+.bdetail-author{
+  background:#f8faff;border-radius:16px;padding:20px;margin:24px 0;
+  display:flex;gap:14px;align-items:flex-start;border:1px solid rgba(0,119,182,.1);
+}
+.bdetail-author-avatar{width:60px;height:60px;border-radius:50%;flex-shrink:0;object-fit:cover;border:3px solid rgba(0,119,182,.2)}
+.bdetail-author-name{font-size:14px;font-weight:900;color:#1a1f6e;margin-bottom:3px}
+.bdetail-author-role{font-size:11px;color:#0077b6;font-weight:700;margin-bottom:5px}
+.bdetail-author-bio{font-size:13px;color:#6c757d;line-height:1.6;margin:0}
+
+
+.bdetail-toc{
+  background:linear-gradient(135deg,rgba(0,119,182,.05),rgba(0,180,216,.05));
+  border:1px solid rgba(0,119,182,.14);border-radius:14px;padding:16px 20px;margin:0 0 26px;
+}
+.bdetail-toc-title{font-size:12px;font-weight:900;color:#0077b6;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.bdetail-toc ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px}
+.bdetail-toc li a{font-size:12px;color:#3a4460;text-decoration:none!important;display:flex;align-items:flex-start;gap:7px;transition:color .2s;font-weight:500;cursor:pointer!important}
+.bdetail-toc li a::before{content:'';width:5px;height:5px;border-radius:50%;background:#00b4d8;flex-shrink:0;margin-top:5px}
+.bdetail-toc li a:hover{color:#0077b6;font-weight:700}
+
+
+.bdetail-related-title{font-size:18px;font-weight:900;color:#1a1f6e;margin:32px 0 18px;display:flex;align-items:center;gap:8px}
+.bdetail-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:600px){.bdetail-related-grid{grid-template-columns:1fr}}
+.bdetail-related-card{border-radius:14px;overflow:hidden;background:#f4f7fc;cursor:pointer!important;transition:transform .25s;border:1px solid rgba(0,119,182,.08)}
+.bdetail-related-card:hover{transform:translateY(-5px)}
+.bdetail-related-thumb{height:100px;background:linear-gradient(135deg,#1a1f6e,#00b4d8);position:relative;overflow:hidden}
+.bdetail-related-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bdetail-related-body{padding:11px}
+.bdetail-related-cat{font-size:10px;font-weight:800;color:#0077b6;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.bdetail-related-name{font-size:12px;font-weight:700;color:#1a1f6e;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+
+.bdetail-cta{
+  background:linear-gradient(135deg,#1a1f6e,#0077b6,#00b4d8);
+  border-radius:20px;padding:28px 24px;color:#fff;text-align:center;
+  position:sticky;top:88px;
+}
+.bdetail-cta-title{font-size:16px;font-weight:900;margin-bottom:8px}
+.bdetail-cta-sub{font-size:12px;opacity:.82;margin-bottom:18px;line-height:1.6}
+.bdetail-cta-btn{
+  display:block;background:#fff;color:#1a1f6e!important;text-decoration:none!important;
+  font-weight:900;font-size:13px;padding:12px 20px;border-radius:30px;
+  transition:all .25s;cursor:pointer!important;margin-bottom:10px;
+}
+.bdetail-cta-btn:hover{background:rgba(255,255,255,.88);transform:translateY(-2px)}
+.bdetail-cta-list{text-align:left;font-size:12px;opacity:.85;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.bdetail-cta-list li::before{content:'✓ ';font-weight:900}
+
+
+.blog-discover{padding:64px 0;background:#fff;border-top:1px solid #f0f4f8}
+.bdiscover-eyebrow{font-size:10px;font-weight:800;letter-spacing:4px;color:#0077b6;text-transform:uppercase;margin-bottom:8px}
+.bdiscover-title{font-size:clamp(26px,4vw,42px);font-weight:900;color:#1a1f6e;margin-bottom:12px;line-height:1.15}
+.bdiscover-sub{font-size:14px;color:#6c757d;margin-bottom:32px;max-width:420px;line-height:1.75}
+.bdiscover-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:768px){.bdiscover-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.bdiscover-grid{grid-template-columns:1fr}}
+.bdiscover-item{
+  border-radius:16px;overflow:hidden;position:relative;height:160px;
+  cursor:pointer!important;transition:transform .3s;
+}
+.bdiscover-item:hover{transform:scale(1.03)}
+.bdiscover-item img{width:100%;height:100%;object-fit:cover;display:block}
+.bdiscover-item-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,14,50,.75) 0%,transparent 60%);
+}
+.bdiscover-item-label{
+  position:absolute;bottom:0;left:0;right:0;padding:14px;
+  color:#fff;font-weight:900;font-size:13px;
+}
+.bdiscover-item-cat{font-size:10px;opacity:.8;font-weight:600;margin-bottom:2px}
+
+
+
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+
+        
+        .btn-login {
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            color:#fff !important; border:none; border-radius:10px;
+            padding:7px 16px; font-size:13px; transition:all .2s;
+        }
+        .btn-login:hover { opacity:.88; transform:translateY(-1px); }
+        
+        .user-avatar-btn {
+            width:38px; height:38px; border-radius:50%;
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            display:flex; align-items:center; justify-content:center;
+            color:#fff; font-weight:800; font-size:15px;
+            cursor:pointer; border:none; transition:all .2s;
+        }
+        .user-avatar-btn:hover { box-shadow:0 4px 14px rgba(0,119,182,.35); }
+        .user-profile-dropdown .dropdown-menu {
+            border-radius:14px; padding:8px 0;
+            box-shadow:0 8px 30px rgba(0,0,0,.12);
+        }
+
+        </style><link rel="stylesheet" href="css/kene-experience.css"><link rel="manifest" href="manifest.webmanifest"><meta name="color-scheme" content="light"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="img/brand/icon-32.png"><link rel="apple-touch-icon" href="img/brand/icon-180.png"><link rel="stylesheet" href="css/kene-brand.css"></head><body data-page="blog"><header class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 border-bottom">
+        <div class="container">
+
+            
+            <a class="navbar-brand" href="html_trangchu.html">
+                <img src="img/logo.svg" alt="Kể Nè — Không gian lắng nghe" height="46" class=" logo-header" width="142">
+            </a>
+
+            
+            <div class="header-search-wrap mx-lg-4 d-none d-md-flex">
+<div class="input-group header-search">
+                    <div class="input-group-prepend border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" id="header-search-inp" class="form-control border-0 bg-transparent" placeholder="Tìm dịch vụ, chuyên gia, bài viết…" autocomplete="off" aria-label="Tìm kiếm toàn website">
+                    
+                    <span class="hs-shortcut d-none d-lg-inline-flex align-items-center">⌘K</span>
+                </div>
+                <div id="header-dropdown" class="search-dropdown"></div>
+            </div>
+
+            
+            <div class="navbar-nav ml-auto align-items-center">
+                <a class="nav-item nav-link mr-3 d-none d-xl-block small-text" href="html_trangchu.html">Trang chủ</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_gioithieu.html">Về Kể Nè</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_lienhe_chinhsach.html">Liên hệ &amp; Tin cậy</a>
+                <a class="nav-item nav-link mr-3 d-none d-md-block small-text" href="html_blog.html">Góc đọc</a>
+
+                
+                <a class="nav-item nav-link mr-3 text-dark" href="html_giohang.html" style="position:relative;" aria-label="Giỏ dịch vụ">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-badge" style="position:absolute;top:-4px;right:-8px;background:#ff4d4d;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;line-height:1;">0</span>
+                </a>
+
+                
+                <div class="auth-buttons" id="auth-zone">
+                    <a class="nav-item nav-link mr-3 font-weight-bold" href="html_dangnhap_dangky.html">Đăng ký</a>
+                    <a class="btn btn-login font-weight-bold" href="html_dangnhap_dangky.html">Đăng nhập</a>
+                    <a class="nav-item nav-link ml-2 d-none d-sm-block" href="html_thongtin.html">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="sub-nav bg-white border-bottom" aria-label="Dịch vụ"><div class="container"><div class="nav kn-subnav"><a class="nav-link" href="html_dichvu.html">Dịch vụ &amp; Bảng giá</a><a class="nav-link" href="html_diadiem.html">Chuyên gia &amp; Ghép nối</a><a class="nav-link" href="html_diadiem.html#sang-loc">Sàng lọc miễn phí</a><a class="nav-link ml-auto sub-voucher-link" href="html_khuyenmaivatiepthi.html"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Ưu đãi</a></div></div></nav><a class="kn-skip" href="#main-content">Bỏ qua điều hướng</a><main id="main-content"><div id="read-progress-bar" aria-hidden="true"></div><div id="blog-home-view"><section class="blog-hero"><div class="blog-hero-dots"></div><div class="container position-relative" style="z-index:2"><div class="row align-items-center"><div class="col-lg-8"><span class="blog-hero-eyebrow">GÓC ĐỌC KỂ NÈ</span><h1 class="blog-hero-title">Một chút thời gian<br>để <span>hiểu mình</span> hơn</h1><p class="blog-hero-sub">Nội dung về chuẩn bị phiên tư vấn, quyền riêng tư và những điều bạn có thể muốn trao đổi. Không thay thế đánh giá chuyên môn.</p><form class="blog-search-bar" id="blog-search-form"><label class="sr-only" for="blog-search-input">Tìm bài viết</label><input id="blog-search-input" placeholder="Tìm bài viết hoặc chủ đề…" maxlength="150"><button type="submit">Tìm kiếm</button></form><div class="blog-hero-stats"><div><div class="bhero-stat-num" data-ke-count="30">30</div><div class="bhero-stat-lbl">Bài viết</div></div><div><div class="bhero-stat-num" data-ke-count="9">9</div><div class="bhero-stat-lbl">Nhóm nội dung</div></div><div><div class="bhero-stat-num">0đ</div><div class="bhero-stat-lbl">Phí đọc</div></div></div></div><div class="col-lg-4 d-none d-lg-block"><picture class="ke-picture " data-ke-image="journal-flatlay"><source type="image/webp" srcset="img/photos/journal-flatlay-960.webp 960w, img/photos/journal-flatlay-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/journal-flatlay-1920.jpg" alt="Minh hoạ không gian lắng nghe" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="journal-flatlay" class="kn-rounded"></picture></div></div></div></section><div class="blog-cats-wrap"><div class="container"><div id="blog-chips" class="kn-chips"></div></div></div><section class="blog-home-main"><div class="container"><div id="blog-result-count" class="mb-3" aria-live="polite"></div><div class="blog-grid" id="blog-grid"></div><nav class="blog-pag" id="blog-pag" aria-label="Phân trang góc đọc"></nav></div></section><section class="blog-discover"><div class="container"><div class="row align-items-center"><div class="col-lg-5"><span class="bdiscover-eyebrow">ĐỌC THEO NHU CẦU</span><h2 class="bdiscover-title ke-reveal">Không cần hiểu hết<br>mới có thể bắt đầu</h2><p class="bdiscover-sub">Chọn một chủ đề gần với bạn, hoặc tìm hiểu cách một phiên tư vấn được chuẩn bị.</p><a href="html_diadiem.html#sang-loc" class="kn-btn">Sàng lọc miễn phí</a></div><div class="col-lg-7"><div class="bdiscover-grid"><a class="bdiscover-item" href="html_blog.html?post=bai-01"><picture class="ke-picture " data-ke-image="v3-journal-cozy"><source type="image/webp" srcset="img/photos/v3-journal-cozy-960.webp 960w, img/photos/v3-journal-cozy-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-journal-cozy-1920.jpg" alt="Viết nhật ký trong khoảng riêng tại nhà" width="1920" height="2877" loading="lazy" decoding="async" data-ke-photo="v3-journal-cozy"></picture><div class="bdiscover-item-overlay"></div><div class="bdiscover-item-label">Bắt đầu một cuộc trò chuyện khi chưa biết nói gì</div></a><a class="bdiscover-item" href="html_blog.html?post=bai-02"><picture class="ke-picture " data-ke-image="v3-care-greenroom"><source type="image/webp" srcset="img/photos/v3-care-greenroom-960.webp 960w, img/photos/v3-care-greenroom-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-care-greenroom-1920.jpg" alt="Hai người trò chuyện giữa không gian có cây xanh" width="1920" height="1080" loading="lazy" decoding="async" data-ke-photo="v3-care-greenroom"></picture><div class="bdiscover-item-overlay"></div><div class="bdiscover-item-label">Phiên tư vấn 50 phút diễn ra như thế nào?</div></a><a class="bdiscover-item" href="html_blog.html?post=bai-03"><picture class="ke-picture " data-ke-image="v3-journal-sticky"><source type="image/webp" srcset="img/photos/v3-journal-sticky-960.webp 960w, img/photos/v3-journal-sticky-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-journal-sticky-1920.jpg" alt="Ghi chú bên máy tính và những tờ giấy nhắc việc" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-journal-sticky"></picture><div class="bdiscover-item-overlay"></div><div class="bdiscover-item-label">Sàng lọc khác với chẩn đoán ra sao?</div></a><a class="bdiscover-item" href="html_blog.html?post=bai-04"><picture class="ke-picture " data-ke-image="care-notes"><source type="image/webp" srcset="img/photos/care-notes-960.webp 960w, img/photos/care-notes-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/care-notes-1920.jpg" alt="Lắng nghe và ghi chú trong cuộc trò chuyện" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="care-notes"></picture><div class="bdiscover-item-overlay"></div><div class="bdiscover-item-label">Chọn chuyên gia: hãy xem điều gì ngoài số sao?</div></a><a class="bdiscover-item" href="html_blog.html?post=bai-05"><picture class="ke-picture " data-ke-image="tea-notes"><source type="image/webp" srcset="img/photos/tea-notes-960.webp 960w, img/photos/tea-notes-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/tea-notes-1920.jpg" alt="Ghi chép với tách trà trong khoảng thời gian riêng" width="1920" height="1282" loading="lazy" decoding="async" data-ke-photo="tea-notes"></picture><div class="bdiscover-item-overlay"></div><div class="bdiscover-item-label">Một bản ghi nhỏ trước buổi hẹn</div></a><a class="bdiscover-item" href="html_blog.html?post=bai-06"><picture class="ke-picture " data-ke-image="v3-study-textbook"><source type="image/webp" srcset="img/photos/v3-study-textbook-960.webp 960w, img/photos/v3-study-textbook-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-study-textbook-1920.jpg" alt="Cùng xem tài liệu và thảo luận trong thư viện" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-study-textbook"></picture><div class="bdiscover-item-overlay"></div><div class="bdiscover-item-label">Khi áp lực học tập đến từ nhiều phía</div></a></div></div></div></div></section></div><div id="blog-detail-view" class="bdetail-wrap" hidden><div class="container py-4"><button class="bdetail-back-btn" data-action="blog-back">← Quay lại Góc đọc</button></div><div id="bdetail-hero-slot"></div><div class="container"><div class="row"><article class="col-lg-8 bdetail-body pt-4" id="bdetail-body-slot"></article><aside class="col-lg-4 pl-lg-4 pt-4"><div class="bdetail-cta"><div class="bdetail-cta-title">Một bước nhỏ để bắt đầu</div><p class="bdetail-cta-sub">Tìm hiểu trước khi quyết định. Bạn có quyền chọn nhịp và phần thông tin muốn chia sẻ.</p><a href="html_diadiem.html#sang-loc" class="bdetail-cta-btn">Sàng lọc miễn phí</a><a href="html_dichvu.html" class="bdetail-cta-btn">Xem dịch vụ</a><ul class="bdetail-cta-list mt-3"><li>50 phút/phiên cá nhân</li><li>Giá tham chiếu 400.000đ</li><li>Không tự gia hạn</li><li>Không dùng kết quả thay chẩn đoán</li></ul></div><nav id="article-toc" class="kn-white-card mt-3" aria-label="Mục lục bài viết"></nav></aside></div><div id="bdetail-related-slot" class="py-5"></div></div></div></main><footer class="kene-footer"><div class="footer-bg-layer"></div><div class="container position-relative" style="z-index:2"><div class="row footer-main-row pt-5 pb-4"><div class="col-lg-4 col-md-6 mb-4"><a href="html_trangchu.html" class="footer-brand d-inline-block mb-3" aria-label="Kể Nè — Trang chủ"><img class="footer-logo" src="img/logo-white.svg" width="150" height="49" alt="Kể Nè"></a><p class="footer-desc">Chuyện khó nói, có người nghe. Kể Nè đồng hành cùng bạn tìm hiểu nhu cầu và lựa chọn cách chăm sóc sức khoẻ tinh thần phù hợp.</p><a class="footer-sitemap-btn" href="html_sitemap.html">Sơ đồ website</a></div><div class="col-lg-4 col-md-6 mb-4"><h2 class="footer-heading">Khám phá Kể Nè</h2><ul class="ke-footer-links"><li><a href="html_gioithieu.html">Câu chuyện &amp; Con người</a></li><li><a href="html_dichvu.html">Dịch vụ &amp; Mức giá tham khảo</a></li><li><a href="html_diadiem.html">Tìm cách đồng hành phù hợp</a></li><li><a href="html_blog.html">Góc đọc mỗi ngày</a></li><li><a href="html_khuyenmaivatiepthi.html">Ưu đãi &amp; Điều kiện áp dụng</a></li></ul></div><div class="col-lg-4 col-md-12 mb-4"><h2 class="footer-heading">Bạn luôn có quyền lựa chọn</h2><p class="ke-footer-promise">♡ Chia sẻ theo nhịp của bạn. Hiểu rõ điều kiện trước khi bắt đầu.</p><ul class="ke-footer-links"><li><a href="html_lienhe_chinhsach.html#du-lieu">Quyền riêng tư</a></li><li><a href="html_lienhe_chinhsach.html#doi-lich">Đổi lịch &amp; Hỗ trợ</a></li><li><a href="html_lienhe_chinhsach.html">Liên hệ &amp; Trung tâm tin cậy</a></li><li><a href="html_lienhe_chinhsach.html?topic=to-chuc">Dành cho tổ chức</a></li><li><a href="html_lienhe_chinhsach.html?topic=chuyen-gia">Hợp tác chuyên gia</a></li></ul></div></div><div class="footer-divider"></div><div class="ke-footer-tools"><button type="button" data-ke-motion aria-pressed="false">Chuyển động: Êm dịu</button><button type="button" data-ke-credits>Nguồn ảnh</button><button type="button" data-ke-saved-articles>Bài viết đã lưu</button><span id="ke-offline-state" class="ke-offline-state">Ảnh cục bộ · Không cần Internet</span></div><div class="footer-bottom py-3 d-flex flex-wrap justify-content-between"><p class="footer-copy mb-0">© 2026 Kể Nè. Mọi quyền được bảo lưu.</p><p class="footer-copy mb-0">Tư vấn, tham vấn tâm lý · Không thay thế cấp cứu</p></div></div></footer><div id="kn-toast" class="kn-toast" hidden role="status" aria-live="polite"></div><div class="kn-tools"><button class="kn-sos-btn" data-action="sos">Cần giúp ngay</button><button class="kn-help-btn" data-action="help" aria-label="Mở trợ giúp thao tác">?</button><button class="kn-exit-btn" data-action="quick-exit">Thoát nhanh ↗</button></div><div id="kn-modal" class="kn-modal" hidden role="dialog" aria-modal="true" aria-labelledby="kn-modal-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-modal-title"></h2><div><button class="kn-link" data-action="sos">Cần giúp ngay</button><button class="kn-modal-close" data-action="close-modal" aria-label="Đóng cửa sổ">×</button></div></div><div id="kn-modal-body"></div></div></div><div id="kn-sos" class="kn-modal kn-sos-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="kn-sos-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-sos-title">Ưu tiên sự an toàn của bạn</h2><button class="kn-modal-close" data-action="close-sos" aria-label="Đóng hướng dẫn">×</button></div><p>Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế hoặc đến cơ sở cấp cứu gần nhất. Nếu có thể, nhờ một người tin cậy ở cạnh bạn.</p><a class="kn-btn kn-btn-full" href="tel:115">Gọi cấp cứu y tế 115</a><p class="kn-note mt-3">115 là cấp cứu y tế, không phải đường dây tư vấn của Kể Nè.</p><div class="kn-white-card my-3"><h3 class="kn-h4">Website không có người trực</h3><p>Kể Nè không phải kênh cấp cứu và không gửi cảnh báo từ nút này. Đừng chờ phản hồi trên website khi bạn đang không an toàn.</p><p id="kn-support-hours"></p></div><button class="kn-btn kn-btn-light" data-action="quick-exit">Thoát nhanh khỏi website</button></div></div><button id="back-to-top" class="kn-back-top" aria-label="Lên đầu trang" hidden>↑</button><script src="js/jquery.min.js" defer></script><script src="js/bootstrap.bundle.min.js" defer></script><script src="js/kene-data.js" defer></script><script src="js/kene-engine.js" defer></script><script src="js/kene-core.js" defer></script><script src="js/kene-media-data.js" defer></script><script src="js/kene-media.js" defer></script><script src="js/kene-runtime.js" defer></script><script src="js/kene-pages.js" defer></script><script src="js/kene-offline-version.js" defer></script><script src="js/kene-experience.js" defer></script><script src="js/kene-scenes.js" defer></script></body></html>

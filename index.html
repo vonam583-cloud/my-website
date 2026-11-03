@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Khám phá Kể Nè, dịch vụ, góc đọc và đội Kể Nè."><meta name="theme-color" content="#0077b6"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Trang chủ | Kể Nè</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/fontawesome.min.css"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css_trangchu.css"><style>
+
+        
+        .cate-icon-wrap {
+            width: 80px; height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #f0f7ff, #e8f4fd);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,119,182,0.1);
+        }
+        .cate-sticker {
+            font-size: 36px;
+            transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+            display: block; line-height: 1;
+        }
+        .cate-item:hover .cate-icon-wrap {
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            box-shadow: 0 8px 25px rgba(0,119,182,0.35);
+            transform: translateY(-4px);
+        }
+        
+        [data-cate="session"]:hover    .cate-sticker { animation: spin-globe   0.6s ease; }
+        [data-cate="cruise"]:hover  .cate-sticker { animation: sail          0.8s ease infinite alternate; }
+        [data-cate="culture"]:hover .cate-sticker { animation: glow-pulse    0.5s ease infinite alternate; }
+        [data-cate="ticket"]:hover  .cate-sticker { animation: ticket-shake  0.4s ease; }
+        [data-cate="all"]:hover     .cate-sticker { animation: sparkle       0.4s ease infinite alternate; }
+
+        
+        [data-cate="park"]:hover .cate-icon-wrap {
+            transform: translateY(-4px);
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            box-shadow: 0 8px 25px rgba(0,119,182,0.35);
+            animation: none;
+        }
+        [data-cate="park"]:hover .cate-sticker      { animation: none; }
+        [data-cate="park"]:hover .ferris-wheel-spin  { animation: ferris-spin 1.2s linear infinite; }
+        
+        [data-cate="park"]:hover #sticker-park line,
+        [data-cate="park"]:hover #sticker-park circle:not([fill="#1a1f6e"]):not([r="3.5"]) { stroke: rgba(255,255,255,0.9); }
+        [data-cate="park"]:hover #sticker-park .ferris-wheel-spin circle[r="20"]          { stroke: rgba(255,255,255,0.9); }
+        [data-cate="park"]:hover #sticker-park rect                                        { opacity: 0.9; }
+
+        @keyframes spin-globe   { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+        @keyframes sail         { 0%{transform:translateX(-6px) rotate(-5deg)} 100%{transform:translateX(6px) rotate(5deg)} }
+        @keyframes glow-pulse   { 0%{transform:scale(1)} 100%{transform:scale(1.25)} }
+        @keyframes ticket-shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-10deg)} 75%{transform:rotate(10deg)} }
+        @keyframes ferris-spin  { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+        @keyframes sparkle      { 0%{transform:scale(1) rotate(0)} 100%{transform:scale(1.3) rotate(20deg)} }
+
+        
+        .all-services-panel {
+            position: fixed; top: 0; right: -420px;
+            width: 400px; height: 100vh;
+            background: #fff; z-index: 10000;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+            transition: right 0.4s cubic-bezier(0.34,1.56,0.64,1);
+            overflow-y: auto;
+        }
+        .all-services-panel.open { right: 0; }
+        .all-panel-inner { padding: 60px 25px 30px; }
+        .all-panel-close {
+            position: absolute; top: 15px; right: 15px;
+            background: #f0f4f8; border: none;
+            width: 36px; height: 36px; border-radius: 50%;
+            font-size: 14px; color: #1a1f6e;
+            cursor: pointer !important; transition: 0.2s;
+        }
+        .all-panel-close:hover { background: #1a1f6e; color: #fff; }
+        .all-panel-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.4); z-index: 9999;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s; backdrop-filter: blur(3px);
+        }
+        .all-panel-overlay.open { opacity: 1; pointer-events: all; }
+        .panel-section-title {
+            font-size: 13px; font-weight: 700; color: #1a1f6e;
+            letter-spacing: 0.5px; border-bottom: 2px solid #e8f4fd;
+            padding-bottom: 8px; margin-bottom: 12px;
+        }
+        .panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .panel-item {
+            display: flex; align-items: center; gap: 8px;
+            padding: 10px 14px; border-radius: 10px;
+            background: #f8fafc; text-decoration: none !important;
+            color: #1a1f6e; font-size: 13px; font-weight: 500;
+            transition: all 0.2s; border: 1px solid transparent;
+        }
+        .panel-item:hover {
+            background: linear-gradient(135deg,#1a1f6e,#0077b6);
+            color: #fff !important; transform: translateX(4px);
+        }
+        .panel-item span { font-size: 18px; }
+        .panel-item-note { opacity: 0.5; pointer-events: none; }
+
+        
+        .kham-pha-box {
+            background: var(--gradient-brand);
+            box-shadow: 0 10px 25px rgba(26,31,110,0.25);
+            min-height: 150px; position: relative; overflow: hidden;
+        }
+        .kham-pha-box::before {
+            content: ''; position: absolute; top: -50px; right: -50px;
+            width: 200px; height: 200px; border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+        .kham-pha-placeholder {
+            border: 2px dashed rgba(255,255,255,0.4);
+            border-radius: 12px; padding: 15px 20px; display: inline-block;
+        }
+        .kham-pha-icon-float { font-size: 80px; animation: float-map 3s ease-in-out infinite; }
+        @keyframes float-map { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
+
+        
+        .blog-cards-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        @media (max-width:768px) { .blog-cards-row { grid-template-columns: 1fr; } }
+        .blog-card {
+            border-radius: 16px; overflow: hidden; background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.165,0.84,0.44,1);
+            cursor: pointer !important;
+        }
+        .blog-card:hover { transform: translateY(-12px) rotateX(2deg); box-shadow: 0 20px 40px rgba(0,119,182,0.2); }
+        .blog-card-img {
+            height: 140px; display: flex; align-items: center;
+            justify-content: center; position: relative; overflow: hidden;
+        }
+        .blog-emoji { font-size: 56px; animation: float-emoji 3s ease-in-out infinite; }
+        @keyframes float-emoji { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-8px) rotate(5deg)} }
+        .blog-card-body { padding: 18px; }
+        .blog-tag {
+            background: #e8f4fd; color: #0077b6; font-size: 11px; font-weight: 700;
+            padding: 3px 10px; border-radius: 20px; display: inline-block;
+            margin-bottom: 8px; letter-spacing: 0.5px;
+        }
+        .blog-card-body h6 { color: #1a1f6e; font-size: 15px; font-weight: 700; line-height: 1.4; }
+        .blog-card-body p  { font-size: 13px; line-height: 1.5; }
+        .blog-read-more {
+            color: #0077b6; font-size: 13px; font-weight: 700;
+            text-decoration: none !important; display: inline-flex;
+            align-items: center; gap: 6px; transition: gap 0.2s;
+        }
+        .blog-read-more:hover { gap: 10px; color: #1a1f6e; }
+
+        
+        
+        
+        
+        .why-kene-section {
+            background: #fff;
+            padding: 80px 0;
+            overflow: hidden;  
+            position: relative;
+        }
+        .why-title    { color:var(--dark-blue); font-size:2.2rem; }
+        .why-subtitle { color:var(--text-muted); font-size:15px; }
+
+        
+        .why-cards-wrap {
+            display: flex;
+            gap: 0;               
+            align-items: stretch;
+            border-radius: 20px;
+            overflow: hidden;     
+            border: 1px solid rgba(0,119,182,.1);
+        }
+        @media(max-width:992px){ .why-cards-wrap{ flex-wrap:wrap; border-radius:16px; } }
+        @media(max-width:576px){ .why-cards-wrap{ flex-direction:column; } }
+
+        
+        .why-card {
+            flex: 1; min-width: 0;
+            background: #f8faff;
+            border: none;
+            border-right: 1px solid rgba(0,119,182,.08);
+            padding: 36px 22px;
+            text-align: center; color: var(--dark-blue);
+            position: relative; cursor: pointer!important;
+            overflow: hidden;
+            transition:
+                flex       .44s cubic-bezier(.22,1,.36,1),
+                opacity    .36s ease,
+                background .36s ease;
+            
+        }
+        .why-card:last-child { border-right: none; }
+
+        
+        .why-cards-wrap.why-active .why-card:not(.why-focused) {
+            flex: 0.5;
+            opacity: 0.3;
+        }
+        
+        .why-card.why-focused {
+            flex: 2.5;
+            background: linear-gradient(140deg, #1a1f6e 0%, #0077b6 55%, #00b4d8 100%);
+            border-right-color: transparent;
+        }
+
+        
+        .why-card-glow {
+            position: absolute; top: -30%; left: -30%;
+            width: 160%; height: 160%;
+            background: radial-gradient(circle, rgba(0,180,216,.15) 0%, transparent 55%);
+            opacity: 0; pointer-events: none;
+            transition: opacity .4s ease;
+        }
+        .why-card.why-focused .why-card-glow { opacity: 1; }
+
+        
+        .why-icon-3d {
+            font-size: 46px; display: block; margin-bottom: 14px;
+            transition: transform .42s cubic-bezier(.34,1.56,.64,1);
+        }
+        .why-card.why-focused .why-icon-3d { transform: scale(1.12) rotate(-3deg); }
+
+        
+        .why-card h5 { font-size: 15px; font-weight: 800; margin-bottom: 8px; transition: color .3s; }
+        .why-card p  { font-size: 13px; line-height: 1.68; color: #6c757d; transition: color .3s; }
+        .why-card.why-focused h5,
+        .why-card.why-focused p { color: rgba(255,255,255,.92); }
+
+        
+        .why-stat { margin-top: 14px; font-size: 26px; font-weight: 900; color: var(--primary-blue); line-height: 1; transition: color .3s; }
+        .why-stat span { display:block; font-size:11px; font-weight:600; letter-spacing:1px; color:var(--text-muted); transition: color .3s; }
+        .why-card.why-focused .why-stat { color: #00e5ff; }
+        .why-card.why-focused .why-stat span { color: rgba(255,255,255,.6); }
+
+        
+        .why-card-detail { max-height:0; overflow:hidden; opacity:0; transition: max-height .44s cubic-bezier(.22,1,.36,1), opacity .34s ease .04s; }
+        .why-card.why-focused .why-card-detail { max-height: 220px; opacity: 1; }
+
+        .why-detail-list { list-style:none; padding:0; margin:12px 0 0; display:flex; flex-direction:column; gap:6px; }
+        .why-detail-list li { font-size:12.5px; color:rgba(255,255,255,.9); display:flex; align-items:flex-start; gap:8px; text-align:left; }
+        .why-detail-list li i { color:#00e5ff; font-size:11px; flex-shrink:0; margin-top:2px; }
+
+        .why-cta-link { display:inline-flex; align-items:center; gap:6px; margin-top:12px; font-size:12.5px; font-weight:800; color:#fff!important; text-decoration:none!important; background:rgba(255,255,255,.15); border:1.5px solid rgba(255,255,255,.3); border-radius:20px; padding:7px 16px; transition:background .22s,gap .22s; }
+        .why-cta-link:hover { background:rgba(255,255,255,.26); gap:10px; }
+        
+        .sub-voucher-link {
+            color: var(--text-dark) !important; font-weight: 600 !important;
+            font-size: 14px !important; background: none !important;
+            border-radius: 0 !important; padding: 15px 20px !important;
+            box-shadow: none !important; white-space: nowrap;
+        }
+        .sub-voucher-link:hover { color: var(--primary-blue) !important; background: rgba(0,119,182,0.06) !important; }
+        .sub-voucher-link i { font-size: 13px; }
+
+        
+        
+
+        
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 44px !important; height: 44px !important;
+            top: 50% !important; bottom: auto !important;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.18) !important;
+            backdrop-filter: blur(6px);
+            border-radius: 50% !important;
+            border: 1.5px solid rgba(255,255,255,0.35) !important;
+            opacity: 1 !important; margin: 0 16px;
+            transition: all 0.3s ease !important;
+        }
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background: rgba(255,255,255,0.38) !important;
+            transform: translateY(-50%) scale(1.08);
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon { width: 18px !important; height: 18px !important; }
+
+        
+        .vtl-item { position: relative; cursor: pointer !important; }
+        .vtl-item:hover .vtl-year { transform: translateX(4px); transition: transform 0.25s ease; }
+
+        
+        #visionOrbit { transition: opacity 0.35s ease, transform 0.35s ease; }
+        #visionOrbit.orbit-hidden {
+            opacity: 0 !important;
+            transform: scale(0.88) !important;
+            pointer-events: none !important;
+        }
+        
+        .vyp-bg-ring {
+            position: absolute; border-radius: 50%;
+            border: 1.5px dashed rgba(0,119,182,0.12);
+            pointer-events: none; top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .vyp-bg-ring-1 { width: 160px; height: 160px; animation: vyp-spin 18s linear infinite; }
+        .vyp-bg-ring-2 { width: 260px; height: 260px; animation: vyp-spin 28s linear infinite reverse; }
+        .vyp-bg-ring-3 { width: 360px; height: 360px; animation: vyp-spin 38s linear infinite; }
+        @keyframes vyp-spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+        
+
+        
+        .blog-home-row {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 10px 0;
+            flex-wrap: nowrap;
+            scrollbar-width: none;
+            flex: 1;
+            min-width: 0;
+        }
+        .blog-home-row::-webkit-scrollbar { display: none; }
+
+        .blog-home-card {
+            flex: 0 0 calc(25% - 16px);
+            min-width: 240px;
+            max-width: 300px;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,119,182,0.07);
+            border: 1px solid rgba(0,119,182,0.08);
+            cursor: pointer !important;
+            transition: all 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+        .blog-home-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 48px rgba(0,119,182,0.18);
+            border-color: rgba(0,119,182,0.2);
+        }
+        .bhc-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+        }
+        .bhc-img {
+            width: 100%; height: 100%;
+            object-fit: cover; display: block;
+            transition: transform 0.5s ease;
+        }
+        .blog-home-card:hover .bhc-img { transform: scale(1.08); }
+        .bhc-cat {
+            position: absolute; top: 12px; left: 12px;
+            background: var(--gradient-brand);
+            color: #fff; font-size: 10px; font-weight: 800;
+            letter-spacing: 0.5px; text-transform: uppercase;
+            padding: 3px 10px; border-radius: 20px; z-index: 2;
+        }
+        .bhc-body {
+            padding: 16px; flex: 1;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .bhc-title {
+            font-size: 14px; font-weight: 800;
+            color: var(--dark-blue); line-height: 1.45;
+            display: -webkit-box; -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical; overflow: hidden;
+            margin: 0; transition: color 0.2s;
+        }
+        .blog-home-card:hover .bhc-title { color: var(--primary-blue); }
+        .bhc-meta {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 11px; color: #9baab8; font-weight: 500;
+            margin-top: auto;
+        }
+        .bhc-meta i { color: var(--teal-light); font-size: 11px; }
+        .bhc-btn {
+            display: inline-flex; align-items: center; gap: 5px;
+            color: var(--primary-blue); font-size: 12px; font-weight: 800;
+            transition: gap 0.2s;
+        }
+        .blog-home-card:hover .bhc-btn { gap: 9px; }
+
+
+        
+
+        
+        
+        #hero-search-overlay {
+            position: absolute;
+            bottom: 90px;
+            left: 0; right: 0;
+            z-index: 30;
+            pointer-events: auto;
+        }
+        
+        .hero-search-box {
+            position: relative;
+            max-width: 680px;
+            margin: 0 auto;
+            transition: max-width 0.35s cubic-bezier(0.34,1.2,0.64,1);
+            overflow: visible;
+        }
+        
+        .hero-search-box.expanded { max-width: 820px; }
+
+        
+        .hero-search-inner {
+            display: flex; align-items: center;
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.28);
+            padding: 6px 8px 6px 22px;
+            border: 2px solid transparent;
+            transition: box-shadow 0.25s, border-radius 0.25s, border-color 0.25s;
+        }
+        
+        .hero-search-box.expanded .hero-search-inner {
+            box-shadow: 0 12px 56px rgba(0,119,182,0.25);
+            border-color: rgba(0,119,182,0.3);
+            border-radius: 18px 18px 0 0;
+        }
+        .hero-search-icon {
+            color: #aab4c0; font-size: 16px; margin-right: 10px; flex-shrink: 0;
+            transition: color 0.2s;
+        }
+        .hero-search-box.expanded .hero-search-icon { color: #0077b6; }
+        .hero-search-input {
+            flex: 1; border: none; outline: none;
+            font-size: 15px; font-weight: 500; color: #1a1f6e;
+            background: transparent; padding: 9px 0;
+        }
+        .hero-search-input::placeholder { color: #aab4c0; }
+        .hero-search-btn {
+            flex-shrink: 0;
+            background: linear-gradient(135deg,#1a1f6e,#0077b6);
+            color: #fff; border: none; border-radius: 40px;
+            padding: 10px 24px; font-size: 14px; font-weight: 800;
+            cursor: pointer !important; white-space: nowrap;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .hero-search-btn:hover { opacity: 0.88; transform: scale(1.03); }
+
+        
+
+        
+
+
+
+        
+
+        
+        .jrn-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative; z-index: 2;
+        }
+        @media (max-width: 992px) { .jrn-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 576px) { .jrn-grid { grid-template-columns: 1fr; } }
+
+        
+        .jrn-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            min-height: 380px;
+            background: #fff;
+            border: 1px solid rgba(0,119,182,0.1);
+            box-shadow: 0 6px 28px rgba(0,0,0,0.07);
+            cursor: pointer !important;
+            
+            transform-style: preserve-3d;
+            transition: box-shadow 0.4s ease, border-color 0.4s ease;
+            
+            will-change: transform;
+        }
+        .jrn-card:hover {
+            box-shadow: 0 24px 60px rgba(0,119,182,0.22);
+            border-color: rgba(0,119,182,0.25);
+        }
+
+        
+        .jrn-bg-layer {
+            position: absolute; inset: -10%;  
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.1s linear;
+            z-index: 0;
+            will-change: transform;
+        }
+        .jrn-card:hover .jrn-bg-layer {
+            opacity: 0.18;  
+        }
+
+        
+        .jrn-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(160deg, rgba(26,31,110,0) 0%, rgba(0,119,182,0.06) 100%);
+            z-index: 1;
+            transition: background 0.4s ease;
+        }
+        .jrn-card:hover .jrn-overlay {
+            background: linear-gradient(160deg, rgba(26,31,110,0.04) 0%, rgba(0,119,182,0.1) 100%);
+        }
+
+        
+        .jrn-default-content {
+            position: relative; z-index: 2;
+            padding: 32px 26px;
+            display: flex; flex-direction: column; gap: 16px;
+            transition: transform 0.45s cubic-bezier(0.34,1.2,0.64,1),
+                        opacity 0.35s ease;
+            height: 100%;
+        }
+        .jrn-card:hover .jrn-default-content {
+            transform: translateY(-12px);
+            opacity: 0.08;  
+        }
+
+        
+        .jrn-number {
+            position: absolute; top: 20px; right: 22px;
+            font-size: 60px; font-weight: 900; line-height: 1;
+            color: rgba(0,119,182,0.06);
+            letter-spacing: -3px; pointer-events: none; user-select: none;
+            transition: color 0.4s ease;
+        }
+        .jrn-card:hover .jrn-number { color: rgba(0,119,182,0.12); }
+
+        
+        .jrn-icon-wrap {
+            position: relative;
+            width: 70px; height: 70px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .jrn-icon {
+            font-size: 34px;
+            position: relative; z-index: 2;
+            transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+            display: block;
+        }
+        .jrn-card:hover .jrn-icon { transform: scale(1.2) rotate(-8deg); }
+        .jrn-icon-ring {
+            position: absolute; inset: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8f4fd, #cce8f6);
+            transition: transform 0.4s ease, border-radius 0.4s ease;
+        }
+        .jrn-card:hover .jrn-icon-ring {
+            transform: rotate(15deg) scale(1.08);
+            border-radius: 30%;
+        }
+
+        
+        .jrn-title {
+            font-size: 20px; font-weight: 800;
+            color: var(--dark-blue); margin: 0;
+            transition: transform 0.4s ease;
+        }
+
+        
+        .jrn-stat {
+            display: flex; align-items: baseline; gap: 6px;
+            padding: 10px 14px;
+            background: linear-gradient(135deg,#f0f7ff,#e8f4fd);
+            border-radius: 12px;
+            margin-top: auto;
+        }
+        .jrn-stat-num {
+            font-size: 26px; font-weight: 900;
+            color: var(--primary-blue);
+        }
+        .jrn-stat-lbl {
+            font-size: 13px; color: var(--text-muted); font-weight: 500;
+        }
+
+        
+        .jrn-bottom-line {
+            position: absolute; bottom: 0; left: 0;
+            height: 3px; width: 0%;
+            background: var(--gradient-brand);
+            transition: width 0.5s cubic-bezier(0.34,1.2,0.64,1);
+            border-radius: 0 0 24px 24px;
+        }
+        .jrn-card:hover .jrn-bottom-line { width: 100%; }
+
+        
+        .jrn-reveal-content {
+            position: absolute; inset: 0;
+            z-index: 3;
+            padding: 28px 26px;
+            display: flex; flex-direction: column; gap: 12px;
+            background: linear-gradient(160deg, #1a1f6e 0%, #0077b6 60%, #00b4d8 100%);
+            
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.48s cubic-bezier(0.34,1.1,0.64,1),
+                        opacity 0.35s ease;
+            overflow-y: auto;
+        }
+        
+        .jrn-card:hover .jrn-reveal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        
+        .jrn-reveal-icon {
+            font-size: 36px; line-height: 1;
+            animation: jrn-icon-bounce 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+        }
+        @keyframes jrn-icon-bounce {
+            0% { transform: scale(0.5) rotate(-15deg); opacity:0; }
+            100% { transform: scale(1) rotate(0); opacity:1; }
+        }
+
+        
+        .jrn-reveal-title {
+            font-size: 17px; font-weight: 900;
+            color: #fff; margin: 0; line-height: 1.3;
+        }
+
+        
+        .jrn-reveal-desc {
+            font-size: 13px; color: rgba(255,255,255,0.85);
+            line-height: 1.65; margin: 0;
+        }
+        .jrn-reveal-desc strong { color: #00e5ff; font-weight: 700; }
+
+        
+        .jrn-reveal-list {
+            list-style: none; padding: 0; margin: 0;
+            display: flex; flex-direction: column; gap: 6px;
+        }
+        .jrn-reveal-list li {
+            font-size: 12px; color: rgba(255,255,255,0.9);
+            display: flex; align-items: center; gap: 7px;
+        }
+        .jrn-reveal-list li i {
+            color: #00e5ff; font-size: 11px; flex-shrink: 0;
+        }
+
+        
+        .jrn-reveal-btn {
+            display: inline-flex; align-items: center; gap: 7px;
+            margin-top: auto;
+            background: rgba(255,255,255,0.15);
+            border: 1.5px solid rgba(255,255,255,0.35);
+            color: #fff !important;
+            text-decoration: none !important;
+            font-size: 13px; font-weight: 800;
+            padding: 9px 18px; border-radius: 30px;
+            transition: background 0.2s, gap 0.2s, transform 0.2s;
+            cursor: pointer !important;
+            align-self: flex-start;
+        }
+        .jrn-reveal-btn:hover {
+            background: rgba(255,255,255,0.25);
+            gap: 11px;
+            transform: translateX(3px);
+        }
+        .jrn-reveal-btn i { font-size: 11px; }
+
+        
+        .blog-scroll-wrapper,
+        .hoat-dong-scroll-wrapper,
+        .kene-scroll-wrapper,
+        .dest-scroll-wrapper {
+            
+            margin-left:  -22px;
+            margin-right: -22px;
+            padding-left:  8px;
+            padding-right: 8px;
+            gap: 0;         
+        }
+        
+        .blog-scroll-wrapper  .nav-arrow-btn,
+        .hoat-dong-scroll-wrapper .nav-arrow-btn,
+        .kene-scroll-wrapper .nav-arrow-btn,
+        .dest-scroll-wrapper  .nav-arrow-btn {
+            flex-shrink: 0;
+            margin: 0 6px;   
+        }
+        
+        .blog-scroll-wrapper .blog-home-row { flex: 1; min-width: 0; }
+
+        
+        .jrn-preview-desc {
+            font-size: 13px;
+            color: #6b7a90;
+            line-height: 1.6;
+            margin: 0;
+            
+            transition: opacity 0.35s ease;
+        }
+        .jrn-preview-desc strong { color: var(--primary-blue); font-weight: 700; }
+
+        
+    
+        
+        .blog-home-card {
+            flex: 0 0 270px !important;
+            min-width: 270px !important;
+            max-width: 270px !important;
+            width: 270px !important;
+        }
+        .bhc-img-wrap {
+            height: 180px !important;
+        }
+        .bhc-title {
+            font-size: 13.5px !important;
+            line-height: 1.5 !important;
+            -webkit-line-clamp: 3 !important;
+            min-height: 0 !important;
+            height: auto !important;
+            max-height: none !important;
+        }
+        .bhc-body {
+            padding: 14px !important;
+            gap: 6px !important;
+        }
+        
+        #blog-home-row {
+            gap: 16px !important;
+            padding: 8px 4px !important;
+            align-items: stretch !important;
+        }
+
+
+        
+        #hoat-dong-row {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 20px !important;
+            overflow: visible !important;
+            overflow-x: visible !important;
+            flex: 1 !important;
+            min-width: 0 !important;
+            padding: 10px 0 !important;
+        }
+        #hoat-dong-row > .col-md-3 {
+            flex: none !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        #hoat-dong-row > .col-md-3.hd-hidden {
+            display: none !important;
+        }
+
+        
+        #blog-home-row {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 20px !important;
+            overflow: visible !important;
+            overflow-x: visible !important;
+            flex: 1 !important;
+            min-width: 0 !important;
+            padding: 8px 0 !important;
+            align-items: stretch !important;
+        }
+        #blog-home-row > .blog-home-card {
+            flex: none !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            width: 100% !important;
+        }
+        #blog-home-row > .blog-home-card.blog-hidden {
+            display: none !important;
+        }
+
+        
+        .nav-arrow-btn.disabled {
+            opacity: 0.35 !important;
+            cursor: not-allowed !important;
+            pointer-events: none;
+        }
+
+        
+        
+        #hoat-dong-row.hd-slide-out-left {
+            animation: hdSlideOutLeft 0.28s cubic-bezier(0.4,0,0.6,1) forwards;
+        }
+        #hoat-dong-row.hd-slide-out-right {
+            animation: hdSlideOutRight 0.28s cubic-bezier(0.4,0,0.6,1) forwards;
+        }
+        
+        #hoat-dong-row.hd-slide-in-left {
+            animation: hdSlideInLeft 0.3s cubic-bezier(0.22,1,0.36,1) forwards;
+        }
+        #hoat-dong-row.hd-slide-in-right {
+            animation: hdSlideInRight 0.3s cubic-bezier(0.22,1,0.36,1) forwards;
+        }
+
+        @keyframes hdSlideOutLeft  { from{opacity:1;transform:translateX(0)}   to{opacity:0;transform:translateX(-40px)} }
+        @keyframes hdSlideOutRight { from{opacity:1;transform:translateX(0)}   to{opacity:0;transform:translateX(40px)} }
+        @keyframes hdSlideInLeft   { from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)} }
+        @keyframes hdSlideInRight  { from{opacity:0;transform:translateX(-40px)} to{opacity:1;transform:translateX(0)} }
+
+        
+        #blog-home-row.blog-slide-out-left  { animation: hdSlideOutLeft  0.28s cubic-bezier(0.4,0,0.6,1) forwards; }
+        #blog-home-row.blog-slide-out-right { animation: hdSlideOutRight 0.28s cubic-bezier(0.4,0,0.6,1) forwards; }
+        #blog-home-row.blog-slide-in-left   { animation: hdSlideInLeft   0.3s  cubic-bezier(0.22,1,0.36,1) forwards; }
+        #blog-home-row.blog-slide-in-right  { animation: hdSlideInRight  0.3s  cubic-bezier(0.22,1,0.36,1) forwards; }
+    </style><link rel="stylesheet" href="css/kene-experience.css"><link rel="manifest" href="manifest.webmanifest"><meta name="color-scheme" content="light"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="img/brand/icon-32.png"><link rel="apple-touch-icon" href="img/brand/icon-180.png"><link rel="stylesheet" href="css/kene-brand.css"></head><body data-page="home"><header class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 border-bottom">
+        <div class="container">
+
+            
+            <a class="navbar-brand" href="html_trangchu.html">
+                <img src="img/logo.svg" alt="Kể Nè — Không gian lắng nghe" height="46" class=" logo-header" width="142">
+            </a>
+
+            
+            <div class="header-search-wrap mx-lg-4 d-none d-md-flex">
+<div class="input-group header-search">
+                    <div class="input-group-prepend border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" id="header-search-inp" class="form-control border-0 bg-transparent" placeholder="Tìm dịch vụ, chuyên gia, bài viết…" autocomplete="off" aria-label="Tìm kiếm toàn website">
+                    
+                    <span class="hs-shortcut d-none d-lg-inline-flex align-items-center">⌘K</span>
+                </div>
+                <div id="header-dropdown" class="search-dropdown"></div>
+            </div>
+
+            
+            <div class="navbar-nav ml-auto align-items-center">
+                <a class="nav-item nav-link mr-3 d-none d-xl-block small-text" href="html_trangchu.html">Trang chủ</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_gioithieu.html">Về Kể Nè</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_lienhe_chinhsach.html">Liên hệ &amp; Tin cậy</a>
+                <a class="nav-item nav-link mr-3 d-none d-md-block small-text" href="html_blog.html">Góc đọc</a>
+
+                
+                <a class="nav-item nav-link mr-3 text-dark" href="html_giohang.html" style="position:relative;" aria-label="Giỏ dịch vụ">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-badge" style="position:absolute;top:-4px;right:-8px;background:#ff4d4d;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;line-height:1;">0</span>
+                </a>
+
+                
+                <div class="auth-buttons" id="auth-zone">
+                    <a class="nav-item nav-link mr-3 font-weight-bold" href="html_dangnhap_dangky.html">Đăng ký</a>
+                    <a class="btn btn-login font-weight-bold" href="html_dangnhap_dangky.html">Đăng nhập</a>
+                    <a class="nav-item nav-link ml-2 d-none d-sm-block" href="html_thongtin.html">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="sub-nav bg-white border-bottom" aria-label="Dịch vụ"><div class="container"><div class="nav kn-subnav"><a class="nav-link" href="html_dichvu.html">Dịch vụ &amp; Bảng giá</a><a class="nav-link" href="html_diadiem.html">Chuyên gia &amp; Ghép nối</a><a class="nav-link" href="html_diadiem.html#sang-loc">Sàng lọc miễn phí</a><a class="nav-link ml-auto sub-voucher-link" href="html_khuyenmaivatiepthi.html"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Ưu đãi</a></div></div></nav><a class="kn-skip" href="#main-content">Bỏ qua điều hướng</a><main id="main-content">
+<div class="hero-voucher-wrapper"><section id="keneHeroCarousel" class="carousel slide carousel-fade" data-interval="6500" aria-label="Giới thiệu Kể Nè"><div class="carousel-inner">
+<div class="carousel-item active"><div class="hero-slide-bg"><picture class="ke-picture ke-hero-picture" data-ke-image="v3-care-greenroom"><source type="image/webp" srcset="img/photos/v3-care-greenroom-960.webp 960w, img/photos/v3-care-greenroom-1920.webp 1920w" sizes="100vw"><img src="img/photos/v3-care-greenroom-1920.jpg" alt="Hai người trò chuyện giữa không gian có cây xanh" width="1920" height="1080" loading="eager" decoding="async" fetchpriority="high" data-ke-photo="v3-care-greenroom"></picture></div><div class="carousel-caption-custom"><div class="container"><span class="kn-hero-eyebrow">KỂ NÈ · CHUYỆN KHÓ NÓI, CÓ NGƯỜI NGHE</span><h1>Một nơi để bạn được lắng nghe</h1><p>Bắt đầu theo nhịp của mình, với giá rõ ràng và quyền lựa chọn thông tin muốn chia sẻ.</p><a href="html_diadiem.html#sang-loc" class="kn-btn kn-btn-white">Sàng lọc miễn phí</a> <a href="html_dichvu.html" class="kn-btn kn-btn-glass">Xem dịch vụ</a></div></div></div><div class="carousel-item "><div class="hero-slide-bg"><picture class="ke-picture ke-hero-picture" data-ke-image="v3-online-headphones"><source type="image/webp" srcset="img/photos/v3-online-headphones-960.webp 960w, img/photos/v3-online-headphones-1920.webp 1920w" sizes="100vw"><img src="img/photos/v3-online-headphones-1920.jpg" alt="Trò chuyện trực tuyến bằng laptop và tai nghe" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-online-headphones"></picture></div><div class="carousel-caption-custom"><div class="container"><span class="kn-hero-eyebrow">KỂ NÈ · CHUYỆN KHÓ NÓI, CÓ NGƯỜI NGHE</span><h1>Chọn cách đồng hành phù hợp</h1><p>Tư vấn cá nhân 50 phút, gói 6 buổi và những lựa chọn hỗ trợ theo nhu cầu.</p><a href="html_diadiem.html#sang-loc" class="kn-btn kn-btn-white">Sàng lọc miễn phí</a> <a href="html_dichvu.html" class="kn-btn kn-btn-glass">Xem dịch vụ</a></div></div></div><div class="carousel-item "><div class="hero-slide-bg"><picture class="ke-picture ke-hero-picture" data-ke-image="care-hands"><source type="image/webp" srcset="img/photos/care-hands-960.webp 960w, img/photos/care-hands-1920.webp 1920w" sizes="100vw"><img src="img/photos/care-hands-1920.jpg" alt="Cử chỉ nâng đỡ trong một cuộc trò chuyện riêng" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="care-hands"></picture></div><div class="carousel-caption-custom"><div class="container"><span class="kn-hero-eyebrow">KỂ NÈ · CHUYỆN KHÓ NÓI, CÓ NGƯỜI NGHE</span><h1>Một bước nhỏ, không cần vội</h1><p>Tìm hiểu dịch vụ, xem gợi ý và chọn một khung giờ phù hợp với lịch của bạn.</p><a href="html_diadiem.html#sang-loc" class="kn-btn kn-btn-white">Sàng lọc miễn phí</a> <a href="html_dichvu.html" class="kn-btn kn-btn-glass">Xem dịch vụ</a></div></div></div>
+<a class="carousel-control-prev" href="#keneHeroCarousel" role="button" data-slide="prev" aria-label="Thông điệp trước"><span class="carousel-control-prev-icon" aria-hidden="true"></span></a><a class="carousel-control-next" href="#keneHeroCarousel" role="button" data-slide="next" aria-label="Thông điệp sau"><span class="carousel-control-next-icon" aria-hidden="true"></span></a></div></section>
+<section class="container py-5"><div class="row text-center cate-row"><div class="col-4 col-md-2 mb-3"><a class="kn-category" href="html_dichvu.html?id=ca-nhan"><span>💬</span><strong>Cá nhân</strong></a></div><div class="col-4 col-md-2 mb-3"><a class="kn-category" href="html_dichvu.html?id=dong-hanh-6"><span>🌱</span><strong>Gói đồng hành</strong></a></div><div class="col-4 col-md-2 mb-3"><a class="kn-category" href="html_dichvu.html?id=sang-loc"><span>📝</span><strong>Miễn phí</strong></a></div><div class="col-4 col-md-2 mb-3"><a class="kn-category" href="html_dichvu.html?id=ke-nhanh"><span>☕</span><strong>Làm quen</strong></a></div><div class="col-4 col-md-2 mb-3"><a class="kn-category" href="html_dichvu.html?id=vong-ke"><span>🤝</span><strong>Nhóm hỗ trợ</strong></a></div><div class="col-4 col-md-2 mb-3"><a class="kn-category" href="html_dichvu.html?id=workshop"><span>🎓</span><strong>Workshop</strong></a></div></div></section>
+<section class="hero-voucher-section"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center mb-4 kn-section-head"><h2 class="ke-reveal">Ưu đãi &amp; Khả năng tiếp cận</h2><a href="html_khuyenmaivatiepthi.html" class="kn-link">Xem tất cả</a></div><div class="kn-promo-grid"><a href="html_khuyenmaivatiepthi.html" class="kn-promo ke-promo-tile"><span>☀️ KHUNG BAN NGÀY</span><strong>Giảm 15%</strong><p>Phiên cá nhân bắt đầu 08:00–trước 17:00</p><picture class="ke-picture ke-promo-image" data-ke-image="study-together"><source type="image/webp" srcset="img/photos/study-together-960.webp 960w, img/photos/study-together-1920.webp 1920w" sizes="240px"><img src="img/photos/study-together-1920.jpg" alt="Những người học trao đổi và ghi chép cùng nhau" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="study-together"></picture></a><a href="html_lienhe_chinhsach.html?topic=sinh-vien" class="kn-promo ke-promo-tile"><span>📚 SINH VIÊN</span><strong>Bắt đầu dễ hơn</strong><p>Tìm hiểu lựa chọn hỗ trợ và giá minh bạch</p><picture class="ke-picture ke-promo-image" data-ke-image="students-library"><source type="image/webp" srcset="img/photos/students-library-960.webp 960w, img/photos/students-library-1920.webp 1920w" sizes="240px"><img src="img/photos/students-library-1920.jpg" alt="Hai người cùng học trong thư viện với sách và máy tính" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="students-library"></picture></a><a href="html_lienhe_chinhsach.html?topic=to-chuc" class="kn-promo ke-promo-tile"><span>🏢 TỔ CHỨC</span><strong>Đồng hành tự nguyện</strong><p>Workshop và hạn mức phiên theo nhu cầu</p><picture class="ke-picture ke-promo-image" data-ke-image="team-workshop"><source type="image/webp" srcset="img/photos/team-workshop-960.webp 960w, img/photos/team-workshop-1920.webp 1920w" sizes="240px"><img src="img/photos/team-workshop-1920.jpg" alt="Những người tham gia cùng học và trao đổi tại buổi tập huấn" width="1920" height="2400" loading="lazy" decoding="async" data-ke-photo="team-workshop"></picture></a></div></div></section></div>
+<section id="section-xem-gan-day" class="container my-5"><div class="d-flex flex-wrap justify-content-between align-items-center mb-4 kn-section-head"><h2 class="ke-reveal">Bạn vừa tìm hiểu</h2></div><div class="d-flex justify-content-end mb-2"><button class="kn-link" data-action="clear-recent">Xoá lịch sử xem</button></div><div id="kn-recent" class="kn-grid-4"></div></section>
+<section class="container mb-5"><div class="d-flex flex-wrap justify-content-between align-items-center mb-4 kn-section-head"><h2 class="ke-reveal">Bạn muốn chia sẻ điều gì?</h2><a href="html_diadiem.html" class="kn-link">Xem tất cả</a></div><div class="dest-scroll-wrapper"><div class="dest-scroll-container" id="destContainer"><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=stress"><picture class="ke-picture " data-ke-image="journal-window"><source type="image/webp" srcset="img/photos/journal-window-960.webp 960w, img/photos/journal-window-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/journal-window-1920.jpg" alt="Viết vào nhật ký bên cửa sổ sáng" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="journal-window"></picture><strong>Căng thẳng</strong><span>Khi có quá nhiều điều cùng cần bạn giải quyết.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=anxiety"><picture class="ke-picture " data-ke-image="care-session"><source type="image/webp" srcset="img/photos/care-session-960.webp 960w, img/photos/care-session-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/care-session-1920.jpg" alt="Hai người ngồi trao đổi trong không gian trò chuyện riêng" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="care-session"></picture><strong>Lo âu</strong><span>Một khoảng lắng để chia sẻ những điều khiến bạn bận lòng.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=mood"><picture class="ke-picture " data-ke-image="quiet-moment"><source type="image/webp" srcset="img/photos/quiet-moment-960.webp 960w, img/photos/quiet-moment-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/quiet-moment-1920.jpg" alt="Một khoảnh khắc dành cho bản thân và sự chú tâm" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="quiet-moment"></picture><strong>Tâm trạng</strong><span>Bạn không cần tìm đúng từ ngay mới có thể bắt đầu kể.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=sleep"><picture class="ke-picture " data-ke-image="care-notes"><source type="image/webp" srcset="img/photos/care-notes-960.webp 960w, img/photos/care-notes-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/care-notes-1920.jpg" alt="Lắng nghe và ghi chú trong cuộc trò chuyện" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="care-notes"></picture><strong>Giấc ngủ</strong><span>Cùng tìm hiểu những điều đang ảnh hưởng tới nhịp nghỉ ngơi.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=study"><picture class="ke-picture " data-ke-image="study-quiet"><source type="image/webp" srcset="img/photos/study-quiet-960.webp 960w, img/photos/study-quiet-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/study-quiet-1920.jpg" alt="Một góc học tập yên tĩnh giữa các kệ sách" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="study-quiet"></picture><strong>Áp lực học tập</strong><span>Điểm số, kỳ vọng và những lựa chọn của riêng bạn.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=work"><picture class="ke-picture " data-ke-image="work-focus"><source type="image/webp" srcset="img/photos/work-focus-960.webp 960w, img/photos/work-focus-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/work-focus-1920.jpg" alt="Góc làm việc cá nhân với máy tính" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="work-focus"></picture><strong>Công việc</strong><span>Không gian nói về áp lực, ranh giới và thay đổi nghề nghiệp.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=relationships"><picture class="ke-picture " data-ke-image="friends-listen"><source type="image/webp" srcset="img/photos/friends-listen-960.webp 960w, img/photos/friends-listen-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/friends-listen-1920.jpg" alt="Hai người ngồi lắng nghe nhau bên tách cà phê" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="friends-listen"></picture><strong>Mối quan hệ</strong><span>Lắng nghe mình trong cách kết nối với người khác.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=family"><picture class="ke-picture " data-ke-image="family-talk"><source type="image/webp" srcset="img/photos/family-talk-960.webp 960w, img/photos/family-talk-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/family-talk-1920.jpg" alt="Những thành viên gia đình trò chuyện trong phòng khách" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="family-talk"></picture><strong>Gia đình</strong><span>Những điều thân thuộc đôi khi cũng khó nói thành lời.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=confidence"><picture class="ke-picture " data-ke-image="v3-friends-snacks"><source type="image/webp" srcset="img/photos/v3-friends-snacks-960.webp 960w, img/photos/v3-friends-snacks-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-friends-snacks-1920.jpg" alt="Những người bạn trò chuyện và dùng bữa nhẹ cùng nhau" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-friends-snacks"></picture><strong>Tự tin</strong><span>Nhìn lại cách bạn đánh giá mình, với nhiều sự cảm thông hơn.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=change"><picture class="ke-picture " data-ke-image="leaves-light"><source type="image/webp" srcset="img/photos/leaves-light-960.webp 960w, img/photos/leaves-light-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/leaves-light-1920.jpg" alt="Ánh sáng nhẹ xuyên qua tán lá xanh" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="leaves-light"></picture><strong>Thích nghi</strong><span>Đồng hành khi bạn bước vào một giai đoạn mới.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=emotions"><picture class="ke-picture " data-ke-image="journal-flatlay"><source type="image/webp" srcset="img/photos/journal-flatlay-960.webp 960w, img/photos/journal-flatlay-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/journal-flatlay-1920.jpg" alt="Sổ ghi chép và tách trà trên bàn" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="journal-flatlay"></picture><strong>Cảm xúc</strong><span>Nhận diện cảm xúc và nói ra nhu cầu theo nhịp của mình.</span></a><a class="dest-item kn-topic-tile" href="html_diadiem.html?topic=burnout"><picture class="ke-picture " data-ke-image="tea-notes"><source type="image/webp" srcset="img/photos/tea-notes-960.webp 960w, img/photos/tea-notes-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/tea-notes-1920.jpg" alt="Ghi chép với tách trà trong khoảng thời gian riêng" width="1920" height="1282" loading="lazy" decoding="async" data-ke-photo="tea-notes"></picture><strong>Kiệt sức</strong><span>Một nơi để dừng lại và nhìn vào những gì bạn đang gánh.</span></a></div></div></section>
+<section class="container mb-5"><div class="d-flex flex-wrap justify-content-between align-items-center mb-4 kn-section-head"><h2 class="ke-reveal">Dịch vụ &amp; Gói đồng hành</h2><a href="html_dichvu.html" class="kn-link">Xem tất cả</a></div><div class="kn-grid-4"><article class="dv-card kn-service-card"><a href="html_dichvu.html?id=ca-nhan" class="kn-card-link"><div class="dv-card-img"><picture class="ke-picture " data-ke-image="care-conversation"><source type="image/webp" srcset="img/photos/care-conversation-960.webp 960w, img/photos/care-conversation-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/care-conversation-1920.jpg" alt="Hai người trao đổi trong một không gian tư vấn yên tĩnh" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="care-conversation"></picture></div><div class="dv-card-body"><div class="dv-card-meta">💬 Cá nhân</div><h3 class="dv-card-title">Tư vấn cá nhân 1–1</h3><p class="kn-card-excerpt">Một phiên riêng để bạn chia sẻ với chuyên gia theo nhu cầu và mức sẵn sàng của mình.</p><div class="dv-card-foot"><div><small>Giá tham khảo</small><div class="dv-card-price">400.000đ</div></div><span aria-hidden="true">↗</span></div></div></a><button class="kn-save" data-wish="ca-nhan" aria-label="Lưu Tư vấn cá nhân 1–1" aria-pressed="false">♡</button></article><article class="dv-card kn-service-card"><a href="html_dichvu.html?id=dong-hanh-6" class="kn-card-link"><div class="dv-card-img"><picture class="ke-picture " data-ke-image="conversation-notes"><source type="image/webp" srcset="img/photos/conversation-notes-960.webp 960w, img/photos/conversation-notes-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/conversation-notes-1920.jpg" alt="Ghi chú trong cuộc trò chuyện trực tiếp" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="conversation-notes"></picture></div><div class="dv-card-body"><div class="dv-card-meta">🌱 Gói đồng hành</div><h3 class="dv-card-title">Gói đồng hành 6 buổi</h3><p class="kn-card-excerpt">Một buổi đánh giá và năm buổi hỗ trợ theo kế hoạch thống nhất cùng chuyên gia.</p><div class="dv-card-foot"><div><small>Giá tham khảo</small><div class="dv-card-price">2.400.000đ</div></div><span aria-hidden="true">↗</span></div></div></a><button class="kn-save" data-wish="dong-hanh-6" aria-label="Lưu Gói đồng hành 6 buổi" aria-pressed="false">♡</button></article><article class="dv-card kn-service-card"><a href="html_dichvu.html?id=sang-loc" class="kn-card-link"><div class="dv-card-img"><picture class="ke-picture " data-ke-image="journal-planning"><source type="image/webp" srcset="img/photos/journal-planning-960.webp 960w, img/photos/journal-planning-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/journal-planning-1920.jpg" alt="Bàn tay viết ghi chú cá nhân trên bàn gỗ" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="journal-planning"></picture></div><div class="dv-card-body"><div class="dv-card-meta">📝 Miễn phí</div><h3 class="dv-card-title">Sàng lọc PHQ-9 &amp; GAD-7</h3><p class="kn-card-excerpt">Bảng hỏi tham khảo về hai tuần vừa qua và một câu hỏi an toàn trước khi ghép nối.</p><div class="dv-card-foot"><div><small>Miễn phí</small><div class="dv-card-price">Miễn phí</div></div><span aria-hidden="true">↗</span></div></div></a><button class="kn-save" data-wish="sang-loc" aria-label="Lưu Sàng lọc PHQ-9 &amp; GAD-7" aria-pressed="false">♡</button></article><article class="dv-card kn-service-card"><a href="html_dichvu.html?id=ke-nhanh" class="kn-card-link"><div class="dv-card-img"><picture class="ke-picture " data-ke-image="friends-warm"><source type="image/webp" srcset="img/photos/friends-warm-960.webp 960w, img/photos/friends-warm-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/friends-warm-1920.jpg" alt="Cuộc trò chuyện thân thiện trong không gian ấm áp" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="friends-warm"></picture></div><div class="dv-card-body"><div class="dv-card-meta">☕ Làm quen</div><h3 class="dv-card-title">Kể nhanh — làm quen 20 phút</h3><p class="kn-card-excerpt">Ý tưởng phiên ngắn để tìm hiểu cách đồng hành trước khi chọn kế hoạch dài hơn.</p><div class="dv-card-foot"><div><small>Làm quen</small><div class="dv-card-price">Tìm hiểu thêm</div></div><span aria-hidden="true">↗</span></div></div></a><button class="kn-save" data-wish="ke-nhanh" aria-label="Lưu Kể nhanh — làm quen 20 phút" aria-pressed="false">♡</button></article><article class="dv-card kn-service-card"><a href="html_dichvu.html?id=vong-ke" class="kn-card-link"><div class="dv-card-img"><picture class="ke-picture " data-ke-image="group-discussion"><source type="image/webp" srcset="img/photos/group-discussion-960.webp 960w, img/photos/group-discussion-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/group-discussion-1920.jpg" alt="Một nhóm người lớn cùng tham gia trao đổi" width="1920" height="2879" loading="lazy" decoding="async" data-ke-photo="group-discussion"></picture></div><div class="dv-card-body"><div class="dv-card-meta">🤝 Nhóm hỗ trợ</div><h3 class="dv-card-title">Vòng Kể — nhóm hỗ trợ 1:6</h3><p class="kn-card-excerpt">Nhóm hỗ trợ tự nguyện với một chuyên gia và tối đa sáu người tham gia.</p><div class="dv-card-foot"><div><small>Nhóm hỗ trợ</small><div class="dv-card-price">Tìm hiểu thêm</div></div><span aria-hidden="true">↗</span></div></div></a><button class="kn-save" data-wish="vong-ke" aria-label="Lưu Vòng Kể — nhóm hỗ trợ 1:6" aria-pressed="false">♡</button></article><article class="dv-card kn-service-card"><a href="html_dichvu.html?id=workshop" class="kn-card-link"><div class="dv-card-img"><picture class="ke-picture " data-ke-image="v3-group-workshop"><source type="image/webp" srcset="img/photos/v3-group-workshop-960.webp 960w, img/photos/v3-group-workshop-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-group-workshop-1920.jpg" alt="Người tham dự trao đổi trong buổi làm việc nhóm" width="1920" height="2876" loading="lazy" decoding="async" data-ke-photo="v3-group-workshop"></picture></div><div class="dv-card-body"><div class="dv-card-meta">🎓 Workshop</div><h3 class="dv-card-title">Workshop cho trường học</h3><p class="kn-card-excerpt">Chương trình chia sẻ kiến thức và thảo luận theo nhu cầu của trường học.</p><div class="dv-card-foot"><div><small>Workshop</small><div class="dv-card-price">Tìm hiểu thêm</div></div><span aria-hidden="true">↗</span></div></div></a><button class="kn-save" data-wish="workshop" aria-label="Lưu Workshop cho trường học" aria-pressed="false">♡</button></article><article class="dv-card kn-service-card"><a href="html_dichvu.html?id=to-chuc" class="kn-card-link"><div class="dv-card-img"><picture class="ke-picture " data-ke-image="v3-group-laptop"><source type="image/webp" srcset="img/photos/v3-group-laptop-960.webp 960w, img/photos/v3-group-laptop-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-group-laptop-1920.jpg" alt="Nhóm người cùng trao đổi bên màn hình máy tính" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-group-laptop"></picture></div><div class="dv-card-body"><div class="dv-card-meta">🏢 Tổ chức</div><h3 class="dv-card-title">Đồng hành cùng tổ chức</h3><p class="kn-card-excerpt">Hạn mức phiên tư vấn, workshop và báo cáo tổng hợp cho đơn vị đối tác.</p><div class="dv-card-foot"><div><small>Tổ chức</small><div class="dv-card-price">Tìm hiểu thêm</div></div><span aria-hidden="true">↗</span></div></div></a><button class="kn-save" data-wish="to-chuc" aria-label="Lưu Đồng hành cùng tổ chức" aria-pressed="false">♡</button></article><article class="dv-card kn-service-card"><a href="html_dichvu.html?id=sinh-vien" class="kn-card-link"><div class="dv-card-img"><picture class="ke-picture " data-ke-image="v3-study-collaboration"><source type="image/webp" srcset="img/photos/v3-study-collaboration-960.webp 960w, img/photos/v3-study-collaboration-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-study-collaboration-1920.jpg" alt="Những người học cùng trao đổi trong thư viện" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-study-collaboration"></picture></div><div class="dv-card-body"><div class="dv-card-meta">📚 Khả năng tiếp cận</div><h3 class="dv-card-title">Tiếp cận hỗ trợ cho sinh viên</h3><p class="kn-card-excerpt">Tìm hiểu lựa chọn hỗ trợ chi phí và khung giờ phù hợp với lịch học.</p><div class="dv-card-foot"><div><small>Khả năng tiếp cận</small><div class="dv-card-price">Tìm hiểu thêm</div></div><span aria-hidden="true">↗</span></div></div></a><button class="kn-save" data-wish="sinh-vien" aria-label="Lưu Tiếp cận hỗ trợ cho sinh viên" aria-pressed="false">♡</button></article></div></section>
+<section id="section-blog" class="container mb-5"><div class="d-flex flex-wrap justify-content-between align-items-center mb-4 kn-section-head"><h2 class="ke-reveal">Góc đọc Kể Nè</h2><a href="html_blog.html" class="kn-link">Xem tất cả</a></div><div class="kn-horizontal-cards"><article class="blog-card kn-blog-card"><a href="html_blog.html?post=bai-01" class="kn-card-link"><picture class="ke-picture " data-ke-image="v3-journal-home"><source type="image/webp" srcset="img/photos/v3-journal-home-960.webp 960w, img/photos/v3-journal-home-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-journal-home-1920.jpg" alt="Viết vào sổ trong một góc làm việc ở nhà" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="v3-journal-home" class="blog-card-img"></picture><div class="blog-card-body"><span class="kn-tag">Bắt đầu</span><h3>Bắt đầu một cuộc trò chuyện khi chưa biết nói gì</h3><p>Bạn có thể đến một phiên đầu với cảm giác chưa biết bắt đầu từ đâu. Không cần chuẩn bị một câu chuyện trọn vẹn hay tìm một lý do đủ lớn.</p><small>3 phút đọc · Kể Nè</small></div></a></article><article class="blog-card kn-blog-card"><a href="html_blog.html?post=bai-02" class="kn-card-link"><picture class="ke-picture " data-ke-image="v3-care-reassurance"><source type="image/webp" srcset="img/photos/v3-care-reassurance-960.webp 960w, img/photos/v3-care-reassurance-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-care-reassurance-1920.jpg" alt="Trao đổi với người hỗ trợ trong không gian yên tĩnh" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-care-reassurance" class="blog-card-img"></picture><div class="blog-card-body"><span class="kn-tag">Hiểu dịch vụ</span><h3>Phiên tư vấn 50 phút diễn ra như thế nào?</h3><p>Phiên cá nhân của Kể Nè được thiết kế với thời lượng 50 phút. Mục đích là có một khoảng riêng cho nhu cầu của bạn, thay vì cố giải quyết tất cả trong một lần.</p><small>3 phút đọc · Kể Nè</small></div></a></article><article class="blog-card kn-blog-card"><a href="html_blog.html?post=bai-03" class="kn-card-link"><picture class="ke-picture " data-ke-image="v3-journal-planner"><source type="image/webp" srcset="img/photos/v3-journal-planner-960.webp 960w, img/photos/v3-journal-planner-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-journal-planner-1920.jpg" alt="Một kế hoạch nhỏ được viết vào sổ" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-journal-planner" class="blog-card-img"></picture><div class="blog-card-body"><span class="kn-tag">Sàng lọc</span><h3>Sàng lọc khác với chẩn đoán ra sao?</h3><p>PHQ-9 và GAD-7 là những bảng hỏi về tần suất một số trải nghiệm trong hai tuần. Tổng điểm giúp gợi mở trao đổi, không tự xác định bạn mắc một bệnh.</p><small>3 phút đọc · Kể Nè</small></div></a></article><article class="blog-card kn-blog-card"><a href="html_blog.html?post=bai-04" class="kn-card-link"><picture class="ke-picture " data-ke-image="v3-care-dialogue"><source type="image/webp" srcset="img/photos/v3-care-dialogue-960.webp 960w, img/photos/v3-care-dialogue-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-care-dialogue-1920.jpg" alt="Đối thoại và chia sẻ trong khoảng thời gian riêng" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="v3-care-dialogue" class="blog-card-img"></picture><div class="blog-card-body"><span class="kn-tag">Hiểu dịch vụ</span><h3>Chọn chuyên gia: hãy xem điều gì ngoài số sao?</h3><p>Độ phù hợp không thể được mô tả chỉ bằng một số sao. Chủ đề chuyên môn, cách trao đổi, hình thức gặp và lịch trống đều có thể ảnh hưởng tới lựa chọn.</p><small>3 phút đọc · Kể Nè</small></div></a></article><article class="blog-card kn-blog-card"><a href="html_blog.html?post=bai-05" class="kn-card-link"><picture class="ke-picture " data-ke-image="v3-journal-spiral"><source type="image/webp" srcset="img/photos/v3-journal-spiral-960.webp 960w, img/photos/v3-journal-spiral-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-journal-spiral-1920.jpg" alt="Ghi chép bằng bút trong cuốn sổ cá nhân" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="v3-journal-spiral" class="blog-card-img"></picture><div class="blog-card-body"><span class="kn-tag">Chuẩn bị</span><h3>Một bản ghi nhỏ trước buổi hẹn</h3><p>Chuẩn bị không có nghĩa là phải kể thật dài. Một ghi chú ngắn có thể giúp bạn nhớ điều muốn nói khi tới lượt mình.</p><small>3 phút đọc · Kể Nè</small></div></a></article><article class="blog-card kn-blog-card"><a href="html_blog.html?post=bai-06" class="kn-card-link"><picture class="ke-picture " data-ke-image="v3-study-library"><source type="image/webp" srcset="img/photos/v3-study-library-960.webp 960w, img/photos/v3-study-library-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-study-library-1920.jpg" alt="Nhóm người học cùng tập trung trong thư viện" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-study-library" class="blog-card-img"></picture><div class="blog-card-body"><span class="kn-tag">Đời sống</span><h3>Khi áp lực học tập đến từ nhiều phía</h3><p>Lịch học, kỳ thi và kỳ vọng có thể cùng xuất hiện trong một tuần. Bạn không cần so sánh độ khó của mình với người khác mới được tìm người lắng nghe.</p><small>3 phút đọc · Kể Nè</small></div></a></article><article class="blog-card kn-blog-card"><a href="html_blog.html?post=bai-07" class="kn-card-link"><picture class="ke-picture " data-ke-image="v3-work-together"><source type="image/webp" srcset="img/photos/v3-work-together-960.webp 960w, img/photos/v3-work-together-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-work-together-1920.jpg" alt="Hai người làm việc tại nhà trong không gian sáng" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-work-together" class="blog-card-img"></picture><div class="blog-card-body"><span class="kn-tag">Đời sống</span><h3>Nói về ranh giới trong công việc</h3><p>Ranh giới là những điều giúp người khác hiểu thời gian và khả năng đáp ứng của bạn. Chúng có thể thay đổi theo vai trò và thoả thuận công việc.</p><small>3 phút đọc · Kể Nè</small></div></a></article><article class="blog-card kn-blog-card"><a href="html_blog.html?post=bai-08" class="kn-card-link"><picture class="ke-picture " data-ke-image="rest-bedroom"><source type="image/webp" srcset="img/photos/rest-bedroom-960.webp 960w, img/photos/rest-bedroom-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/rest-bedroom-1920.jpg" alt="Ánh sáng buổi sáng trong căn phòng nghỉ ngơi gọn gàng" width="1920" height="2886" loading="lazy" decoding="async" data-ke-photo="rest-bedroom" class="blog-card-img"></picture><div class="blog-card-body"><span class="kn-tag">Đời sống</span><h3>Theo dõi nhịp ngủ mà không tự trách</h3><p>Một bản ghi ngắn về giờ nghỉ, giờ dậy và những điều diễn ra trong ngày có thể giúp bạn nhớ lại bối cảnh khi trao đổi với chuyên môn.</p><small>3 phút đọc · Kể Nè</small></div></a></article></div></section>
+<section id="section-gioi-thieu" class="kene-about-section kn-about"><div class="container"><div class="row align-items-center"><div class="col-lg-5 mb-4"><span class="kn-eyebrow">VỀ KỂ NÈ</span><h2 class="ke-reveal">Gần gũi.<br>An toàn.<br>Giá minh bạch.</h2><p>Kể Nè tạo một khoảng riêng để bạn tìm hiểu nhu cầu, lựa chọn cách đồng hành và bắt đầu câu chuyện theo nhịp của mình.</p><a href="html_gioithieu.html" class="kn-btn">Câu chuyện Kể Nè</a></div><div class="col-lg-7"><div class="kn-value-grid"><article class="kn-white-card"><span class="kn-step-no">01</span><h3>Sứ mệnh</h3><p>Thiết kế hành trình từ hiểu nhu cầu, ghép nối đến tư vấn và theo dõi.</p></article><article class="kn-white-card"><span class="kn-step-no">02</span><h3>Định vị</h3><p>Chất lượng và an toàn là trụ cột; sự tiện lợi là lớp bổ trợ.</p></article><article class="kn-white-card"><span class="kn-step-no">03</span><h3>Quyền lựa chọn</h3><p>Biệt danh, đồng thuận theo mục đích và quyền dừng khi chưa sẵn sàng.</p></article><article class="kn-white-card"><span class="kn-step-no">04</span><h3>Minh bạch</h3><p>Công khai giá, thời lượng, điều kiện và giới hạn dịch vụ.</p></article></div></div></div><div class="ke-story-gallery"><figure class="ke-photo-frame ke-tilt "><picture class="ke-picture " data-ke-image="online-consult"><source type="image/webp" srcset="img/photos/online-consult-960.webp 960w, img/photos/online-consult-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/online-consult-1920.jpg" alt="Trao đổi trực tuyến qua màn hình máy tính" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="online-consult"></picture><button type="button" class="ke-photo-zoom" data-ke-lightbox="online-consult" data-ke-gallery="home-story" aria-label="Xem ảnh lớn: Lắng nghe theo nhịp của bạn"><span aria-hidden="true">⤢</span></button><figcaption><strong>Lắng nghe theo nhịp của bạn</strong></figcaption></figure><figure class="ke-photo-frame ke-tilt "><picture class="ke-picture " data-ke-image="online-home"><source type="image/webp" srcset="img/photos/online-home-960.webp 960w, img/photos/online-home-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/online-home-1920.jpg" alt="Kết nối trong khoảng riêng" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="online-home"></picture><button type="button" class="ke-photo-zoom" data-ke-lightbox="online-home" data-ke-gallery="home-story" aria-label="Xem ảnh lớn: Kết nối trong khoảng riêng"><span aria-hidden="true">⤢</span></button><figcaption><strong>Kết nối trong khoảng riêng</strong></figcaption></figure><figure class="ke-photo-frame ke-tilt "><picture class="ke-picture " data-ke-image="v3-journal-sticky"><source type="image/webp" srcset="img/photos/v3-journal-sticky-960.webp 960w, img/photos/v3-journal-sticky-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-journal-sticky-1920.jpg" alt="Ghi chú bên máy tính và những tờ giấy nhắc việc" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-journal-sticky"></picture><button type="button" class="ke-photo-zoom" data-ke-lightbox="v3-journal-sticky" data-ke-gallery="home-story" aria-label="Xem ảnh lớn: Một ghi chú cho chính mình"><span aria-hidden="true">⤢</span></button><figcaption><strong>Một ghi chú cho chính mình</strong></figcaption></figure></div></div></section>
+<section id="section-journey" class="journey-section kn-journey"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center mb-4 kn-section-head"><h2 class="ke-reveal">Bốn bước trong hành trình của bạn</h2></div><div class="kn-grid-4"><article class="kn-step-card"><picture class="ke-picture ke-step-photo" data-ke-image="v3-journal-cozy"><source type="image/webp" srcset="img/photos/v3-journal-cozy-960.webp 960w, img/photos/v3-journal-cozy-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-journal-cozy-1920.jpg" alt="Viết nhật ký trong khoảng riêng tại nhà" width="1920" height="2877" loading="lazy" decoding="async" data-ke-photo="v3-journal-cozy"></picture><span class="kn-step-no">01</span><h3>Hiểu nhu cầu</h3><p>Sàng lọc và trả lời câu hỏi an toàn; bạn chủ động đồng ý việc sử dụng dữ liệu.</p></article><article class="kn-step-card"><picture class="ke-picture ke-step-photo" data-ke-image="v3-friends-cafe"><source type="image/webp" srcset="img/photos/v3-friends-cafe-960.webp 960w, img/photos/v3-friends-cafe-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-friends-cafe-1920.jpg" alt="Hai người bạn trò chuyện trong quán cà phê" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="v3-friends-cafe"></picture><span class="kn-step-no">02</span><h3>Chọn người &amp; Giờ hẹn</h3><p>Xem gợi ý có lý do và đối chiếu khung giờ.</p></article><article class="kn-step-card"><picture class="ke-picture ke-step-photo" data-ke-image="v3-online-asian"><source type="image/webp" srcset="img/photos/v3-online-asian-960.webp 960w, img/photos/v3-online-asian-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-online-asian-1920.jpg" alt="Trao đổi trực tuyến trong góc làm việc tại nhà" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-online-asian"></picture><span class="kn-step-no">03</span><h3>Xác nhận lịch</h3><p>Dành 10 phút xem lại thời gian, mức giá và điều kiện của yêu cầu.</p></article><article class="kn-step-card"><picture class="ke-picture ke-step-photo" data-ke-image="v3-journal-modern"><source type="image/webp" srcset="img/photos/v3-journal-modern-960.webp 960w, img/photos/v3-journal-modern-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-journal-modern-1920.jpg" alt="Một góc ghi chép với máy tính và sổ tay" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-journal-modern"></picture><span class="kn-step-no">04</span><h3>Đồng hành &amp; Nhìn lại</h3><p>Tham gia phiên, phản hồi và chọn bước tiếp theo.</p></article></div><p class="kn-note">Mỗi bước đều ưu tiên sự rõ ràng, quyền riêng tư và lựa chọn của bạn. Khi cần hỗ trợ khẩn cấp, hãy tìm trợ giúp trực tiếp.</p></div></section>
+<section id="section-vision" class="vision-section kn-vision"><div class="container"><span class="kn-eyebrow">THEO NHỊP RIÊNG CỦA BẠN</span><h2 class="ke-reveal">Không cần vội, chỉ cần bắt đầu</h2><div class="kn-grid-4"><article class="kn-white-card"><picture class="ke-picture ke-step-photo" data-ke-image="privacy-laptop"><source type="image/webp" srcset="img/photos/privacy-laptop-960.webp 960w, img/photos/privacy-laptop-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/privacy-laptop-1920.jpg" alt="Đôi tay thao tác trên máy tính trong không gian riêng" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="privacy-laptop"></picture><span class="kn-tag">Khi muốn hiểu mình</span><h3>Dành một khoảng riêng</h3><p>Nhìn lại điều khiến bạn bận lòng và điều bạn đang cần.</p></article><article class="kn-white-card"><picture class="ke-picture ke-step-photo" data-ke-image="nature-detail"><source type="image/webp" srcset="img/photos/nature-detail-960.webp 960w, img/photos/nature-detail-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/nature-detail-1920.jpg" alt="Chi tiết lá cây xanh trong ánh sáng tự nhiên" width="1920" height="1285" loading="lazy" decoding="async" data-ke-photo="nature-detail"></picture><span class="kn-tag">Khi sẵn sàng chia sẻ</span><h3>Chọn cách đồng hành</h3><p>Tìm chủ đề, hình thức và nhịp trò chuyện phù hợp.</p></article><article class="kn-white-card"><picture class="ke-picture ke-step-photo" data-ke-image="mindful-room"><source type="image/webp" srcset="img/photos/mindful-room-960.webp 960w, img/photos/mindful-room-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/mindful-room-1920.jpg" alt="Một khoảng thời gian tĩnh lặng trong căn phòng" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="mindful-room"></picture><span class="kn-tag">Sau một cuộc trò chuyện</span><h3>Cho mình thời gian</h3><p>Ghi lại điều muốn nhớ và trao đổi về bước tiếp theo.</p></article><article class="kn-white-card"><picture class="ke-picture ke-step-photo" data-ke-image="v3-space-armchair"><source type="image/webp" srcset="img/photos/v3-space-armchair-960.webp 960w, img/photos/v3-space-armchair-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-space-armchair-1920.jpg" alt="Chiếc ghế trong căn phòng đón ánh sáng tự nhiên" width="1920" height="2560" loading="lazy" decoding="async" data-ke-photo="v3-space-armchair"></picture><span class="kn-tag">Khi nhu cầu thay đổi</span><h3>Chủ động lựa chọn lại</h3><p>Tiếp tục, tạm dừng hoặc tìm cách hỗ trợ phù hợp hơn.</p></article></div><p class="kn-note">Mỗi người có một hành trình riêng. Bạn không cần đi qua tất cả các bước theo cùng một nhịp.</p></div></section>
+<section id="section-team" class="team-section"><div class="team-spotlight" id="teamSpotlight"></div><div class="container position-relative" style="z-index:2"><div class="team-header"><div class="team-eyebrow">CÙNG XÂY DỰNG KỂ NÈ</div><h2 class="team-headline ke-reveal">Con người<br><span class="team-headline--accent">Kể Nè</span></h2><p class="team-sub">Tám góc nhìn về trải nghiệm, dịch vụ, vận hành và công nghệ cùng kết nối trong Kể Nè.</p><div class="ke-trail-invite"><button type="button" data-team-trail>Chạm một nhịp kết nối ✧</button><small>Tám góc nhìn, cùng một mong muốn: để mỗi câu chuyện đều có khoảng riêng.</small></div></div><div class="team-grid"><div class="team-card-wrap" data-delay="0"><button class="team-card kn-team-flip" aria-label="Tìm hiểu về Lưu Tố Anh" aria-pressed="false"><span class="tcard-front"><span class="tcard-avatar"><img src="img/member-1.svg" alt="Chữ viết tắt tên Lưu Tố Anh" loading="lazy"><span class="tcard-avatar-ring"></span></span><span class="tcard-info"><strong>Lưu Tố Anh</strong><span class="tcard-role">Điều phối &amp; Phát triển</span></span><span class="tcard-flip-hint">Chạm để gặp một góc nhìn ↻</span></span><span class="tcard-back"><span class="tcard-back-content"><span class="tcard-back-icon">🎯</span><strong>Lưu Tố Anh</strong><span class="tcard-role">Điều phối &amp; Phát triển</span><span class="kn-team-bio">Điều phối các mảng công việc, kết nối mục tiêu chất lượng với trải nghiệm của người dùng.</span></span></span></button></div><div class="team-card-wrap" data-delay="1"><button class="team-card kn-team-flip" aria-label="Tìm hiểu về Võ Thiên Ân" aria-pressed="false"><span class="tcard-front"><span class="tcard-avatar"><img src="img/member-2.svg" alt="Chữ viết tắt tên Võ Thiên Ân" loading="lazy"><span class="tcard-avatar-ring"></span></span><span class="tcard-info"><strong>Võ Thiên Ân</strong><span class="tcard-role">Chiến lược &amp; Trải nghiệm</span></span><span class="tcard-flip-hint">Chạm để gặp một góc nhìn ↻</span></span><span class="tcard-back"><span class="tcard-back-content"><span class="tcard-back-icon">🧭</span><strong>Võ Thiên Ân</strong><span class="tcard-role">Chiến lược &amp; Trải nghiệm</span><span class="kn-team-bio">Kết nối dịch vụ và những điểm chạm rõ ràng trong hành trình của bạn.</span></span></span></button></div><div class="team-card-wrap" data-delay="2"><button class="team-card kn-team-flip" aria-label="Tìm hiểu về Nguyễn Phạm Ngọc Hân" aria-pressed="false"><span class="tcard-front"><span class="tcard-avatar"><img src="img/member-3.svg" alt="Chữ viết tắt tên Nguyễn Phạm Ngọc Hân" loading="lazy"><span class="tcard-avatar-ring"></span></span><span class="tcard-info"><strong>Nguyễn Phạm Ngọc Hân</strong><span class="tcard-role">Thiết kế dịch vụ</span></span><span class="tcard-flip-hint">Chạm để gặp một góc nhìn ↻</span></span><span class="tcard-back"><span class="tcard-back-content"><span class="tcard-back-icon">💡</span><strong>Nguyễn Phạm Ngọc Hân</strong><span class="tcard-role">Thiết kế dịch vụ</span><span class="kn-team-bio">Chú trọng cấu trúc dịch vụ, cách trình bày thông tin và quyền chủ động lựa chọn.</span></span></span></button></div><div class="team-card-wrap" data-delay="3"><button class="team-card kn-team-flip" aria-label="Tìm hiểu về Nguyễn Thị Diễm Hương" aria-pressed="false"><span class="tcard-front"><span class="tcard-avatar"><img src="img/member-4.svg" alt="Chữ viết tắt tên Nguyễn Thị Diễm Hương" loading="lazy"><span class="tcard-avatar-ring"></span></span><span class="tcard-info"><strong>Nguyễn Thị Diễm Hương</strong><span class="tcard-role">Vận hành &amp; Quy trình</span></span><span class="tcard-flip-hint">Chạm để gặp một góc nhìn ↻</span></span><span class="tcard-back"><span class="tcard-back-content"><span class="tcard-back-icon">🔄</span><strong>Nguyễn Thị Diễm Hương</strong><span class="tcard-role">Vận hành &amp; Quy trình</span><span class="kn-team-bio">Sắp xếp các bước tìm hiểu, đặt lịch, xem lại và phản hồi thành một hành trình mạch lạc.</span></span></span></button></div><div class="team-card-wrap" data-delay="4"><button class="team-card kn-team-flip" aria-label="Tìm hiểu về Nguyễn Duy Quỳnh Hương" aria-pressed="false"><span class="tcard-front"><span class="tcard-avatar"><img src="img/member-5.svg" alt="Chữ viết tắt tên Nguyễn Duy Quỳnh Hương" loading="lazy"><span class="tcard-avatar-ring"></span></span><span class="tcard-info"><strong>Nguyễn Duy Quỳnh Hương</strong><span class="tcard-role">Kế hoạch &amp; Năng lực</span></span><span class="tcard-flip-hint">Chạm để gặp một góc nhìn ↻</span></span><span class="tcard-back"><span class="tcard-back-content"><span class="tcard-back-icon">📈</span><strong>Nguyễn Duy Quỳnh Hương</strong><span class="tcard-role">Kế hoạch &amp; Năng lực</span><span class="kn-team-bio">Cân đối thời gian, lịch trình và nguồn lực để mỗi bước sử dụng đều có sự chuẩn bị.</span></span></span></button></div><div class="team-card-wrap" data-delay="5"><button class="team-card kn-team-flip" aria-label="Tìm hiểu về Phan Anh Tài" aria-pressed="false"><span class="tcard-front"><span class="tcard-avatar"><img src="img/member-6.svg" alt="Chữ viết tắt tên Phan Anh Tài" loading="lazy"><span class="tcard-avatar-ring"></span></span><span class="tcard-info"><strong>Phan Anh Tài</strong><span class="tcard-role">Hệ thống &amp; Kết nối</span></span><span class="tcard-flip-hint">Chạm để gặp một góc nhìn ↻</span></span><span class="tcard-back"><span class="tcard-back-content"><span class="tcard-back-icon">⚙️</span><strong>Phan Anh Tài</strong><span class="tcard-role">Hệ thống &amp; Kết nối</span><span class="kn-team-bio">Kết nối góc nhìn vận hành với công nghệ, giúp thông tin được tổ chức nhất quán.</span></span></span></button></div><div class="team-card-wrap" data-delay="6"><button class="team-card kn-team-flip" aria-label="Tìm hiểu về Nguyễn Thị Diệu Thương" aria-pressed="false"><span class="tcard-front"><span class="tcard-avatar"><img src="img/member-7.svg" alt="Chữ viết tắt tên Nguyễn Thị Diệu Thương" loading="lazy"><span class="tcard-avatar-ring"></span></span><span class="tcard-info"><strong>Nguyễn Thị Diệu Thương</strong><span class="tcard-role">Cải tiến &amp; Tin cậy</span></span><span class="tcard-flip-hint">Chạm để gặp một góc nhìn ↻</span></span><span class="tcard-back"><span class="tcard-back-content"><span class="tcard-back-icon">🌱</span><strong>Nguyễn Thị Diệu Thương</strong><span class="tcard-role">Cải tiến &amp; Tin cậy</span><span class="kn-team-bio">Rà soát điểm vướng trong trải nghiệm và ưu tiên những cải tiến có ích.</span></span></span></button></div><div class="team-card-wrap" data-delay="7"><button class="team-card kn-team-flip" aria-label="Tìm hiểu về Trần Phương Tùng" aria-pressed="false"><span class="tcard-front"><span class="tcard-avatar"><img src="img/member-8.svg" alt="Chữ viết tắt tên Trần Phương Tùng" loading="lazy"><span class="tcard-avatar-ring"></span></span><span class="tcard-info"><strong>Trần Phương Tùng</strong><span class="tcard-role">Chất lượng &amp; Công nghệ</span></span><span class="tcard-flip-hint">Chạm để gặp một góc nhìn ↻</span></span><span class="tcard-back"><span class="tcard-back-content"><span class="tcard-back-icon">🛡️</span><strong>Trần Phương Tùng</strong><span class="tcard-role">Chất lượng &amp; Công nghệ</span><span class="kn-team-bio">Chú trọng chất lượng giao diện, tính rõ ràng và trải nghiệm trên các thiết bị.</span></span></span></button></div></div></div></section>
+<section id="section-why" class="why-kene-section py-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center mb-4 kn-section-head"><h2 class="ke-reveal">Những điều bạn cần biết trước khi bắt đầu</h2></div><div class="kn-grid-4"><article class="kn-white-card"><span class="kn-big-icon">🔎</span><h3>Hồ sơ minh bạch</h3><p>Tìm hiểu chuyên môn, cách đồng hành và điều kiện trước khi lựa chọn.</p></article><article class="kn-white-card"><span class="kn-big-icon">🕰️</span><h3>Thời gian rõ ràng</h3><p>50 phút cho một phiên cá nhân, 10 phút để xem lại lựa chọn và quyền chủ động với thời gian của bạn.</p></article><article class="kn-white-card"><span class="kn-big-icon">💙</span><h3>Theo nhịp của bạn</h3><p>Không tự gia hạn, không dùng điểm số để ép tiếp tục.</p></article><article class="kn-white-card"><span class="kn-big-icon">🛡️</span><h3>Giới hạn dịch vụ</h3><p>Không chẩn đoán, không kê thuốc, không thay thế cấp cứu.</p></article></div></div></section></main><footer class="kene-footer"><div class="footer-bg-layer"></div><div class="container position-relative" style="z-index:2"><div class="row footer-main-row pt-5 pb-4"><div class="col-lg-4 col-md-6 mb-4"><a href="html_trangchu.html" class="footer-brand d-inline-block mb-3" aria-label="Kể Nè — Trang chủ"><img class="footer-logo" src="img/logo-white.svg" width="150" height="49" alt="Kể Nè"></a><p class="footer-desc">Chuyện khó nói, có người nghe. Kể Nè đồng hành cùng bạn tìm hiểu nhu cầu và lựa chọn cách chăm sóc sức khoẻ tinh thần phù hợp.</p><a class="footer-sitemap-btn" href="html_sitemap.html">Sơ đồ website</a></div><div class="col-lg-4 col-md-6 mb-4"><h2 class="footer-heading">Khám phá Kể Nè</h2><ul class="ke-footer-links"><li><a href="html_gioithieu.html">Câu chuyện &amp; Con người</a></li><li><a href="html_dichvu.html">Dịch vụ &amp; Mức giá tham khảo</a></li><li><a href="html_diadiem.html">Tìm cách đồng hành phù hợp</a></li><li><a href="html_blog.html">Góc đọc mỗi ngày</a></li><li><a href="html_khuyenmaivatiepthi.html">Ưu đãi &amp; Điều kiện áp dụng</a></li></ul></div><div class="col-lg-4 col-md-12 mb-4"><h2 class="footer-heading">Bạn luôn có quyền lựa chọn</h2><p class="ke-footer-promise">♡ Chia sẻ theo nhịp của bạn. Hiểu rõ điều kiện trước khi bắt đầu.</p><ul class="ke-footer-links"><li><a href="html_lienhe_chinhsach.html#du-lieu">Quyền riêng tư</a></li><li><a href="html_lienhe_chinhsach.html#doi-lich">Đổi lịch &amp; Hỗ trợ</a></li><li><a href="html_lienhe_chinhsach.html">Liên hệ &amp; Trung tâm tin cậy</a></li><li><a href="html_lienhe_chinhsach.html?topic=to-chuc">Dành cho tổ chức</a></li><li><a href="html_lienhe_chinhsach.html?topic=chuyen-gia">Hợp tác chuyên gia</a></li></ul></div></div><div class="footer-divider"></div><div class="ke-footer-tools"><button type="button" data-ke-motion aria-pressed="false">Chuyển động: Êm dịu</button><button type="button" data-ke-credits>Nguồn ảnh</button><button type="button" data-ke-saved-articles>Bài viết đã lưu</button><span id="ke-offline-state" class="ke-offline-state">Ảnh cục bộ · Không cần Internet</span></div><div class="footer-bottom py-3 d-flex flex-wrap justify-content-between"><p class="footer-copy mb-0">© 2026 Kể Nè. Mọi quyền được bảo lưu.</p><p class="footer-copy mb-0">Tư vấn, tham vấn tâm lý · Không thay thế cấp cứu</p></div></div></footer><div id="kn-toast" class="kn-toast" hidden role="status" aria-live="polite"></div><div class="kn-tools"><button class="kn-sos-btn" data-action="sos">Cần giúp ngay</button><button class="kn-help-btn" data-action="help" aria-label="Mở trợ giúp thao tác">?</button><button class="kn-exit-btn" data-action="quick-exit">Thoát nhanh ↗</button></div><div id="kn-modal" class="kn-modal" hidden role="dialog" aria-modal="true" aria-labelledby="kn-modal-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-modal-title"></h2><div><button class="kn-link" data-action="sos">Cần giúp ngay</button><button class="kn-modal-close" data-action="close-modal" aria-label="Đóng cửa sổ">×</button></div></div><div id="kn-modal-body"></div></div></div><div id="kn-sos" class="kn-modal kn-sos-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="kn-sos-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-sos-title">Ưu tiên sự an toàn của bạn</h2><button class="kn-modal-close" data-action="close-sos" aria-label="Đóng hướng dẫn">×</button></div><p>Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế hoặc đến cơ sở cấp cứu gần nhất. Nếu có thể, nhờ một người tin cậy ở cạnh bạn.</p><a class="kn-btn kn-btn-full" href="tel:115">Gọi cấp cứu y tế 115</a><p class="kn-note mt-3">115 là cấp cứu y tế, không phải đường dây tư vấn của Kể Nè.</p><div class="kn-white-card my-3"><h3 class="kn-h4">Website không có người trực</h3><p>Kể Nè không phải kênh cấp cứu và không gửi cảnh báo từ nút này. Đừng chờ phản hồi trên website khi bạn đang không an toàn.</p><p id="kn-support-hours"></p></div><button class="kn-btn kn-btn-light" data-action="quick-exit">Thoát nhanh khỏi website</button></div></div><button id="back-to-top" class="kn-back-top" aria-label="Lên đầu trang" hidden>↑</button><script src="js/jquery.min.js" defer></script><script src="js/bootstrap.bundle.min.js" defer></script><script src="js/kene-data.js" defer></script><script src="js/kene-engine.js" defer></script><script src="js/kene-core.js" defer></script><script src="js/kene-media-data.js" defer></script><script src="js/kene-media.js" defer></script><script src="js/kene-runtime.js" defer></script><script src="js/kene-pages.js" defer></script><script src="js/kene-offline-version.js" defer></script><script src="js/kene-experience.js" defer></script><script src="js/kene-scenes.js" defer></script></body></html>

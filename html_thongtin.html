@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lịch hẹn, gói, nhật ký tự nguyện và quyền dữ liệu."><meta name="theme-color" content="#0077b6"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Tài khoản của tôi | Kể Nè</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/fontawesome.min.css"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css_trangchu.css"><style>
+        
+        :root {
+            --primary-blue:   #0077b6;
+            --dark-blue:      #1a1f6e;
+            --accent-red:     #ff4d4d;
+            --teal-light:     #00b4d8;
+            --gradient-brand: linear-gradient(135deg, #1a1f6e 0%, #0077b6 55%, #00b4d8 100%);
+            --bg-light:       #f0f4f8;
+            --text-dark:      #1a1f6e;
+            --text-muted:     #6c757d;
+            --white:          #ffffff;
+            --glass-bg:       rgba(255,255,255,0.72);
+            --glass-border:   rgba(255,255,255,0.45);
+            --sidebar-w:      260px;
+        }
+
+
+        
+        body { background: var(--bg-light); font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+
+        
+        .dashboard-wrapper {
+            display: flex;
+            min-height: calc(100vh - 130px); 
+            max-width: 1280px;
+            margin: 28px auto;
+            gap: 24px;
+            padding: 0 16px;
+        }
+
+        
+        .dashboard-sidebar {
+            width: var(--sidebar-w);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        
+        .sidebar-profile-card {
+            background: var(--gradient-brand);
+            border-radius: 20px;
+            padding: 28px 20px 22px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(26,31,110,0.25);
+        }
+        
+        .sidebar-profile-card::before {
+            content: '';
+            position: absolute; top: -60px; right: -60px;
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+        }
+        .sidebar-profile-card::after {
+            content: '';
+            position: absolute; bottom: -40px; left: -40px;
+            width: 130px; height: 130px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+        }
+
+        
+        .sidebar-avatar-wrap {
+            position: relative;
+            width: 84px; height: 84px;
+            margin: 0 auto 12px;
+        }
+        .sidebar-avatar {
+            width: 84px; height: 84px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.6);
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
+        
+        .sidebar-avatar-badge {
+            position: absolute; bottom: 3px; right: 3px;
+            width: 16px; height: 16px;
+            background: #22c55e;
+            border: 2px solid #fff;
+            border-radius: 50%;
+        }
+
+        
+        .sidebar-name {
+            font-size: 16px; font-weight: 800;
+            color: #fff; margin: 0 0 4px; line-height: 1.2;
+        }
+        .sidebar-email {
+            font-size: 12px; color: rgba(255,255,255,0.75);
+            margin: 0 0 14px;
+        }
+        
+        .sidebar-badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff; font-size: 11px; font-weight: 700;
+            padding: 4px 12px; border-radius: 20px;
+        }
+
+        
+        .sidebar-nav-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        
+        .sidebar-nav-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 11px 14px;
+            border-radius: 12px;
+            font-size: 14px; font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.25s ease;
+            margin-bottom: 3px;
+            text-decoration: none !important;
+        }
+        .sidebar-nav-item:last-child { margin-bottom: 0; }
+        .sidebar-nav-item i {
+            width: 20px; text-align: center;
+            font-size: 15px;
+            transition: color 0.25s;
+        }
+        
+        .sidebar-nav-item.active,
+        .sidebar-nav-item:hover {
+            background: rgba(0,119,182,0.08);
+            color: var(--primary-blue);
+        }
+        .sidebar-nav-item.active {
+            background: var(--gradient-brand);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(0,119,182,0.3);
+        }
+        .sidebar-nav-item.active i { color: #fff; }
+        
+        .sidebar-nav-item.logout {
+            color: var(--accent-red);
+        }
+        .sidebar-nav-item.logout:hover {
+            background: rgba(255,77,77,0.08);
+            color: var(--accent-red);
+        }
+
+        
+        .dashboard-content {
+            flex: 1;
+            min-width: 0; 
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        
+        .tab-panel {
+            display: none;
+            animation: tabFadeIn 0.35s ease;
+        }
+        .tab-panel.active { display: block; }
+
+        
+        @keyframes tabFadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .stat-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 22px 18px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,119,182,0.08);
+            transition: transform 0.3s cubic-bezier(0.34,1.2,0.64,1),
+                        box-shadow 0.3s ease;
+            
+            opacity: 0; transform: translateY(50px);
+        }
+        .stat-item:hover {
+            transform: translateY(-6px) !important;
+            box-shadow: 0 20px 48px rgba(0,119,182,0.18);
+        }
+        
+        .stat-item::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gradient-brand);
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .stat-item.stat-red::before  { background: linear-gradient(90deg, #ff4d4d, #ff8c69); }
+        .stat-item.stat-teal::before { background: linear-gradient(90deg, #0077b6, #00b4d8); }
+        .stat-item.stat-green::before{ background: linear-gradient(90deg, #22c55e, #4ade80); }
+
+        .stat-icon {
+            width: 44px; height: 44px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; margin-bottom: 12px;
+        }
+        .stat-icon.si-blue  { background: rgba(0,119,182,0.12);  color: var(--primary-blue); }
+        .stat-icon.si-red   { background: rgba(255,77,77,0.1);   color: var(--accent-red); }
+        .stat-icon.si-teal  { background: rgba(0,180,216,0.1);   color: var(--teal-light); }
+        .stat-icon.si-green { background: rgba(34,197,94,0.1);   color: #22c55e; }
+
+        .stat-number {
+            font-size: 30px; font-weight: 900;
+            color: var(--dark-blue); line-height: 1;
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            font-size: 12px; color: var(--text-muted);
+            font-weight: 600;
+        }
+        
+        .stat-badge {
+            position: absolute; top: 16px; right: 14px;
+            font-size: 10px; font-weight: 700;
+            padding: 2px 8px; border-radius: 20px;
+        }
+        .stat-badge.up   { background: rgba(34,197,94,0.12); color: #22c55e; }
+        .stat-badge.info { background: rgba(0,119,182,0.10); color: var(--primary-blue); }
+
+        
+        .upcoming-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            display: flex; align-items: center; gap: 20px;
+            position: relative; overflow: hidden;
+        }
+        .upcoming-card::after {
+            content: '✈️';
+            position: absolute; right: 24px; bottom: 10px;
+            font-size: 64px; opacity: 0.07;
+            animation: float-plane 3s ease-in-out infinite;
+        }
+        @keyframes float-plane {
+            0%,100% { transform: translateY(0) rotate(-15deg); }
+            50%      { transform: translateY(-12px) rotate(-10deg); }
+        }
+        .upcoming-img {
+            width: 90px; height: 90px;
+            border-radius: 16px; object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        }
+        .upcoming-info { flex: 1; }
+        .upcoming-tag {
+            display: inline-block;
+            background: rgba(0,119,182,0.1);
+            color: var(--primary-blue);
+            font-size: 10px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.8px;
+            padding: 3px 10px; border-radius: 20px;
+            margin-bottom: 6px;
+        }
+        .upcoming-title {
+            font-size: 16px; font-weight: 800;
+            color: var(--dark-blue); margin: 0 0 6px;
+        }
+        .upcoming-meta {
+            font-size: 13px; color: var(--text-muted);
+            display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+        }
+        .upcoming-meta span { display: flex; align-items: center; gap: 5px; }
+        .upcoming-meta i { color: var(--primary-blue); }
+
+        
+        .upcoming-countdown {
+            display: flex; flex-direction: column; align-items: center;
+            background: var(--gradient-brand);
+            border-radius: 16px; padding: 12px 20px;
+            color: #fff; text-align: center;
+            flex-shrink: 0;
+        }
+        .countdown-number { font-size: 32px; font-weight: 900; line-height: 1; }
+        .countdown-label  { font-size: 11px; font-weight: 600; opacity: 0.8; }
+
+        
+        .section-title-row {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 14px;
+        }
+        .section-title {
+            font-size: 18px; font-weight: 800;
+            color: var(--dark-blue); margin: 0;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .section-see-all {
+            font-size: 13px; font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none !important;
+            transition: gap 0.2s;
+            display: flex; align-items: center; gap: 5px;
+        }
+        .section-see-all:hover { gap: 8px; }
+
+        
+        .suggest-card {
+            border-radius: 18px; overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            transition: all 0.4s cubic-bezier(0.34,1.1,0.64,1);
+            cursor: pointer;
+        }
+        .suggest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 50px rgba(0,119,182,0.16);
+        }
+        
+        .suggest-img-wrap {
+            position: relative; height: 160px; overflow: hidden;
+        }
+        .suggest-img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .suggest-card:hover .suggest-img { transform: scale(1.07); }
+        
+        .suggest-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(26,31,110,0.85) 0%, transparent 55%);
+            display: flex; flex-direction: column;
+            justify-content: flex-end;
+            padding: 12px;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .suggest-card:hover .suggest-overlay { opacity: 1; }
+        .suggest-overlay-title {
+            color: #fff; font-size: 13px; font-weight: 800;
+            margin: 0 0 4px; line-height: 1.3;
+        }
+        .suggest-overlay-detail {
+            color: rgba(255,255,255,0.85);
+            font-size: 11px;
+        }
+        
+        .suggest-cat-badge {
+            position: absolute; top: 10px; left: 10px;
+            background: var(--gradient-brand);
+            color: #fff; font-size: 9.5px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 3px 9px; border-radius: 20px; z-index: 2;
+        }
+        
+        .suggest-wish-btn {
+            position: absolute; top: 10px; right: 10px;
+            width: 30px; height: 30px; border-radius: 50%;
+            background: rgba(255,255,255,0.9);
+            border: none; display: flex; align-items: center; justify-content: center;
+            color: #ccc; font-size: 13px;
+            transition: all 0.25s; z-index: 2;
+        }
+        .suggest-wish-btn.active, .suggest-wish-btn:hover { color: var(--accent-red); }
+
+        .suggest-body { padding: 14px; }
+        .suggest-name { font-size: 14px; font-weight: 800; color: var(--dark-blue); margin: 0 0 6px; line-height: 1.3; }
+        .suggest-meta { display: flex; align-items: center; justify-content: space-between; }
+        .suggest-price { font-size: 15px; font-weight: 900; color: var(--accent-red); }
+        .suggest-rating { font-size: 12px; color: #f59e0b; font-weight: 700; }
+
+        
+        
+        .booking-filter {
+            display: flex; gap: 8px; flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .bfilter-btn {
+            padding: 7px 16px; border-radius: 100px;
+            border: 1.5px solid #dde4ef;
+            font-size: 12px; font-weight: 700;
+            color: var(--text-muted);
+            background: var(--white);
+            transition: all 0.22s;
+        }
+        .bfilter-btn.active {
+            background: var(--dark-blue);
+            border-color: var(--dark-blue);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(26,31,110,0.2);
+        }
+        .bfilter-btn:hover:not(.active) {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        
+        .booking-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+        
+        .booking-timeline::before {
+            content: '';
+            position: absolute;
+            left: 40px; top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-blue), transparent);
+            opacity: 0.2;
+        }
+
+        
+        .booking-card {
+            display: flex; gap: 16px;
+            background: var(--white);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 3px 16px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.35s cubic-bezier(0.34,1.1,0.64,1);
+            position: relative;
+        }
+        .booking-card:hover {
+            transform: translateX(6px);
+            box-shadow: 0 12px 36px rgba(0,119,182,0.14);
+        }
+        
+        .booking-dot {
+            width: 80px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 8px;
+            background: #f8faff;
+            border-right: 1px solid #eef2f8;
+        }
+        .booking-dot-circle {
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-blue);
+            background: var(--white);
+            margin-bottom: 6px;
+        }
+        
+        .booking-card.confirmed .booking-dot-circle { background: #22c55e; border-color: #22c55e; }
+        .booking-card.pending   .booking-dot-circle { background: #f59e0b; border-color: #f59e0b; }
+        .booking-card.cancelled .booking-dot-circle { background: var(--accent-red); border-color: var(--accent-red); }
+
+        .booking-dot-date { font-size: 10px; font-weight: 700; color: var(--text-muted); text-align: center; line-height: 1.3; }
+
+        
+        .booking-img {
+            width: 110px; flex-shrink: 0;
+            position: relative; overflow: hidden;
+        }
+        .booking-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .booking-card:hover .booking-img img { transform: scale(1.08); }
+
+        
+        .booking-info {
+            flex: 1; padding: 16px 14px;
+            display: flex; flex-direction: column;
+            justify-content: center;
+        }
+        .booking-info-top {
+            display: flex; align-items: flex-start;
+            justify-content: space-between; gap: 10px;
+            margin-bottom: 8px;
+        }
+        .booking-name {
+            font-size: 15px; font-weight: 800;
+            color: var(--dark-blue); margin: 0;
+            line-height: 1.3; flex: 1;
+        }
+        
+        .booking-status {
+            font-size: 10px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 4px 10px; border-radius: 20px;
+            white-space: nowrap; flex-shrink: 0;
+        }
+        .booking-status.confirmed { background: rgba(34,197,94,0.12); color: #16a34a; }
+        .booking-status.pending   { background: rgba(245,158,11,0.12); color: #d97706; }
+        .booking-status.cancelled { background: rgba(255,77,77,0.12);  color: var(--accent-red); }
+
+        .booking-meta-row {
+            display: flex; gap: 14px; flex-wrap: wrap;
+            font-size: 12px; color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .booking-meta-row span { display: flex; align-items: center; gap: 4px; }
+        .booking-meta-row i { color: var(--primary-blue); font-size: 11px; }
+
+        .booking-price-row {
+            display: flex; align-items: center;
+            justify-content: space-between; flex-wrap: wrap; gap: 8px;
+        }
+        .booking-price { font-size: 17px; font-weight: 900; color: var(--accent-red); }
+        
+        .booking-actions { display: flex; gap: 8px; }
+        .booking-btn {
+            font-size: 12px; font-weight: 700;
+            padding: 7px 14px; border-radius: 20px;
+            border: none; transition: all 0.22s;
+        }
+        .booking-btn.primary {
+            background: var(--gradient-brand);
+            color: #fff;
+            box-shadow: 0 3px 12px rgba(0,119,182,0.25);
+        }
+        .booking-btn.primary:hover { opacity: 0.88; transform: scale(1.04); }
+        .booking-btn.outline {
+            background: #fff;
+            color: var(--primary-blue);
+            border: 1.5px solid rgba(0,119,182,0.3);
+        }
+        .booking-btn.outline:hover {
+            background: rgba(0,119,182,0.06);
+        }
+        .booking-btn.danger {
+            background: rgba(255,77,77,0.08);
+            color: var(--accent-red);
+            border: 1.5px solid rgba(255,77,77,0.2);
+        }
+        .booking-btn.danger:hover { background: rgba(255,77,77,0.15); }
+
+        
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .wish-card {
+            border-radius: 18px; overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+            transition: all 0.35s cubic-bezier(0.34,1.1,0.64,1);
+            cursor: pointer;
+        }
+        .wish-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 48px rgba(0,119,182,0.16);
+        }
+        .wish-img-wrap { position: relative; height: 150px; overflow: hidden; }
+        .wish-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .wish-card:hover .wish-img { transform: scale(1.08); }
+        
+        .wish-remove-btn {
+            position: absolute; top: 8px; right: 8px;
+            width: 28px; height: 28px; border-radius: 50%;
+            background: rgba(255,255,255,0.92);
+            border: none; color: var(--accent-red);
+            font-size: 12px; display: flex; align-items: center; justify-content: center;
+            z-index: 2;
+            transition: all 0.22s;
+        }
+        .wish-remove-btn:hover { background: var(--accent-red); color: #fff; }
+        .wish-body { padding: 13px; }
+        .wish-name { font-size: 13.5px; font-weight: 800; color: var(--dark-blue); margin: 0 0 5px; line-height: 1.3; }
+        .wish-footer { display: flex; align-items: center; justify-content: space-between; }
+        .wish-price { font-size: 14px; font-weight: 900; color: var(--accent-red); }
+        .wish-book-btn {
+            font-size: 11px; font-weight: 700;
+            padding: 5px 12px; border-radius: 20px;
+            background: var(--gradient-brand); color: #fff; border: none;
+            transition: opacity 0.2s;
+        }
+        .wish-book-btn:hover { opacity: 0.85; }
+
+        
+        .voucher-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+        
+        .voucher-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .voucher-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(0,119,182,0.15);
+        }
+        
+        .voucher-left {
+            width: 80px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px;
+            background: var(--gradient-brand);
+            position: relative;
+        }
+        
+        .voucher-left::after {
+            content: '';
+            position: absolute; right: -6px;
+            top: 0; bottom: 0;
+            width: 12px;
+            background: radial-gradient(circle at 0 50%, transparent 6px, var(--white) 6px) 0 0 / 12px 16px;
+        }
+        .voucher-right { flex: 1; padding: 14px 16px 14px 20px; }
+        .voucher-code {
+            font-size: 13px; font-weight: 900; letter-spacing: 1.5px;
+            color: var(--dark-blue); margin: 0 0 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .voucher-desc { font-size: 12px; color: var(--text-muted); margin: 0 0 8px; }
+        .voucher-meta-row { display: flex; align-items: center; justify-content: space-between; }
+        .voucher-discount {
+            font-size: 20px; font-weight: 900;
+            color: var(--accent-red); line-height: 1;
+        }
+        .voucher-expire { font-size: 10px; color: var(--text-muted); font-weight: 600; }
+        
+        .voucher-copy-btn {
+            font-size: 11px; font-weight: 700;
+            padding: 5px 12px; border-radius: 20px;
+            background: rgba(0,119,182,0.1);
+            color: var(--primary-blue); border: none;
+            margin-top: 8px;
+            transition: all 0.22s;
+        }
+        .voucher-copy-btn:hover { background: var(--primary-blue); color: #fff; }
+
+        
+        .voucher-card.expired { opacity: 0.5; }
+        .voucher-card.expired .voucher-left { background: #b0b8c1; }
+
+        
+        .settings-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+        }
+        .settings-title {
+            font-size: 16px; font-weight: 800;
+            color: var(--dark-blue);
+            margin: 0 0 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eef2f8;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .settings-title i { color: var(--primary-blue); }
+
+        
+        .avatar-upload-zone {
+            display: flex; align-items: center; gap: 20px;
+            padding: 18px;
+            border: 2px dashed rgba(0,119,182,0.25);
+            border-radius: 16px;
+            background: rgba(0,119,182,0.03);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .avatar-upload-zone.drag-over {
+            border-color: var(--primary-blue);
+            background: rgba(0,119,182,0.08);
+            transform: scale(1.01);
+        }
+        
+        .avatar-preview-large {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--glass-border);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+        .avatar-upload-info h6 { font-size: 14px; font-weight: 700; color: var(--dark-blue); margin: 0 0 4px; }
+        .avatar-upload-info p { font-size: 12px; color: var(--text-muted); margin: 0 0 10px; }
+        
+        .avatar-upload-btn {
+            font-size: 12px; font-weight: 700;
+            padding: 7px 16px; border-radius: 20px;
+            background: rgba(0,119,182,0.1);
+            color: var(--primary-blue); border: none;
+            transition: all 0.22s;
+        }
+        .avatar-upload-btn:hover { background: var(--primary-blue); color: #fff; }
+
+        
+        .float-group {
+            position: relative;
+            margin-bottom: 16px;
+        }
+        .float-input {
+            width: 100%;
+            padding: 18px 44px 8px 14px;
+            border: 1.5px solid #dde4ef;
+            border-radius: 12px;
+            font-size: 14px; font-weight: 500;
+            color: var(--dark-blue);
+            background: #fff;
+            outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+        .float-input:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0,119,182,0.1);
+        }
+        
+        .float-label {
+            position: absolute; top: 14px; left: 14px;
+            font-size: 14px; color: var(--text-muted); font-weight: 500;
+            pointer-events: none;
+            transition: all 0.22s ease;
+        }
+        .float-input:focus ~ .float-label,
+        .float-input:not(:placeholder-shown) ~ .float-label {
+            top: 5px; left: 12px;
+            font-size: 10px; font-weight: 700;
+            color: var(--primary-blue);
+            letter-spacing: 0.5px;
+        }
+        
+        .float-validation-icon {
+            position: absolute; right: 14px; top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px; opacity: 0;
+            transition: opacity 0.25s;
+        }
+        .float-group.valid   .float-validation-icon { opacity: 1; color: #22c55e; }
+        .float-group.invalid .float-validation-icon { opacity: 1; color: var(--accent-red); }
+        .float-group.valid   .float-input { border-color: #22c55e; }
+        .float-group.invalid .float-input { border-color: var(--accent-red); }
+        
+        .float-error-msg {
+            font-size: 11px; color: var(--accent-red);
+            font-weight: 600; margin-top: 4px;
+            display: none;
+        }
+        .float-group.invalid .float-error-msg { display: block; }
+
+        
+        .save-btn {
+            background: var(--gradient-brand);
+            color: #fff; border: none;
+            padding: 12px 32px; border-radius: 100px;
+            font-size: 14px; font-weight: 800;
+            box-shadow: 0 6px 20px rgba(0,119,182,0.3);
+            transition: all 0.25s;
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        .save-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+        
+        .save-btn .spin {
+            display: none;
+            animation: spinner 0.7s linear infinite;
+        }
+        @keyframes spinner { to { transform: rotate(360deg); } }
+        .save-btn.loading .spin { display: inline-block; }
+        .save-btn.loading .btn-text { opacity: 0.7; }
+
+        
+        .toggle-row {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f4f8;
+        }
+        .toggle-row:last-child { border-bottom: none; }
+        .toggle-info h6 { font-size: 13.5px; font-weight: 700; color: var(--dark-blue); margin: 0; }
+        .toggle-info p  { font-size: 12px; color: var(--text-muted); margin: 0; }
+        
+        .toggle-switch {
+            width: 44px; height: 24px; border-radius: 100px;
+            background: #dde4ef; position: relative;
+            transition: background 0.25s;
+            flex-shrink: 0;
+        }
+        .toggle-switch.on { background: var(--primary-blue); }
+        .toggle-switch::after {
+            content: '';
+            position: absolute; top: 3px; left: 3px;
+            width: 18px; height: 18px;
+            border-radius: 50%; background: #fff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            transition: left 0.25s cubic-bezier(0.34,1.2,0.64,1);
+        }
+        .toggle-switch.on::after { left: calc(100% - 21px); }
+
+        
+        #toast-container {
+            position: fixed; top: 24px; right: 24px;
+            z-index: 9999990;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .toast-item {
+            display: flex; align-items: center; gap: 12px;
+            background: #fff;
+            border-radius: 14px;
+            padding: 14px 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+            border-left: 4px solid var(--primary-blue);
+            min-width: 280px; max-width: 360px;
+            animation: toastIn 0.4s cubic-bezier(0.34,1.2,0.64,1);
+        }
+        .toast-item.success { border-color: #22c55e; }
+        .toast-item.error   { border-color: var(--accent-red); }
+        .toast-item.info    { border-color: var(--primary-blue); }
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(60px) scale(0.9); }
+            to   { opacity: 1; transform: translateX(0) scale(1); }
+        }
+        @keyframes toastOut {
+            to { opacity: 0; transform: translateX(60px) scale(0.9); }
+        }
+        .toast-icon { font-size: 20px; flex-shrink: 0; }
+        .toast-text { flex: 1; }
+        .toast-text strong { font-size: 13.5px; font-weight: 800; color: var(--dark-blue); display: block; }
+        .toast-text span   { font-size: 12px; color: var(--text-muted); }
+        .toast-close { font-size: 14px; color: var(--text-muted); background: none; border: none; padding: 0; transition: color 0.2s; }
+        .toast-close:hover { color: var(--dark-blue); }
+
+        
+        .mobile-bottom-nav {
+            display: none;
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: var(--white);
+            border-top: 1px solid #eef2f8;
+            box-shadow: 0 -4px 24px rgba(0,0,0,0.1);
+            z-index: 10000;
+            padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+        }
+        .mobile-nav-inner {
+            display: flex; justify-content: space-around;
+            align-items: center;
+        }
+        .mobile-nav-item {
+            display: flex; flex-direction: column;
+            align-items: center; gap: 3px;
+            padding: 6px 12px;
+            color: var(--text-muted);
+            font-size: 10px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.3px;
+            transition: color 0.22s;
+            border: none; background: none;
+            flex: 1;
+        }
+        .mobile-nav-item i { font-size: 18px; transition: transform 0.25s cubic-bezier(0.34,1.2,0.64,1); }
+        .mobile-nav-item.active { color: var(--primary-blue); }
+        .mobile-nav-item.active i { transform: scale(1.2); }
+
+        
+        .white-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 22px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        
+        .dashboard-header-bar {
+            background: var(--gradient-brand);
+            border-radius: 20px;
+            padding: 20px 24px;
+            display: flex; align-items: center; gap: 16px;
+            box-shadow: 0 6px 24px rgba(26,31,110,0.2);
+            position: relative; overflow: hidden;
+            
+            opacity: 0; transform: translateY(30px);
+        }
+        .dashboard-header-bar::before {
+            content: '';
+            position: absolute; top: -50%; right: -80px;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+        .db-header-avatar {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            border: 2.5px solid rgba(255,255,255,0.5);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .db-header-info { flex: 1; }
+        .db-header-greeting { font-size: 13px; color: rgba(255,255,255,0.75); margin: 0; }
+        .db-header-name { font-size: 20px; font-weight: 800; color: #fff; margin: 0; }
+        .db-header-right { text-align: right; }
+        .db-header-points { font-size: 22px; font-weight: 900; color: #fff; line-height: 1; }
+        .db-header-points-label { font-size: 11px; color: rgba(255,255,255,0.75); }
+
+        
+        @media (max-width: 992px) {
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .wishlist-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            
+            .dashboard-sidebar   { display: none; }
+            .mobile-bottom-nav   { display: block; }
+            
+            body { padding-bottom: 80px; }
+            .dashboard-wrapper { margin: 16px auto; padding: 0 10px; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .booking-card { flex-wrap: wrap; }
+            .booking-img { width: 100%; height: 160px; }
+            .booking-dot { width: 100%; flex-direction: row; border-right: none; border-bottom: 1px solid #eef2f8; justify-content: flex-start; padding: 10px 16px; }
+            .wishlist-grid { grid-template-columns: 1fr; }
+            .voucher-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 576px) {
+            .stat-grid { grid-template-columns: 1fr 1fr; }
+            .db-header-right { display: none; }
+            .upcoming-countdown { display: none; }
+        }
+    
+
+
+        
+        .btn-login {
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            color:#fff !important; border:none; border-radius:10px;
+            padding:7px 16px; font-size:13px; transition:all .2s;
+        }
+        .btn-login:hover { opacity:.88; transform:translateY(-1px); }
+        
+        .user-avatar-btn {
+            width:38px; height:38px; border-radius:50%;
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            display:flex; align-items:center; justify-content:center;
+            color:#fff; font-weight:800; font-size:15px;
+            cursor:pointer; border:none; transition:all .2s;
+        }
+        .user-avatar-btn:hover { box-shadow:0 4px 14px rgba(0,119,182,.35); }
+        .user-profile-dropdown .dropdown-menu {
+            border-radius:14px; padding:8px 0;
+            box-shadow:0 8px 30px rgba(0,0,0,.12);
+        }
+
+        </style><link rel="stylesheet" href="css/kene-experience.css"><link rel="manifest" href="manifest.webmanifest"><meta name="color-scheme" content="light"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="img/brand/icon-32.png"><link rel="apple-touch-icon" href="img/brand/icon-180.png"><link rel="stylesheet" href="css/kene-brand.css"></head><body data-page="account"><header class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 border-bottom">
+        <div class="container">
+
+            
+            <a class="navbar-brand" href="html_trangchu.html">
+                <img src="img/logo.svg" alt="Kể Nè — Không gian lắng nghe" height="46" class=" logo-header" width="142">
+            </a>
+
+            
+            <div class="header-search-wrap mx-lg-4 d-none d-md-flex">
+<div class="input-group header-search">
+                    <div class="input-group-prepend border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" id="header-search-inp" class="form-control border-0 bg-transparent" placeholder="Tìm dịch vụ, chuyên gia, bài viết…" autocomplete="off" aria-label="Tìm kiếm toàn website">
+                    
+                    <span class="hs-shortcut d-none d-lg-inline-flex align-items-center">⌘K</span>
+                </div>
+                <div id="header-dropdown" class="search-dropdown"></div>
+            </div>
+
+            
+            <div class="navbar-nav ml-auto align-items-center">
+                <a class="nav-item nav-link mr-3 d-none d-xl-block small-text" href="html_trangchu.html">Trang chủ</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_gioithieu.html">Về Kể Nè</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_lienhe_chinhsach.html">Liên hệ &amp; Tin cậy</a>
+                <a class="nav-item nav-link mr-3 d-none d-md-block small-text" href="html_blog.html">Góc đọc</a>
+
+                
+                <a class="nav-item nav-link mr-3 text-dark" href="html_giohang.html" style="position:relative;" aria-label="Giỏ dịch vụ">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-badge" style="position:absolute;top:-4px;right:-8px;background:#ff4d4d;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;line-height:1;">0</span>
+                </a>
+
+                
+                <div class="auth-buttons" id="auth-zone">
+                    <a class="nav-item nav-link mr-3 font-weight-bold" href="html_dangnhap_dangky.html">Đăng ký</a>
+                    <a class="btn btn-login font-weight-bold" href="html_dangnhap_dangky.html">Đăng nhập</a>
+                    <a class="nav-item nav-link ml-2 d-none d-sm-block" href="html_thongtin.html">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="sub-nav bg-white border-bottom" aria-label="Dịch vụ"><div class="container"><div class="nav kn-subnav"><a class="nav-link" href="html_dichvu.html">Dịch vụ &amp; Bảng giá</a><a class="nav-link" href="html_diadiem.html">Chuyên gia &amp; Ghép nối</a><a class="nav-link" href="html_diadiem.html#sang-loc">Sàng lọc miễn phí</a><a class="nav-link ml-auto sub-voucher-link" href="html_khuyenmaivatiepthi.html"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Ưu đãi</a></div></div></nav><a class="kn-skip" href="#main-content">Bỏ qua điều hướng</a><main id="main-content"><div class="dashboard-wrapper"><aside class="dashboard-sidebar"><div class="kn-user-summary"><div id="account-avatar" class="kn-avatar">KN</div><h1 id="account-name" class="kn-h3"></h1><p id="account-email"></p><span class="kn-tag">Tài khoản</span></div><nav class="kn-account-nav" aria-label="Tài khoản"><button data-tab="overview" class="active">Tổng quan</button><button data-tab="bookings">Lịch hẹn &amp; Gói đồng hành</button><button data-tab="wishlist">Dịch vụ đã lưu</button><button data-tab="vouchers">Mã ưu đãi</button><button data-tab="settings">Cài đặt &amp; Quyền dữ liệu</button><button data-action="logout">Đăng xuất</button></nav></aside><div class="dashboard-content"><section class="ke-page-banner"><div><span class="ke-eyebrow">KHÔNG GIAN CỦA BẠN</span><h2>Theo nhịp riêng của mình</h2><p>Lịch hẹn, ghi chú và những lựa chọn bạn tự quyết định lưu.</p></div><figure class="ke-photo-frame ke-tilt "><picture class="ke-picture " data-ke-image="tea-notes"><source type="image/webp" srcset="img/photos/tea-notes-960.webp 960w, img/photos/tea-notes-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/tea-notes-1920.jpg" alt="Ghi chép với tách trà trong khoảng thời gian riêng" width="1920" height="1282" loading="lazy" decoding="async" data-ke-photo="tea-notes"></picture><button type="button" class="ke-photo-zoom" data-ke-lightbox="tea-notes" data-ke-gallery="account-banner" aria-label="Xem ảnh lớn: Ghi chép với tách trà trong khoảng thời gian riêng"><span aria-hidden="true">⤢</span></button></figure></section><section id="tab-overview" class="tab-panel active"><h2 class="ke-reveal">Hành trình của bạn</h2><div id="account-stats" class="kn-grid-3 mb-4"></div><div id="next-appointment"></div><div class="kn-white-card my-4"><h3>Một ghi chú tâm trạng nhỏ</h3><p>Bạn có thể ghi khi thấy có ích. Không có chuỗi ngày hoặc hình phạt khi bỏ lỡ.</p><form id="mood-form"><fieldset><legend class="kn-h4">Hôm nay bạn cảm thấy thế nào?</legend><div class="kn-chips"><label class="kn-mood-choice"><input type="radio" name="mood" value="1" required> 🌧️ Rất khó</label><label class="kn-mood-choice"><input type="radio" name="mood" value="2" required> ☁️ Khó</label><label class="kn-mood-choice"><input type="radio" name="mood" value="3" required> 🌤️ Bình thường</label><label class="kn-mood-choice"><input type="radio" name="mood" value="4" required> 🌿 Khá ổn</label><label class="kn-mood-choice"><input type="radio" name="mood" value="5" required> ☀️ Ổn</label></div></fieldset><label>Một dòng bối cảnh, nếu muốn<input name="note" maxlength="150" placeholder="Chỉ dùng nội dung trên thiết bị"></label><label class="kn-check"><input type="checkbox" name="consent" required> Tôi đồng ý lưu bản ghi trên thiết bị này.</label><button class="kn-btn" type="submit">Lưu ghi chú</button></form><div id="mood-chart" class="mt-4"></div><button class="kn-link" data-action="clear-moods">Xoá các ghi chú tâm trạng</button></div><div class="kn-white-card my-4"><h3>Điểm sàng lọc đã chọn lưu</h3><div id="screening-history"></div><a href="html_diadiem.html#sang-loc">Làm lại sàng lọc khi cần →</a></div><div class="kn-white-card my-4"><h3>Hộ chiếu câu chuyện</h3><p>Bản tóm tắt do bạn chủ động viết; không phải ghi chú hay hồ sơ chuyên môn. Website chưa chia sẻ với chuyên gia thật.</p><form id="passport-form"><label>Điều muốn người đồng hành hiểu<textarea name="story" maxlength="500" rows="3" placeholder="Chỉ dùng nội dung trên thiết bị"></textarea></label><label>Phong cách bạn mong muốn<input name="preference" maxlength="120"></label><label class="kn-check"><input type="checkbox" name="share"> Cho phép hiển thị bản tóm tắt trong phần chuẩn bị.</label><label class="kn-check"><input type="checkbox" name="consent" required> Tôi đồng ý lưu bản tóm tắt trên thiết bị.</label><button type="submit" class="kn-btn">Lưu lựa chọn</button></form></div></section><section id="tab-bookings" class="tab-panel" hidden><h2 class="ke-reveal">Lịch hẹn &amp; Gói đồng hành</h2><div class="kn-chips mb-4" id="booking-filters"><button class="kn-chip active" data-booking-filter="all">Tất cả</button><button class="kn-chip" data-booking-filter="requested">Đã lưu</button><button class="kn-chip" data-booking-filter="cancelled">Đã huỷ</button><button class="kn-chip" data-booking-filter="completed">Hoàn tất</button></div><div id="booking-list"></div></section><section id="tab-wishlist" class="tab-panel" hidden><h2 class="ke-reveal">Dịch vụ bạn đã lưu</h2><div id="account-wishlist" class="kn-grid-3"></div></section><section id="tab-vouchers" class="tab-panel" hidden><h2 class="ke-reveal">Mã ưu đãi của bạn</h2><div id="account-vouchers"></div><a href="html_khuyenmaivatiepthi.html">Xem điều kiện ưu đãi →</a></section><section id="tab-settings" class="tab-panel" hidden><h2 class="ke-reveal">Cài đặt &amp; Quyền dữ liệu</h2><div class="kn-white-card mb-4"><form id="profile-form"><label>Biệt danh<input name="nickname" required minlength="2" maxlength="50"></label><label>Email<input name="email" type="email" required maxlength="150"></label><label>Ảnh đại diện<input type="file" id="avatar-input" accept="image/png,image/jpeg,image/webp"></label><p class="kn-note">PNG, JPG hoặc WebP, tối đa 5 MB. Ảnh chỉ lưu trên thiết bị.</p><label class="kn-check"><input type="checkbox" name="quiet"> Chế độ Kín: tiêu đề và thông báo trung tính.</label><label class="kn-check"><input type="checkbox" name="notifications"> Nhắc lịch trung tính trong phiên bản hiện tại.</label><button type="submit" class="kn-btn">Lưu thay đổi</button></form></div><div class="kn-white-card mb-4"><h3>Đổi mật khẩu trên thiết bị</h3><form id="password-form"><label>Mật khẩu hiện tại<input type="password" name="old" required autocomplete="current-password"></label><label>Mật khẩu mới<input type="password" name="password" required minlength="8" maxlength="128" autocomplete="new-password"></label><label>Nhập lại mật khẩu mới<input type="password" name="confirm" required autocomplete="new-password"></label><button type="submit" class="kn-btn">Đổi mật khẩu</button></form></div><div class="kn-white-card"><h3>Bạn kiểm soát dữ liệu trên thiết bị</h3><p>Phiên bản hiện tại không có hồ sơ bệnh án hoặc nhật ký truy cập của nhân viên. Các dữ liệu ở đây do chính tài khoản tạo trên trình duyệt.</p><div class="kn-chips"><button class="kn-btn" data-action="export-data">Tải dữ liệu của tôi</button><button class="kn-btn kn-btn-light" data-action="clear-sensitive">Xoá ghi chú &amp; Điểm đã lưu</button><button class="kn-btn kn-btn-danger" data-action="delete-account">Xoá tài khoản</button></div></div></section></div></div></main><footer class="kene-footer"><div class="footer-bg-layer"></div><div class="container position-relative" style="z-index:2"><div class="row footer-main-row pt-5 pb-4"><div class="col-lg-4 col-md-6 mb-4"><a href="html_trangchu.html" class="footer-brand d-inline-block mb-3" aria-label="Kể Nè — Trang chủ"><img class="footer-logo" src="img/logo-white.svg" width="150" height="49" alt="Kể Nè"></a><p class="footer-desc">Chuyện khó nói, có người nghe. Kể Nè đồng hành cùng bạn tìm hiểu nhu cầu và lựa chọn cách chăm sóc sức khoẻ tinh thần phù hợp.</p><a class="footer-sitemap-btn" href="html_sitemap.html">Sơ đồ website</a></div><div class="col-lg-4 col-md-6 mb-4"><h2 class="footer-heading">Khám phá Kể Nè</h2><ul class="ke-footer-links"><li><a href="html_gioithieu.html">Câu chuyện &amp; Con người</a></li><li><a href="html_dichvu.html">Dịch vụ &amp; Mức giá tham khảo</a></li><li><a href="html_diadiem.html">Tìm cách đồng hành phù hợp</a></li><li><a href="html_blog.html">Góc đọc mỗi ngày</a></li><li><a href="html_khuyenmaivatiepthi.html">Ưu đãi &amp; Điều kiện áp dụng</a></li></ul></div><div class="col-lg-4 col-md-12 mb-4"><h2 class="footer-heading">Bạn luôn có quyền lựa chọn</h2><p class="ke-footer-promise">♡ Chia sẻ theo nhịp của bạn. Hiểu rõ điều kiện trước khi bắt đầu.</p><ul class="ke-footer-links"><li><a href="html_lienhe_chinhsach.html#du-lieu">Quyền riêng tư</a></li><li><a href="html_lienhe_chinhsach.html#doi-lich">Đổi lịch &amp; Hỗ trợ</a></li><li><a href="html_lienhe_chinhsach.html">Liên hệ &amp; Trung tâm tin cậy</a></li><li><a href="html_lienhe_chinhsach.html?topic=to-chuc">Dành cho tổ chức</a></li><li><a href="html_lienhe_chinhsach.html?topic=chuyen-gia">Hợp tác chuyên gia</a></li></ul></div></div><div class="footer-divider"></div><div class="ke-footer-tools"><button type="button" data-ke-motion aria-pressed="false">Chuyển động: Êm dịu</button><button type="button" data-ke-credits>Nguồn ảnh</button><button type="button" data-ke-saved-articles>Bài viết đã lưu</button><span id="ke-offline-state" class="ke-offline-state">Ảnh cục bộ · Không cần Internet</span></div><div class="footer-bottom py-3 d-flex flex-wrap justify-content-between"><p class="footer-copy mb-0">© 2026 Kể Nè. Mọi quyền được bảo lưu.</p><p class="footer-copy mb-0">Tư vấn, tham vấn tâm lý · Không thay thế cấp cứu</p></div></div></footer><div id="kn-toast" class="kn-toast" hidden role="status" aria-live="polite"></div><div class="kn-tools"><button class="kn-sos-btn" data-action="sos">Cần giúp ngay</button><button class="kn-help-btn" data-action="help" aria-label="Mở trợ giúp thao tác">?</button><button class="kn-exit-btn" data-action="quick-exit">Thoát nhanh ↗</button></div><div id="kn-modal" class="kn-modal" hidden role="dialog" aria-modal="true" aria-labelledby="kn-modal-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-modal-title"></h2><div><button class="kn-link" data-action="sos">Cần giúp ngay</button><button class="kn-modal-close" data-action="close-modal" aria-label="Đóng cửa sổ">×</button></div></div><div id="kn-modal-body"></div></div></div><div id="kn-sos" class="kn-modal kn-sos-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="kn-sos-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-sos-title">Ưu tiên sự an toàn của bạn</h2><button class="kn-modal-close" data-action="close-sos" aria-label="Đóng hướng dẫn">×</button></div><p>Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế hoặc đến cơ sở cấp cứu gần nhất. Nếu có thể, nhờ một người tin cậy ở cạnh bạn.</p><a class="kn-btn kn-btn-full" href="tel:115">Gọi cấp cứu y tế 115</a><p class="kn-note mt-3">115 là cấp cứu y tế, không phải đường dây tư vấn của Kể Nè.</p><div class="kn-white-card my-3"><h3 class="kn-h4">Website không có người trực</h3><p>Kể Nè không phải kênh cấp cứu và không gửi cảnh báo từ nút này. Đừng chờ phản hồi trên website khi bạn đang không an toàn.</p><p id="kn-support-hours"></p></div><button class="kn-btn kn-btn-light" data-action="quick-exit">Thoát nhanh khỏi website</button></div></div><button id="back-to-top" class="kn-back-top" aria-label="Lên đầu trang" hidden>↑</button><script src="js/jquery.min.js" defer></script><script src="js/bootstrap.bundle.min.js" defer></script><script src="js/kene-data.js" defer></script><script src="js/kene-engine.js" defer></script><script src="js/kene-core.js" defer></script><script src="js/kene-media-data.js" defer></script><script src="js/kene-media.js" defer></script><script src="js/kene-runtime.js" defer></script><script src="js/kene-pages.js" defer></script><script src="js/kene-offline-version.js" defer></script><script src="js/kene-experience.js" defer></script><script src="js/kene-scenes.js" defer></script></body></html>

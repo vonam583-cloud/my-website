@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Ưu đãi khung giờ ban ngày và điều kiện áp dụng."><meta name="theme-color" content="#0077b6"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Ưu đãi &amp; Hỗ trợ tiếp cận | Kể Nè</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/fontawesome.min.css"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css_trangchu.css"><style>
+        
+
+        :root {
+            --km-blue:  #0077b6;
+            --km-dark:  #1a1f6e;
+            --km-red:   #ff4d4d;
+            --km-teal:  #00b4d8;
+            --km-gold:  #f59e0b;
+            --km-green: #10b981;
+            --km-orange:#f97316;
+            --km-font:  'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            --km-head:  var(--km-font); 
+        }
+
+        
+        
+        body { font-family: var(--km-font); }
+
+
+        
+        
+        .km-notify-overlay {
+            position: fixed; inset: 0; z-index: 99999;
+            background: rgba(10, 15, 61, 0.82);
+            backdrop-filter: blur(6px);
+            display: flex; align-items: center; justify-content: center;
+            padding: 16px;
+            animation: kmFadeIn .4s ease;
+        }
+        
+        .km-notify-box {
+            background: #fff;
+            border-radius: 24px;
+            max-width: 560px; width: 100%;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0,0,0,.35);
+            position: relative;
+            animation: kmSlideUp .45s cubic-bezier(.34,1.2,.64,1);
+        }
+        
+        .km-notify-banner {
+            
+            background: url('img/scene-care.svg') center / cover no-repeat;
+            height: 220px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        
+        .km-notify-banner::before,
+        .km-notify-banner::after {
+            content: none;
+        }
+        
+        .km-notify-banner-text {
+            position: relative; z-index: 1;
+            text-align: center; color: #fff; padding: 0 24px;
+        }
+        .km-notify-banner-text .km-banner-tag {
+            display: inline-block;
+            background: rgba(255,255,255,.18); border-radius: 30px;
+            padding: 4px 16px; font-size: 11px; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;
+        }
+        .km-notify-banner-text h2 {
+            font-family: var(--km-head);
+            font-size: 2rem; margin: 0 0 6px;
+            text-shadow: 0 2px 12px rgba(0,0,0,.3);
+        }
+        .km-notify-banner-text p {
+            font-size: 13px; opacity: .88; margin: 0;
+        }
+        
+        .km-notify-body {
+            padding: 28px 32px 32px;
+            text-align: center;
+        }
+        .km-notify-body h3 {
+            font-size: 1.35rem; font-weight: 800;
+            color: var(--km-dark); margin-bottom: 8px;
+        }
+        .km-notify-body p {
+            font-size: 13.5px; color: #6c757d;
+            margin-bottom: 20px; line-height: 1.7;
+        }
+        
+        .km-notify-cta {
+            width: 100%; padding: 13px;
+            background: linear-gradient(135deg, var(--km-dark), var(--km-blue));
+            color: #fff; border: none; border-radius: 14px;
+            font-size: 14px; font-weight: 800;
+            letter-spacing: .5px; cursor: pointer;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .km-notify-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(0,119,182,.4);
+        }
+        
+        .km-notify-skip {
+            margin-top: 12px; font-size: 12px; color: #adb5bd;
+            cursor: pointer; display: block;
+            transition: color .2s;
+        }
+        .km-notify-skip:hover { color: var(--km-dark); }
+        
+        .km-notify-close {
+            position: absolute; top: 12px; right: 12px; z-index: 2;
+            width: 32px; height: 32px; border-radius: 50%;
+            background: rgba(255,255,255,.2); border: none;
+            color: #fff; font-size: 16px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: background .2s;
+        }
+        .km-notify-close:hover { background: rgba(255,255,255,.4); }
+
+        
+        .km-hero {
+            position: relative;
+            padding: 80px 0 60px;
+            overflow: hidden;
+            
+            background: linear-gradient(140deg, #0a0f3d 0%, #024b7a 45%, #0099c6 75%, #00c9e4 100%);
+        }
+        
+        .km-hero-wave {
+            position: absolute; bottom: -2px; left: 0; right: 0;
+            height: 80px; pointer-events: none;
+        }
+        
+        .km-hero-bg-circles span {
+            position: absolute; border-radius: 50%;
+            background: rgba(255,255,255,.06);
+            pointer-events: none;
+        }
+        
+        .km-hero-tag {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 30px; padding: 6px 18px;
+            font-size: 11px; font-weight: 800;
+            letter-spacing: 2px; text-transform: uppercase;
+            color: #fff; margin-bottom: 20px;
+        }
+        
+        .km-hero-title {
+            font-family: var(--km-head);
+            font-size: clamp(2rem, 5vw, 3.8rem);
+            color: #fff; line-height: 1.2;
+            margin-bottom: 16px;
+            text-shadow: 0 4px 20px rgba(0,0,0,.2);
+        }
+        .km-hero-title .km-highlight {
+            color: #ffd60a;
+            text-shadow: 0 0 30px rgba(255,214,10,.6);
+        }
+        
+        .km-hero-desc {
+            font-size: 15px; color: rgba(255,255,255,.85);
+            max-width: 520px; margin-bottom: 32px; line-height: 1.75;
+        }
+        
+        .km-hero-stats {
+            display: flex; flex-wrap: wrap; gap: 24px; margin-top: 32px;
+        }
+        .km-stat-item {
+            text-align: center; color: #fff;
+        }
+        .km-stat-num {
+            font-family: var(--km-head);
+            font-size: 2rem; display: block;
+            text-shadow: 0 2px 10px rgba(0,0,0,.2);
+        }
+        .km-stat-label {
+            font-size: 11px; opacity: .75;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        
+        .km-hero-countdown {
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 18px; padding: 20px 28px;
+            max-width: 320px; text-align: center;
+        }
+        .km-hero-countdown p {
+            font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            color: rgba(255,255,255,.7); margin-bottom: 14px;
+        }
+        .km-countdown-wrap {
+            display: flex; gap: 10px; justify-content: center;
+        }
+        .km-cd-unit {
+            background: rgba(255,255,255,.18);
+            border-radius: 10px; padding: 10px 14px;
+            min-width: 54px; text-align: center;
+        }
+        .km-cd-num {
+            font-family: var(--km-head);
+            font-size: 1.6rem; color: #fff; display: block; line-height: 1;
+        }
+        .km-cd-label {
+            font-size: 9px; color: rgba(255,255,255,.6);
+            text-transform: uppercase; letter-spacing: 1px; margin-top: 2px;
+        }
+        .km-cd-sep {
+            font-size: 1.6rem; color: #ffd60a;
+            font-weight: 900; align-self: center; margin-top: -6px;
+        }
+
+        
+        .km-section { padding: 64px 0; }
+        .km-section-alt { background: #f7f9ff; }
+        .km-section-title {
+            font-family: var(--km-head);
+            font-size: 1.8rem; color: var(--km-dark);
+            margin-bottom: 6px;
+        }
+        .km-section-sub {
+            font-size: 14px; color: #6c757d;
+            margin-bottom: 0;
+        }
+        
+        .km-title-bar {
+            width: 48px; height: 4px; border-radius: 4px;
+            background: linear-gradient(90deg, var(--km-blue), var(--km-teal));
+            margin: 10px 0 28px;
+        }
+
+        
+        .km-filter-bar {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            margin-bottom: 36px;
+        }
+        .km-filter-btn {
+            padding: 9px 22px; border-radius: 30px;
+            border: 2px solid #e2e8f0;
+            background: #fff; color: #64748b;
+            font-size: 13px; font-weight: 700;
+            cursor: pointer; transition: all .22s;
+            display: inline-flex; align-items: center; gap: 6px;
+        }
+        .km-filter-btn:hover {
+            border-color: var(--km-blue); color: var(--km-blue);
+        }
+        .km-filter-btn.active {
+            background: var(--km-dark); color: #fff;
+            border-color: var(--km-dark);
+            box-shadow: 0 6px 18px rgba(26,31,110,.3);
+        }
+
+        
+        #km-voucher-grid { transition: opacity .25s; }
+
+        .km-voucher-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,.07);
+            transition: transform .26s, box-shadow .26s;
+            margin-bottom: 28px;
+            display: flex; flex-direction: column;
+            height: 100%;
+        }
+        .km-voucher-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 44px rgba(0,0,0,.14);
+        }
+        
+        .km-vc-head {
+            padding: 20px 22px 16px;
+            position: relative; overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .km-vc-head-img-overlay {
+            position: absolute; inset: 0;
+            background: rgba(10,15,61,.52);
+            z-index: 0;
+        }
+        
+        .km-vc-head .km-vc-badge,
+        .km-vc-head .km-vc-code,
+        .km-vc-head .km-vc-discount {
+            position: relative; z-index: 1;
+        }
+        .km-vc-head::after {
+            content: ''; position: absolute;
+            width: 120px; height: 120px;
+            border-radius: 50%; right: -30px; top: -30px;
+            background: rgba(255,255,255,.12);
+            z-index: 0;
+        }
+        
+        .km-vc-session    { background: linear-gradient(135deg, #0a0f3d, #0077b6); }
+        .km-vc-boat    { background: linear-gradient(135deg, #064e84, #00b4d8); }
+        .km-vc-water   { background: linear-gradient(135deg, #0077b6, #22d3ee); }
+        .km-vc-spa     { background: linear-gradient(135deg, #5b21b6, #8b5cf6); }
+        .km-vc-culture { background: linear-gradient(135deg, #b45309, #f59e0b); }
+
+        
+        .km-vc-badge {
+            display: inline-flex; align-items: center; gap: 4px;
+            background: rgba(255,255,255,.2); border-radius: 20px;
+            padding: 3px 12px; font-size: 10px; font-weight: 800;
+            letter-spacing: 1px; text-transform: uppercase;
+            color: #fff; margin-bottom: 10px;
+        }
+        
+        .km-vc-code {
+            font-family: var(--km-head);
+            font-size: 1.8rem; color: #fff;
+            letter-spacing: 2px; margin: 0;
+            text-shadow: 0 2px 8px rgba(0,0,0,.2);
+        }
+        
+        .km-vc-discount {
+            font-size: 12px; color: rgba(255,255,255,.75);
+            font-weight: 700; margin-top: 2px;
+        }
+        
+        .km-vc-body {
+            padding: 18px 22px;
+            flex: 1; display: flex; flex-direction: column;
+        }
+        .km-vc-title {
+            font-size: 14.5px; font-weight: 800;
+            color: var(--km-dark); margin-bottom: 6px;
+            line-height: 1.45;
+        }
+        .km-vc-desc {
+            font-size: 12.5px; color: #64748b;
+            line-height: 1.65; margin-bottom: 14px;
+            flex: 1;
+        }
+        
+        .km-vc-meta {
+            display: flex; flex-direction: column; gap: 5px;
+            margin-bottom: 16px;
+        }
+        .km-vc-meta-item {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 11.5px; color: #94a3b8;
+            font-weight: 600;
+        }
+        .km-vc-meta-item i { font-size: 10px; color: var(--km-blue); }
+        
+        .km-vc-divider {
+            border: none; margin: 0 0 16px;
+            border-top: 2px dashed #e2e8f0;
+        }
+        
+        .km-vc-footer {
+            display: flex; align-items: center;
+            justify-content: space-between; gap: 12px;
+        }
+        .km-vc-price-block small {
+            font-size: 10px; color: #94a3b8; display: block;
+            text-transform: uppercase; letter-spacing: .5px;
+        }
+        .km-vc-price-block strong {
+            font-size: 15px; color: var(--km-dark);
+            font-weight: 900;
+        }
+        
+        .km-vc-copy-btn {
+            padding: 9px 16px; border-radius: 12px;
+            background: var(--km-dark); color: #fff;
+            font-size: 12px; font-weight: 800;
+            border: none; cursor: pointer;
+            transition: background .2s, transform .2s;
+            white-space: nowrap;
+        }
+        .km-vc-copy-btn:hover {
+            background: var(--km-blue);
+            transform: scale(1.04);
+        }
+        .km-vc-copy-btn.copied {
+            background: var(--km-green);
+        }
+
+        
+        .km-flash-section {
+            background: linear-gradient(135deg, #0a0f3d 0%, #0077b6 100%);
+            padding: 60px 0;
+            position: relative; overflow: hidden;
+        }
+        .km-flash-section::before {
+            content: '⚡';
+            position: absolute; right: -30px; top: -40px;
+            font-size: 220px; opacity: .04;
+            line-height: 1; pointer-events: none;
+        }
+        .km-flash-title {
+            font-family: var(--km-head);
+            font-size: 2rem; color: #fff;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .km-flash-badge {
+            background: var(--km-red); color: #fff;
+            border-radius: 8px; padding: 4px 12px;
+            font-size: 12px; font-weight: 900;
+            animation: kmPulse 1.2s infinite;
+        }
+        @keyframes kmPulse {
+            0%,100% { transform: scale(1); }
+            50%      { transform: scale(1.05); }
+        }
+        
+        .km-flash-card {
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 18px; padding: 22px 24px;
+            display: flex; align-items: center; gap: 20px;
+            transition: background .2s;
+            height: 100%;
+        }
+        .km-flash-card:hover { background: rgba(255,255,255,.18); }
+        .km-flash-icon {
+            font-size: 2.4rem; flex-shrink: 0;
+            width: 60px; height: 60px;
+            background: rgba(255,255,255,.15);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .km-flash-card-title {
+            font-size: 14px; font-weight: 800; color: #fff;
+            margin-bottom: 4px;
+        }
+        .km-flash-card-code {
+            font-family: var(--km-head);
+            font-size: 1.2rem; color: #ffd60a;
+            letter-spacing: 1.5px;
+        }
+        .km-flash-card-desc {
+            font-size: 11.5px; color: rgba(255,255,255,.65);
+            margin-top: 4px;
+        }
+
+        
+        .km-howto-card {
+            background: #fff; border-radius: 20px;
+            padding: 28px 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,.06);
+            text-align: center;
+            transition: transform .22s, box-shadow .22s;
+        }
+        .km-howto-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(0,0,0,.12);
+        }
+        .km-howto-icon {
+            width: 64px; height: 64px; border-radius: 18px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; margin: 0 auto 16px;
+        }
+        .km-howto-num {
+            font-family: var(--km-head);
+            font-size: 3rem; color: #e2e8f0;
+            line-height: 1; margin-bottom: 10px;
+        }
+        .km-howto-title {
+            font-size: 14px; font-weight: 800;
+            color: var(--km-dark); margin-bottom: 6px;
+        }
+        .km-howto-desc {
+            font-size: 12.5px; color: #64748b; line-height: 1.65;
+        }
+
+        
+        @keyframes kmFadeIn  { from{opacity:0} to{opacity:1} }
+        @keyframes kmSlideUp { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes kmFloat   {
+            0%,100%{ transform:translateY(0) rotate(0deg); }
+            50%    { transform:translateY(-16px) rotate(3deg); }
+        }
+
+        
+        .km-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .55s ease, transform .55s ease;
+        }
+        .km-reveal.visible {
+            opacity: 1; transform: translateY(0);
+        }
+
+        
+        @media(max-width:575px){
+            .km-hero { padding: 60px 0 50px; }
+            .km-hero-title { font-size: 1.8rem; }
+            .km-filter-btn { padding: 7px 14px; font-size: 12px; }
+            .km-notify-body { padding: 20px 20px 24px; }
+            .km-notify-banner { height: 180px; }
+            .km-notify-banner-text h2 { font-size: 1.5rem; }
+        }
+    
+        
+        .km-mkt-section {
+            padding: 72px 0;
+            background: #f7f9ff;
+            overflow: hidden;
+        }
+        
+        .km-mkt-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        @media(max-width:767px){ .km-mkt-grid { grid-template-columns: 1fr; } }
+        @media(min-width:768px) and (max-width:991px){ .km-mkt-grid { grid-template-columns: 1fr 1fr; } }
+
+        
+        .km-mkt-card {
+            border-radius: 22px;
+            overflow: hidden;
+            position: relative;
+            min-height: 280px;
+            display: flex; align-items: flex-end;
+            cursor: pointer;
+            transition: transform .3s, box-shadow .3s;
+            box-shadow: 0 8px 30px rgba(0,0,0,.1);
+        }
+        .km-mkt-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,.18);
+        }
+        .km-mkt-card:hover .km-mkt-overlay { opacity: .82; }
+        .km-mkt-card:hover .km-mkt-cta { transform: translateY(0); opacity: 1; }
+
+        
+        .km-mkt-bg {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center;
+            transition: transform .5s;
+        }
+        .km-mkt-card:hover .km-mkt-bg { transform: scale(1.06); }
+
+        
+        .km-mkt-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(0deg, rgba(10,15,61,.85) 0%, rgba(10,15,61,.2) 60%, transparent 100%);
+            opacity: .7; transition: opacity .3s;
+        }
+
+        
+        .km-mkt-content {
+            position: relative; z-index: 2;
+            padding: 22px 24px;
+            width: 100%;
+        }
+        .km-mkt-tag {
+            display: inline-block;
+            background: rgba(255,255,255,.2); backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 20px; padding: 3px 12px;
+            font-size: 10px; font-weight: 800;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            color: #fff; margin-bottom: 8px;
+        }
+        .km-mkt-card-title {
+            font-family: var(--km-head);
+            font-size: 1.25rem; color: #fff;
+            font-weight: 900; line-height: 1.3;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 8px rgba(0,0,0,.3);
+        }
+        .km-mkt-card-sub {
+            font-size: 12px; color: rgba(255,255,255,.75);
+            margin-bottom: 0;
+        }
+        
+        .km-mkt-cta {
+            display: inline-block; margin-top: 12px;
+            background: #ffd60a; color: #0a0f3d;
+            padding: 8px 18px; border-radius: 20px;
+            font-size: 12px; font-weight: 900;
+            text-decoration: none;
+            transform: translateY(10px); opacity: 0;
+            transition: transform .3s, opacity .3s;
+        }
+        .km-mkt-cta:hover { text-decoration: none; color: #0a0f3d; }
+
+        
+        .km-mkt-wide { grid-column: span 2; min-height: 300px; }
+        @media(max-width:767px){ .km-mkt-wide { grid-column: span 1; } }
+
+
+
+
+        
+        .btn-login {
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            color:#fff !important; border:none; border-radius:10px;
+            padding:7px 16px; font-size:13px; transition:all .2s;
+        }
+        .btn-login:hover { opacity:.88; transform:translateY(-1px); }
+        
+        .user-avatar-btn {
+            width:38px; height:38px; border-radius:50%;
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            display:flex; align-items:center; justify-content:center;
+            color:#fff; font-weight:800; font-size:15px;
+            cursor:pointer; border:none; transition:all .2s;
+        }
+        .user-avatar-btn:hover { box-shadow:0 4px 14px rgba(0,119,182,.35); }
+        .user-profile-dropdown .dropdown-menu {
+            border-radius:14px; padding:8px 0;
+            box-shadow:0 8px 30px rgba(0,0,0,.12);
+        }
+
+        </style><link rel="stylesheet" href="css/kene-experience.css"><link rel="manifest" href="manifest.webmanifest"><meta name="color-scheme" content="light"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="img/brand/icon-32.png"><link rel="apple-touch-icon" href="img/brand/icon-180.png"><link rel="stylesheet" href="css/kene-brand.css"></head><body data-page="promo"><header class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 border-bottom">
+        <div class="container">
+
+            
+            <a class="navbar-brand" href="html_trangchu.html">
+                <img src="img/logo.svg" alt="Kể Nè — Không gian lắng nghe" height="46" class=" logo-header" width="142">
+            </a>
+
+            
+            <div class="header-search-wrap mx-lg-4 d-none d-md-flex">
+<div class="input-group header-search">
+                    <div class="input-group-prepend border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" id="header-search-inp" class="form-control border-0 bg-transparent" placeholder="Tìm dịch vụ, chuyên gia, bài viết…" autocomplete="off" aria-label="Tìm kiếm toàn website">
+                    
+                    <span class="hs-shortcut d-none d-lg-inline-flex align-items-center">⌘K</span>
+                </div>
+                <div id="header-dropdown" class="search-dropdown"></div>
+            </div>
+
+            
+            <div class="navbar-nav ml-auto align-items-center">
+                <a class="nav-item nav-link mr-3 d-none d-xl-block small-text" href="html_trangchu.html">Trang chủ</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_gioithieu.html">Về Kể Nè</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_lienhe_chinhsach.html">Liên hệ &amp; Tin cậy</a>
+                <a class="nav-item nav-link mr-3 d-none d-md-block small-text" href="html_blog.html">Góc đọc</a>
+
+                
+                <a class="nav-item nav-link mr-3 text-dark" href="html_giohang.html" style="position:relative;" aria-label="Giỏ dịch vụ">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-badge" style="position:absolute;top:-4px;right:-8px;background:#ff4d4d;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;line-height:1;">0</span>
+                </a>
+
+                
+                <div class="auth-buttons" id="auth-zone">
+                    <a class="nav-item nav-link mr-3 font-weight-bold" href="html_dangnhap_dangky.html">Đăng ký</a>
+                    <a class="btn btn-login font-weight-bold" href="html_dangnhap_dangky.html">Đăng nhập</a>
+                    <a class="nav-item nav-link ml-2 d-none d-sm-block" href="html_thongtin.html">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="sub-nav bg-white border-bottom" aria-label="Dịch vụ"><div class="container"><div class="nav kn-subnav"><a class="nav-link" href="html_dichvu.html">Dịch vụ &amp; Bảng giá</a><a class="nav-link" href="html_diadiem.html">Chuyên gia &amp; Ghép nối</a><a class="nav-link" href="html_diadiem.html#sang-loc">Sàng lọc miễn phí</a><a class="nav-link ml-auto sub-voucher-link" href="html_khuyenmaivatiepthi.html"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Ưu đãi</a></div></div></nav><a class="kn-skip" href="#main-content">Bỏ qua điều hướng</a><main id="main-content"><section class="km-hero ke-photo-hero"><div class="ke-hero-photo-panel"><picture class="ke-picture " data-ke-image="study-together"><source type="image/webp" srcset="img/photos/study-together-960.webp 960w, img/photos/study-together-1920.webp 1920w" sizes="100vw"><img src="img/photos/study-together-1920.jpg" alt="Những người học trao đổi và ghi chép cùng nhau" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high" data-ke-photo="study-together"></picture></div><div class="container"><span class="km-hero-tag">ƯU ĐÃI &amp; KHẢ NĂNG TIẾP CẬN</span><h1 class="kn-promo-title">Một lựa chọn phù hợp<br>với lịch và nhu cầu</h1><p>Một khoảng thời gian phù hợp, thêm một lựa chọn dễ tiếp cận. Xem rõ điều kiện trước khi áp dụng ưu đãi.</p><a href="#km-vouchers" class="kn-btn kn-btn-white">Xem điều kiện ưu đãi</a><div class="kn-hero-stat-row"><div><strong>15%</strong><span>Ưu đãi ban ngày</span></div><div><strong>8–17h</strong><span>Khung áp dụng</span></div><div><strong>0đ</strong><span>Phí dịch vụ bổ sung</span></div></div></div></section><section class="km-flash-section"><div class="container kn-grid-3"><article class="kn-white-card"><h2 class="kn-h3 ke-reveal">Giá hiển thị trước</h2><p>Kiểm tra điều kiện và tổng tiền trước khi xác nhận.</p></article><article class="kn-white-card"><h2 class="kn-h3 ke-reveal">Không tự gia hạn</h2><p>Mua theo phiên hoặc gói; bạn tự quyết định bước tiếp theo.</p></article><article class="kn-white-card"><h2 class="kn-h3 ke-reveal">Không đếm ngược giả</h2><p>Đồng hồ chỉ dùng cho giữ chỗ 10 phút ở thanh toán.</p></article></div></section><section id="km-vouchers" class="km-section"><div class="container"><h2 class="ke-reveal">Tất cả lựa chọn hỗ trợ</h2><div id="voucher-filters" class="kn-chips my-4"></div><div id="voucher-grid" class="kn-grid-3"></div></div></section><section class="km-mkt-section"><div class="container"><div class="kn-promo-grid"><a class="kn-promo ke-promo-tile" href="html_dichvu.html?id=ca-nhan"><strong>Phiên cá nhân 50 phút</strong><p>Giá tham khảo tham chiếu 400.000đ</p><picture class="ke-picture ke-promo-image" data-ke-image="study-quiet"><source type="image/webp" srcset="img/photos/study-quiet-960.webp 960w, img/photos/study-quiet-1920.webp 1920w" sizes="240px"><img src="img/photos/study-quiet-1920.jpg" alt="Một góc học tập yên tĩnh giữa các kệ sách" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="study-quiet"></picture></a><a class="kn-promo ke-promo-tile" href="html_dichvu.html?id=dong-hanh-6"><strong>Gói đồng hành 6 buổi</strong><p>1 buổi đánh giá + 5 buổi hỗ trợ</p><picture class="ke-picture ke-promo-image" data-ke-image="conversation-notes"><source type="image/webp" srcset="img/photos/conversation-notes-960.webp 960w, img/photos/conversation-notes-1920.webp 1920w" sizes="240px"><img src="img/photos/conversation-notes-1920.jpg" alt="Ghi chú trong cuộc trò chuyện trực tiếp" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="conversation-notes"></picture></a><a class="kn-promo ke-promo-tile" href="html_diadiem.html#sang-loc"><strong>Sàng lọc miễn phí</strong><p>PHQ-9, GAD-7 và câu hỏi an toàn</p><picture class="ke-picture ke-promo-image" data-ke-image="journal-planning"><source type="image/webp" srcset="img/photos/journal-planning-960.webp 960w, img/photos/journal-planning-1920.webp 1920w" sizes="240px"><img src="img/photos/journal-planning-1920.jpg" alt="Bàn tay viết ghi chú cá nhân trên bàn gỗ" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="journal-planning"></picture></a></div></div></section></main><footer class="kene-footer"><div class="footer-bg-layer"></div><div class="container position-relative" style="z-index:2"><div class="row footer-main-row pt-5 pb-4"><div class="col-lg-4 col-md-6 mb-4"><a href="html_trangchu.html" class="footer-brand d-inline-block mb-3" aria-label="Kể Nè — Trang chủ"><img class="footer-logo" src="img/logo-white.svg" width="150" height="49" alt="Kể Nè"></a><p class="footer-desc">Chuyện khó nói, có người nghe. Kể Nè đồng hành cùng bạn tìm hiểu nhu cầu và lựa chọn cách chăm sóc sức khoẻ tinh thần phù hợp.</p><a class="footer-sitemap-btn" href="html_sitemap.html">Sơ đồ website</a></div><div class="col-lg-4 col-md-6 mb-4"><h2 class="footer-heading">Khám phá Kể Nè</h2><ul class="ke-footer-links"><li><a href="html_gioithieu.html">Câu chuyện &amp; Con người</a></li><li><a href="html_dichvu.html">Dịch vụ &amp; Mức giá tham khảo</a></li><li><a href="html_diadiem.html">Tìm cách đồng hành phù hợp</a></li><li><a href="html_blog.html">Góc đọc mỗi ngày</a></li><li><a href="html_khuyenmaivatiepthi.html">Ưu đãi &amp; Điều kiện áp dụng</a></li></ul></div><div class="col-lg-4 col-md-12 mb-4"><h2 class="footer-heading">Bạn luôn có quyền lựa chọn</h2><p class="ke-footer-promise">♡ Chia sẻ theo nhịp của bạn. Hiểu rõ điều kiện trước khi bắt đầu.</p><ul class="ke-footer-links"><li><a href="html_lienhe_chinhsach.html#du-lieu">Quyền riêng tư</a></li><li><a href="html_lienhe_chinhsach.html#doi-lich">Đổi lịch &amp; Hỗ trợ</a></li><li><a href="html_lienhe_chinhsach.html">Liên hệ &amp; Trung tâm tin cậy</a></li><li><a href="html_lienhe_chinhsach.html?topic=to-chuc">Dành cho tổ chức</a></li><li><a href="html_lienhe_chinhsach.html?topic=chuyen-gia">Hợp tác chuyên gia</a></li></ul></div></div><div class="footer-divider"></div><div class="ke-footer-tools"><button type="button" data-ke-motion aria-pressed="false">Chuyển động: Êm dịu</button><button type="button" data-ke-credits>Nguồn ảnh</button><button type="button" data-ke-saved-articles>Bài viết đã lưu</button><span id="ke-offline-state" class="ke-offline-state">Ảnh cục bộ · Không cần Internet</span></div><div class="footer-bottom py-3 d-flex flex-wrap justify-content-between"><p class="footer-copy mb-0">© 2026 Kể Nè. Mọi quyền được bảo lưu.</p><p class="footer-copy mb-0">Tư vấn, tham vấn tâm lý · Không thay thế cấp cứu</p></div></div></footer><div id="kn-toast" class="kn-toast" hidden role="status" aria-live="polite"></div><div class="kn-tools"><button class="kn-sos-btn" data-action="sos">Cần giúp ngay</button><button class="kn-help-btn" data-action="help" aria-label="Mở trợ giúp thao tác">?</button><button class="kn-exit-btn" data-action="quick-exit">Thoát nhanh ↗</button></div><div id="kn-modal" class="kn-modal" hidden role="dialog" aria-modal="true" aria-labelledby="kn-modal-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-modal-title"></h2><div><button class="kn-link" data-action="sos">Cần giúp ngay</button><button class="kn-modal-close" data-action="close-modal" aria-label="Đóng cửa sổ">×</button></div></div><div id="kn-modal-body"></div></div></div><div id="kn-sos" class="kn-modal kn-sos-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="kn-sos-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-sos-title">Ưu tiên sự an toàn của bạn</h2><button class="kn-modal-close" data-action="close-sos" aria-label="Đóng hướng dẫn">×</button></div><p>Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế hoặc đến cơ sở cấp cứu gần nhất. Nếu có thể, nhờ một người tin cậy ở cạnh bạn.</p><a class="kn-btn kn-btn-full" href="tel:115">Gọi cấp cứu y tế 115</a><p class="kn-note mt-3">115 là cấp cứu y tế, không phải đường dây tư vấn của Kể Nè.</p><div class="kn-white-card my-3"><h3 class="kn-h4">Website không có người trực</h3><p>Kể Nè không phải kênh cấp cứu và không gửi cảnh báo từ nút này. Đừng chờ phản hồi trên website khi bạn đang không an toàn.</p><p id="kn-support-hours"></p></div><button class="kn-btn kn-btn-light" data-action="quick-exit">Thoát nhanh khỏi website</button></div></div><button id="back-to-top" class="kn-back-top" aria-label="Lên đầu trang" hidden>↑</button><script src="js/jquery.min.js" defer></script><script src="js/bootstrap.bundle.min.js" defer></script><script src="js/kene-data.js" defer></script><script src="js/kene-engine.js" defer></script><script src="js/kene-core.js" defer></script><script src="js/kene-media-data.js" defer></script><script src="js/kene-media.js" defer></script><script src="js/kene-runtime.js" defer></script><script src="js/kene-pages.js" defer></script><script src="js/kene-offline-version.js" defer></script><script src="js/kene-experience.js" defer></script><script src="js/kene-scenes.js" defer></script></body></html>

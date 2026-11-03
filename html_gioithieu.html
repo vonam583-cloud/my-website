@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Câu chuyện, định vị và đúng tám thành viên Kể Nè."><meta name="theme-color" content="#0077b6"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Về Kể Nè | Kể Nè</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/fontawesome.min.css"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css_trangchu.css"><style>
+        :root {
+            --primary-blue:   #0077b6;
+            --dark-blue:      #1a1f6e;
+            --teal-light:     #00b4d8;
+            --accent-red:     #ff4d4d;
+            --gradient-brand: linear-gradient(135deg, #1a1f6e 0%, #0077b6 55%, #00b4d8 100%);
+        }
+
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            color: var(--dark-blue);
+            background: #fff;
+            overflow-x: clip; 
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        
+        header.navbar.sticky-top,
+        .sub-nav,
+        .kene-footer {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        
+        .hero-carousel-container {
+            height: 60vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-item {
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .carousel-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.28);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .carousel-caption-custom h1 {
+            font-weight: 900;
+            font-size: clamp(2rem, 5vw, 4rem);
+            text-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            animation: letterSpacing 2s ease-out;
+        }
+        .carousel-caption-custom p { font-size: 1.2rem; opacity: .85; }
+        @keyframes letterSpacing {
+            from { letter-spacing: 20px; opacity: 0; }
+            to   { letter-spacing: normal; opacity: 1; }
+        }
+
+        .airplane-path {
+            position: absolute;
+            top: 15%;
+            left: -100px;
+            z-index: 100;
+            font-size: 2.5rem;
+            color: #fff;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            animation: flyAcross 15s linear infinite;
+        }
+        @keyframes flyAcross {
+            0%   { left: -100px; transform: scaleX(1); }
+            45%  { left: 110%;   transform: scaleX(1); }
+            50%  { transform: scaleX(-1); }
+            95%  { left: -100px; transform: scaleX(-1); }
+            100% { transform: scaleX(1); }
+        }
+
+        .wave-seamless-box {
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            z-index: 50;
+            pointer-events: none;
+        }
+        .waves-svg-main {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0px -10px 15px rgba(255,255,255,0.5));
+        }
+        .parallax-wave-layers > use { animation: wave-motion 20s cubic-bezier(.55,.5,.45,.5) infinite; }
+        .parallax-wave-layers > use:nth-child(1) { animation-delay:-2s; animation-duration:8s;  fill:rgba(255,255,255,0.3); }
+        .parallax-wave-layers > use:nth-child(2) { animation-delay:-3s; animation-duration:11s; fill:rgba(255,255,255,0.5); }
+        .parallax-wave-layers > use:nth-child(3) { animation-delay:-4s; animation-duration:14s; fill:rgba(255,255,255,0.8); }
+        .parallax-wave-layers > use:nth-child(4) { animation-delay:-5s; animation-duration:19s; fill:#ffffff; }
+        @keyframes wave-motion {
+            0%   { transform: translate3d(-90px,0,0); }
+            100% { transform: translate3d(85px,0,0); }
+        }
+
+        .reveal { opacity: 0; transform: translateY(50px); transition: .8s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        
+        .story-section {
+            padding: 100px 0 120px;
+            position: relative;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)),
+                url('img/scene-care.svg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+        .story-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('img/scene-care.svg');
+            opacity: 0.07;
+            pointer-events: none;
+        }
+
+        .floating-bubble {
+            position: absolute;
+            background: rgba(0,180,216,0.06);
+            border-radius: 50%;
+            z-index: 1;
+            animation: floatBubble 10s infinite ease-in-out;
+        }
+        @keyframes floatBubble {
+            0%,100% { transform: translateY(0) translateX(0); }
+            50%     { transform: translateY(-50px) translateX(30px); }
+        }
+
+        .image-stack-wrapper {
+            position: relative;
+            height: 420px;
+            perspective: 1000px;
+        }
+        .stacked-img {
+            position: absolute;
+            width: 80%;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+            transition: all .6s cubic-bezier(.68,-.55,.265,1.55);
+        }
+        .img-1 { z-index:3; top:40px; left:15%; transform:rotate(2deg);  opacity:1;   }
+        .img-2 { z-index:2; top:20px; left:10%; transform:rotate(-4deg); opacity:0.9; }
+        .img-3 { z-index:1; top: 0px; left: 5%; transform:rotate(-8deg); opacity:0.7; }
+
+        .image-stack-wrapper.shuffled .img-1 { z-index:1; top:0;    left:5%;  transform:rotate(-8deg); opacity:0.7; }
+        .image-stack-wrapper.shuffled .img-2 { z-index:3; top:40px; left:15%; transform:rotate(2deg);  opacity:1;   }
+        .image-stack-wrapper.shuffled .img-3 { z-index:2; top:20px; left:10%; transform:rotate(-4deg); opacity:0.9; }
+
+        .image-stack-wrapper.shuffled2 .img-1 { z-index:2; top:20px; left:10%; transform:rotate(-4deg); opacity:0.9; }
+        .image-stack-wrapper.shuffled2 .img-2 { z-index:1; top:0;    left:5%;  transform:rotate(-8deg); opacity:0.7; }
+        .image-stack-wrapper.shuffled2 .img-3 { z-index:3; top:40px; left:15%; transform:rotate(2deg);  opacity:1;   }
+
+        .story-content-card {
+            display: none;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            padding: 36px 40px;
+            border-radius: 20px;
+            border-left: 8px solid var(--primary-blue);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.09);
+            transition: .5s;
+            animation: fadeCardIn .4s ease forwards;
+        }
+        .story-content-card.active { display: block; }
+        .story-content-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px rgba(0,119,182,0.18);
+        }
+        @keyframes fadeCardIn {
+            from { opacity:0; transform:translateY(16px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+        .story-content-card h2 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--dark-blue);
+            margin-bottom: 16px;
+        }
+        .story-text { font-size: 1rem; line-height: 1.85; color: #444; }
+        .handwritten {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            display: block;
+            margin-top: 18px;
+        }
+
+        
+        .care-gallery-section {
+            padding: 100px 0 120px;
+            position: relative;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)),
+                url('img/scene-care.svg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        
+        .gt-video-wrap {
+            position: relative;
+            max-width: 960px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+            background: #000;
+            
+            aspect-ratio: 16 / 9;
+        }
+        .gt-video-wrap iframe,
+        .gt-video-wrap video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        
+        .gt-video-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1f6e 0%, #0077b6 55%, #00b4d8 100%);
+            color: #fff;
+            gap: 18px;
+        }
+        .gt-video-placeholder i {
+            font-size: 4rem;
+            opacity: .85;
+        }
+        .gt-video-placeholder p {
+            font-size: 1rem;
+            opacity: .7;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .gt-video-wrap { border-radius: 12px; }
+        }
+
+        
+
+        
+        .reasons-tabs-section {
+            padding: 100px 0;
+            position: relative;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)),
+                url('img/scene-care.svg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .reasons-nav {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .reason-tab-item {
+            padding: 14px 28px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark-blue);
+            transition: all .4s cubic-bezier(.175,.885,.32,1.275);
+            display: flex; align-items: center; gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .reason-tab-item i { color: var(--primary-blue); transition: .4s; }
+        .reason-tab-item:hover { border-color: var(--primary-blue); color: var(--primary-blue); transform: translateY(-3px); }
+        .reason-tab-item.active {
+            background: var(--gradient-brand) !important;
+            color: #fff !important; border: none;
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 25px rgba(26,31,110,0.2);
+        }
+        .reason-tab-item.active i { color: #fff !important; transform: scale(1.2); }
+
+        .reason-display-area {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            min-height: 230px;
+        }
+        .reason-content-panel {
+            position: absolute; inset: 0;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 28px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            display: none;
+            border-bottom: 5px solid var(--primary-blue);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .reason-content-panel.active {
+            display: block;
+            animation: slideUpFade .55s cubic-bezier(.23,1,.32,1) forwards;
+        }
+        @keyframes slideUpFade {
+            from { opacity:0; transform:translateY(28px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+        .reason-detail-header { display: flex; align-items: center; gap: 20px; margin-bottom: 18px; }
+        .big-icon {
+            font-size: 2.8rem;
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .reason-detail-text { font-size: 1.05rem; line-height: 1.82; color: #555; font-weight: 500; }
+
+        
+        .partners-section {
+            padding: 100px 0 0;
+            position: relative;
+            background: linear-gradient(180deg, #f4f9ff 0%, #e8f4fd 50%, #f4f9ff 100%);
+        }
+
+        .partners-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(0,119,182,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0,180,216,0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .partners-container { position: relative; z-index: 2; }
+
+        .partners-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .partners-subtitle {
+            text-align: center;
+            color: #6c757d;
+            font-size: 1rem;
+            margin-bottom: 60px;
+        }
+
+        .partners-grid-new {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        
+        .member-card {
+            width: 190px;
+            position: relative;
+            padding-top: 62px; 
+            animation: memberFloat 4s ease-in-out infinite;
+        }
+        .member-card:nth-child(1) { animation-delay: 0s; }
+        .member-card:nth-child(2) { animation-delay: 0.5s; }
+        .member-card:nth-child(3) { animation-delay: 1s; }
+        .member-card:nth-child(4) { animation-delay: 1.5s; }
+        .member-card:nth-child(5) { animation-delay: 2s; }
+
+        @keyframes memberFloat {
+            0%, 100% { transform: translateY(0px); }
+            50%       { transform: translateY(-10px); }
+        }
+
+        .member-card:hover {
+            animation-play-state: paused;
+            transform: translateY(-18px) scale(1.05);
+            z-index: 10;
+        }
+
+        
+        .member-avatar-wrap {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 0;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #1a1f6e, #0077b6, #00b4d8, #1a1f6e);
+            padding: 4px;
+            box-shadow: 0 8px 30px rgba(0,119,182,0.25);
+            transition: all 0.5s cubic-bezier(.175,.885,.32,1.275);
+        }
+        .member-card:hover .member-avatar-wrap {
+            box-shadow: 0 20px 50px rgba(0,119,182,0.45);
+            animation: borderSpin 2s linear infinite;
+        }
+        @keyframes borderSpin {
+            from { background: conic-gradient(from 0deg, #1a1f6e, #0077b6, #00b4d8, #1a1f6e); }
+            to   { background: conic-gradient(from 360deg, #1a1f6e, #0077b6, #00b4d8, #1a1f6e); }
+        }
+
+        .member-avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #e8f4fd;
+            position: relative;
+        }
+
+        .member-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: opacity 0.5s ease, transform 0.6s ease;
+        }
+        .member-img-default { opacity: 1; z-index: 1; }
+        .member-img-hover   { opacity: 0; z-index: 2; transform: scale(1.1); }
+
+        .member-card:hover .member-img-default { opacity: 0; }
+        .member-card:hover .member-img-hover   { opacity: 1; transform: scale(1); }
+
+        .member-avatar-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #e8f4fd, #c9e8f7);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .member-badge {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 34px;
+            height: 34px;
+            background: var(--gradient-brand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 12px rgba(0,119,182,0.4);
+            z-index: 10;
+            border: 2px solid #fff;
+        }
+
+        
+        .member-info-box {
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(16px);
+            border-radius: 20px;
+            padding: 18px 16px 16px;
+            margin-top: -16px;
+            padding-top: 24px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,119,182,0.08);
+            text-align: center;
+            transition: all 0.5s cubic-bezier(.175,.885,.32,1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-info-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gradient-brand);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .member-card:hover .member-info-box::before { transform: scaleX(1); }
+        .member-card:hover .member-info-box {
+            box-shadow: 0 20px 50px rgba(0,119,182,0.18);
+            border-color: rgba(0,119,182,0.2);
+        }
+
+        .member-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .member-role-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--teal-light);
+            margin-bottom: 10px;
+        }
+
+        .member-bio {
+            font-size: 0.78rem;
+            color: #666;
+            line-height: 1.55;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.4s ease 0.1s, margin 0.4s ease;
+            margin-top: 0;
+        }
+        .member-card:hover .member-bio {
+            max-height: 120px;
+            opacity: 1;
+            margin-top: 8px;
+        }
+
+        .member-divider {
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--teal-light));
+            margin: 0 auto;
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+        .member-card:hover .member-divider { width: 40px; }
+
+        .member-socials {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 0;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s ease 0.15s, opacity 0.35s ease 0.2s, margin 0.4s ease;
+        }
+        .member-card:hover .member-socials {
+            max-height: 40px;
+            opacity: 1;
+            margin-top: 10px;
+        }
+        .member-social-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gradient-brand);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .member-social-btn:hover {
+            transform: scale(1.2) translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,119,182,0.4);
+            color: #fff;
+        }
+
+        
+        .leader-crown {
+            position: absolute;
+            
+            left: 50%;
+            transform: translateX(-50%);
+            
+            top: 7px;
+            display: block;
+            z-index: 20;
+            line-height: 1;
+            
+            animation: crownBounce 2.2s ease-in-out infinite;
+        }
+        @keyframes crownBounce {
+            0%,100% { transform: translateX(-50%) translateY(0) rotate(-2deg); }
+            50%      { transform: translateX(-50%) translateY(-6px) rotate(2deg); }
+        }
+
+        
+        
+        .member-card:nth-child(1) .member-avatar-wrap {
+            background: conic-gradient(from 0deg, #ff69b4, #e91e8c, #ff69b4, #e91e8c);
+            box-shadow: 0 8px 30px rgba(255,20,147,0.35);
+        }
+        .member-card:nth-child(1):hover .member-avatar-wrap {
+            box-shadow: 0 20px 50px rgba(255,20,147,0.55);
+            animation: borderSpinPink 2s linear infinite;
+        }
+        @keyframes borderSpinPink {
+            from { background: conic-gradient(from 0deg, #ff69b4, #e91e8c, #ffb3d9, #e91e8c); }
+            to   { background: conic-gradient(from 360deg, #ff69b4, #e91e8c, #ffb3d9, #e91e8c); }
+        }
+        .member-card:nth-child(1) .member-info-box::before { background: linear-gradient(90deg, #ff69b4, #e91e8c); }
+        .member-card:nth-child(1) .member-role-tag { color: #e91e8c; }
+        .member-card:nth-child(1) .member-badge { background: linear-gradient(135deg, #ff69b4, #e91e8c); }
+
+        
+        .member-card:nth-child(2) .member-avatar-wrap {
+            background: conic-gradient(from 0deg, #ce93d8, #9c27b0, #ce93d8, #9c27b0);
+            box-shadow: 0 8px 30px rgba(156,39,176,0.3);
+        }
+        .member-card:nth-child(2):hover .member-avatar-wrap {
+            box-shadow: 0 20px 50px rgba(156,39,176,0.5);
+            animation: borderSpinPurple 2s linear infinite;
+        }
+        @keyframes borderSpinPurple {
+            from { background: conic-gradient(from 0deg, #ce93d8, #9c27b0, #e1bee7, #9c27b0); }
+            to   { background: conic-gradient(from 360deg, #ce93d8, #9c27b0, #e1bee7, #9c27b0); }
+        }
+        .member-card:nth-child(2) .member-info-box::before { background: linear-gradient(90deg, #ce93d8, #9c27b0); }
+        .member-card:nth-child(2) .member-role-tag { color: #9c27b0; }
+        .member-card:nth-child(2) .member-badge { background: linear-gradient(135deg, #ce93d8, #9c27b0); }
+
+        
+        .member-card:nth-child(3) .member-avatar-wrap {
+            background: conic-gradient(from 0deg, #80cbc4, #009688, #80cbc4, #009688);
+            box-shadow: 0 8px 30px rgba(0,150,136,0.3);
+        }
+        .member-card:nth-child(3):hover .member-avatar-wrap {
+            box-shadow: 0 20px 50px rgba(0,150,136,0.5);
+            animation: borderSpinTeal 2s linear infinite;
+        }
+        @keyframes borderSpinTeal {
+            from { background: conic-gradient(from 0deg, #80cbc4, #009688, #b2dfdb, #009688); }
+            to   { background: conic-gradient(from 360deg, #80cbc4, #009688, #b2dfdb, #009688); }
+        }
+        .member-card:nth-child(3) .member-info-box::before { background: linear-gradient(90deg, #80cbc4, #009688); }
+        .member-card:nth-child(3) .member-role-tag { color: #009688; }
+        .member-card:nth-child(3) .member-badge { background: linear-gradient(135deg, #80cbc4, #009688); }
+
+        
+        .member-card:nth-child(4) .member-avatar-wrap {
+            background: conic-gradient(from 0deg, #1a1f6e, #0077b6, #00b4d8, #1a1f6e);
+            box-shadow: 0 8px 30px rgba(0,119,182,0.3);
+        }
+        .member-card:nth-child(4):hover .member-avatar-wrap {
+            animation: borderSpin 2s linear infinite;
+        }
+
+        
+        .member-card:nth-child(5) .member-avatar-wrap {
+            background: conic-gradient(from 0deg, #ffd54f, #ff8f00, #ffd54f, #ff8f00);
+            box-shadow: 0 8px 30px rgba(255,143,0,0.3);
+        }
+        .member-card:nth-child(5):hover .member-avatar-wrap {
+            box-shadow: 0 20px 50px rgba(255,143,0,0.5);
+            animation: borderSpinAmber 2s linear infinite;
+        }
+        @keyframes borderSpinAmber {
+            from { background: conic-gradient(from 0deg, #ffd54f, #ff8f00, #fff9c4, #ff8f00); }
+            to   { background: conic-gradient(from 360deg, #ffd54f, #ff8f00, #fff9c4, #ff8f00); }
+        }
+        .member-card:nth-child(5) .member-info-box::before { background: linear-gradient(90deg, #ffd54f, #ff8f00); }
+        .member-card:nth-child(5) .member-role-tag { color: #e65100; }
+        .member-card:nth-child(5) .member-badge { background: linear-gradient(135deg, #ffd54f, #ff8f00); }
+
+        
+        @media (max-width: 768px) {
+            .partners-grid-new { gap: 20px; }
+            .member-card { width: 155px; }
+            .member-avatar-wrap { width: 130px; height: 130px; }
+        }
+        @media (max-width: 480px) {
+            .member-card { width: 140px; }
+            .member-avatar-wrap { width: 115px; height: 115px; }
+        }
+
+        .wave-seamless-box-relative {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            pointer-events: none;
+            margin-top: 60px;
+            bottom: -5px;
+        }
+        .wave-seamless-box-relative .waves-svg-main {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0px -10px 15px rgba(255,255,255,0.5));
+        }
+    
+
+
+        
+        .btn-login {
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            color:#fff !important; border:none; border-radius:10px;
+            padding:7px 16px; font-size:13px; transition:all .2s;
+        }
+        .btn-login:hover { opacity:.88; transform:translateY(-1px); }
+        
+        .user-avatar-btn {
+            width:38px; height:38px; border-radius:50%;
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            display:flex; align-items:center; justify-content:center;
+            color:#fff; font-weight:800; font-size:15px;
+            cursor:pointer; border:none; transition:all .2s;
+        }
+        .user-avatar-btn:hover { box-shadow:0 4px 14px rgba(0,119,182,.35); }
+        .user-profile-dropdown .dropdown-menu {
+            border-radius:14px; padding:8px 0;
+            box-shadow:0 8px 30px rgba(0,0,0,.12);
+        }
+
+        </style><link rel="stylesheet" href="css/kene-experience.css"><link rel="manifest" href="manifest.webmanifest"><meta name="color-scheme" content="light"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="img/brand/icon-32.png"><link rel="apple-touch-icon" href="img/brand/icon-180.png"><link rel="stylesheet" href="css/kene-brand.css"></head><body data-page="intro"><header class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 border-bottom">
+        <div class="container">
+
+            
+            <a class="navbar-brand" href="html_trangchu.html">
+                <img src="img/logo.svg" alt="Kể Nè — Không gian lắng nghe" height="46" class=" logo-header" width="142">
+            </a>
+
+            
+            <div class="header-search-wrap mx-lg-4 d-none d-md-flex">
+<div class="input-group header-search">
+                    <div class="input-group-prepend border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" id="header-search-inp" class="form-control border-0 bg-transparent" placeholder="Tìm dịch vụ, chuyên gia, bài viết…" autocomplete="off" aria-label="Tìm kiếm toàn website">
+                    
+                    <span class="hs-shortcut d-none d-lg-inline-flex align-items-center">⌘K</span>
+                </div>
+                <div id="header-dropdown" class="search-dropdown"></div>
+            </div>
+
+            
+            <div class="navbar-nav ml-auto align-items-center">
+                <a class="nav-item nav-link mr-3 d-none d-xl-block small-text" href="html_trangchu.html">Trang chủ</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_gioithieu.html">Về Kể Nè</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_lienhe_chinhsach.html">Liên hệ &amp; Tin cậy</a>
+                <a class="nav-item nav-link mr-3 d-none d-md-block small-text" href="html_blog.html">Góc đọc</a>
+
+                
+                <a class="nav-item nav-link mr-3 text-dark" href="html_giohang.html" style="position:relative;" aria-label="Giỏ dịch vụ">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-badge" style="position:absolute;top:-4px;right:-8px;background:#ff4d4d;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;line-height:1;">0</span>
+                </a>
+
+                
+                <div class="auth-buttons" id="auth-zone">
+                    <a class="nav-item nav-link mr-3 font-weight-bold" href="html_dangnhap_dangky.html">Đăng ký</a>
+                    <a class="btn btn-login font-weight-bold" href="html_dangnhap_dangky.html">Đăng nhập</a>
+                    <a class="nav-item nav-link ml-2 d-none d-sm-block" href="html_thongtin.html">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="sub-nav bg-white border-bottom" aria-label="Dịch vụ"><div class="container"><div class="nav kn-subnav"><a class="nav-link" href="html_dichvu.html">Dịch vụ &amp; Bảng giá</a><a class="nav-link" href="html_diadiem.html">Chuyên gia &amp; Ghép nối</a><a class="nav-link" href="html_diadiem.html#sang-loc">Sàng lọc miễn phí</a><a class="nav-link ml-auto sub-voucher-link" href="html_khuyenmaivatiepthi.html"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Ưu đãi</a></div></div></nav><a class="kn-skip" href="#main-content">Bỏ qua điều hướng</a><main id="main-content"><div class="hero-carousel-container kn-intro-hero"><div class="kn-intro-art"><picture class="ke-picture ke-hero-picture" data-ke-image="care-hands"><source type="image/webp" srcset="img/photos/care-hands-960.webp 960w, img/photos/care-hands-1920.webp 1920w" sizes="100vw"><img src="img/photos/care-hands-1920.jpg" alt="Cử chỉ nâng đỡ trong một cuộc trò chuyện riêng" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high" data-ke-photo="care-hands"></picture></div><div class="carousel-overlay"><div class="container carousel-caption-custom"><span class="kn-hero-eyebrow">CÂU CHUYỆN KỂ NÈ</span><h1>Chuyện khó nói,<br>có người nghe.</h1><p>Một hành trình được thiết kế quanh chất lượng và sự an toàn.</p></div></div><span class="airplane-path" aria-hidden="true">💬</span></div>
+<section class="story-section"><div class="container"><div class="row align-items-center"><div class="col-lg-6 mb-4"><div id="ke-story-switcher" class="ke-story-switcher" role="region" aria-label="Câu chuyện Kể Nè qua ba góc nhìn"><div class="ke-story-stage"><div class="ke-story-sheet" data-position="0"><picture class="ke-picture" data-ke-image="v3-care-listening"><source type="image/webp" srcset="img/photos/v3-care-listening-960.webp 960w, img/photos/v3-care-listening-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-care-listening-1920.jpg" alt="Lắng nghe chăm chú trong buổi trò chuyện" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="v3-care-listening"></picture></div><div class="ke-story-sheet" data-position="1"><picture class="ke-picture" data-ke-image="v3-online-welcome"><source type="image/webp" srcset="img/photos/v3-online-welcome-960.webp 960w, img/photos/v3-online-welcome-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-online-welcome-1920.jpg" alt="Lời chào mở đầu trong cuộc trò chuyện trực tuyến" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="v3-online-welcome"></picture></div><div class="ke-story-sheet" data-position="2"><picture class="ke-picture" data-ke-image="v3-space-plants"><source type="image/webp" srcset="img/photos/v3-space-plants-960.webp 960w, img/photos/v3-space-plants-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/v3-space-plants-1920.jpg" alt="Góc ghế đọc sách giữa những chậu cây xanh" width="1920" height="2878" loading="lazy" decoding="async" data-ke-photo="v3-space-plants"></picture></div></div><div class="ke-story-controls"><button type="button" data-story-step="-1" aria-label="Câu chuyện trước">←</button><output aria-live="polite">01 / 03</output><button type="button" data-story-to="0" aria-label="Vì sao có Kể Nè?"></button><button type="button" data-story-to="1" aria-label="Hành trình kết nối"></button><button type="button" data-story-to="2" aria-label="Những điều được coi trọng"></button><button type="button" data-story-step="1" aria-label="Câu chuyện tiếp theo">→</button></div></div><p class="text-center text-muted">Dùng mũi tên hoặc chọn một chấm để khám phá từng góc nhìn.</p></div><div class="col-lg-6">
+<article class="story-content-card active" id="storyCard1"><h2 class="ke-reveal">Vì sao có Kể Nè?</h2><p class="story-text">Kể Nè là không gian tìm hiểu và kết nối dịch vụ tư vấn, tham vấn tâm lý cho người trẻ và tổ chức tại Việt Nam. Chúng tôi bắt đầu từ một điều giản dị: chuyện khó nói cũng xứng đáng được lắng nghe.</p><span class="handwritten">Bắt đầu từ nhu cầu được lắng nghe.</span></article><article class="story-content-card " id="storyCard2"><h2 class="ke-reveal">Một hành trình được kết nối</h2><p class="story-text">Giá trị được thiết kế xuyên suốt: hiểu nhu cầu, ghép nối, đặt lịch, tư vấn và theo dõi. Chuyên gia là nguồn cung độc lập cần được thẩm định và giám sát chuyên môn.</p><span class="handwritten">Chất lượng cần có quy trình phía sau.</span></article><article class="story-content-card " id="storyCard3"><h2 class="ke-reveal">Rõ ràng để bạn an tâm</h2><p class="story-text">Bạn có quyền hiểu cách dịch vụ hoạt động, xem điều kiện và quyết định phần thông tin muốn chia sẻ. Kể Nè coi sự minh bạch, quyền riêng tư và giới hạn chuyên môn là nền tảng của một hành trình đồng hành phù hợp.</p><span class="handwritten">Minh bạch trước khi tạo niềm tin.</span></article>
+</div></div></div></section>
+<section class="care-gallery-section kn-video-section"><div class="container text-center"><span class="kn-eyebrow">HÀNH TRÌNH KỂ NÈ</span><h2 class="ke-reveal">Từ hiểu nhu cầu đến đồng hành</h2><p>Tìm hiểu quy trình qua phần giới thiệu tương tác.</p><div class="kn-video-frame"><iframe id="gt-main-video" src="video/kene-intro.html" title="Giới thiệu tương tác hành trình Kể Nè" loading="lazy"></iframe></div><button class="kn-btn mt-3" data-action="cinema">Mở chế độ tập trung</button><div class="ke-story-gallery"><figure class="ke-photo-frame ke-tilt "><picture class="ke-picture " data-ke-image="care-conversation"><source type="image/webp" srcset="img/photos/care-conversation-960.webp 960w, img/photos/care-conversation-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/care-conversation-1920.jpg" alt="Một cuộc trò chuyện có chỗ cho bạn" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="care-conversation"></picture><button type="button" class="ke-photo-zoom" data-ke-lightbox="care-conversation" data-ke-gallery="intro-story" aria-label="Xem ảnh lớn: Một cuộc trò chuyện có chỗ cho bạn"><span aria-hidden="true">⤢</span></button><figcaption><strong>Một cuộc trò chuyện có chỗ cho bạn</strong></figcaption></figure><figure class="ke-photo-frame ke-tilt "><picture class="ke-picture " data-ke-image="journal-flatlay"><source type="image/webp" srcset="img/photos/journal-flatlay-960.webp 960w, img/photos/journal-flatlay-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/journal-flatlay-1920.jpg" alt="Chuẩn bị một điều muốn nói" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="journal-flatlay"></picture><button type="button" class="ke-photo-zoom" data-ke-lightbox="journal-flatlay" data-ke-gallery="intro-story" aria-label="Xem ảnh lớn: Chuẩn bị một điều muốn nói"><span aria-hidden="true">⤢</span></button><figcaption><strong>Chuẩn bị một điều muốn nói</strong></figcaption></figure><figure class="ke-photo-frame ke-tilt "><picture class="ke-picture " data-ke-image="group-discussion"><source type="image/webp" srcset="img/photos/group-discussion-960.webp 960w, img/photos/group-discussion-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/group-discussion-1920.jpg" alt="Kết nối theo nhu cầu" width="1920" height="2879" loading="lazy" decoding="async" data-ke-photo="group-discussion"></picture><button type="button" class="ke-photo-zoom" data-ke-lightbox="group-discussion" data-ke-gallery="intro-story" aria-label="Xem ảnh lớn: Kết nối theo nhu cầu"><span aria-hidden="true">⤢</span></button><figcaption><strong>Kết nối theo nhu cầu</strong></figcaption></figure></div></div></section>
+<section class="reasons-tabs-section py-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center mb-4 kn-section-head"><h2 class="ke-reveal">Kể Nè đặt điều gì ở trung tâm?</h2></div><div class="kn-reason-tabs" role="tablist"><button class="reason-tab-item active" data-reason="0" role="tab" aria-selected="true" aria-controls="reason-0">Chất lượng</button><button class="reason-tab-item " data-reason="1" role="tab" aria-selected="false" aria-controls="reason-1">Riêng tư</button><button class="reason-tab-item " data-reason="2" role="tab" aria-selected="false" aria-controls="reason-2">Minh bạch</button><button class="reason-tab-item " data-reason="3" role="tab" aria-selected="false" aria-controls="reason-3">An toàn</button></div>
+<article class="reason-content-panel kn-white-card active" id="reason-0" role="tabpanel"><picture class="ke-picture ke-reason-photo" data-ke-image="care-session"><source type="image/webp" srcset="img/photos/care-session-960.webp 960w, img/photos/care-session-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/care-session-1920.jpg" alt="Hai người ngồi trao đổi trong không gian trò chuyện riêng" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="care-session"></picture><h3>Thẩm định và giám sát chuyên môn</h3><p>Chúng tôi coi trọng sự phù hợp, thông tin minh bạch và chất lượng trong từng điểm chạm. Hồ sơ chuyên môn cần được xác minh trước khi mở lịch.</p></article><article class="reason-content-panel kn-white-card " id="reason-1" role="tabpanel" hidden><picture class="ke-picture ke-reason-photo" data-ke-image="privacy-laptop"><source type="image/webp" srcset="img/photos/privacy-laptop-960.webp 960w, img/photos/privacy-laptop-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/privacy-laptop-1920.jpg" alt="Đôi tay thao tác trên máy tính trong không gian riêng" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="privacy-laptop"></picture><h3>Biệt danh và đồng thuận theo mục đích</h3><p>Bạn chủ động chọn việc lưu và chia sẻ dữ liệu. Website chỉ dùng bộ nhớ trình duyệt; không nhập thông tin sức khoẻ thật hoặc dùng thiết bị chung để ghi chuyện riêng.</p></article><article class="reason-content-panel kn-white-card " id="reason-2" role="tabpanel" hidden><picture class="ke-picture ke-reason-photo" data-ke-image="journal-planning"><source type="image/webp" srcset="img/photos/journal-planning-960.webp 960w, img/photos/journal-planning-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/journal-planning-1920.jpg" alt="Bàn tay viết ghi chú cá nhân trên bàn gỗ" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="journal-planning"></picture><h3>Giá và điều kiện trước khi quyết định</h3><p>400.000đ cho một phiên 50 phút là mức giá tham khảo. Bạn được xem rõ thời lượng và chi phí; các chương trình riêng cần trao đổi trước khi quyết định.</p></article><article class="reason-content-panel kn-white-card " id="reason-3" role="tabpanel" hidden><h3>Có ranh giới hỗ trợ rõ ràng</h3><p>Kể Nè không thay thế cấp cứu hoặc khám chữa bệnh tâm thần. Khi đang không an toàn, hãy ưu tiên hỗ trợ trực tiếp.</p></article></div></section>
+<section class="partners-section"><div class="partners-container container"><div class="text-center mb-5"><span class="kn-eyebrow">CÙNG XÂY DỰNG KỂ NÈ</span><h2 class="ke-reveal">Những người cùng xây dựng Kể Nè</h2><p>Tám góc nhìn cùng chung mong muốn xây dựng một trải nghiệm được lắng nghe.</p></div><div class="partners-grid-new"><article class="member-card"><div class="member-avatar-wrap"><div class="member-avatar-inner"><img src="img/Lưu Tố Anh.jpg" alt="Lưu Tố Anh" loading="lazy" decoding="async"></div><div class="member-badge">1</div></div><div class="member-info-box"><h3 class="member-name">Lưu Tố Anh</h3><div class="member-role-tag">Điều phối &amp; Phát triển</div><div class="member-divider"></div><p class="member-bio">Điều phối các mảng công việc, kết nối mục tiêu chất lượng với trải nghiệm của người dùng.</p></div></article><article class="member-card"><div class="member-avatar-wrap"><div class="member-avatar-inner"><img src="img/Võ Thiên Ân.jpg" alt="Võ Thiên Ân" loading="lazy" decoding="async"></div><div class="member-badge">2</div></div><div class="member-info-box"><h3 class="member-name">Võ Thiên Ân</h3><div class="member-role-tag">Chiến lược &amp; Trải nghiệm</div><div class="member-divider"></div><p class="member-bio">Kết nối dịch vụ và những điểm chạm rõ ràng trong hành trình của bạn.</p></div></article><article class="member-card"><div class="member-avatar-wrap"><div class="member-avatar-inner"><img src="img/Nguyễn Phạm Ngọc Hân.jpg" alt="Nguyễn Phạm Ngọc Hân" loading="lazy" decoding="async"></div><div class="member-badge">3</div></div><div class="member-info-box"><h3 class="member-name">Nguyễn Phạm Ngọc Hân</h3><div class="member-role-tag">Thiết kế dịch vụ</div><div class="member-divider"></div><p class="member-bio">Chú trọng cấu trúc dịch vụ, cách trình bày thông tin và quyền chủ động lựa chọn.</p></div></article><article class="member-card"><div class="member-avatar-wrap"><div class="member-avatar-inner"><img src="img/Nguyễn Thị Diễm Hương.jpg" alt="Nguyễn Thị Diễm Hương" loading="lazy" decoding="async"></div><div class="member-badge">4</div></div><div class="member-info-box"><h3 class="member-name">Nguyễn Thị Diễm Hương</h3><div class="member-role-tag">Vận hành &amp; Quy trình</div><div class="member-divider"></div><p class="member-bio">Sắp xếp các bước tìm hiểu, đặt lịch, xem lại và phản hồi thành một hành trình mạch lạc.</p></div></article><article class="member-card"><div class="member-avatar-wrap"><div class="member-avatar-inner"><img src="img/Nguyễn Duy Quỳnh Hương.jpg" alt="Nguyễn Duy Quỳnh Hương" loading="lazy" decoding="async"></div><div class="member-badge">5</div></div><div class="member-info-box"><h3 class="member-name">Nguyễn Duy Quỳnh Hương</h3><div class="member-role-tag">Kế hoạch &amp; Năng lực</div><div class="member-divider"></div><p class="member-bio">Cân đối thời gian, lịch trình và nguồn lực để mỗi bước sử dụng đều có sự chuẩn bị.</p></div></article><article class="member-card"><div class="member-avatar-wrap"><div class="member-avatar-inner"><img src="img/Phan Anh Tài.jpg" alt="Phan Anh Tài" loading="lazy" decoding="async"></div><div class="member-badge">6</div></div><div class="member-info-box"><h3 class="member-name">Phan Anh Tài</h3><div class="member-role-tag">Hệ thống &amp; Kết nối</div><div class="member-divider"></div><p class="member-bio">Kết nối góc nhìn vận hành với công nghệ, giúp thông tin được tổ chức nhất quán.</p></div></article><article class="member-card"><div class="member-avatar-wrap"><div class="member-avatar-inner"><img src="img/Nguyễn Thị Diệu Thương.jpg" alt="Nguyễn Thị Diệu Thương" loading="lazy" decoding="async"></div><div class="member-badge">7</div></div><div class="member-info-box"><h3 class="member-name">Nguyễn Thị Diệu Thương</h3><div class="member-role-tag">Cải tiến &amp; Tin cậy</div><div class="member-divider"></div><p class="member-bio">Rà soát điểm vướng trong trải nghiệm và ưu tiên những cải tiến có ích.</p></div></article><article class="member-card"><div class="member-avatar-wrap"><div class="member-avatar-inner"><img src="img/Trần Phương Tùng.jpg" alt="Trần Phương Tùng" loading="lazy" decoding="async"></div><div class="member-badge">8</div></div><div class="member-info-box"><h3 class="member-name">Trần Phương Tùng</h3><div class="member-role-tag">Chất lượng &amp; Công nghệ</div><div class="member-divider"></div><p class="member-bio">Chú trọng chất lượng giao diện, tính rõ ràng và trải nghiệm trên các thiết bị.</p></div></article></div></div></section></main><footer class="kene-footer"><div class="footer-bg-layer"></div><div class="container position-relative" style="z-index:2"><div class="row footer-main-row pt-5 pb-4"><div class="col-lg-4 col-md-6 mb-4"><a href="html_trangchu.html" class="footer-brand d-inline-block mb-3" aria-label="Kể Nè — Trang chủ"><img class="footer-logo" src="img/logo-white.svg" width="150" height="49" alt="Kể Nè"></a><p class="footer-desc">Chuyện khó nói, có người nghe. Kể Nè đồng hành cùng bạn tìm hiểu nhu cầu và lựa chọn cách chăm sóc sức khoẻ tinh thần phù hợp.</p><a class="footer-sitemap-btn" href="html_sitemap.html">Sơ đồ website</a></div><div class="col-lg-4 col-md-6 mb-4"><h2 class="footer-heading">Khám phá Kể Nè</h2><ul class="ke-footer-links"><li><a href="html_gioithieu.html">Câu chuyện &amp; Con người</a></li><li><a href="html_dichvu.html">Dịch vụ &amp; Mức giá tham khảo</a></li><li><a href="html_diadiem.html">Tìm cách đồng hành phù hợp</a></li><li><a href="html_blog.html">Góc đọc mỗi ngày</a></li><li><a href="html_khuyenmaivatiepthi.html">Ưu đãi &amp; Điều kiện áp dụng</a></li></ul></div><div class="col-lg-4 col-md-12 mb-4"><h2 class="footer-heading">Bạn luôn có quyền lựa chọn</h2><p class="ke-footer-promise">♡ Chia sẻ theo nhịp của bạn. Hiểu rõ điều kiện trước khi bắt đầu.</p><ul class="ke-footer-links"><li><a href="html_lienhe_chinhsach.html#du-lieu">Quyền riêng tư</a></li><li><a href="html_lienhe_chinhsach.html#doi-lich">Đổi lịch &amp; Hỗ trợ</a></li><li><a href="html_lienhe_chinhsach.html">Liên hệ &amp; Trung tâm tin cậy</a></li><li><a href="html_lienhe_chinhsach.html?topic=to-chuc">Dành cho tổ chức</a></li><li><a href="html_lienhe_chinhsach.html?topic=chuyen-gia">Hợp tác chuyên gia</a></li></ul></div></div><div class="footer-divider"></div><div class="ke-footer-tools"><button type="button" data-ke-motion aria-pressed="false">Chuyển động: Êm dịu</button><button type="button" data-ke-credits>Nguồn ảnh</button><button type="button" data-ke-saved-articles>Bài viết đã lưu</button><span id="ke-offline-state" class="ke-offline-state">Ảnh cục bộ · Không cần Internet</span></div><div class="footer-bottom py-3 d-flex flex-wrap justify-content-between"><p class="footer-copy mb-0">© 2026 Kể Nè. Mọi quyền được bảo lưu.</p><p class="footer-copy mb-0">Tư vấn, tham vấn tâm lý · Không thay thế cấp cứu</p></div></div></footer><div id="kn-toast" class="kn-toast" hidden role="status" aria-live="polite"></div><div class="kn-tools"><button class="kn-sos-btn" data-action="sos">Cần giúp ngay</button><button class="kn-help-btn" data-action="help" aria-label="Mở trợ giúp thao tác">?</button><button class="kn-exit-btn" data-action="quick-exit">Thoát nhanh ↗</button></div><div id="kn-modal" class="kn-modal" hidden role="dialog" aria-modal="true" aria-labelledby="kn-modal-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-modal-title"></h2><div><button class="kn-link" data-action="sos">Cần giúp ngay</button><button class="kn-modal-close" data-action="close-modal" aria-label="Đóng cửa sổ">×</button></div></div><div id="kn-modal-body"></div></div></div><div id="kn-sos" class="kn-modal kn-sos-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="kn-sos-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-sos-title">Ưu tiên sự an toàn của bạn</h2><button class="kn-modal-close" data-action="close-sos" aria-label="Đóng hướng dẫn">×</button></div><p>Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế hoặc đến cơ sở cấp cứu gần nhất. Nếu có thể, nhờ một người tin cậy ở cạnh bạn.</p><a class="kn-btn kn-btn-full" href="tel:115">Gọi cấp cứu y tế 115</a><p class="kn-note mt-3">115 là cấp cứu y tế, không phải đường dây tư vấn của Kể Nè.</p><div class="kn-white-card my-3"><h3 class="kn-h4">Website không có người trực</h3><p>Kể Nè không phải kênh cấp cứu và không gửi cảnh báo từ nút này. Đừng chờ phản hồi trên website khi bạn đang không an toàn.</p><p id="kn-support-hours"></p></div><button class="kn-btn kn-btn-light" data-action="quick-exit">Thoát nhanh khỏi website</button></div></div><button id="back-to-top" class="kn-back-top" aria-label="Lên đầu trang" hidden>↑</button><script src="js/jquery.min.js" defer></script><script src="js/bootstrap.bundle.min.js" defer></script><script src="js/kene-data.js" defer></script><script src="js/kene-engine.js" defer></script><script src="js/kene-core.js" defer></script><script src="js/kene-media-data.js" defer></script><script src="js/kene-media.js" defer></script><script src="js/kene-runtime.js" defer></script><script src="js/kene-pages.js" defer></script><script src="js/kene-offline-version.js" defer></script><script src="js/kene-experience.js" defer></script><script src="js/kene-scenes.js" defer></script></body></html>

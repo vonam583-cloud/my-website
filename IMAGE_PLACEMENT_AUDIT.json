@@ -1,0 +1,79 @@
+{
+  "pages": [
+    {
+      "page": "html_blog.html",
+      "placements": 7,
+      "unique": 7,
+      "duplicates": []
+    },
+    {
+      "page": "html_dangnhap_dangky.html",
+      "placements": 1,
+      "unique": 1,
+      "duplicates": []
+    },
+    {
+      "page": "html_diadiem.html",
+      "placements": 2,
+      "unique": 2,
+      "duplicates": []
+    },
+    {
+      "page": "html_dichvu.html",
+      "placements": 1,
+      "unique": 1,
+      "duplicates": []
+    },
+    {
+      "page": "html_giohang.html",
+      "placements": 1,
+      "unique": 1,
+      "duplicates": []
+    },
+    {
+      "page": "html_gioithieu.html",
+      "placements": 10,
+      "unique": 10,
+      "duplicates": []
+    },
+    {
+      "page": "html_khuyenmaivatiepthi.html",
+      "placements": 4,
+      "unique": 4,
+      "duplicates": []
+    },
+    {
+      "page": "html_lienhe_chinhsach.html",
+      "placements": 3,
+      "unique": 3,
+      "duplicates": []
+    },
+    {
+      "page": "html_sitemap.html",
+      "placements": 13,
+      "unique": 13,
+      "duplicates": []
+    },
+    {
+      "page": "html_thanhtoan.html",
+      "placements": 1,
+      "unique": 1,
+      "duplicates": []
+    },
+    {
+      "page": "html_thongtin.html",
+      "placements": 1,
+      "unique": 1,
+      "duplicates": []
+    },
+    {
+      "page": "html_trangchu.html",
+      "placements": 45,
+      "unique": 45,
+      "duplicates": []
+    }
+  ],
+  "articleCovers": 30,
+  "expertContexts": 6,
+  "services": 8
+}

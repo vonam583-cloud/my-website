@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "Kể Nè — Không gian lắng nghe",
+  "short_name": "Kể Nè",
+  "lang": "vi",
+  "description": "Kể Nè — Không gian lắng nghe, tìm hiểu và kết nối dịch vụ tư vấn tâm lý.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f0f4f8",
+  "theme_color": "#1a1f6e",
+  "icons": [
+    {
+      "src": "img/brand/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

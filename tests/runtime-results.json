@@ -1,0 +1,46 @@
+{
+  "passed": 10,
+  "total": 10,
+  "results": [
+    {
+      "name": "Closing before permission resolves stops every camera track",
+      "status": "PASS"
+    },
+    {
+      "name": "Stopping a pending camera invalidates late results",
+      "status": "PASS"
+    },
+    {
+      "name": "New request wins even if older permission resolves last",
+      "status": "PASS"
+    },
+    {
+      "name": "Detached preview receives no stream update",
+      "status": "PASS"
+    },
+    {
+      "name": "Permission denial is handled and retry remains possible",
+      "status": "PASS"
+    },
+    {
+      "name": "Late denial after closure cannot update detached UI",
+      "status": "PASS"
+    },
+    {
+      "name": "Seconds and milliseconds cannot bypass whole-hour rules",
+      "status": "PASS"
+    },
+    {
+      "name": "Saved local request never claims collected payment",
+      "status": "PASS"
+    },
+    {
+      "name": "V2 local records migrate without losing identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Feedback cannot complete a cancellation-requested appointment",
+      "status": "PASS"
+    }
+  ]
+}

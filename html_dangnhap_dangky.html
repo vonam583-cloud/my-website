@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Tài khoản bằng biệt danh và đồng thuận."><meta name="theme-color" content="#0077b6"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Đăng nhập &amp; Đăng ký | Kể Nè</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/fontawesome.min.css"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css_trangchu.css"><style>
+        
+        :root {
+            --primary:   #0077b6;
+            --dark:      #1a1f6e;
+            --teal:      #00b4d8;
+            --red:       #ff4d4d;
+            --success:   #10b981;
+            --warning:   #f59e0b;
+            --gradient:  linear-gradient(135deg, #1a1f6e 0%, #0077b6 55%, #00b4d8 100%);
+            --bg:        #eef2f7;
+            --white:     #ffffff;
+            --border:    #dde3ee;
+            --text:      #1a1f6e;
+            --muted:     #6b7280;
+            --radius:    12px;
+            --radius-lg: 22px;
+            --shadow:    0 24px 64px rgba(26,31,110,0.13), 0 4px 18px rgba(0,0,0,0.07);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        
+        .auth-page {
+            min-height: calc(100vh - 120px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 52px 16px;
+            
+            background:
+                radial-gradient(ellipse 75% 55% at 5% 10%,  rgba(0,119,182,0.09) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 95% 90%, rgba(26,31,110,0.08) 0%, transparent 60%),
+                var(--bg);
+        }
+
+        
+        .auth-screen {
+            display: none;
+            width: 100%;
+            max-width: 960px;
+            animation: screenReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        }
+        .auth-screen.active { display: flex; }
+
+        
+        @keyframes screenReveal {
+            from { opacity: 0; transform: translateY(30px) scale(0.97); filter: blur(4px); }
+            to   { opacity: 1; transform: translateY(0) scale(1);      filter: blur(0);   }
+        }
+
+        
+        .auth-card {
+            display: grid;
+            grid-template-columns: 1fr 460px; 
+            width: 100%;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            min-height: 610px;
+        }
+
+        
+        .auth-visual {
+            background: var(--gradient);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 52px 44px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        
+        .auth-visual::before {
+            content: '';
+            position: absolute;
+            top: -70px; right: -70px;
+            width: 260px; height: 260px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.055);
+        }
+        .auth-visual::after {
+            content: '';
+            position: absolute;
+            bottom: -55px; left: -55px;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+        }
+
+        
+        .visual-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            position: relative; z-index: 1;
+        }
+        .visual-brand img   { height: 42px; border-radius: 9px; }
+        .visual-brand-name  {
+            font-size: 1.65rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #fff;
+        }
+
+        
+        .visual-emoji {
+            font-size: 5.5rem;
+            margin-bottom: 26px;
+            animation: floatEmoji 3.5s ease-in-out infinite;
+            position: relative; z-index: 1;
+        }
+        @keyframes floatEmoji {
+            0%,100% { transform: translateY(0) rotate(-4deg); }
+            50%      { transform: translateY(-14px) rotate(4deg); }
+        }
+
+        .visual-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 14px;
+            position: relative; z-index: 1;
+        }
+        .visual-desc {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.78);
+            line-height: 1.8;
+            margin-bottom: 38px;
+            position: relative; z-index: 1;
+        }
+
+        
+        .btn-goto {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 12px 30px;
+            border: 2px solid rgba(255,255,255,0.82);
+            border-radius: 99px;
+            background: transparent;
+            color: #fff;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+            position: relative; z-index: 1;
+        }
+        .btn-goto:hover {
+            background: rgba(255,255,255,0.18);
+            border-color: #fff;
+            transform: scale(1.04);
+            color: #fff;
+            text-decoration: none !important;
+        }
+
+        
+        .visual-dots {
+            display: flex;
+            gap: 8px;
+            margin-top: 30px;
+            position: relative; z-index: 1;
+        }
+        .vdot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.35);
+            transition: all 0.3s;
+        }
+        .vdot.on { background: #fff; width: 22px; border-radius: 4px; }
+
+        
+        .auth-form-col {
+            padding: 52px 46px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #fff;
+            overflow-y: auto;
+        }
+
+        
+        .f-title {
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+        .f-sub {
+            font-size: 0.875rem;
+            color: var(--muted);
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        
+        .fld {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        
+        .fld-input {
+            width: 100%;
+            height: 56px;
+            padding: 20px 48px 8px 16px; 
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.925rem;
+            font-weight: 600;
+            color: var(--dark);
+            background: #f8fafd;
+            outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+        }
+        
+        .fld-input::placeholder { color: transparent; }
+
+        .fld-input:focus {
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(0,119,182,0.1);
+        }
+
+        
+        .fld-label {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #9ca3af;
+            pointer-events: none;
+            transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+        
+        .fld-input:focus     ~ .fld-label,
+        .fld-input:not(:placeholder-shown) ~ .fld-label {
+            top: 10px;
+            transform: translateY(0) scale(0.78);
+            transform-origin: left;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        
+        .fld-input.is-ok  { border-color: var(--success); background: #f0fdf6; }
+        .fld-input.is-err { border-color: var(--red);     background: #fff5f5; }
+        .fld-input.is-ok:focus  { box-shadow: 0 0 0 4px rgba(16,185,129,0.1); }
+        .fld-input.is-err:focus { box-shadow: 0 0 0 4px rgba(255,77,77,0.1);  }
+
+        
+        .fld-input.is-ok:focus  ~ .fld-label,
+        .fld-input.is-ok:not(:placeholder-shown)  ~ .fld-label { color: var(--success); }
+        .fld-input.is-err:focus ~ .fld-label,
+        .fld-input.is-err:not(:placeholder-shown) ~ .fld-label { color: var(--red); }
+
+        
+        .fld-ico {
+            position: absolute;
+            right: 44px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.95rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+        .fld-ico.show    { opacity: 1; }
+        .fld-ico.is-ok   { color: var(--success); }
+        .fld-ico.is-err  { color: var(--red); }
+
+        
+        .fld.no-eye .fld-ico { right: 14px; }
+
+        
+        .btn-eye {
+            position: absolute;
+            right: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            padding: 5px 6px;
+            color: #9ca3af;
+            font-size: 0.875rem;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+        .btn-eye:hover { color: var(--primary); }
+
+        
+        .fld-msg {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 4px;
+            padding-left: 4px;
+            min-height: 14px;
+        }
+        .fld-msg.ok  { color: var(--success); }
+        .fld-msg.err { color: var(--red); }
+        .fld-msg:empty { min-height: 0; margin-top: 2px; }
+
+        
+        .pw-strength {
+            display: none; 
+            margin: 6px 0 8px;
+        }
+        .pw-strength.show { display: block; }
+
+        
+        .pw-track {
+            height: 5px;
+            background: #e5e7eb;
+            border-radius: 99px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .pw-fill {
+            height: 100%;
+            width: 0;
+            border-radius: 99px;
+            transition: width 0.4s ease, background 0.4s ease;
+        }
+
+        
+        .pw-list {
+            list-style: none;
+            padding: 0; margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 16px;
+        }
+        .pw-list li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.755rem;
+            font-weight: 700;
+            color: #9ca3af;
+            transition: color 0.2s;
+        }
+        .pw-list li.met  { color: var(--success); }
+        .pw-list .ci     { font-size: 0.8rem; flex-shrink: 0; }
+
+        
+        .opt-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        
+        .chk-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            font-size: 0.825rem;
+            font-weight: 600;
+            color: var(--muted);
+            user-select: none;
+            line-height: 1.5;
+        }
+        .chk-label input[type="checkbox"] { display: none; }
+        .chk-box {
+            width: 18px; height: 18px;
+            min-width: 18px;
+            border: 1.5px solid #c8d0dc;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            margin-top: 1px;
+            transition: all 0.2s;
+        }
+        .chk-label input:checked ~ .chk-box {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+        .chk-label input:checked ~ .chk-box::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 10px;
+            color: #fff;
+        }
+        
+        .chk-box.shake-err { border-color: var(--red) !important; background: #fff5f5; }
+
+        
+        .lnk {
+            color: var(--primary) !important;
+            font-weight: 800;
+            font-size: 0.825rem;
+            text-decoration: none !important;
+            transition: color 0.2s;
+        }
+        .lnk:hover { color: var(--dark) !important; }
+
+        
+        .btn-submit {
+            width: 100%;
+            height: 52px;
+            background: var(--gradient);
+            border: none;
+            border-radius: var(--radius);
+            color: #fff;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            transition: transform 0.25s, box-shadow 0.25s;
+            margin-bottom: 16px;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(0,119,182,0.38);
+        }
+        .btn-submit:active { transform: translateY(0); }
+
+        
+        .spin {
+            display: none;
+            width: 20px; height: 20px;
+            border: 2.5px solid rgba(255,255,255,0.35);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spinning 0.7s linear infinite;
+        }
+        @keyframes spinning { to { transform: rotate(360deg); } }
+        .btn-submit.loading .btn-text { display: none; }
+        .btn-submit.loading .spin     { display: block; }
+
+        
+        @keyframes shakeX {
+            0%,100% { transform: translateX(0); }
+            15%,45%,75% { transform: translateX(-9px); }
+            30%,60%,90% { transform: translateX(9px); }
+        }
+        .do-shake { animation: shakeX 0.5s ease; }
+
+        
+        .switch-hint {
+            text-align: center;
+            font-size: 0.84rem;
+            color: var(--muted);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        .switch-hint a {
+            color: var(--primary) !important;
+            font-weight: 800;
+            text-decoration: none !important;
+        }
+        .switch-hint a:hover { color: var(--dark) !important; }
+
+        
+        #auth-toast {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            min-width: 310px;
+            max-width: 380px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px 20px 20px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.14), 0 0 0 1px rgba(16,185,129,0.15);
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            z-index: 99999;
+            
+            transform: translateX(calc(100% + 50px));
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), opacity 0.4s ease;
+        }
+        #auth-toast.show { transform: translateX(0); opacity: 1; }
+
+        .t-ico {
+            width: 44px; height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; flex-shrink: 0;
+        }
+        .t-title { font-weight: 800; font-size: 0.9rem; color: var(--dark); margin: 0 0 3px; }
+        .t-msg   { font-size: 0.79rem; color: var(--muted); margin: 0; }
+        .t-close {
+            margin-left: auto; background: none; border: none;
+            font-size: 0.85rem; color: #9ca3af; padding: 2px 4px;
+            align-self: flex-start; line-height: 1;
+        }
+        .t-close:hover { color: var(--dark); }
+
+        
+        .t-bar {
+            position: absolute;
+            bottom: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--success), var(--teal));
+            border-radius: 0 0 16px 16px;
+            transform-origin: left;
+        }
+
+        
+        @media (max-width: 767px) {
+            .auth-page  { padding: 20px 12px; align-items: flex-start; }
+            .auth-card  { grid-template-columns: 1fr; min-height: auto; }
+            .auth-visual { display: none; } 
+            .auth-form-col { padding: 32px 22px; }
+            .f-title   { font-size: 1.5rem; }
+            .pw-list   { grid-template-columns: 1fr; }
+            #auth-toast { right: 10px; bottom: 10px; min-width: calc(100vw - 20px); max-width: none; }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .auth-card { grid-template-columns: 1fr 400px; }
+            .auth-form-col { padding: 40px 34px; }
+        }
+    
+
+
+        
+        .btn-login {
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            color:#fff !important; border:none; border-radius:10px;
+            padding:7px 16px; font-size:13px; transition:all .2s;
+        }
+        .btn-login:hover { opacity:.88; transform:translateY(-1px); }
+        
+        .user-avatar-btn {
+            width:38px; height:38px; border-radius:50%;
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            display:flex; align-items:center; justify-content:center;
+            color:#fff; font-weight:800; font-size:15px;
+            cursor:pointer; border:none; transition:all .2s;
+        }
+        .user-avatar-btn:hover { box-shadow:0 4px 14px rgba(0,119,182,.35); }
+        .user-profile-dropdown .dropdown-menu {
+            border-radius:14px; padding:8px 0;
+            box-shadow:0 8px 30px rgba(0,0,0,.12);
+        }
+
+        </style><link rel="stylesheet" href="css/kene-experience.css"><link rel="manifest" href="manifest.webmanifest"><meta name="color-scheme" content="light"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="img/brand/icon-32.png"><link rel="apple-touch-icon" href="img/brand/icon-180.png"><link rel="stylesheet" href="css/kene-brand.css"></head><body data-page="auth"><header class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 border-bottom">
+        <div class="container">
+
+            
+            <a class="navbar-brand" href="html_trangchu.html">
+                <img src="img/logo.svg" alt="Kể Nè — Không gian lắng nghe" height="46" class=" logo-header" width="142">
+            </a>
+
+            
+            <div class="header-search-wrap mx-lg-4 d-none d-md-flex">
+<div class="input-group header-search">
+                    <div class="input-group-prepend border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" id="header-search-inp" class="form-control border-0 bg-transparent" placeholder="Tìm dịch vụ, chuyên gia, bài viết…" autocomplete="off" aria-label="Tìm kiếm toàn website">
+                    
+                    <span class="hs-shortcut d-none d-lg-inline-flex align-items-center">⌘K</span>
+                </div>
+                <div id="header-dropdown" class="search-dropdown"></div>
+            </div>
+
+            
+            <div class="navbar-nav ml-auto align-items-center">
+                <a class="nav-item nav-link mr-3 d-none d-xl-block small-text" href="html_trangchu.html">Trang chủ</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_gioithieu.html">Về Kể Nè</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_lienhe_chinhsach.html">Liên hệ &amp; Tin cậy</a>
+                <a class="nav-item nav-link mr-3 d-none d-md-block small-text" href="html_blog.html">Góc đọc</a>
+
+                
+                <a class="nav-item nav-link mr-3 text-dark" href="html_giohang.html" style="position:relative;" aria-label="Giỏ dịch vụ">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-badge" style="position:absolute;top:-4px;right:-8px;background:#ff4d4d;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;line-height:1;">0</span>
+                </a>
+
+                
+                <div class="auth-buttons" id="auth-zone">
+                    <a class="nav-item nav-link mr-3 font-weight-bold" href="html_dangnhap_dangky.html">Đăng ký</a>
+                    <a class="btn btn-login font-weight-bold" href="html_dangnhap_dangky.html">Đăng nhập</a>
+                    <a class="nav-item nav-link ml-2 d-none d-sm-block" href="html_thongtin.html">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="sub-nav bg-white border-bottom" aria-label="Dịch vụ"><div class="container"><div class="nav kn-subnav"><a class="nav-link" href="html_dichvu.html">Dịch vụ &amp; Bảng giá</a><a class="nav-link" href="html_diadiem.html">Chuyên gia &amp; Ghép nối</a><a class="nav-link" href="html_diadiem.html#sang-loc">Sàng lọc miễn phí</a><a class="nav-link ml-auto sub-voucher-link" href="html_khuyenmaivatiepthi.html"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Ưu đãi</a></div></div></nav><a class="kn-skip" href="#main-content">Bỏ qua điều hướng</a><main id="main-content" class="auth-page"><div class="kn-auth-shell"><section class="kn-auth-intro"><img src="img/logo.svg" alt="Kể Nè" width="180"><span class="kn-big-icon">💬</span><h1>Một tài khoản.<br>Một nhịp riêng.</h1><p>Dùng biệt danh, theo dõi lịch hẹn và tự chọn phần thông tin muốn lưu.</p><p class="kn-note-light">Bạn có thể dùng biệt danh và tự chọn phần thông tin muốn lưu. Tài khoản hiện được quản lý trên thiết bị này.</p><picture class="ke-picture ke-auth-photo" data-ke-image="online-home"><source type="image/webp" srcset="img/photos/online-home-960.webp 960w, img/photos/online-home-1920.webp 1920w" sizes="(max-width:600px) 100vw, 40vw"><img src="img/photos/online-home-1920.jpg" alt="Không gian làm việc và trò chuyện trực tuyến tại nhà" width="1920" height="2880" loading="eager" decoding="async" data-ke-photo="online-home"></picture></section><section class="kn-auth-form"><div class="kn-chips mb-4" role="tablist"><button class="kn-chip active" data-auth-mode="login" role="tab" aria-selected="true">Đăng nhập</button><button class="kn-chip" data-auth-mode="register" role="tab" aria-selected="false">Đăng ký</button></div><div id="auth-message" aria-live="polite"></div><form id="login-form"><h2 class="ke-reveal">Chào mừng bạn trở lại</h2><label>Email<input type="email" name="email" autocomplete="username" required maxlength="150"></label><label>Mật khẩu<span class="kn-password-row"><input type="password" name="password" autocomplete="current-password" required maxlength="128"><button type="button" data-toggle-password aria-label="Hiện mật khẩu">◉</button></span></label><label class="kn-check"><input type="checkbox" name="remember"> Ghi nhớ phiên trên thiết bị này</label><button type="submit" class="kn-btn kn-btn-full">Đăng nhập</button><button type="button" class="kn-link mt-3" data-action="forgot-password">Quên mật khẩu tài khoản?</button></form><form id="register-form" hidden><h2 class="ke-reveal">Tạo tài khoản bằng biệt danh</h2><label>Biệt danh<input name="nickname" required minlength="2" maxlength="50" autocomplete="nickname" placeholder="Bạn muốn được gọi là gì?"></label><label>Email<input type="email" name="email" required maxlength="150" autocomplete="username" placeholder="ban@example.com"></label><label>Mật khẩu<span class="kn-password-row"><input type="password" name="password" required minlength="8" maxlength="128" autocomplete="new-password"><button type="button" data-toggle-password aria-label="Hiện mật khẩu">◉</button></span></label><p class="kn-note">Từ 8 ký tự, gồm chữ hoa, chữ thường, số và ký tự đặc biệt.</p><label>Nhập lại mật khẩu<input type="password" name="confirm" required autocomplete="new-password" maxlength="128"></label><label class="kn-check"><input type="checkbox" name="adult" required> Tôi từ 18 tuổi trở lên.</label><label class="kn-check"><input type="checkbox" name="terms" required> Tôi đồng ý <a href="html_lienhe_chinhsach.html#dieu-khoan">điều khoản</a> và việc lưu tài khoản trên thiết bị.</label><label class="kn-check"><input type="checkbox" name="notifications"> Tôi muốn nhận nhắc lịch trung tính trong website.</label><button type="submit" class="kn-btn kn-btn-full">Tạo tài khoản</button></form></section></div></main><footer class="kene-footer"><div class="footer-bg-layer"></div><div class="container position-relative" style="z-index:2"><div class="row footer-main-row pt-5 pb-4"><div class="col-lg-4 col-md-6 mb-4"><a href="html_trangchu.html" class="footer-brand d-inline-block mb-3" aria-label="Kể Nè — Trang chủ"><img class="footer-logo" src="img/logo-white.svg" width="150" height="49" alt="Kể Nè"></a><p class="footer-desc">Chuyện khó nói, có người nghe. Kể Nè đồng hành cùng bạn tìm hiểu nhu cầu và lựa chọn cách chăm sóc sức khoẻ tinh thần phù hợp.</p><a class="footer-sitemap-btn" href="html_sitemap.html">Sơ đồ website</a></div><div class="col-lg-4 col-md-6 mb-4"><h2 class="footer-heading">Khám phá Kể Nè</h2><ul class="ke-footer-links"><li><a href="html_gioithieu.html">Câu chuyện &amp; Con người</a></li><li><a href="html_dichvu.html">Dịch vụ &amp; Mức giá tham khảo</a></li><li><a href="html_diadiem.html">Tìm cách đồng hành phù hợp</a></li><li><a href="html_blog.html">Góc đọc mỗi ngày</a></li><li><a href="html_khuyenmaivatiepthi.html">Ưu đãi &amp; Điều kiện áp dụng</a></li></ul></div><div class="col-lg-4 col-md-12 mb-4"><h2 class="footer-heading">Bạn luôn có quyền lựa chọn</h2><p class="ke-footer-promise">♡ Chia sẻ theo nhịp của bạn. Hiểu rõ điều kiện trước khi bắt đầu.</p><ul class="ke-footer-links"><li><a href="html_lienhe_chinhsach.html#du-lieu">Quyền riêng tư</a></li><li><a href="html_lienhe_chinhsach.html#doi-lich">Đổi lịch &amp; Hỗ trợ</a></li><li><a href="html_lienhe_chinhsach.html">Liên hệ &amp; Trung tâm tin cậy</a></li><li><a href="html_lienhe_chinhsach.html?topic=to-chuc">Dành cho tổ chức</a></li><li><a href="html_lienhe_chinhsach.html?topic=chuyen-gia">Hợp tác chuyên gia</a></li></ul></div></div><div class="footer-divider"></div><div class="ke-footer-tools"><button type="button" data-ke-motion aria-pressed="false">Chuyển động: Êm dịu</button><button type="button" data-ke-credits>Nguồn ảnh</button><button type="button" data-ke-saved-articles>Bài viết đã lưu</button><span id="ke-offline-state" class="ke-offline-state">Ảnh cục bộ · Không cần Internet</span></div><div class="footer-bottom py-3 d-flex flex-wrap justify-content-between"><p class="footer-copy mb-0">© 2026 Kể Nè. Mọi quyền được bảo lưu.</p><p class="footer-copy mb-0">Tư vấn, tham vấn tâm lý · Không thay thế cấp cứu</p></div></div></footer><div id="kn-toast" class="kn-toast" hidden role="status" aria-live="polite"></div><div class="kn-tools"><button class="kn-sos-btn" data-action="sos">Cần giúp ngay</button><button class="kn-help-btn" data-action="help" aria-label="Mở trợ giúp thao tác">?</button><button class="kn-exit-btn" data-action="quick-exit">Thoát nhanh ↗</button></div><div id="kn-modal" class="kn-modal" hidden role="dialog" aria-modal="true" aria-labelledby="kn-modal-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-modal-title"></h2><div><button class="kn-link" data-action="sos">Cần giúp ngay</button><button class="kn-modal-close" data-action="close-modal" aria-label="Đóng cửa sổ">×</button></div></div><div id="kn-modal-body"></div></div></div><div id="kn-sos" class="kn-modal kn-sos-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="kn-sos-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-sos-title">Ưu tiên sự an toàn của bạn</h2><button class="kn-modal-close" data-action="close-sos" aria-label="Đóng hướng dẫn">×</button></div><p>Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế hoặc đến cơ sở cấp cứu gần nhất. Nếu có thể, nhờ một người tin cậy ở cạnh bạn.</p><a class="kn-btn kn-btn-full" href="tel:115">Gọi cấp cứu y tế 115</a><p class="kn-note mt-3">115 là cấp cứu y tế, không phải đường dây tư vấn của Kể Nè.</p><div class="kn-white-card my-3"><h3 class="kn-h4">Website không có người trực</h3><p>Kể Nè không phải kênh cấp cứu và không gửi cảnh báo từ nút này. Đừng chờ phản hồi trên website khi bạn đang không an toàn.</p><p id="kn-support-hours"></p></div><button class="kn-btn kn-btn-light" data-action="quick-exit">Thoát nhanh khỏi website</button></div></div><button id="back-to-top" class="kn-back-top" aria-label="Lên đầu trang" hidden>↑</button><script src="js/jquery.min.js" defer></script><script src="js/bootstrap.bundle.min.js" defer></script><script src="js/kene-data.js" defer></script><script src="js/kene-engine.js" defer></script><script src="js/kene-core.js" defer></script><script src="js/kene-media-data.js" defer></script><script src="js/kene-media.js" defer></script><script src="js/kene-runtime.js" defer></script><script src="js/kene-pages.js" defer></script><script src="js/kene-offline-version.js" defer></script><script src="js/kene-experience.js" defer></script><script src="js/kene-scenes.js" defer></script></body></html>

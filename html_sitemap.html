@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Danh mục và các hành trình sử dụng website."><meta name="theme-color" content="#0077b6"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Sơ đồ website | Kể Nè</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/fontawesome.min.css"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css_trangchu.css"><style>
+    
+    :root{
+        --sm-b1:#1a1f6e;   
+        --sm-b2:#0077b6;   
+        --sm-b3:#00b4d8;   
+        --sm-green:#00b894;
+        --sm-red:#ff4d4d;
+        --sm-amber:#f59e0b;
+        --sm-bg:#eef3fa;
+        --sm-card:#ffffff;
+        --sm-line:#dde7f3;
+        --sm-ink:#1a1f6e;
+        --sm-muted:#6c7a92;
+        --sm-mono:"SFMono-Regular",ui-monospace,"Cascadia Code","Consolas",monospace;
+    }
+
+    .sm-page{
+        background:
+            radial-gradient(900px 420px at 85% -8%, rgba(0,180,216,.10), transparent 60%),
+            radial-gradient(700px 380px at 5% 4%, rgba(26,31,110,.07), transparent 55%),
+            var(--sm-bg);
+        font-family:"Segoe UI",Roboto,system-ui,sans-serif;
+        color:var(--sm-ink);
+        overflow-x:hidden;
+    }
+
+    
+    .sm-wrap{ max-width:1140px; margin:0 auto; padding:0 16px; }
+
+    
+    .sm-hero{
+        position:relative; overflow:hidden; color:#fff; text-align:center;
+        padding:56px 16px 64px;
+        background:linear-gradient(135deg,var(--sm-b1) 0%,var(--sm-b2) 55%,var(--sm-b3) 100%);
+    }
+    .sm-hero::before{
+        content:''; position:absolute; inset:0; opacity:.07;
+        background-image:linear-gradient(#fff 1px,transparent 1px),
+                         linear-gradient(90deg,#fff 1px,transparent 1px);
+        background-size:34px 34px;
+    }
+    .sm-hero > *{ position:relative; z-index:1; }
+    .sm-hero-pill{
+        display:inline-flex; align-items:center; gap:8px;
+        background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+        border-radius:30px; padding:6px 18px; margin-bottom:16px;
+        font-size:11.5px; font-weight:800; letter-spacing:1px; text-transform:uppercase;
+    }
+    .sm-hero h1{ font-size:clamp(24px,4.4vw,38px); font-weight:900; margin:0 0 10px; letter-spacing:-.5px; }
+    .sm-hero p{ font-size:14px; opacity:.86; max-width:560px; margin:0 auto 28px; line-height:1.6; }
+
+    .sm-stats{
+        display:flex; flex-wrap:wrap; justify-content:center; gap:12px; max-width:680px; margin:0 auto;
+    }
+    .sm-stat{
+        flex:1 1 130px; min-width:130px;
+        background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.22);
+        border-radius:14px; padding:16px 10px; backdrop-filter:blur(4px);
+    }
+    .sm-stat b{ display:block; font-size:26px; font-weight:900; line-height:1; }
+    .sm-stat span{ font-size:11.5px; opacity:.8; font-weight:600; }
+
+    
+    .sm-section{ padding:46px 0 8px; }
+    .sm-shead{ text-align:center; margin-bottom:30px; }
+    .sm-shead .sm-eyebrow{
+        font-size:11px; font-weight:900; letter-spacing:2.5px; text-transform:uppercase;
+        color:var(--sm-b2);
+    }
+    .sm-shead h2{ font-size:clamp(19px,3vw,26px); font-weight:900; margin:6px 0 6px; }
+    .sm-shead p{ font-size:13px; color:var(--sm-muted); margin:0; }
+
+    
+    .sm-cluster{ margin-bottom:30px; }
+    .sm-cluster-title{
+        display:flex; align-items:center; gap:10px; margin:0 0 14px;
+        font-size:13px; font-weight:800; color:var(--sm-b1); text-transform:uppercase; letter-spacing:.8px;
+    }
+    .sm-cluster-title::before{
+        content:''; width:26px; height:26px; border-radius:8px; flex:0 0 auto;
+        background:linear-gradient(135deg,var(--sm-b1),var(--sm-b3));
+    }
+    .sm-cluster-title::after{ content:''; flex:1; height:1px; background:var(--sm-line); }
+
+    .sm-grid{
+        display:grid; gap:14px;
+        grid-template-columns:repeat(auto-fill, minmax(248px,1fr));
+    }
+
+    .sm-node{
+        display:flex; flex-direction:column; gap:8px;
+        background:var(--sm-card); border:1px solid var(--sm-line); border-radius:16px;
+        padding:16px 16px 15px; text-decoration:none; color:inherit;
+        transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+        position:relative;
+    }
+    .sm-node:hover{
+        transform:translateY(-4px); border-color:rgba(0,119,182,.45);
+        box-shadow:0 14px 30px rgba(0,119,182,.16); color:inherit; text-decoration:none;
+    }
+    .sm-node-top{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+    .sm-node-ico{
+        width:38px; height:38px; border-radius:11px; flex:0 0 auto;
+        display:flex; align-items:center; justify-content:center; font-size:17px; color:#fff;
+        background:linear-gradient(135deg,var(--sm-b2),var(--sm-b3));
+    }
+    .sm-badge{
+        font-size:10px; font-weight:800; letter-spacing:.4px; text-transform:uppercase;
+        padding:4px 10px; border-radius:30px; white-space:nowrap;
+        background:#eaf4fb; color:var(--sm-b2);
+    }
+    .sm-node h3{ font-size:15px; font-weight:800; margin:2px 0 0; }
+    .sm-node .sm-file{ font-family:var(--sm-mono); font-size:11px; color:var(--sm-b2); word-break:break-all; }
+    .sm-node .sm-feat{ font-size:12px; color:var(--sm-muted); line-height:1.55; margin:0; }
+
+    
+    .sm-node.is-current{
+        background:linear-gradient(135deg,var(--sm-b1),var(--sm-b2));
+        border-color:transparent; color:#fff; cursor:default;
+    }
+    .sm-node.is-current:hover{ transform:none; box-shadow:0 14px 30px rgba(26,31,110,.30); }
+    .sm-node.is-current .sm-node-ico{ background:rgba(255,255,255,.2); }
+    .sm-node.is-current .sm-badge{ background:rgba(255,255,255,.22); color:#fff; }
+    .sm-node.is-current .sm-file,
+    .sm-node.is-current .sm-feat{ color:rgba(255,255,255,.85); }
+
+    
+    .sm-journey{
+        background:var(--sm-card); border:1px solid var(--sm-line); border-radius:18px;
+        padding:18px 18px 20px; margin-bottom:16px;
+    }
+    .sm-journey h3{
+        display:flex; align-items:center; gap:9px;
+        font-size:14px; font-weight:800; margin:0 0 14px;
+    }
+    .sm-journey h3 .sm-jdot{
+        width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+        font-size:15px;color:#fff;flex:0 0 auto;
+    }
+    .sm-flow{ display:flex; flex-wrap:wrap; align-items:stretch; gap:8px; }
+    .sm-step{
+        display:flex; align-items:center; gap:7px;
+        background:#f5f9fe; border:1px solid var(--sm-line); border-radius:11px;
+        padding:9px 13px; font-size:12.5px; font-weight:700; color:var(--sm-b1);
+    }
+    .sm-step .sm-step-i{ font-size:14px; }
+    .sm-arrow{ display:flex; align-items:center; color:var(--sm-b3); font-size:14px; }
+    .sm-step.is-guard{ background:#fff4f4; border-color:#ffd5d5; color:var(--sm-red); }
+    .sm-step.is-end{ background:linear-gradient(135deg,var(--sm-b2),var(--sm-b3)); border-color:transparent; color:#fff; }
+
+    
+    .sm-flowgrid{ display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); }
+    .sm-flowcard{
+        background:var(--sm-card); border:1px solid var(--sm-line); border-radius:16px;
+        padding:18px; border-top:3px solid var(--sm-b2);
+    }
+    .sm-flowcard-h{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .sm-flowcard-h .sm-fc-ico{ font-size:24px; line-height:1; }
+    .sm-flowcard-h b{ display:block; font-size:14px; font-weight:800; }
+    .sm-flowcard-h small{ font-size:11px; color:var(--sm-muted); font-weight:600; letter-spacing:.3px; }
+    .sm-steplist{ list-style:none; margin:0; padding:0; counter-reset:s; }
+    .sm-steplist li{
+        position:relative; padding:6px 0 6px 30px; font-size:12.5px; color:#37445c; line-height:1.5;
+        border-top:1px dashed #eef2f8;
+    }
+    .sm-steplist li:first-child{ border-top:none; }
+    .sm-steplist li::before{
+        counter-increment:s; content:counter(s);
+        position:absolute; left:0; top:6px;
+        width:20px; height:20px; border-radius:50%;
+        background:#eaf4fb; color:var(--sm-b2);
+        font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center;
+    }
+    .sm-steplist code{
+        font-family:var(--sm-mono); font-size:11px; background:#f0f4f9;
+        padding:1px 5px; border-radius:5px; color:var(--sm-b1);
+    }
+
+    
+    .sm-techgrid{ display:grid; gap:11px; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); }
+    .sm-tech{
+        display:flex; gap:13px; align-items:flex-start;
+        background:var(--sm-card); border:1px solid var(--sm-line); border-radius:13px; padding:13px 15px;
+    }
+    .sm-tech-key{ flex:0 0 auto; }
+    .sm-tech-key code{
+        font-family:var(--sm-mono); font-size:12px; font-weight:700; color:var(--sm-b1);
+        background:#eef3fa; padding:4px 9px; border-radius:7px; display:inline-block; word-break:break-all;
+    }
+    .sm-tech-body{ flex:1; min-width:0; }
+    .sm-tech-body .sm-scope{
+        font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.4px;
+        padding:2px 9px; border-radius:30px; display:inline-block; margin-bottom:5px;
+    }
+    .sm-scope.all{ background:#e7f8f1; color:var(--sm-green); }
+    .sm-scope.few{ background:#fff3e0; color:var(--sm-amber); }
+    .sm-scope.one{ background:#eef3fa; color:var(--sm-b2); }
+    .sm-scope.local{ background:#e7f8f1; color:var(--sm-green); }
+    .sm-scope.session{ background:#fdeef0; color:var(--sm-red); }
+    .sm-tech-body p{ font-size:12px; color:var(--sm-muted); margin:0; line-height:1.5; }
+
+    
+    .sm-loadnote{
+        margin-top:18px; background:#fbfdff; border:1px dashed var(--sm-line); border-radius:13px;
+        padding:14px 16px; font-size:12px; color:var(--sm-muted); line-height:1.7;
+    }
+    .sm-loadnote b{ color:var(--sm-b1); }
+    .sm-loadnote code{ font-family:var(--sm-mono); font-size:11px; color:var(--sm-b2); }
+
+    .sm-foot-space{ height:46px; }
+
+    
+    .smap{ }
+    .smap-root{ display:flex; justify-content:center; }
+    .smap-rootchip{
+        display:inline-flex; align-items:center; gap:11px;
+        background:linear-gradient(135deg,var(--sm-b1),var(--sm-b2));
+        color:#fff; border-radius:15px; padding:14px 26px;
+        font-weight:800; font-size:16px; box-shadow:0 12px 26px rgba(0,119,182,.28);
+    }
+    .smap-rootchip i{ font-size:19px; }
+
+    .smap-branches{
+        display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+        position:relative; padding-top:32px; margin-top:16px;
+    }
+    
+    .smap-branches::before{
+        content:''; position:absolute; top:0; left:16.667%; right:16.667%;
+        height:2px; background:var(--sm-line);
+    }
+    .smap-branches::after{
+        content:''; position:absolute; top:-16px; left:50%; width:2px; height:16px;
+        background:var(--sm-line); transform:translateX(-1px);
+    }
+    .smap-col{ position:relative; padding-top:32px; }
+    .smap-col::before{
+        content:''; position:absolute; top:0; left:50%; width:2px; height:32px;
+        background:var(--sm-line); transform:translateX(-1px);
+    }
+    .smap-group{
+        background:var(--sm-card); border:1px solid var(--sm-line); border-radius:15px;
+        padding:14px 14px 8px;
+    }
+    .smap-ghead{
+        display:flex; align-items:center; gap:9px; margin-bottom:6px;
+        font-size:12.5px; font-weight:800; color:var(--sm-b1);
+    }
+    .smap-ghead .smap-gico{
+        width:30px; height:30px; border-radius:9px; flex:0 0 auto; color:#fff;
+        display:flex; align-items:center; justify-content:center; font-size:14px;
+        background:linear-gradient(135deg,var(--sm-b2),var(--sm-b3));
+    }
+    .smap-list{ list-style:none; margin:0; padding:0; position:relative; }
+    .smap-list::before{
+        content:''; position:absolute; left:9px; top:2px; bottom:20px; width:2px; background:var(--sm-line);
+    }
+    .smap-leaf{ position:relative; padding-left:26px; margin:7px 0 0; }
+    .smap-leaf::before{
+        content:''; position:absolute; left:9px; top:18px; width:15px; height:2px; background:var(--sm-line);
+    }
+    .smap-leaf > a{
+        display:flex; align-items:center; gap:9px; text-decoration:none; color:inherit;
+        background:#f5f9fe; border:1px solid var(--sm-line); border-radius:10px;
+        padding:7px 11px; transition:background .16s, border-color .16s, transform .16s;
+    }
+    .smap-leaf > a:hover{ background:#fff; border-color:rgba(0,119,182,.45); transform:translateX(3px); color:inherit; text-decoration:none; }
+    .smap-leaf .lf-i{ color:var(--sm-b2); font-size:13px; width:16px; text-align:center; flex:0 0 auto; }
+    .smap-leaf .lf-t{ font-size:12.5px; font-weight:700; line-height:1.2; }
+    .smap-leaf .lf-f{ display:block; font-family:var(--sm-mono); font-size:9.5px; color:var(--sm-muted); margin-top:1px; word-break:break-all; }
+    
+    .smap-leaf.is-here > a{ background:linear-gradient(135deg,var(--sm-b1),var(--sm-b2)); border-color:transparent; cursor:default; }
+    .smap-leaf.is-here > a:hover{ transform:none; }
+    .smap-leaf.is-here .lf-i,
+    .smap-leaf.is-here .lf-t{ color:#fff; }
+    .smap-leaf.is-here .lf-f{ color:rgba(255,255,255,.8); }
+
+    
+    @media (max-width:767.98px){
+        .smap-branches{ grid-template-columns:1fr; padding-top:0; gap:12px; margin-top:10px; }
+        .smap-branches::before, .smap-branches::after{ display:none; }
+        .smap-col{ padding-top:0; }
+        .smap-col::before{ display:none; }
+    }
+
+    
+    @media (prefers-reduced-motion:no-preference){
+        .sm-rise{ opacity:0; transform:translateY(16px); animation:smRise .6s cubic-bezier(.22,1,.36,1) forwards; }
+        @keyframes smRise{ to{ opacity:1; transform:none; } }
+    }
+
+    
+    @media (max-width:575.98px){
+        .sm-section{ padding:34px 0 4px; }
+        .sm-grid{ grid-template-columns:1fr; }
+        .sm-techgrid{ grid-template-columns:1fr; }
+        .sm-flowgrid{ grid-template-columns:1fr; }
+        .sm-stat b{ font-size:22px; }
+        
+        .sm-flow{ flex-direction:column; align-items:stretch; }
+        .sm-step{ justify-content:center; }
+        .sm-arrow{ justify-content:center; transform:rotate(90deg); }
+    }
+    </style><link rel="stylesheet" href="css/kene-experience.css"><link rel="manifest" href="manifest.webmanifest"><meta name="color-scheme" content="light"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="img/brand/icon-32.png"><link rel="apple-touch-icon" href="img/brand/icon-180.png"><link rel="stylesheet" href="css/kene-brand.css"></head><body data-page="sitemap"><header class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 border-bottom">
+        <div class="container">
+
+            
+            <a class="navbar-brand" href="html_trangchu.html">
+                <img src="img/logo.svg" alt="Kể Nè — Không gian lắng nghe" height="46" class=" logo-header" width="142">
+            </a>
+
+            
+            <div class="header-search-wrap mx-lg-4 d-none d-md-flex">
+<div class="input-group header-search">
+                    <div class="input-group-prepend border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" id="header-search-inp" class="form-control border-0 bg-transparent" placeholder="Tìm dịch vụ, chuyên gia, bài viết…" autocomplete="off" aria-label="Tìm kiếm toàn website">
+                    
+                    <span class="hs-shortcut d-none d-lg-inline-flex align-items-center">⌘K</span>
+                </div>
+                <div id="header-dropdown" class="search-dropdown"></div>
+            </div>
+
+            
+            <div class="navbar-nav ml-auto align-items-center">
+                <a class="nav-item nav-link mr-3 d-none d-xl-block small-text" href="html_trangchu.html">Trang chủ</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_gioithieu.html">Về Kể Nè</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_lienhe_chinhsach.html">Liên hệ &amp; Tin cậy</a>
+                <a class="nav-item nav-link mr-3 d-none d-md-block small-text" href="html_blog.html">Góc đọc</a>
+
+                
+                <a class="nav-item nav-link mr-3 text-dark" href="html_giohang.html" style="position:relative;" aria-label="Giỏ dịch vụ">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-badge" style="position:absolute;top:-4px;right:-8px;background:#ff4d4d;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;line-height:1;">0</span>
+                </a>
+
+                
+                <div class="auth-buttons" id="auth-zone">
+                    <a class="nav-item nav-link mr-3 font-weight-bold" href="html_dangnhap_dangky.html">Đăng ký</a>
+                    <a class="btn btn-login font-weight-bold" href="html_dangnhap_dangky.html">Đăng nhập</a>
+                    <a class="nav-item nav-link ml-2 d-none d-sm-block" href="html_thongtin.html">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="sub-nav bg-white border-bottom" aria-label="Dịch vụ"><div class="container"><div class="nav kn-subnav"><a class="nav-link" href="html_dichvu.html">Dịch vụ &amp; Bảng giá</a><a class="nav-link" href="html_diadiem.html">Chuyên gia &amp; Ghép nối</a><a class="nav-link" href="html_diadiem.html#sang-loc">Sàng lọc miễn phí</a><a class="nav-link ml-auto sub-voucher-link" href="html_khuyenmaivatiepthi.html"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Ưu đãi</a></div></div></nav><a class="kn-skip" href="#main-content">Bỏ qua điều hướng</a><main id="main-content"><section class="sm-hero ke-photo-hero"><div class="ke-hero-photo-panel"><picture class="ke-picture " data-ke-image="nature-detail"><source type="image/webp" srcset="img/photos/nature-detail-960.webp 960w, img/photos/nature-detail-1920.webp 1920w" sizes="100vw"><img src="img/photos/nature-detail-1920.jpg" alt="Chi tiết lá cây xanh trong ánh sáng tự nhiên" width="1920" height="1285" loading="eager" decoding="async" fetchpriority="high" data-ke-photo="nature-detail"></picture></div><div class="sm-wrap"><span class="kn-hero-eyebrow">SƠ ĐỒ WEBSITE KỂ NÈ</span><h1>Một nơi để tìm đúng thông tin</h1><p>Mười hai trang kết nối từ tìm hiểu dịch vụ tới lịch hẹn và quyền dữ liệu.</p><div class="kn-hero-stat-row"><div><strong data-ke-count="12">12</strong><span>Trang chức năng</span></div><div><strong data-ke-count="8">8</strong><span>Thành viên Kể Nè</span></div><div><strong data-ke-count="3">3</strong><span>Bước đặt lịch</span></div></div></div></section><section class="sm-section"><div class="sm-wrap"><div class="sm-shead"><h2 class="ke-reveal">Đi tới trang bạn cần</h2></div><div class="kn-grid-3"><a class="sm-tech kn-white-card kn-card-link" href="html_trangchu.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="care-conversation"><source type="image/webp" srcset="img/photos/care-conversation-960.webp 960w, img/photos/care-conversation-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/care-conversation-1920.jpg" alt="Hai người trao đổi trong một không gian tư vấn yên tĩnh" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="care-conversation"></picture><span class="kn-tag">01</span><h3>Trang chủ</h3><p>Khám phá Kể Nè, dịch vụ, góc đọc và đội Kể Nè.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_gioithieu.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="care-hands"><source type="image/webp" srcset="img/photos/care-hands-960.webp 960w, img/photos/care-hands-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/care-hands-1920.jpg" alt="Cử chỉ nâng đỡ trong một cuộc trò chuyện riêng" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="care-hands"></picture><span class="kn-tag">02</span><h3>Về Kể Nè</h3><p>Câu chuyện, định vị và đúng tám thành viên Kể Nè.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_dichvu.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="care-notes"><source type="image/webp" srcset="img/photos/care-notes-960.webp 960w, img/photos/care-notes-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/care-notes-1920.jpg" alt="Lắng nghe và ghi chú trong cuộc trò chuyện" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="care-notes"></picture><span class="kn-tag">03</span><h3>Dịch vụ &amp; Bảng giá</h3><p>Phiên 50 phút, gói 6 buổi và các chương trình hỗ trợ.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_diadiem.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="friends-listen"><source type="image/webp" srcset="img/photos/friends-listen-960.webp 960w, img/photos/friends-listen-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/friends-listen-1920.jpg" alt="Hai người ngồi lắng nghe nhau bên tách cà phê" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="friends-listen"></picture><span class="kn-tag">04</span><h3>Chuyên gia &amp; Ghép nối</h3><p>Sàng lọc, tiêu chí, ba gợi ý và khung giờ mong muốn.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_blog.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="journal-window"><source type="image/webp" srcset="img/photos/journal-window-960.webp 960w, img/photos/journal-window-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/journal-window-1920.jpg" alt="Viết vào nhật ký bên cửa sổ sáng" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="journal-window"></picture><span class="kn-tag">05</span><h3>Góc đọc</h3><p>30 bài về chuẩn bị, quyền riêng tư và hiểu dịch vụ.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_dangnhap_dangky.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="online-home"><source type="image/webp" srcset="img/photos/online-home-960.webp 960w, img/photos/online-home-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/online-home-1920.jpg" alt="Không gian làm việc và trò chuyện trực tuyến tại nhà" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="online-home"></picture><span class="kn-tag">06</span><h3>Đăng nhập &amp; Đăng ký</h3><p>Tài khoản bằng biệt danh và đồng thuận.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_giohang.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="journal-planning"><source type="image/webp" srcset="img/photos/journal-planning-960.webp 960w, img/photos/journal-planning-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/journal-planning-1920.jpg" alt="Bàn tay viết ghi chú cá nhân trên bàn gỗ" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="journal-planning"></picture><span class="kn-tag">07</span><h3>Giỏ dịch vụ</h3><p>Kiểm tra lịch dự kiến, ưu đãi và tổng tiền.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_thanhtoan.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="privacy-laptop"><source type="image/webp" srcset="img/photos/privacy-laptop-960.webp 960w, img/photos/privacy-laptop-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/privacy-laptop-1920.jpg" alt="Đôi tay thao tác trên máy tính trong không gian riêng" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="privacy-laptop"></picture><span class="kn-tag">08</span><h3>Xem lại yêu cầu</h3><p>Giữ chỗ 10 phút và xác nhận lịch dự kiến.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_thongtin.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="tea-notes"><source type="image/webp" srcset="img/photos/tea-notes-960.webp 960w, img/photos/tea-notes-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/tea-notes-1920.jpg" alt="Ghi chép với tách trà trong khoảng thời gian riêng" width="1920" height="1282" loading="lazy" decoding="async" data-ke-photo="tea-notes"></picture><span class="kn-tag">09</span><h3>Tài khoản của tôi</h3><p>Lịch hẹn, gói, nhật ký tự nguyện và quyền dữ liệu.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_khuyenmaivatiepthi.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="study-together"><source type="image/webp" srcset="img/photos/study-together-960.webp 960w, img/photos/study-together-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/study-together-1920.jpg" alt="Những người học trao đổi và ghi chép cùng nhau" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="study-together"></picture><span class="kn-tag">10</span><h3>Ưu đãi &amp; Hỗ trợ tiếp cận</h3><p>Ưu đãi khung giờ ban ngày và điều kiện áp dụng.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_lienhe_chinhsach.html"><picture class="ke-picture ke-sitemap-photo" data-ke-image="leaves-light"><source type="image/webp" srcset="img/photos/leaves-light-960.webp 960w, img/photos/leaves-light-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/leaves-light-1920.jpg" alt="Ánh sáng nhẹ xuyên qua tán lá xanh" width="1920" height="2880" loading="lazy" decoding="async" data-ke-photo="leaves-light"></picture><span class="kn-tag">11</span><h3>Liên hệ &amp; Tin cậy</h3><p>Biểu mẫu tìm hiểu, chính sách, giới hạn và FAQ.</p></a><a class="sm-tech kn-white-card kn-card-link" href="html_sitemap.html" aria-current="page"><picture class="ke-picture ke-sitemap-photo" data-ke-image="care-session"><source type="image/webp" srcset="img/photos/care-session-960.webp 960w, img/photos/care-session-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/care-session-1920.jpg" alt="Hai người ngồi trao đổi trong không gian trò chuyện riêng" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="care-session"></picture><span class="kn-tag">12</span><h3>Sơ đồ website</h3><p>Bạn đang ở đây.</p></a></div></div></section><section class="sm-section"><div class="sm-wrap"><h2 class="ke-reveal">Ba bước đặt lịch</h2><div class="kn-grid-3"><article class="kn-white-card"><span class="kn-step-no">01</span><h3>Chọn chuyên gia &amp; Giờ</h3><p>Sàng lọc an toàn, xem gợi ý và chọn khung phù hợp.</p></article><article class="kn-white-card"><span class="kn-step-no">02</span><h3>Kiểm tra &amp; Thanh toán</h3><p>Giữ chỗ 10 phút, kiểm tra thông tin và giá.</p></article><article class="kn-white-card"><span class="kn-step-no">03</span><h3>Nhận xác nhận</h3><p>Xem lịch trong tài khoản và tải tệp lịch trung tính.</p></article></div></div></section><section class="sm-section"><div class="sm-wrap"><h2 class="ke-reveal">Những lối đi quan trọng</h2><div class="kn-grid-3"><article class="kn-white-card"><h3>Tìm hiểu trước</h3><p>Trang chủ → Góc đọc → Dịch vụ → Sàng lọc.</p><a href="html_blog.html">Mở Góc đọc →</a></article><article class="kn-white-card"><h3>Quay lại lịch hẹn</h3><p>Đăng nhập → Tài khoản → Lịch hẹn → Đổi lịch hoặc thêm vào lịch cá nhân.</p><a href="html_thongtin.html?tab=bookings">Xem lịch hẹn →</a></article><article class="kn-white-card"><h3>Quyền dữ liệu</h3><p>Chính sách → Tài khoản → Cài đặt → Xem, tải hoặc xoá dữ liệu trên thiết bị.</p><a href="html_lienhe_chinhsach.html#bao-mat">Đọc chính sách →</a></article></div></div></section><section class="sm-section"><div class="sm-wrap"><h2 class="ke-reveal">Giới hạn cần biết</h2><p>Kể Nè không phải kênh cấp cứu. Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế 115 hoặc đến cơ sở cấp cứu gần nhất.</p><button class="kn-btn" data-action="sos">Cần giúp ngay</button></div></section></main><footer class="kene-footer"><div class="footer-bg-layer"></div><div class="container position-relative" style="z-index:2"><div class="row footer-main-row pt-5 pb-4"><div class="col-lg-4 col-md-6 mb-4"><a href="html_trangchu.html" class="footer-brand d-inline-block mb-3" aria-label="Kể Nè — Trang chủ"><img class="footer-logo" src="img/logo-white.svg" width="150" height="49" alt="Kể Nè"></a><p class="footer-desc">Chuyện khó nói, có người nghe. Kể Nè đồng hành cùng bạn tìm hiểu nhu cầu và lựa chọn cách chăm sóc sức khoẻ tinh thần phù hợp.</p><a class="footer-sitemap-btn" href="html_sitemap.html">Sơ đồ website</a></div><div class="col-lg-4 col-md-6 mb-4"><h2 class="footer-heading">Khám phá Kể Nè</h2><ul class="ke-footer-links"><li><a href="html_gioithieu.html">Câu chuyện &amp; Con người</a></li><li><a href="html_dichvu.html">Dịch vụ &amp; Mức giá tham khảo</a></li><li><a href="html_diadiem.html">Tìm cách đồng hành phù hợp</a></li><li><a href="html_blog.html">Góc đọc mỗi ngày</a></li><li><a href="html_khuyenmaivatiepthi.html">Ưu đãi &amp; Điều kiện áp dụng</a></li></ul></div><div class="col-lg-4 col-md-12 mb-4"><h2 class="footer-heading">Bạn luôn có quyền lựa chọn</h2><p class="ke-footer-promise">♡ Chia sẻ theo nhịp của bạn. Hiểu rõ điều kiện trước khi bắt đầu.</p><ul class="ke-footer-links"><li><a href="html_lienhe_chinhsach.html#du-lieu">Quyền riêng tư</a></li><li><a href="html_lienhe_chinhsach.html#doi-lich">Đổi lịch &amp; Hỗ trợ</a></li><li><a href="html_lienhe_chinhsach.html">Liên hệ &amp; Trung tâm tin cậy</a></li><li><a href="html_lienhe_chinhsach.html?topic=to-chuc">Dành cho tổ chức</a></li><li><a href="html_lienhe_chinhsach.html?topic=chuyen-gia">Hợp tác chuyên gia</a></li></ul></div></div><div class="footer-divider"></div><div class="ke-footer-tools"><button type="button" data-ke-motion aria-pressed="false">Chuyển động: Êm dịu</button><button type="button" data-ke-credits>Nguồn ảnh</button><button type="button" data-ke-saved-articles>Bài viết đã lưu</button><span id="ke-offline-state" class="ke-offline-state">Ảnh cục bộ · Không cần Internet</span></div><div class="footer-bottom py-3 d-flex flex-wrap justify-content-between"><p class="footer-copy mb-0">© 2026 Kể Nè. Mọi quyền được bảo lưu.</p><p class="footer-copy mb-0">Tư vấn, tham vấn tâm lý · Không thay thế cấp cứu</p></div></div></footer><div id="kn-toast" class="kn-toast" hidden role="status" aria-live="polite"></div><div class="kn-tools"><button class="kn-sos-btn" data-action="sos">Cần giúp ngay</button><button class="kn-help-btn" data-action="help" aria-label="Mở trợ giúp thao tác">?</button><button class="kn-exit-btn" data-action="quick-exit">Thoát nhanh ↗</button></div><div id="kn-modal" class="kn-modal" hidden role="dialog" aria-modal="true" aria-labelledby="kn-modal-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-modal-title"></h2><div><button class="kn-link" data-action="sos">Cần giúp ngay</button><button class="kn-modal-close" data-action="close-modal" aria-label="Đóng cửa sổ">×</button></div></div><div id="kn-modal-body"></div></div></div><div id="kn-sos" class="kn-modal kn-sos-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="kn-sos-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-sos-title">Ưu tiên sự an toàn của bạn</h2><button class="kn-modal-close" data-action="close-sos" aria-label="Đóng hướng dẫn">×</button></div><p>Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế hoặc đến cơ sở cấp cứu gần nhất. Nếu có thể, nhờ một người tin cậy ở cạnh bạn.</p><a class="kn-btn kn-btn-full" href="tel:115">Gọi cấp cứu y tế 115</a><p class="kn-note mt-3">115 là cấp cứu y tế, không phải đường dây tư vấn của Kể Nè.</p><div class="kn-white-card my-3"><h3 class="kn-h4">Website không có người trực</h3><p>Kể Nè không phải kênh cấp cứu và không gửi cảnh báo từ nút này. Đừng chờ phản hồi trên website khi bạn đang không an toàn.</p><p id="kn-support-hours"></p></div><button class="kn-btn kn-btn-light" data-action="quick-exit">Thoát nhanh khỏi website</button></div></div><button id="back-to-top" class="kn-back-top" aria-label="Lên đầu trang" hidden>↑</button><script src="js/jquery.min.js" defer></script><script src="js/bootstrap.bundle.min.js" defer></script><script src="js/kene-data.js" defer></script><script src="js/kene-engine.js" defer></script><script src="js/kene-core.js" defer></script><script src="js/kene-media-data.js" defer></script><script src="js/kene-media.js" defer></script><script src="js/kene-runtime.js" defer></script><script src="js/kene-pages.js" defer></script><script src="js/kene-offline-version.js" defer></script><script src="js/kene-experience.js" defer></script><script src="js/kene-scenes.js" defer></script></body></html>

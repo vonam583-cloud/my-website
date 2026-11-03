@@ -1,0 +1,4276 @@
+[
+  {
+    "id": "care-conversation",
+    "key": "care-conversation",
+    "theme": "counseling",
+    "alt": "Hai người trao đổi trong một không gian tư vấn yên tĩnh",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-therapist-listening-to-a-woman-9064360/",
+    "original_url": "https://images.pexels.com/photos/9064360/pexels-photo-9064360.jpeg",
+    "download_url": "https://images.pexels.com/photos/9064360/pexels-photo-9064360.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by RDNE Stock project",
+    "photographer": "RDNE Stock project",
+    "photographer_url": "https://www.pexels.com/@rdne/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6720,
+      "height": 4480
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/care-conversation-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 29132,
+        "sha256": "426f456017b26781ffe179f8e3269596e296a3fe268b12cd2cd8474e3b909884"
+      },
+      "1920": {
+        "path": "photos/care-conversation-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 69754,
+        "sha256": "375c83ae11946e96d0cece38d4af5cf6ccd8aa47923f1dffbcc771d00b6b3b9d"
+      },
+      "fallback": {
+        "path": "photos/care-conversation-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 121137,
+        "sha256": "d9f410c8528ad92976192d4c0059257287b5dcd29542b2a0e3743ad4101d32e5"
+      }
+    },
+    "sha256": "3b57d5ce35f18ab3ebfd797c1884ac9ad3414f9be8c94b10243bc3bddd60829f",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "care-session",
+    "key": "care-session",
+    "pexels_id": "3958465",
+    "theme": "counseling",
+    "alt": "Hai người ngồi trao đổi trong không gian trò chuyện riêng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-listening-to-therapist-3958465/",
+    "original_url": "https://images.pexels.com/photos/3958465/pexels-photo-3958465.jpeg",
+    "download_url": "https://images.pexels.com/photos/3958465/pexels-photo-3958465.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Polina Zimmerman",
+    "photographer": "Polina Zimmerman",
+    "photographer_url": "https://www.pexels.com/@polina-zimmerman/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5760,
+      "height": 3840
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/care-session-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 23286,
+        "sha256": "3ac549cc2454783c5a1ea3846358de0bb5a5f4c5cb9e59c632399846f4c7a14b"
+      },
+      "1920": {
+        "path": "photos/care-session-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 75932,
+        "sha256": "200ef38f642f758d6a2ae51e4d44968961dafd520d2d1529c06046a808198fb9"
+      },
+      "fallback": {
+        "path": "photos/care-session-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 146461,
+        "sha256": "4feea63dd62f4d129464fd4fcfab199eb6c6e229a198c919653ed199fc6206ba"
+      }
+    },
+    "sha256": "acc9e9fc81c7731c1b6734631d04f4e2e0f873b2d02072ca05b0704ddceecfe7",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "care-notes",
+    "key": "care-notes",
+    "theme": "counseling",
+    "alt": "Lắng nghe và ghi chú trong cuộc trò chuyện",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/therapist-taking-notes-3958467/",
+    "original_url": "https://images.pexels.com/photos/3958467/pexels-photo-3958467.jpeg",
+    "download_url": "https://images.pexels.com/photos/3958467/pexels-photo-3958467.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Polina Zimmerman",
+    "photographer": "Polina Zimmerman",
+    "photographer_url": "https://www.pexels.com/@polina-zimmerman/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3840,
+      "height": 5760
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/care-notes-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 41026,
+        "sha256": "594e361cf357e16317618a6f2b57dc11e6a615572e10f12b49eddafa3f2e1fec"
+      },
+      "1920": {
+        "path": "photos/care-notes-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 217968,
+        "sha256": "df5d72573744feb80209461a50b3f76be6039feb84ca40d0af0a396bd2ac98fc"
+      },
+      "fallback": {
+        "path": "photos/care-notes-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 354985,
+        "sha256": "13d75e845a6376939a15b85b45d9c842ee3998cbc8741f3a9bb9ae8f41454c5f"
+      }
+    },
+    "sha256": "df8780e149d3341c2f63186395edd994bb189feb21363f9048b13d94db832223",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "care-hands",
+    "key": "care-hands",
+    "theme": "support",
+    "alt": "Cử chỉ nâng đỡ trong một cuộc trò chuyện riêng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/crop-psychologist-supporting-patient-during-counseling-indoors-7176325/",
+    "original_url": "https://images.pexels.com/photos/7176325/pexels-photo-7176325.jpeg",
+    "download_url": "https://images.pexels.com/photos/7176325/pexels-photo-7176325.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by SHVETS production",
+    "photographer": "SHVETS production",
+    "photographer_url": "https://www.pexels.com/@shvets-production/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6240,
+      "height": 4160
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/care-hands-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 29120,
+        "sha256": "79f436a39215ff6fd357f748149ed5b7c51d1e881a7f5a7f22a674b7172d5867"
+      },
+      "1920": {
+        "path": "photos/care-hands-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 107086,
+        "sha256": "ca6d09aaf478871bcfe8804efcb0d045ef5326b92ce7547cfbb3d03b527325d4"
+      },
+      "fallback": {
+        "path": "photos/care-hands-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 174441,
+        "sha256": "128cb863f32db3bb86e84df654839fdf221c1b9368c16c9fa2743f56db723887"
+      }
+    },
+    "sha256": "0b9ca262ba1da40d91e8af911833bf5a45912d2d7b6cfb20338b8a33eb3980c0",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "online-consult",
+    "key": "online-consult",
+    "theme": "online",
+    "alt": "Trao đổi trực tuyến qua màn hình máy tính",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-woman-having-a-video-call-on-a-laptop-9301861/",
+    "original_url": "https://images.pexels.com/photos/9301861/pexels-photo-9301861.jpeg",
+    "download_url": "https://images.pexels.com/photos/9301861/pexels-photo-9301861.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Mikhail Nilov",
+    "photographer": "Mikhail Nilov",
+    "photographer_url": "https://www.pexels.com/@mikhail-nilov/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5866,
+      "height": 3911
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/online-consult-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 20958,
+        "sha256": "e9431339238a5630079756ddfaddb9055e9b4d1f02f4a7df4c2d0f66241290bd"
+      },
+      "1920": {
+        "path": "photos/online-consult-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 56728,
+        "sha256": "ada23c1b25632d82269830ee03f70ee51dbe5e2f755bc7a9906826074ecd5db6"
+      },
+      "fallback": {
+        "path": "photos/online-consult-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 96718,
+        "sha256": "8ec20068e5351f2b9cf4b6f767a0ee21b0a72dd8dd96e509ab70e20359fb542a"
+      }
+    },
+    "sha256": "94bcfdc15bb78571f389653569a7a9d98aa8f5912d4dac42418798b035d84f64",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "online-home",
+    "key": "online-home",
+    "theme": "online",
+    "alt": "Không gian làm việc và trò chuyện trực tuyến tại nhà",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-woman-having-a-virtual-meeting-7605214/",
+    "original_url": "https://images.pexels.com/photos/7605214/pexels-photo-7605214.jpeg",
+    "download_url": "https://images.pexels.com/photos/7605214/pexels-photo-7605214.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by MART PRODUCTION",
+    "photographer": "MART PRODUCTION",
+    "photographer_url": "https://www.pexels.com/@mart-production/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3755,
+      "height": 5632
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/online-home-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 42136,
+        "sha256": "2bace74a05e9e1e2b9242ac3b0ec60659f6b4e10bdd8e3a8bbe927835aff8459"
+      },
+      "1920": {
+        "path": "photos/online-home-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 128972,
+        "sha256": "075ecd9a6d7556a5592be7e04b45bd1d7cbd6055b052f917228a6b8a9bea7038"
+      },
+      "fallback": {
+        "path": "photos/online-home-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 253548,
+        "sha256": "52db2e02b9e08b4320950628c09e5a6cf6ae76ec6add8fb76ece038e75449f3c"
+      }
+    },
+    "sha256": "732a1b210ee9106df04b89b4802f42a2a256d0327212ec9b345d34db41ffab95",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "journal-window",
+    "key": "journal-window",
+    "theme": "journal",
+    "alt": "Viết vào nhật ký bên cửa sổ sáng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-writing-in-journal-by-a-window-37129604/",
+    "original_url": "https://images.pexels.com/photos/37129604/pexels-photo-37129604/free-photo-of-woman-writing-in-journal-by-a-window.jpeg",
+    "download_url": "https://images.pexels.com/photos/37129604/pexels-photo-37129604/free-photo-of-woman-writing-in-journal-by-a-window.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Huỳnh Như Mavi",
+    "photographer": "Huỳnh Như Mavi",
+    "photographer_url": "https://www.pexels.com/@mavihnt/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4480,
+      "height": 6720
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/journal-window-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 80230,
+        "sha256": "ddbc91b3c2ce4a08843a633210b002df006561c635038dad1f3f8756d79f3517"
+      },
+      "1920": {
+        "path": "photos/journal-window-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 537058,
+        "sha256": "161d6d07fb4ce78f122be7a8b02aa33f13b48a57f538b96999a3d443228d742e"
+      },
+      "fallback": {
+        "path": "photos/journal-window-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 569566,
+        "sha256": "3671aedc941789fea9e2317a98f39c693f22ae3a4b16004ca3178db2375efa61"
+      }
+    },
+    "sha256": "2575eb69aad647b506589fc3761c4c152fe6eae7a3848296b568a07ea96ed862",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "journal-flatlay",
+    "key": "journal-flatlay",
+    "theme": "journal",
+    "alt": "Sổ ghi chép và tách trà trên bàn",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/person-writing-on-a-notebook-4186911/",
+    "original_url": "https://images.pexels.com/photos/4186911/pexels-photo-4186911.jpeg",
+    "download_url": "https://images.pexels.com/photos/4186911/pexels-photo-4186911.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by alleksana",
+    "photographer": "alleksana",
+    "photographer_url": "https://www.pexels.com/@alleksana/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5421,
+      "height": 3614
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/journal-flatlay-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 46882,
+        "sha256": "5c148007dfcfb34a45f3e0889cb300ce4649f85e097f2e88bed19af902534534"
+      },
+      "1920": {
+        "path": "photos/journal-flatlay-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 138692,
+        "sha256": "b9f8c3418276b2e34c27f8e85ed427595bf82791347a11833c6ba75bdb01a668"
+      },
+      "fallback": {
+        "path": "photos/journal-flatlay-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 194059,
+        "sha256": "cb22a7f25de0c6936f895028aa727a23476d71c0553425cb5c3c555f42aebaf1"
+      }
+    },
+    "sha256": "c26f3465dd1135a2a212aaf364657f7ea4d5387331afd9df985db354af872e0b",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "journal-planning",
+    "key": "journal-planning",
+    "theme": "journal",
+    "alt": "Bàn tay viết ghi chú cá nhân trên bàn gỗ",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-person-writing-on-a-notebook-on-a-wooden-table-8055486/",
+    "original_url": "https://images.pexels.com/photos/8055486/pexels-photo-8055486.jpeg",
+    "download_url": "https://images.pexels.com/photos/8055486/pexels-photo-8055486.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Annushka Ahuja",
+    "photographer": "Annushka Ahuja",
+    "photographer_url": "https://www.pexels.com/@annushka-ahuja/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5311,
+      "height": 3541
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/journal-planning-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 65600,
+        "sha256": "2186c456a35be3b1d7a8770cb3614249542189c2c20c9fb12dc2fc1d85d0fe8b"
+      },
+      "1920": {
+        "path": "photos/journal-planning-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 215424,
+        "sha256": "8adabcb790fed026e638c651eba9f362f082e713da281641e1d40a56b4f316fe"
+      },
+      "fallback": {
+        "path": "photos/journal-planning-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 274024,
+        "sha256": "fdc80adf0f2acf608f085e77984af9ce57148d6f4fda95ba10d88dda46fe8d5e"
+      }
+    },
+    "sha256": "e956eec0f72d21cd04ef7a2d83ecdee54f9ad1dd166706224b79fedcc0f307da",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "study-together",
+    "key": "study-together",
+    "theme": "study",
+    "alt": "Những người học trao đổi và ghi chép cùng nhau",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/girls-sitting-at-the-table-with-textbooks-and-studying-7128667/",
+    "original_url": "https://images.pexels.com/photos/7128667/pexels-photo-7128667.jpeg",
+    "download_url": "https://images.pexels.com/photos/7128667/pexels-photo-7128667.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by cottonbro studio",
+    "photographer": "cottonbro studio",
+    "photographer_url": "https://www.pexels.com/@cottonbro/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6240,
+      "height": 4160
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/study-together-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 65052,
+        "sha256": "0b48d3a83d094bb7435d76d1db73c1d09c62ca95ab658daba3a237e608fbd551"
+      },
+      "1920": {
+        "path": "photos/study-together-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 173648,
+        "sha256": "2e644d14337aab74fa80e8b35d922efd0b8f50716ff256fd44a9b0f128773d2e"
+      },
+      "fallback": {
+        "path": "photos/study-together-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 238526,
+        "sha256": "2e5cc3006c3ba99762cdaf120de238566332f712c8046256dcf12e6b72d3f7c3"
+      }
+    },
+    "sha256": "656861c1ccf5e324b185e26944b9968581d4b56dd86b8fa11f61f162f2e869ea",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "study-quiet",
+    "key": "study-quiet",
+    "theme": "study",
+    "alt": "Một góc học tập yên tĩnh giữa các kệ sách",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/student-studying-on-a-table-with-books-6549368/",
+    "original_url": "https://images.pexels.com/photos/6549368/pexels-photo-6549368.jpeg",
+    "download_url": "https://images.pexels.com/photos/6549368/pexels-photo-6549368.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Tima Miroshnichenko",
+    "photographer": "Tima Miroshnichenko",
+    "photographer_url": "https://www.pexels.com/@tima-miroshnichenko/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 6000
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/study-quiet-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 108492,
+        "sha256": "5a29e6936c96d92176fe307c3268d6023b30158dfab52d0233ba89593b7013f9"
+      },
+      "1920": {
+        "path": "photos/study-quiet-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 457010,
+        "sha256": "4ca93b2fd364e8d04be5967dd423b7ab6d9223ba660f5c0d224b74e2cd959a5e"
+      },
+      "fallback": {
+        "path": "photos/study-quiet-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 544461,
+        "sha256": "825eeca57180b60439257dc5f209958ca95cc525980d35aa9aa90a9a6047f710"
+      }
+    },
+    "sha256": "df7fa822c8783919692b98830a418590a3442a1d5f0afca5232f0fe9928bf2d9",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "friends-listen",
+    "key": "friends-listen",
+    "theme": "relationships",
+    "alt": "Hai người ngồi lắng nghe nhau bên tách cà phê",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/diverse-friends-drinking-cups-of-tea-and-communicating-in-cafe-6248764/",
+    "original_url": "https://images.pexels.com/photos/6248764/pexels-photo-6248764.jpeg",
+    "download_url": "https://images.pexels.com/photos/6248764/pexels-photo-6248764.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Gary Barnes",
+    "photographer": "Gary Barnes",
+    "photographer_url": "https://www.pexels.com/@gary-barnes/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6000,
+      "height": 4000
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/friends-listen-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 62560,
+        "sha256": "94f634fd453364f39f28c274bcd0783e807c12102aa43e58e8cc9e5447be6805"
+      },
+      "1920": {
+        "path": "photos/friends-listen-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 177820,
+        "sha256": "ce5aa2774a326228ef503cfd2450eb0ed958cb9e1666436e820e7648797631c1"
+      },
+      "fallback": {
+        "path": "photos/friends-listen-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 243025,
+        "sha256": "3aa7caeec0e4770eb6da7dbf5d84bcfa0ba601d2011578cf00c1abc4e960141a"
+      }
+    },
+    "sha256": "bb832267143032fab3ad1dc58ee1f8f05e3d6a08c0715c0748a4a152aa65ec60",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "friends-warm",
+    "key": "friends-warm",
+    "theme": "relationships",
+    "alt": "Cuộc trò chuyện thân thiện trong không gian ấm áp",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/cheerful-diverse-friends-talking-at-table-with-coffee-in-cafe-6457517/",
+    "original_url": "https://images.pexels.com/photos/6457517/pexels-photo-6457517.jpeg",
+    "download_url": "https://images.pexels.com/photos/6457517/pexels-photo-6457517.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Alexander Suhorucov",
+    "photographer": "Alexander Suhorucov",
+    "photographer_url": "https://www.pexels.com/@alexander-suhorucov/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5000,
+      "height": 3333
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/friends-warm-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 48904,
+        "sha256": "db72c9bda9f444009122d45010e957fd0427dcf8d1508758ce0559c6c487c575"
+      },
+      "1920": {
+        "path": "photos/friends-warm-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 129492,
+        "sha256": "49f18dc9a5948454d366eefb0203c82b9e2a4649596bfdb57e08da5a37b6777c"
+      },
+      "fallback": {
+        "path": "photos/friends-warm-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 222649,
+        "sha256": "a7703129e57b14d6c21a16379c6c4176a4ff962f24d62315f5d7cde6d09548e0"
+      }
+    },
+    "sha256": "9804f55e060c8d7bbe698f12244ae477dad03080bb8d8301bba91ad71efc04f1",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "family-talk",
+    "key": "family-talk",
+    "theme": "family",
+    "alt": "Những thành viên gia đình trò chuyện trong phòng khách",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-happy-family-having-conversation-inside-the-living-room-8054818/",
+    "original_url": "https://images.pexels.com/photos/8054818/pexels-photo-8054818.jpeg",
+    "download_url": "https://images.pexels.com/photos/8054818/pexels-photo-8054818.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Annushka Ahuja",
+    "photographer": "Annushka Ahuja",
+    "photographer_url": "https://www.pexels.com/@annushka-ahuja/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6000,
+      "height": 4000
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/family-talk-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 76950,
+        "sha256": "a702042c80f79272cdbf4e30f9ec574cad0c3632d5bf8c4f8b1875927df262a2"
+      },
+      "1920": {
+        "path": "photos/family-talk-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 228802,
+        "sha256": "23339b68a76668aab7974203034b3f1ab57476d6e4be1195ee0880a06faf5ec5"
+      },
+      "fallback": {
+        "path": "photos/family-talk-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 275440,
+        "sha256": "dccc95b0b42f470ea44f42a9d6a07d6750215274a575236d5ccd385e7732a4b0"
+      }
+    },
+    "sha256": "1433be09607f80b522d256de04e72fce21f4587104d38847fde0a41d16a7df7d",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "group-discussion",
+    "key": "group-discussion",
+    "theme": "group",
+    "alt": "Một nhóm người lớn cùng tham gia trao đổi",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/diverse-group-in-engaging-indoor-workshop-33634824/",
+    "original_url": "https://images.pexels.com/photos/33634824/pexels-photo-33634824/free-photo-of-diverse-group-in-engaging-indoor-workshop.jpeg",
+    "download_url": "https://images.pexels.com/photos/33634824/pexels-photo-33634824/free-photo-of-diverse-group-in-engaging-indoor-workshop.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Mariam Bisola",
+    "photographer": "Mariam Bisola",
+    "photographer_url": "https://www.pexels.com/@mariam-bisola-2155268405/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3266,
+      "height": 4898
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3599
+    },
+    "variants": {
+      "960": {
+        "path": "photos/group-discussion-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 77694,
+        "sha256": "05744294565253cbe95f03a5f00c7eab84ff9fde50ce11451d040aa1f1124cf0"
+      },
+      "1920": {
+        "path": "photos/group-discussion-1920.webp",
+        "width": 1920,
+        "height": 2879,
+        "bytes": 387844,
+        "sha256": "2ffd17134ac7225dc060a4768d6bb6095b7962ac537009782a36dfdf1b9af2b5"
+      },
+      "fallback": {
+        "path": "photos/group-discussion-1920.jpg",
+        "width": 1920,
+        "height": 2879,
+        "bytes": 467841,
+        "sha256": "29ef13e6ed7a1b64c5a2cd75784e3036faf552a1267e4c4bc3dfb052c4e77fda"
+      }
+    },
+    "sha256": "4b0b0b73cfca127f0bb454e361e9fef0aa1f7af1c28dd016a4716ae43cce6d22",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "team-workshop",
+    "key": "team-workshop",
+    "theme": "workshop",
+    "alt": "Những người tham gia cùng học và trao đổi tại buổi tập huấn",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/diverse-team-engaged-in-business-training-workshop-34046709/",
+    "original_url": "https://images.pexels.com/photos/34046709/pexels-photo-34046709/free-photo-of-diverse-team-engaged-in-business-training-workshop.jpeg",
+    "download_url": "https://images.pexels.com/photos/34046709/pexels-photo-34046709/free-photo-of-diverse-team-engaged-in-business-training-workshop.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Beniam",
+    "photographer": "Beniam",
+    "photographer_url": "https://www.pexels.com/@beniam-447198297/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4497,
+      "height": 5621
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3000
+    },
+    "variants": {
+      "960": {
+        "path": "photos/team-workshop-960.webp",
+        "width": 960,
+        "height": 1200,
+        "bytes": 53474,
+        "sha256": "11187fb68aefacc943cf305a20573919ab94edc084589d453a577274f0e5e0c4"
+      },
+      "1920": {
+        "path": "photos/team-workshop-1920.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 146394,
+        "sha256": "6886b7b75228ee0addd38901a72edffcdfb3bbb30300a0b482bb6b6a67902b77"
+      },
+      "fallback": {
+        "path": "photos/team-workshop-1920.jpg",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 246736,
+        "sha256": "88e578d6c52c13622448125f8a990501c1accca3dc3ba3c274843ad29af3cf64"
+      }
+    },
+    "sha256": "3d3e21898e8fd6ca7531be34306b3794003d2377cacb01370f041978536c5d00",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "rest-bedroom",
+    "key": "rest-bedroom",
+    "theme": "sleep",
+    "alt": "Ánh sáng buổi sáng trong căn phòng nghỉ ngơi gọn gàng",
+    "illustrative_people": false,
+    "source_page": "https://www.pexels.com/photo/cozy-morning-sunlight-on-a-tidy-bed-28513847/",
+    "original_url": "https://images.pexels.com/photos/28513847/pexels-photo-28513847/free-photo-of-cozy-morning-sunlight-on-a-tidy-bed.jpeg",
+    "download_url": "https://images.pexels.com/photos/28513847/pexels-photo-28513847/free-photo-of-cozy-morning-sunlight-on-a-tidy-bed.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Diana ✨",
+    "photographer": "Diana ✨",
+    "photographer_url": "https://www.pexels.com/@didsss/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4024,
+      "height": 6048
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3607
+    },
+    "variants": {
+      "960": {
+        "path": "photos/rest-bedroom-960.webp",
+        "width": 960,
+        "height": 1443,
+        "bytes": 26824,
+        "sha256": "156738922c953f73558d260690590f9e6fa26b05e6d081f22446ae3a224e024f"
+      },
+      "1920": {
+        "path": "photos/rest-bedroom-1920.webp",
+        "width": 1920,
+        "height": 2886,
+        "bytes": 82706,
+        "sha256": "70fa1fec5719933078d25b066c33c3ae50f761f9f0e0f450746316d8bfdb335f"
+      },
+      "fallback": {
+        "path": "photos/rest-bedroom-1920.jpg",
+        "width": 1920,
+        "height": 2886,
+        "bytes": 184131,
+        "sha256": "860b4c5ed1e09f7d728e1171f7ab8aedd12283fc41b5570ba54394106239fe42"
+      }
+    },
+    "sha256": "c8826470ea468d8ffb1c10c03d7a2e30c60fab18bba545d9973fe33c8adecf64",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "leaves-light",
+    "key": "leaves-light",
+    "theme": "nature",
+    "alt": "Ánh sáng nhẹ xuyên qua tán lá xanh",
+    "illustrative_people": false,
+    "source_page": "https://www.pexels.com/photo/green-leaves-on-a-tree-in-sunlight-19249522/",
+    "original_url": "https://images.pexels.com/photos/19249522/pexels-photo-19249522/free-photo-of-green-leaves-on-a-tree-in-sunlight.jpeg",
+    "download_url": "https://images.pexels.com/photos/19249522/pexels-photo-19249522/free-photo-of-green-leaves-on-a-tree-in-sunlight.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Thể Phạm",
+    "photographer": "Thể Phạm",
+    "photographer_url": "https://www.pexels.com/@phamthe/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3744,
+      "height": 5616
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/leaves-light-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 144726,
+        "sha256": "af28cdd02ab666b8643613dde93ed6210ed12d911e42bb47f532e39bf9d39ce9"
+      },
+      "1920": {
+        "path": "photos/leaves-light-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 389416,
+        "sha256": "0e971b3cb81fd640e2ed6eafdda7231f67e1bef0ff16931f9647d734feeac90a"
+      },
+      "fallback": {
+        "path": "photos/leaves-light-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 544634,
+        "sha256": "b00821f4b54a3943733e3f08384b0020e2653750792c070bfe1a40e19c40ed6c"
+      }
+    },
+    "sha256": "78e180fb23cb1f63185dadcac34efdae2346dea49dfbbf88c623b554f15f8d6b",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "nature-detail",
+    "key": "nature-detail",
+    "theme": "nature",
+    "alt": "Chi tiết lá cây xanh trong ánh sáng tự nhiên",
+    "illustrative_people": false,
+    "source_page": "https://www.pexels.com/photo/sunlight-through-green-leaves-12623891/",
+    "original_url": "https://images.pexels.com/photos/12623891/pexels-photo-12623891.jpeg",
+    "download_url": "https://images.pexels.com/photos/12623891/pexels-photo-12623891.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Cosmin ChiWu",
+    "photographer": "Cosmin ChiWu",
+    "photographer_url": "https://www.pexels.com/@cosmin-chiwu-170428941/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3511,
+      "height": 2349
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1606
+    },
+    "variants": {
+      "960": {
+        "path": "photos/nature-detail-960.webp",
+        "width": 960,
+        "height": 642,
+        "bytes": 48686,
+        "sha256": "1f988b076b70353a9cda37e7d6d30207a8104c51b543e4f21f0f490bb2e8d91c"
+      },
+      "1920": {
+        "path": "photos/nature-detail-1920.webp",
+        "width": 1920,
+        "height": 1285,
+        "bytes": 228878,
+        "sha256": "aacc5d43174914ea8cb7d548af96829d1b5cd55a2940224505b4eb5e69528ace"
+      },
+      "fallback": {
+        "path": "photos/nature-detail-1920.jpg",
+        "width": 1920,
+        "height": 1285,
+        "bytes": 248187,
+        "sha256": "1b7a20bc7377bfa6d22a6459b531ebd7d1ad102775edb5d89834ad71c8601898"
+      }
+    },
+    "sha256": "547484af94943b1e80ddf38c37bc2b9d5cd4b41bc7192af408850370f5b6777e",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "mindful-room",
+    "key": "mindful-room",
+    "theme": "mindfulness",
+    "alt": "Một khoảng thời gian tĩnh lặng trong căn phòng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-doing-yoga-inside-a-room-3094215/",
+    "original_url": "https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg",
+    "download_url": "https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Valeria Ushakova",
+    "photographer": "Valeria Ushakova",
+    "photographer_url": "https://www.pexels.com/@valeria-ushakova/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3458,
+      "height": 5187
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/mindful-room-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 37342,
+        "sha256": "4e0e6c95bb3cb5a1b39907502ffa3644875afa5ec11f96838da138c67774b8b7"
+      },
+      "1920": {
+        "path": "photos/mindful-room-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 125654,
+        "sha256": "a793536466f7a721503fc4ae3c91d2d13beca170b2c766c80d347dfb3d35097d"
+      },
+      "fallback": {
+        "path": "photos/mindful-room-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 220858,
+        "sha256": "8ae46c93bfcaa7612a31243c0793e4df5d797d793b2c9e79521618115b429660"
+      }
+    },
+    "sha256": "944e9d24393454a6050335c02be4cb0a06ba19f3e3ee4144d7d8cc9424642604",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "privacy-laptop",
+    "key": "privacy-laptop",
+    "theme": "privacy",
+    "alt": "Đôi tay thao tác trên máy tính trong không gian riêng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/person-using-a-laptop-7858825/",
+    "original_url": "https://images.pexels.com/photos/7858825/pexels-photo-7858825.jpeg",
+    "download_url": "https://images.pexels.com/photos/7858825/pexels-photo-7858825.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Greta Hoffman",
+    "photographer": "Greta Hoffman",
+    "photographer_url": "https://www.pexels.com/@greta-hoffman/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6000,
+      "height": 4000
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/privacy-laptop-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 23852,
+        "sha256": "91b7d9451ddae608513ee5c90461f1cf8fafd8cfc8647a1d53293f012569a37d"
+      },
+      "1920": {
+        "path": "photos/privacy-laptop-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 64292,
+        "sha256": "cb027805084778e219ca2bf6ea86254f23da5f22ab47ed3ee2385e5672b2f98e"
+      },
+      "fallback": {
+        "path": "photos/privacy-laptop-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 125119,
+        "sha256": "c7ff8e7ebbfbf54e72273511b8f065a66e6f52f82779c0f79cf123e7abe4b0cd"
+      }
+    },
+    "sha256": "a98a2aeb1440ea7b54364b8dad82c86ef6ae99d2b3f0d0d14f360c3af2d9c7ce",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "work-focus",
+    "key": "work-focus",
+    "theme": "work",
+    "alt": "Góc làm việc cá nhân với máy tính",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-person-typing-on-a-laptop-8348970/",
+    "original_url": "https://images.pexels.com/photos/8348970/pexels-photo-8348970.jpeg",
+    "download_url": "https://images.pexels.com/photos/8348970/pexels-photo-8348970.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Henri Mathieu-Saint-Laurent",
+    "photographer": "Henri Mathieu-Saint-Laurent",
+    "photographer_url": "https://www.pexels.com/@henri-mathieu/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5504,
+      "height": 8256
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/work-focus-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 84950,
+        "sha256": "ab7c42b311f3e4dfe2a1b0ad5cbac17fe98ca7dd8960d2a73f3200486a6c1f2e"
+      },
+      "1920": {
+        "path": "photos/work-focus-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 233006,
+        "sha256": "bd515578dc216e8d7f972864dbb00c9a8eaeb4805e97ad663dfb9ec30293f639"
+      },
+      "fallback": {
+        "path": "photos/work-focus-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 356333,
+        "sha256": "29d4bd980834edd29d4d2c558ac67e5ddadcb1f232b315ff1c1be856c453b535"
+      }
+    },
+    "sha256": "2f704529d800232670e459b8b9a4c741290eec4d1f7b778bfa902cf2c8fc7857",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "work-digital",
+    "key": "work-digital",
+    "theme": "work",
+    "alt": "Sử dụng máy tính để kết nối và làm việc",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-woman-working-with-a-laptop-8872200/",
+    "original_url": "https://images.pexels.com/photos/8872200/pexels-photo-8872200.jpeg",
+    "download_url": "https://images.pexels.com/photos/8872200/pexels-photo-8872200.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Mikhail Nilov",
+    "photographer": "Mikhail Nilov",
+    "photographer_url": "https://www.pexels.com/@mikhail-nilov/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3319,
+      "height": 4972
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3595
+    },
+    "variants": {
+      "960": {
+        "path": "photos/work-digital-960.webp",
+        "width": 960,
+        "height": 1438,
+        "bytes": 51580,
+        "sha256": "63ed297fc088fae8c37da41ef25c85fe035444af8c4d258d89263379a1cabd86"
+      },
+      "1920": {
+        "path": "photos/work-digital-1920.webp",
+        "width": 1920,
+        "height": 2876,
+        "bytes": 177148,
+        "sha256": "6da2fc85e86e865361ec846eace2b540d29faf5f6788ed25b0ae2b2e6dd076d7"
+      },
+      "fallback": {
+        "path": "photos/work-digital-1920.jpg",
+        "width": 1920,
+        "height": 2876,
+        "bytes": 322993,
+        "sha256": "25fbed20ee8f6ad772dd5fe45a940c37a37e7cc7ecc4729f9170462570aba664"
+      }
+    },
+    "sha256": "212a70fa730a54d4d8663e5f2339b8e2b43922023e279ac330156793860ea25d",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "quiet-moment",
+    "key": "quiet-moment",
+    "theme": "mindfulness",
+    "alt": "Một khoảnh khắc dành cho bản thân và sự chú tâm",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/brunette-woman-meditating-3822367/",
+    "original_url": "https://images.pexels.com/photos/3822367/pexels-photo-3822367.jpeg",
+    "download_url": "https://images.pexels.com/photos/3822367/pexels-photo-3822367.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Elina Fairytale",
+    "photographer": "Elina Fairytale",
+    "photographer_url": "https://www.pexels.com/@elly-fairytale/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3840,
+      "height": 5760
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/quiet-moment-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 59138,
+        "sha256": "30e15d67e3174a6591447f457e755cc477b49e5920fbed7a26d7de9bbbb60150"
+      },
+      "1920": {
+        "path": "photos/quiet-moment-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 387922,
+        "sha256": "b9c6e71d5b6bb03880105302024131e03248c2f23a115e7c5d7eee2771f79eef"
+      },
+      "fallback": {
+        "path": "photos/quiet-moment-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 423351,
+        "sha256": "192eb6a02a7f9c6b1b18e9f0ddae61d7c5c6cb99f91027d25d06722c4639096e"
+      }
+    },
+    "sha256": "ad3003adcc1314beaeb712dd14e0c5db45ca8dc2f3fad02a706734ab9f08592a",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "tea-notes",
+    "key": "tea-notes",
+    "theme": "journal",
+    "alt": "Ghi chép với tách trà trong khoảng thời gian riêng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-person-writing-on-a-notebook-6653908/",
+    "original_url": "https://images.pexels.com/photos/6653908/pexels-photo-6653908.jpeg",
+    "download_url": "https://images.pexels.com/photos/6653908/pexels-photo-6653908.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Arina Krasnikova",
+    "photographer": "Arina Krasnikova",
+    "photographer_url": "https://www.pexels.com/@arina-krasnikova/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3500,
+      "height": 2336
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1602
+    },
+    "variants": {
+      "960": {
+        "path": "photos/tea-notes-960.webp",
+        "width": 960,
+        "height": 641,
+        "bytes": 42612,
+        "sha256": "94966c1f3345251b4a3dbd3ab8dc68724e15f26081bf63e75201558687d52ef3"
+      },
+      "1920": {
+        "path": "photos/tea-notes-1920.webp",
+        "width": 1920,
+        "height": 1282,
+        "bytes": 114230,
+        "sha256": "e32cf50806cddcf95479deda2106cf0299548b2c474844bfb3bf0c41961e5f99"
+      },
+      "fallback": {
+        "path": "photos/tea-notes-1920.jpg",
+        "width": 1920,
+        "height": 1282,
+        "bytes": 175244,
+        "sha256": "81bd42d6ba6724bbb8149615e7e977123b93faf1a42150a68bc133df82ad625a"
+      }
+    },
+    "sha256": "313761105920cae3d1912cb899a99c9f9cb7498a82a3e351ce7c5816dcecffa2",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "conversation-notes",
+    "key": "conversation-notes",
+    "theme": "counseling",
+    "alt": "Ghi chú trong cuộc trò chuyện trực tiếp",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-talking-to-a-therapist-6255879/",
+    "original_url": "https://images.pexels.com/photos/6255879/pexels-photo-6255879.jpeg",
+    "download_url": "https://images.pexels.com/photos/6255879/pexels-photo-6255879.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by https://kaboompics.com/",
+    "photographer": "https://kaboompics.com/",
+    "photographer_url": "https://www.pexels.com/@karola-g/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6720,
+      "height": 4480
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 1600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/conversation-notes-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 46984,
+        "sha256": "14985d0fc84a038653311070ab614c94418ac6c90dce41d45ca7cb8183a31ba6"
+      },
+      "1920": {
+        "path": "photos/conversation-notes-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 138132,
+        "sha256": "ad8596b976fd5cad38d2e21d66d0b08fb97efe3ce45eb69c67b0ceb70a1bc01f"
+      },
+      "fallback": {
+        "path": "photos/conversation-notes-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 200106,
+        "sha256": "41c7d82bf5d153cef20640dc44c61472d73ba3daabfd41377ca443c10a165459"
+      }
+    },
+    "sha256": "3d60faf03e0e886d21d64339f6357f4054b88e19115dc6e932632e72f4aa4427",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "students-library",
+    "key": "students-library",
+    "theme": "study",
+    "alt": "Hai người cùng học trong thư viện với sách và máy tính",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/students-studying-at-the-library-6281016/",
+    "original_url": "https://images.pexels.com/photos/6281016/pexels-photo-6281016.jpeg",
+    "download_url": "https://images.pexels.com/photos/6281016/pexels-photo-6281016.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "credit": "Photo by Yaroslav Shuraev",
+    "photographer": "Yaroslav Shuraev",
+    "photographer_url": "https://www.pexels.com/@yaroslav-shuraev/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4406,
+      "height": 6609
+    },
+    "download_dimensions": {
+      "width": 2400,
+      "height": 3600
+    },
+    "variants": {
+      "960": {
+        "path": "photos/students-library-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 73078,
+        "sha256": "992e86878a985bb15471952737ed78f44a74affebb044864d873463b754d2169"
+      },
+      "1920": {
+        "path": "photos/students-library-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 216122,
+        "sha256": "67a45faaf6538e22890f028298c6791edf6891907b772975a3bff2cdcf717e39"
+      },
+      "fallback": {
+        "path": "photos/students-library-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 348802,
+        "sha256": "2fb163c1230cf79add86926d3a70b6c3423a6420b271546a5beb7e5c8f0282c0"
+      }
+    },
+    "sha256": "77011e728909595adaa092349d1dd9c0219e0ecc086322428e28fb8ecce196ea",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ. Không xác nhận những người trong ảnh là nhân sự hoặc khách hàng Kể Nè."
+  },
+  {
+    "id": "v3-care-couple",
+    "key": "v3-care-couple",
+    "pexels_id": "5336963",
+    "theme": "counseling",
+    "alt": "Cuộc trao đổi trực tiếp trong không gian riêng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-psychologist-talking-to-her-patient-5336963/",
+    "original_url": "https://images.pexels.com/photos/5336963/pexels-photo-5336963.jpeg",
+    "download_url": "https://images.pexels.com/photos/5336963/pexels-photo-5336963.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Tima Miroshnichenko",
+    "photographer": "Tima Miroshnichenko",
+    "photographer_url": "https://www.pexels.com/@tima-miroshnichenko/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5803,
+      "height": 3869
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-care-couple-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 43492,
+        "sha256": "aaf03b9019d69467dc84d1e5c27b9278319a521582e6e23dc40b34e586613690"
+      },
+      "1920": {
+        "path": "photos/v3-care-couple-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 145586,
+        "sha256": "7b47e484f7252baf590678067d9261107a776016a46e9fbfb2f8a37336eeafd2"
+      },
+      "fallback": {
+        "path": "photos/v3-care-couple-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 187929,
+        "sha256": "49415440542f09763da473f4f6d7ec37583c57b0ea0fa664a5e2c6577d473219"
+      }
+    },
+    "sha256": "a5edb2b31a9d1b567e916d7e5cf66e9f6409b919731be24267187ffd16f1d9db",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-care-listening",
+    "key": "v3-care-listening",
+    "pexels_id": "3958431",
+    "theme": "counseling",
+    "alt": "Lắng nghe chăm chú trong buổi trò chuyện",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/therapist-listening-to-client-3958431/",
+    "original_url": "https://images.pexels.com/photos/3958431/pexels-photo-3958431.jpeg",
+    "download_url": "https://images.pexels.com/photos/3958431/pexels-photo-3958431.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Polina Zimmerman",
+    "photographer": "Polina Zimmerman",
+    "photographer_url": "https://www.pexels.com/@polina-zimmerman/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5760,
+      "height": 3840
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-care-listening-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 53312,
+        "sha256": "84e6920fc3c54ed3927bde75f99801fe4d2711a0004a94a6c357ebedd9910d47"
+      },
+      "1920": {
+        "path": "photos/v3-care-listening-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 176926,
+        "sha256": "b82135fbd1dddd28ba1497b1d698098edd654de992dfd6ed880b337aa31d9ede"
+      },
+      "fallback": {
+        "path": "photos/v3-care-listening-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 235804,
+        "sha256": "f69073b8b514b7930446216debee9a22de4cd51b8bbab3bf0d522bb52e5e266e"
+      }
+    },
+    "sha256": "6a2bcdf41f07b3df222592a0f7ac10cadafd3e526e90a0a4a6b0aff3076fd389",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-care-dialogue",
+    "key": "v3-care-dialogue",
+    "pexels_id": "7579190",
+    "theme": "counseling",
+    "alt": "Đối thoại và chia sẻ trong khoảng thời gian riêng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-in-a-psychotherapy-session-7579190/",
+    "original_url": "https://images.pexels.com/photos/7579190/pexels-photo-7579190.jpeg",
+    "download_url": "https://images.pexels.com/photos/7579190/pexels-photo-7579190.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Antoni Shkraba",
+    "photographer": "Antoni Shkraba",
+    "photographer_url": "https://www.pexels.com/@shkrabaanthony/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3767,
+      "height": 5650
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-care-dialogue-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 63426,
+        "sha256": "549d42ee16a9c1400a2a6cb7b47e1d413fcdc5f9b6645230c37026c262e9b251"
+      },
+      "1920": {
+        "path": "photos/v3-care-dialogue-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 391066,
+        "sha256": "2dba250cbe47e3c1457c361e53a3d0c0c0b7f9b44e8bc5fd848f912923e27c45"
+      },
+      "fallback": {
+        "path": "photos/v3-care-dialogue-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 386003,
+        "sha256": "3725c74b5e926dc6cc4baef699ca7e6ff8d74b3159c8a2888de6d5c8ca0baaaf"
+      }
+    },
+    "sha256": "de0eebe0d39b0fe6bcaac9f047460f0935c24349b61360f2c15b8681d0c3c073",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-care-reassurance",
+    "key": "v3-care-reassurance",
+    "pexels_id": "7176050",
+    "theme": "counseling",
+    "alt": "Trao đổi với người hỗ trợ trong không gian yên tĩnh",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-therapist-talking-to-her-patient-7176050/",
+    "original_url": "https://images.pexels.com/photos/7176050/pexels-photo-7176050.jpeg",
+    "download_url": "https://images.pexels.com/photos/7176050/pexels-photo-7176050.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by SHVETS production",
+    "photographer": "SHVETS production",
+    "photographer_url": "https://www.pexels.com/@shvets-production/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6240,
+      "height": 4160
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-care-reassurance-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 32154,
+        "sha256": "b40b08f1d4a813958452a6afa4f2af16dd2f8fd9f8db234773957a9a1e51cd66"
+      },
+      "1920": {
+        "path": "photos/v3-care-reassurance-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 121356,
+        "sha256": "07c6834de5eaa262838e702dff1cbfd99b02666a9859fc94d0708b309e279fb0"
+      },
+      "fallback": {
+        "path": "photos/v3-care-reassurance-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 167153,
+        "sha256": "c0415d2e21eabf7dccddbb2fa238542668dd527c65a07ae2159fa63db8a1001d"
+      }
+    },
+    "sha256": "e971e7b135fe9025d689a6a1c00d720e034e903c3fbed6d66edb04b4805a77d4",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-care-greenroom",
+    "key": "v3-care-greenroom",
+    "pexels_id": "23496577",
+    "theme": "counseling",
+    "alt": "Hai người trò chuyện giữa không gian có cây xanh",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-woman-sitting-in-a-chair-talking-to-another-woman-23496577/",
+    "original_url": "https://images.pexels.com/photos/23496577/pexels-photo-23496577/free-photo-of-a-woman-sitting-in-a-chair-talking-to-another-woman.jpeg",
+    "download_url": "https://images.pexels.com/photos/23496577/pexels-photo-23496577/free-photo-of-a-woman-sitting-in-a-chair-talking-to-another-woman.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Vitaly Gariev",
+    "photographer": "Vitaly Gariev",
+    "photographer_url": "https://www.pexels.com/@silverkblack/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3840,
+      "height": 2160
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1238
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-care-greenroom-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 28582,
+        "sha256": "eea13b0bf87156f38341999bf5092e2c7a46b3c90d2464dafc389f089db81cbe"
+      },
+      "1920": {
+        "path": "photos/v3-care-greenroom-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 71140,
+        "sha256": "8d716448b278ced220711d7521ac307df476e896d4489ecd02bd0a9e43abcee6"
+      },
+      "fallback": {
+        "path": "photos/v3-care-greenroom-1920.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 131884,
+        "sha256": "fb0e7dfc92c8159962eaac7751fc43859ec7402c5996d31e8788170134a11e6d"
+      }
+    },
+    "sha256": "ed0cd36a732a017ff4ac0f7a7af09a166bb2b4f99183406787952281dedcbd96",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-sticky",
+    "key": "v3-journal-sticky",
+    "pexels_id": "8640080",
+    "theme": "journal",
+    "alt": "Ghi chú bên máy tính và những tờ giấy nhắc việc",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-person-writing-on-sticky-note-8640080/",
+    "original_url": "https://images.pexels.com/photos/8640080/pexels-photo-8640080.jpeg",
+    "download_url": "https://images.pexels.com/photos/8640080/pexels-photo-8640080.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Pavel Danilyuk",
+    "photographer": "Pavel Danilyuk",
+    "photographer_url": "https://www.pexels.com/@pavel-danilyuk/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5760,
+      "height": 3840
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-sticky-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 52304,
+        "sha256": "5bc50fae394a78df17fa7f458dc3d2593a0fb25d5719848642eab4ae24938ea7"
+      },
+      "1920": {
+        "path": "photos/v3-journal-sticky-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 134778,
+        "sha256": "98b2e0ebc5dea6c7f56867844c6d567db5b2dce9a40eb1ad38d6401b350b64ad"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-sticky-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 207297,
+        "sha256": "9522a43ad9bc3451d0a3b2b6fc8581e5a9a8492dcfc61e02ac3451f727be05ad"
+      }
+    },
+    "sha256": "ee07c19c12363eefe86b13aa438041fd58ef9b521464137c0cf87d02df4b7570",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-cozy",
+    "key": "v3-journal-cozy",
+    "pexels_id": "7005388",
+    "theme": "journal",
+    "alt": "Viết nhật ký trong khoảng riêng tại nhà",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-happy-woman-writing-on-a-notebook-7005388/",
+    "original_url": "https://images.pexels.com/photos/7005388/pexels-photo-7005388.jpeg",
+    "download_url": "https://images.pexels.com/photos/7005388/pexels-photo-7005388.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Arina Krasnikova",
+    "photographer": "Arina Krasnikova",
+    "photographer_url": "https://www.pexels.com/@arina-krasnikova/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 2336,
+      "height": 3500
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3296
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-cozy-960.webp",
+        "width": 960,
+        "height": 1438,
+        "bytes": 50928,
+        "sha256": "552af05104e7d5e2f0e7a019b999a7a9c027cf32e22213b9aca633e2c2097b46"
+      },
+      "1920": {
+        "path": "photos/v3-journal-cozy-1920.webp",
+        "width": 1920,
+        "height": 2877,
+        "bytes": 170778,
+        "sha256": "5bdc356d14cce80e98455e377cb74b640f3c7965e485317798a4b087547b00f0"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-cozy-1920.jpg",
+        "width": 1920,
+        "height": 2877,
+        "bytes": 283877,
+        "sha256": "e8be12ffe4ea8ca3049ef0564ee5c91c2cb82a7ed12aa031e9a68d2c19ad7d1f"
+      }
+    },
+    "sha256": "2c5037dd339dd55aa9e490b45493c4e799779c809b46e330b432fc8c2041db8d",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-modern",
+    "key": "v3-journal-modern",
+    "pexels_id": "4443135",
+    "theme": "journal",
+    "alt": "Một góc ghi chép với máy tính và sổ tay",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-person-writing-on-the-notebook-4443135/",
+    "original_url": "https://images.pexels.com/photos/4443135/pexels-photo-4443135.jpeg",
+    "download_url": "https://images.pexels.com/photos/4443135/pexels-photo-4443135.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Polina Tankilevitch",
+    "photographer": "Polina Tankilevitch",
+    "photographer_url": "https://www.pexels.com/@polina-tankilevitch/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3000,
+      "height": 2000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-modern-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 33544,
+        "sha256": "b684fc35e2674f3d1dd3142c2f1a66ee763c7f3111873b4efb2cd0ba888b6c34"
+      },
+      "1920": {
+        "path": "photos/v3-journal-modern-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 103010,
+        "sha256": "677cc8e1b673a0b65d824fe41b49977a6ada81a062de602332099da79d736eeb"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-modern-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 162438,
+        "sha256": "5cf3a9cf4ddfc422a67f482cea3995a198023bccc1f52cb06dffae49bb5ffa36"
+      }
+    },
+    "sha256": "df19d649c34f69dc13495b18865315f15d517b91dd475a78714de2722605e840",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-spiral",
+    "key": "v3-journal-spiral",
+    "pexels_id": "9032499",
+    "theme": "journal",
+    "alt": "Ghi chép bằng bút trong cuốn sổ cá nhân",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-person-writing-on-a-notebook-9032499/",
+    "original_url": "https://images.pexels.com/photos/9032499/pexels-photo-9032499.jpeg",
+    "download_url": "https://images.pexels.com/photos/9032499/pexels-photo-9032499.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Kevin Malik",
+    "photographer": "Kevin Malik",
+    "photographer_url": "https://www.pexels.com/@kevin-malik/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 6000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-spiral-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 38142,
+        "sha256": "b84ccbed34f4e4e9920cac46eb18be542c9e9fd2bc2c290966bc0d864170f27d"
+      },
+      "1920": {
+        "path": "photos/v3-journal-spiral-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 117682,
+        "sha256": "b0a8c6af5adb4bc134c6cdd32e50ae6ea0dfd8cc15efc17c506e93ed593ab050"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-spiral-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 217363,
+        "sha256": "fc78dcd69bbaf804a4db3cd2ab03a726798ed32d3828e43bfcc16293534100f3"
+      }
+    },
+    "sha256": "28013e9cfa91f4c1bf393cd28e3e69253dd3120057eb40177b745550cf659308",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-tablet",
+    "key": "v3-journal-tablet",
+    "pexels_id": "8055496",
+    "theme": "journal",
+    "alt": "Chuẩn bị ghi chú bên sách và tách trà",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-woman-writing-on-the-notebook-8055496/",
+    "original_url": "https://images.pexels.com/photos/8055496/pexels-photo-8055496.jpeg",
+    "download_url": "https://images.pexels.com/photos/8055496/pexels-photo-8055496.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Annushka Ahuja",
+    "photographer": "Annushka Ahuja",
+    "photographer_url": "https://www.pexels.com/@annushka-ahuja/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6000,
+      "height": 4000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-tablet-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 76446,
+        "sha256": "b2fce775831cdc7dc7a7e90a09ab2dda544d6816150e6c5f1bcb3c046eb2de0b"
+      },
+      "1920": {
+        "path": "photos/v3-journal-tablet-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 246652,
+        "sha256": "7433cfb2748e64b0c648749d1deabb33534d5a6c073cfc822b42a5b10d60795a"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-tablet-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 300030,
+        "sha256": "a3a8032f594140ab6acfe30c37bf3d2bc57c9bad4dfd0cefbdd2bee247518dbe"
+      }
+    },
+    "sha256": "758000b9b5daf49340440ddac0c455a59f81ce912fed7b00fa7fe79fb2f6d83a",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-bed",
+    "key": "v3-journal-bed",
+    "pexels_id": "8487211",
+    "theme": "journal",
+    "alt": "Ghi lại một điều nhỏ trong khoảng nghỉ",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-person-writing-on-a-notebook-8487211/",
+    "original_url": "https://images.pexels.com/photos/8487211/pexels-photo-8487211.jpeg",
+    "download_url": "https://images.pexels.com/photos/8487211/pexels-photo-8487211.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Ron Lach",
+    "photographer": "Ron Lach",
+    "photographer_url": "https://www.pexels.com/@ron-lach/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6240,
+      "height": 4160
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-bed-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 15726,
+        "sha256": "99395106976bbe251f8ae0b444a72c0e56c36f29a4f6bd9425b82a18d04a4dbc"
+      },
+      "1920": {
+        "path": "photos/v3-journal-bed-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 49318,
+        "sha256": "2774f9223dfdfbbbb01b532fec85777a563186e55b9a5133f38f48ce4a99b7a9"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-bed-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 102209,
+        "sha256": "fc6a1280ace24fe582f3ba877ac56005265eb33d65cf5834b4ffe9ca637c1f39"
+      }
+    },
+    "sha256": "46cc6dec538c98dfd7ad2ce7541eeb065945c16d7268b9259ab35d1051f91254",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-home",
+    "key": "v3-journal-home",
+    "pexels_id": "7034749",
+    "theme": "journal",
+    "alt": "Viết vào sổ trong một góc làm việc ở nhà",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/focused-woman-with-laptop-writing-in-notebook-in-room-7034749/",
+    "original_url": "https://images.pexels.com/photos/7034749/pexels-photo-7034749.jpeg",
+    "download_url": "https://images.pexels.com/photos/7034749/pexels-photo-7034749.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by George Milton",
+    "photographer": "George Milton",
+    "photographer_url": "https://www.pexels.com/@george-milton/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 6000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-home-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 68538,
+        "sha256": "456763fa2d3b5c26be61cc46d95292842ca74b370ad088d76e4a7f29cf3b138d"
+      },
+      "1920": {
+        "path": "photos/v3-journal-home-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 232002,
+        "sha256": "85abf80006fa5932eb23659e31032d556c8e7176fa1aac2d67b4e6618ec11d71"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-home-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 350705,
+        "sha256": "9a3bae1e79c49783ea5668db7f85e176bc0594c9716887a708227637876a7ff9"
+      }
+    },
+    "sha256": "88f64767fe97f3cd2d6417369edd1e31c03db2ea862a8213d41c0f541993127e",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-work",
+    "key": "v3-journal-work",
+    "pexels_id": "5439164",
+    "theme": "journal",
+    "alt": "Ghi chú cùng tài liệu trong góc làm việc",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-sitting-by-a-desk-with-a-notebook-and-a-pen-5439164/",
+    "original_url": "https://images.pexels.com/photos/5439164/pexels-photo-5439164.jpeg",
+    "download_url": "https://images.pexels.com/photos/5439164/pexels-photo-5439164.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Tima Miroshnichenko",
+    "photographer": "Tima Miroshnichenko",
+    "photographer_url": "https://www.pexels.com/@tima-miroshnichenko/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5296,
+      "height": 3531
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-work-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 22322,
+        "sha256": "a03a8c3c3a550ef9e7f0b7d1a568681127e0ae97e408c3816bc7efe2bd39b698"
+      },
+      "1920": {
+        "path": "photos/v3-journal-work-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 66624,
+        "sha256": "6f88bbd094e317bc73130ad25196eaf76e3f7e9a2fbaeb5578a007f326ae1e42"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-work-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 114257,
+        "sha256": "7559a9c240dfeaa5a87e906d9d9edeefb67c952c8974d3556f99060bc1a7cce1"
+      }
+    },
+    "sha256": "182862b860bc14a81d5c6858fe95b594285c32992f1748b08705074c59c30a35",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-laptop",
+    "key": "v3-journal-laptop",
+    "pexels_id": "9159373",
+    "theme": "journal",
+    "alt": "Viết ghi chú bên chiếc máy tính cá nhân",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-in-white-dress-writing-into-the-notebook-9159373/",
+    "original_url": "https://images.pexels.com/photos/9159373/pexels-photo-9159373.jpeg",
+    "download_url": "https://images.pexels.com/photos/9159373/pexels-photo-9159373.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Mikhail Nilov",
+    "photographer": "Mikhail Nilov",
+    "photographer_url": "https://www.pexels.com/@mikhail-nilov/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 6000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-laptop-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 52172,
+        "sha256": "2cbc6eb3b85ed3b20634a7874a72dc0edd51ce41852d638f5bf588ddc405a0f9"
+      },
+      "1920": {
+        "path": "photos/v3-journal-laptop-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 166742,
+        "sha256": "bb1165ab48eebf5b255210fa595d405128de38f736bd27718df2ba809eb5a8ff"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-laptop-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 248056,
+        "sha256": "26b5d2c58fdb2860ba257185a534624564604f590135bb7cc27f285d05659881"
+      }
+    },
+    "sha256": "f5dba01e7b05c3b44498e7daae4a1e6eea88734af998a7227786d836b1637fa4",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-planner",
+    "key": "v3-journal-planner",
+    "pexels_id": "6862840",
+    "theme": "journal",
+    "alt": "Một kế hoạch nhỏ được viết vào sổ",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/close-up-shot-of-a-person-writing-on-a-notebook-6862840/",
+    "original_url": "https://images.pexels.com/photos/6862840/pexels-photo-6862840.jpeg",
+    "download_url": "https://images.pexels.com/photos/6862840/pexels-photo-6862840.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by cottonbro studio",
+    "photographer": "cottonbro studio",
+    "photographer_url": "https://www.pexels.com/@cottonbro/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6047,
+      "height": 4031
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-planner-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 25236,
+        "sha256": "57fff85276f51562c05aaeafb857fb7be4c6c64181cbabefaabbc99d2bb09bb1"
+      },
+      "1920": {
+        "path": "photos/v3-journal-planner-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 66218,
+        "sha256": "b66ae19610ef0fc57d4c30ff0f89b981b182bccbde129ce1c5a1fc8e56f0daee"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-planner-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 122456,
+        "sha256": "62d0bd1522ca18a319c27e1f48dede2d7b86f063fcb800972bdab1a97c08d5fe"
+      }
+    },
+    "sha256": "0fc57d7efc4e584f1c993e4d98294d23c2d04a1415b68ba78758899fc8d9630b",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-journal-desk",
+    "key": "v3-journal-desk",
+    "pexels_id": "3059747",
+    "theme": "journal",
+    "alt": "Ghi chép tại bàn làm việc với máy tính",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-writing-on-her-notebook-3059747/",
+    "original_url": "https://images.pexels.com/photos/3059747/pexels-photo-3059747.jpeg",
+    "download_url": "https://images.pexels.com/photos/3059747/pexels-photo-3059747.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by RF._.studio _",
+    "photographer": "RF._.studio _",
+    "photographer_url": "https://www.pexels.com/@rethaferguson/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 7822,
+      "height": 5217
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-journal-desk-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 42520,
+        "sha256": "8b0fb56ac91685bdc4ffd04cc267b85adfae6baba869705b3e6a3bcb9c293d96"
+      },
+      "1920": {
+        "path": "photos/v3-journal-desk-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 103382,
+        "sha256": "220d7ece73ffe70cffe72a7afa32ed002edfc1c853e7d0f1847d722fc2bcfa7f"
+      },
+      "fallback": {
+        "path": "photos/v3-journal-desk-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 161039,
+        "sha256": "0749ed27e778a5d2c705deb59408bd38bceabe0871ba5dad9eb39d967170c40a"
+      }
+    },
+    "sha256": "edd34de1f1dc7e40734990210af13172d4f62baaefd41eb27cde71324cfe78cc",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-friends-snacks",
+    "key": "v3-friends-snacks",
+    "pexels_id": "9432635",
+    "theme": "relationships",
+    "alt": "Những người bạn trò chuyện và dùng bữa nhẹ cùng nhau",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/people-having-conversation-while-having-snacks-9432635/",
+    "original_url": "https://images.pexels.com/photos/9432635/pexels-photo-9432635.jpeg",
+    "download_url": "https://images.pexels.com/photos/9432635/pexels-photo-9432635.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Monstera Production",
+    "photographer": "Monstera Production",
+    "photographer_url": "https://www.pexels.com/@gabby-k/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5760,
+      "height": 3840
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-friends-snacks-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 58734,
+        "sha256": "aef022bd37f742b0311576323c7b62c580108efb772666903c9e8d0b1ae825b8"
+      },
+      "1920": {
+        "path": "photos/v3-friends-snacks-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 183154,
+        "sha256": "7862d274b759859ec38ab7daed68c1577db3a32786f8632f969b9ef3384ab633"
+      },
+      "fallback": {
+        "path": "photos/v3-friends-snacks-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 235579,
+        "sha256": "c7323a98847090a96d922642fb79f1cb1814ddb580937d12f9e79ada5e59ceec"
+      }
+    },
+    "sha256": "02db423d2f983ee84c6b6664a3954d1129ec1b9e843dd83d3e42e87a548d25b9",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-friends-cafe",
+    "key": "v3-friends-cafe",
+    "pexels_id": "4921524",
+    "theme": "relationships",
+    "alt": "Hai người bạn trò chuyện trong quán cà phê",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/friends-catching-up-with-each-other-4921524/",
+    "original_url": "https://images.pexels.com/photos/4921524/pexels-photo-4921524.jpeg",
+    "download_url": "https://images.pexels.com/photos/4921524/pexels-photo-4921524.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by RDNE Stock project",
+    "photographer": "RDNE Stock project",
+    "photographer_url": "https://www.pexels.com/@rdne/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3651,
+      "height": 5476
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-friends-cafe-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 54418,
+        "sha256": "dc1a77a3421c276cd259216267b5a3254d6eedd98fc5cd9014893867092aa344"
+      },
+      "1920": {
+        "path": "photos/v3-friends-cafe-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 143254,
+        "sha256": "d61d92a250bb430f0ac2643795c248e9f78442349e7257d795342a2dacdb341a"
+      },
+      "fallback": {
+        "path": "photos/v3-friends-cafe-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 277623,
+        "sha256": "579685a0a97051398928f037a09b93959d15eea07aef3a94227237c39a72bad1"
+      }
+    },
+    "sha256": "33e5499df489f984e4e4812f369a71c1aebaa2c15d1256a03a49740ba1a80872",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-friends-coffee",
+    "key": "v3-friends-coffee",
+    "pexels_id": "4670719",
+    "theme": "relationships",
+    "alt": "Cuộc trò chuyện thân thiện bên tách cà phê",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/men-having-a-conversation-while-drinking-coffee-4670719/",
+    "original_url": "https://images.pexels.com/photos/4670719/pexels-photo-4670719.jpeg",
+    "download_url": "https://images.pexels.com/photos/4670719/pexels-photo-4670719.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Ketut Subiyanto",
+    "photographer": "Ketut Subiyanto",
+    "photographer_url": "https://www.pexels.com/@ketut-subiyanto/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5644,
+      "height": 3763
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-friends-coffee-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 31518,
+        "sha256": "b3798f46603289dd2a1b2c7ddec5cdbd32491eb86da9c597126381a9d5a064fe"
+      },
+      "1920": {
+        "path": "photos/v3-friends-coffee-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 86470,
+        "sha256": "085e84c2fd7ce0b5aa2f1d7a46eff220100c5fba003facee3d4ff3ed40773716"
+      },
+      "fallback": {
+        "path": "photos/v3-friends-coffee-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 165990,
+        "sha256": "7dd09258dce7ae245f68108a764d30345345dc846e59ca280e656f825d785fc9"
+      }
+    },
+    "sha256": "897cc5ff48a222e61c692902b564173e3dd405ac91e11d51c4e45a6ef8fd1cdd",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-friends-community",
+    "key": "v3-friends-community",
+    "pexels_id": "36729765",
+    "theme": "relationships",
+    "alt": "Nhóm bạn cùng chia sẻ trong quán cà phê",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/group-enjoying-pizza-and-coffee-in-a-cafe-setting-36729765/",
+    "original_url": "https://images.pexels.com/photos/36729765/pexels-photo-36729765/free-photo-of-group-enjoying-pizza-and-coffee-in-a-cafe-setting.jpeg",
+    "download_url": "https://images.pexels.com/photos/36729765/pexels-photo-36729765/free-photo-of-group-enjoying-pizza-and-coffee-in-a-cafe-setting.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Vitaly Gariev",
+    "photographer": "Vitaly Gariev",
+    "photographer_url": "https://www.pexels.com/@silverkblack/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3800,
+      "height": 2138
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1238
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-friends-community-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 39708,
+        "sha256": "93ae1b1f5f9dcd6be7ab5bccf3c21902a92fd9bb336607b46e1cccd01fcab754"
+      },
+      "1920": {
+        "path": "photos/v3-friends-community-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 107092,
+        "sha256": "b7357e477f35a5d4a731dda3748d78ec3519e9d319c45b2268d1108ab23161ae"
+      },
+      "fallback": {
+        "path": "photos/v3-friends-community-1920.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 159163,
+        "sha256": "ca5b808f0394498c84618656412735b4f7ad8db80b29aa774915536299e06ff9"
+      }
+    },
+    "sha256": "289b919455ab9fc5a26b3bf331dda79c5b61f68682008e1cbf12c10e2a9e8521",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-friends-break",
+    "key": "v3-friends-break",
+    "pexels_id": "6140385",
+    "theme": "relationships",
+    "alt": "Những người bạn nghỉ ngơi và trao đổi ngoài trời",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/cheerful-diverse-colleagues-having-coffee-break-in-cafe-and-discussing-work-6140385/",
+    "original_url": "https://images.pexels.com/photos/6140385/pexels-photo-6140385.jpeg",
+    "download_url": "https://images.pexels.com/photos/6140385/pexels-photo-6140385.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by William Fortunato",
+    "photographer": "William Fortunato",
+    "photographer_url": "https://www.pexels.com/@william-fortunato/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5670,
+      "height": 3780
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-friends-break-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 57666,
+        "sha256": "bac9fd7e3a68ccd37ba7a10e263c3bbe7f01feac239a0124afe2a5aeacc21606"
+      },
+      "1920": {
+        "path": "photos/v3-friends-break-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 193830,
+        "sha256": "b9888af101d9221634b7c5f53b781f0753b0ec7e95bc187c1c184b99679e1376"
+      },
+      "fallback": {
+        "path": "photos/v3-friends-break-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 255095,
+        "sha256": "1960f35bb06057ed0cbbb304a652b77add91bb7d4d15ba0d018ca18034c0a2d2"
+      }
+    },
+    "sha256": "b16c6560cfe479022b51d2ce6825f3c28c8ee73eb583e16926eda21ffee1fcbe",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-friends-asian",
+    "key": "v3-friends-asian",
+    "pexels_id": "5709526",
+    "theme": "relationships",
+    "alt": "Những người bạn kết nối và xem thông tin cùng nhau",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/positive-asian-friends-spending-time-in-cafe-5709526/",
+    "original_url": "https://images.pexels.com/photos/5709526/pexels-photo-5709526.jpeg",
+    "download_url": "https://images.pexels.com/photos/5709526/pexels-photo-5709526.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Sam Lion",
+    "photographer": "Sam Lion",
+    "photographer_url": "https://www.pexels.com/@sam-lion/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 2716,
+      "height": 3744
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3033
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-friends-asian-960.webp",
+        "width": 960,
+        "height": 1323,
+        "bytes": 87220,
+        "sha256": "c80ec076f582cb47cd239d7d1c4a99c7f296e0eaf3afe57848b5485e4dfa46c1"
+      },
+      "1920": {
+        "path": "photos/v3-friends-asian-1920.webp",
+        "width": 1920,
+        "height": 2647,
+        "bytes": 518812,
+        "sha256": "f003e47401491481cd7671f6abbac227497b15fb47b18966bc2993cb83d8ed27"
+      },
+      "fallback": {
+        "path": "photos/v3-friends-asian-1920.jpg",
+        "width": 1920,
+        "height": 2647,
+        "bytes": 526017,
+        "sha256": "54901646a39fbf21851a9edf84446384d0f65f3998ce26d6bf0b4b93abfe519c"
+      }
+    },
+    "sha256": "334faac04af322ec065377019c0ef212bac4e0285175b67631c0e78e08158fcb",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-study-collaboration",
+    "key": "v3-study-collaboration",
+    "pexels_id": "8199659",
+    "theme": "study",
+    "alt": "Những người học cùng trao đổi trong thư viện",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/students-studying-inside-the-library-8199659/",
+    "original_url": "https://images.pexels.com/photos/8199659/pexels-photo-8199659.jpeg",
+    "download_url": "https://images.pexels.com/photos/8199659/pexels-photo-8199659.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Yan Krukau",
+    "photographer": "Yan Krukau",
+    "photographer_url": "https://www.pexels.com/@yankrukov/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6000,
+      "height": 4000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-study-collaboration-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 52232,
+        "sha256": "40c24c0e98b921067c6f9e516bf59182673f14da1b6b2229d6638097ff781e60"
+      },
+      "1920": {
+        "path": "photos/v3-study-collaboration-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 139302,
+        "sha256": "4fffc8e126f5196bf63b1b3c6024e511aeaa095eaee3c89c533442b75f663b75"
+      },
+      "fallback": {
+        "path": "photos/v3-study-collaboration-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 206852,
+        "sha256": "d4c944c0bfb7b25aa5686f543675239487d6a3b11418f58d596c6c1a20dd76fa"
+      }
+    },
+    "sha256": "783212610c4113f2381d7fbc4c4849e1d8c0805a6cc2814f58ce1c4e2e7247e5",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-study-space",
+    "key": "v3-study-space",
+    "pexels_id": "35545648",
+    "theme": "study",
+    "alt": "Góc bàn học với máy tính và tài liệu",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/students-studying-in-modern-library-setting-35545648/",
+    "original_url": "https://images.pexels.com/photos/35545648/pexels-photo-35545648/free-photo-of-students-studying-in-modern-library-setting.jpeg",
+    "download_url": "https://images.pexels.com/photos/35545648/pexels-photo-35545648/free-photo-of-students-studying-in-modern-library-setting.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Yusuf Çelik",
+    "photographer": "Yusuf Çelik",
+    "photographer_url": "https://www.pexels.com/@zandatsu/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4480,
+      "height": 5952
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 2923
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-study-space-960.webp",
+        "width": 960,
+        "height": 1275,
+        "bytes": 69658,
+        "sha256": "756e1a66e35176995b41bf92fbe9e4d7b20b7ea36e182250fe2083d80bfe22f5"
+      },
+      "1920": {
+        "path": "photos/v3-study-space-1920.webp",
+        "width": 1920,
+        "height": 2551,
+        "bytes": 252504,
+        "sha256": "a0e2448b105d1d865faf37694df82e58a1fb179e6c1b26181c03c0f801dd5120"
+      },
+      "fallback": {
+        "path": "photos/v3-study-space-1920.jpg",
+        "width": 1920,
+        "height": 2551,
+        "bytes": 351332,
+        "sha256": "d33c322ab51f819befb2c66cd552e383872190b6f71c99df21fb572a08452b24"
+      }
+    },
+    "sha256": "bb96651a14bf008db15fd32397e9b80f3a489762146b4b73d09e67469a326b01",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-study-conversation",
+    "key": "v3-study-conversation",
+    "pexels_id": "16420458",
+    "theme": "study",
+    "alt": "Nhóm người học trao đổi bên sách và máy tính",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-group-of-students-sitting-in-a-library-and-studying-16420458/",
+    "original_url": "https://images.pexels.com/photos/16420458/pexels-photo-16420458/free-photo-of-a-group-of-students-sitting-in-a-library-and-studying.jpeg",
+    "download_url": "https://images.pexels.com/photos/16420458/pexels-photo-16420458/free-photo-of-a-group-of-students-sitting-in-a-library-and-studying.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Ludovic Delot",
+    "photographer": "Ludovic Delot",
+    "photographer_url": "https://www.pexels.com/@delot/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6000,
+      "height": 4000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-study-conversation-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 56588,
+        "sha256": "5967e7db278321fa0e7f261305c7ead0386ee1cfaba6c4668b9e608f580b05e3"
+      },
+      "1920": {
+        "path": "photos/v3-study-conversation-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 141294,
+        "sha256": "48053ec0b8bb47b12d5228922f419ab6c6261e65e98302a890f32d7908c2a1b0"
+      },
+      "fallback": {
+        "path": "photos/v3-study-conversation-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 217221,
+        "sha256": "783ac8b81e476a49c24db94b3a902cb2221cb9ac04b8407d1d59194c5aea7c04"
+      }
+    },
+    "sha256": "73bfcc2bb92ca7df02f2634a55c87102a707897df30ba1c3e61e85d1ffbe6372",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-study-textbook",
+    "key": "v3-study-textbook",
+    "pexels_id": "6281030",
+    "theme": "study",
+    "alt": "Cùng xem tài liệu và thảo luận trong thư viện",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/students-studying-at-the-library-6281030/",
+    "original_url": "https://images.pexels.com/photos/6281030/pexels-photo-6281030.jpeg",
+    "download_url": "https://images.pexels.com/photos/6281030/pexels-photo-6281030.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Yaroslav Shuraev",
+    "photographer": "Yaroslav Shuraev",
+    "photographer_url": "https://www.pexels.com/@yaroslav-shuraev/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6493,
+      "height": 4329
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-study-textbook-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 62760,
+        "sha256": "091d0babf87c85d293fb68eb95f2b30e33abd1f66c097ee5d0df58b3234aecbe"
+      },
+      "1920": {
+        "path": "photos/v3-study-textbook-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 182916,
+        "sha256": "100b1304afa812b27674170fba1a806db2aa4deb8f130a0e127f56e70bcc277d"
+      },
+      "fallback": {
+        "path": "photos/v3-study-textbook-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 230112,
+        "sha256": "8cb112ed3bd6cd8864d990065e9b8ff585224607eb91003b22d9b8b43718222f"
+      }
+    },
+    "sha256": "c2b19a47959288c7c22a45f9311591a2a2f53a34466129af3a24bf814118bd0a",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-study-research",
+    "key": "v3-study-research",
+    "pexels_id": "32526073",
+    "theme": "study",
+    "alt": "Nghiên cứu tài liệu trong thư viện",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/students-studying-in-a-library-setting-32526073/",
+    "original_url": "https://images.pexels.com/photos/32526073/pexels-photo-32526073/free-photo-of-students-studying-in-a-library-setting.jpeg",
+    "download_url": "https://images.pexels.com/photos/32526073/pexels-photo-32526073/free-photo-of-students-studying-in-a-library-setting.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by jason hu",
+    "photographer": "jason hu",
+    "photographer_url": "https://www.pexels.com/@hujason/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3410,
+      "height": 3072
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1982
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-study-research-960.webp",
+        "width": 960,
+        "height": 865,
+        "bytes": 55238,
+        "sha256": "adf9b2c415afff59ef909417ba5012a01df88b69f1a6ea23dfd465173916d58d"
+      },
+      "1920": {
+        "path": "photos/v3-study-research-1920.webp",
+        "width": 1920,
+        "height": 1730,
+        "bytes": 248014,
+        "sha256": "6aa9e99457f1537e346c49be5213f48ef5cf3169b31679fd91df80db6eae2af5"
+      },
+      "fallback": {
+        "path": "photos/v3-study-research-1920.jpg",
+        "width": 1920,
+        "height": 1730,
+        "bytes": 315436,
+        "sha256": "509d14b00953a2d8cb21af95bc9e6d3fd4ff1447e0b69f542af4e6477c47971a"
+      }
+    },
+    "sha256": "c93b7467d50c0eaa8b1c0cde19edee826a44a825ea5033b72fafdf337ee656cc",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-study-library",
+    "key": "v3-study-library",
+    "pexels_id": "9572464",
+    "theme": "study",
+    "alt": "Nhóm người học cùng tập trung trong thư viện",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/students-studying-in-the-library-9572464/",
+    "original_url": "https://images.pexels.com/photos/9572464/pexels-photo-9572464.jpeg",
+    "download_url": "https://images.pexels.com/photos/9572464/pexels-photo-9572464.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Tima Miroshnichenko",
+    "photographer": "Tima Miroshnichenko",
+    "photographer_url": "https://www.pexels.com/@tima-miroshnichenko/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5893,
+      "height": 3929
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-study-library-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 91336,
+        "sha256": "5666b9b4cfb6254f48f1c6feede2575b5e9d4d8e230176213c60565fcc4e2d94"
+      },
+      "1920": {
+        "path": "photos/v3-study-library-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 274044,
+        "sha256": "23f3b895b69a6a260640502de120be9a703a4713aebc5ea6b0170692a7a4ae15"
+      },
+      "fallback": {
+        "path": "photos/v3-study-library-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 330579,
+        "sha256": "3edfe48f454c6d1934a517122460f865ed4d5b99ddeb56c1ed146e00894c638b"
+      }
+    },
+    "sha256": "ced7857641800c87c09701382a235828a6575ff90cde7147b0e4ee7b4addc8c2",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-family-sofa",
+    "key": "v3-family-sofa",
+    "pexels_id": "6338449",
+    "theme": "family",
+    "alt": "Gia đình cùng thư giãn trên ghế trong phòng khách",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-family-sitting-on-sofa-hugging-each-other-6338449/",
+    "original_url": "https://images.pexels.com/photos/6338449/pexels-photo-6338449.jpeg",
+    "download_url": "https://images.pexels.com/photos/6338449/pexels-photo-6338449.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Arina Krasnikova",
+    "photographer": "Arina Krasnikova",
+    "photographer_url": "https://www.pexels.com/@arina-krasnikova/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 2336,
+      "height": 3500
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3296
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-family-sofa-960.webp",
+        "width": 960,
+        "height": 1438,
+        "bytes": 119070,
+        "sha256": "36313bb4346fed3e31d11d0ee64b270bec1b73765988c76c84dbd10121aef76d"
+      },
+      "1920": {
+        "path": "photos/v3-family-sofa-1920.webp",
+        "width": 1920,
+        "height": 2877,
+        "bytes": 367508,
+        "sha256": "bcf388890831b8a1bfee53205fe496f8522b48828b84e277004db3f8cb5f9edd"
+      },
+      "fallback": {
+        "path": "photos/v3-family-sofa-1920.jpg",
+        "width": 1920,
+        "height": 2877,
+        "bytes": 497352,
+        "sha256": "7ba09d1b97481d7e4641d2ae5e5a49d86849ec4a765d4f3a811169cf34fbe4a4"
+      }
+    },
+    "sha256": "99fc27b5e58e20c8455e2fe286383a084b804559b9bf607fb7bb31b42450770a",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-family-connection",
+    "key": "v3-family-connection",
+    "pexels_id": "7678040",
+    "theme": "family",
+    "alt": "Khoảnh khắc kết nối giữa các thành viên gia đình",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/family-spending-time-together-7678040/",
+    "original_url": "https://images.pexels.com/photos/7678040/pexels-photo-7678040.jpeg",
+    "download_url": "https://images.pexels.com/photos/7678040/pexels-photo-7678040.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by PNW Production",
+    "photographer": "PNW Production",
+    "photographer_url": "https://www.pexels.com/@pnw-prod/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3197,
+      "height": 4795
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-family-connection-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 87460,
+        "sha256": "566654c274b4c596ea492a082ac6c9eaebcc0bcb37cbc1d8275d9c403dac03d8"
+      },
+      "1920": {
+        "path": "photos/v3-family-connection-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 268510,
+        "sha256": "0f143ea1a1392c03f0e52e6c0ae1597bd98d84148b89c8e8251a9e8b6e5f5aad"
+      },
+      "fallback": {
+        "path": "photos/v3-family-connection-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 413540,
+        "sha256": "4f71536ba4b15624000fdca4322ecdc58a0cb538704151097e5775836b5f7e97"
+      }
+    },
+    "sha256": "18879cc3ed159dd794f9bf4d68168534ff1024ebee9e90a91b9633e9e28eba0b",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-family-generations",
+    "key": "v3-family-generations",
+    "pexels_id": "8120651",
+    "theme": "family",
+    "alt": "Các thành viên cùng chia sẻ thời gian trong ngôi nhà",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-family-chill-time-in-the-living-room-8120651/",
+    "original_url": "https://images.pexels.com/photos/8120651/pexels-photo-8120651.jpeg",
+    "download_url": "https://images.pexels.com/photos/8120651/pexels-photo-8120651.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Mikhail Nilov",
+    "photographer": "Mikhail Nilov",
+    "photographer_url": "https://www.pexels.com/@mikhail-nilov/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 7952,
+      "height": 5304
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-family-generations-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 47896,
+        "sha256": "a69e8e57a0f00782569fb00aa6b56cb70cf3c748914c1ef307d82adc4ff29502"
+      },
+      "1920": {
+        "path": "photos/v3-family-generations-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 149856,
+        "sha256": "83643eb8af18ae757955f9195d7c38f2b8d8aa68d4d5dccc63b94387967be0af"
+      },
+      "fallback": {
+        "path": "photos/v3-family-generations-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 207365,
+        "sha256": "a5319efec8cbaf05642348b549fe328f3cc556183969233bf1e2e504651986ff"
+      }
+    },
+    "sha256": "4a7454e74587c510f46d77a6594f9d655926343d059dc756f306373974ff83f1",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-family-evening",
+    "key": "v3-family-evening",
+    "pexels_id": "7983214",
+    "theme": "family",
+    "alt": "Gia đình cùng ngồi thư giãn trong phòng khách",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-family-smiling-together-7983214/",
+    "original_url": "https://images.pexels.com/photos/7983214/pexels-photo-7983214.jpeg",
+    "download_url": "https://images.pexels.com/photos/7983214/pexels-photo-7983214.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Kampus Production",
+    "photographer": "Kampus Production",
+    "photographer_url": "https://www.pexels.com/@kampus/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6016,
+      "height": 4016
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1469
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-family-evening-960.webp",
+        "width": 960,
+        "height": 641,
+        "bytes": 34180,
+        "sha256": "39e47ed194a389d739cad6bba900a4fcb40255a18d8ed99451801a3faa6155ea"
+      },
+      "1920": {
+        "path": "photos/v3-family-evening-1920.webp",
+        "width": 1920,
+        "height": 1282,
+        "bytes": 95466,
+        "sha256": "a56cf75cfd7036890968cb5ea93688a2972d26fd461d887c1388a45bb4f518d0"
+      },
+      "fallback": {
+        "path": "photos/v3-family-evening-1920.jpg",
+        "width": 1920,
+        "height": 1282,
+        "bytes": 152607,
+        "sha256": "2d8470d3dad02417b338825e6cb4c86f4a5f8f202734c38733bfef5fb28bc7f8"
+      }
+    },
+    "sha256": "9b336d875b23c9cf37da68a29289019120e892835e523844c111570cdb05ac55",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-family-leisure",
+    "key": "v3-family-leisure",
+    "pexels_id": "8055075",
+    "theme": "family",
+    "alt": "Thời gian nghỉ ngơi bên những người thân",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/family-relaxing-in-a-living-room-8055075/",
+    "original_url": "https://images.pexels.com/photos/8055075/pexels-photo-8055075.jpeg",
+    "download_url": "https://images.pexels.com/photos/8055075/pexels-photo-8055075.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Annushka Ahuja",
+    "photographer": "Annushka Ahuja",
+    "photographer_url": "https://www.pexels.com/@annushka-ahuja/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 6000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-family-leisure-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 73160,
+        "sha256": "756afa0baaceaa2ed019bad14276028a095aae3ec41533ac8a31a85210506feb"
+      },
+      "1920": {
+        "path": "photos/v3-family-leisure-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 281612,
+        "sha256": "b9c1163bf250f22e02fe87594bd3a00ccb3c3a88b2d5777d6542e17380d102e2"
+      },
+      "fallback": {
+        "path": "photos/v3-family-leisure-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 381823,
+        "sha256": "5ed3645512332f3f7fe9483247bf233861201f00f91bf4e38e44ac9c81ef0d8a"
+      }
+    },
+    "sha256": "f47bbaa14b135a7171cb4f74cc5632711c51fb80f38ea0b2e8f6fee239b70209",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-group-workshop",
+    "key": "v3-group-workshop",
+    "pexels_id": "6340678",
+    "theme": "group",
+    "alt": "Người tham dự trao đổi trong buổi làm việc nhóm",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-group-of-people-having-a-meeting-6340678/",
+    "original_url": "https://images.pexels.com/photos/6340678/pexels-photo-6340678.jpeg",
+    "download_url": "https://images.pexels.com/photos/6340678/pexels-photo-6340678.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Pavel Danilyuk",
+    "photographer": "Pavel Danilyuk",
+    "photographer_url": "https://www.pexels.com/@pavel-danilyuk/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3983,
+      "height": 5966
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3295
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-group-workshop-960.webp",
+        "width": 960,
+        "height": 1438,
+        "bytes": 62610,
+        "sha256": "1a1a91a934086826f96d94684cd0a31101e82eb5e5a1fcec308c1236ef3315d3"
+      },
+      "1920": {
+        "path": "photos/v3-group-workshop-1920.webp",
+        "width": 1920,
+        "height": 2876,
+        "bytes": 181906,
+        "sha256": "3cd99a9313b65c78724048441b71ecbc91abf88687464ad47ff052089c5b498c"
+      },
+      "fallback": {
+        "path": "photos/v3-group-workshop-1920.jpg",
+        "width": 1920,
+        "height": 2876,
+        "bytes": 303637,
+        "sha256": "f5b7a834c08740c1078503b4623c6491483aa6844cf1a4044c1de87ffe9c42a7"
+      }
+    },
+    "sha256": "97c3e34f1e2ac7edfc44d0d9f41a3d406427cca3b27b6c79986c24e1f087b17f",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-group-discussion",
+    "key": "v3-group-discussion",
+    "pexels_id": "7888803",
+    "theme": "group",
+    "alt": "Những người tham gia cùng thảo luận một chủ đề",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/coworkers-having-a-discussion-during-a-meeting-in-the-office-7888803/",
+    "original_url": "https://images.pexels.com/photos/7888803/pexels-photo-7888803.jpeg",
+    "download_url": "https://images.pexels.com/photos/7888803/pexels-photo-7888803.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by RDNE Stock project",
+    "photographer": "RDNE Stock project",
+    "photographer_url": "https://www.pexels.com/@rdne/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6388,
+      "height": 4259
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-group-discussion-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 55144,
+        "sha256": "d39ad306b9cb858a1acbd4c68f3bff63f9b89571b006473e6967bd2cb53bf229"
+      },
+      "1920": {
+        "path": "photos/v3-group-discussion-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 156650,
+        "sha256": "a1e001b95123e3ca6bfc7bb31d371c0e8a79d920a8ba3d1b1f732f2367096555"
+      },
+      "fallback": {
+        "path": "photos/v3-group-discussion-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 214163,
+        "sha256": "f6c37b72e7d7ea8006191178f1752b004e111bef403c85daa4d2992ecc1e0cce"
+      }
+    },
+    "sha256": "d56981a394a970b094fed4c440b780edd8555b8ec2f8159d2e3f9bd019d57cfd",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-group-laptop",
+    "key": "v3-group-laptop",
+    "pexels_id": "5862323",
+    "theme": "group",
+    "alt": "Nhóm người cùng trao đổi bên màn hình máy tính",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-group-of-people-having-a-meeting-in-the-office-5862323/",
+    "original_url": "https://images.pexels.com/photos/5862323/pexels-photo-5862323.jpeg",
+    "download_url": "https://images.pexels.com/photos/5862323/pexels-photo-5862323.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Antoni Shkraba",
+    "photographer": "Antoni Shkraba",
+    "photographer_url": "https://www.pexels.com/@shkrabaanthony/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 2667
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-group-laptop-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 60180,
+        "sha256": "a3c6348336b1c779d5a4d2c1101d6f8d627f2bf1a99fb38bf7b1220f628456cc"
+      },
+      "1920": {
+        "path": "photos/v3-group-laptop-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 181664,
+        "sha256": "0cd22624c8fd3563f4a8f197c95b4701c8d42675d24ba7653a8d745685180f6b"
+      },
+      "fallback": {
+        "path": "photos/v3-group-laptop-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 239220,
+        "sha256": "c1cc8a23945c55d1e420d8f43fe347a293ae7d0c123af991d1c77a5593b61dc6"
+      }
+    },
+    "sha256": "abce3fe6690a6de74216791962abc21c350145f0fced51b28b25f34b771d3524",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-group-team",
+    "key": "v3-group-team",
+    "pexels_id": "7652176",
+    "theme": "group",
+    "alt": "Các thành viên nhóm cùng chia sẻ góc nhìn",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-group-of-people-having-a-meeting-in-the-office-7652176/",
+    "original_url": "https://images.pexels.com/photos/7652176/pexels-photo-7652176.jpeg",
+    "download_url": "https://images.pexels.com/photos/7652176/pexels-photo-7652176.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Thirdman",
+    "photographer": "Thirdman",
+    "photographer_url": "https://www.pexels.com/@thirdman/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6592,
+      "height": 4395
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-group-team-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 35484,
+        "sha256": "ed67294409f81faaf5f720ff455fef26570d22823114a985f1d9b20738abf6e3"
+      },
+      "1920": {
+        "path": "photos/v3-group-team-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 96710,
+        "sha256": "097e84c3a307928ebe5b79d330533bfd7332f69774a328d8272dd2fc28f5d96b"
+      },
+      "fallback": {
+        "path": "photos/v3-group-team-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 157124,
+        "sha256": "cefeb0665a3af8445b2f36888dcf845514890b7d213d6a190a5a7908880e3712"
+      }
+    },
+    "sha256": "83616393a87fdb46d1a68b52e87556bdfca69fe0942fce76e0af3e6bcd4826e4",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-group-brainstorm",
+    "key": "v3-group-brainstorm",
+    "pexels_id": "7550308",
+    "theme": "group",
+    "alt": "Cùng nhìn vào ý tưởng và lựa chọn của nhóm",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/colleagues-brainstorming-a-business-project-at-a-meeting-7550308/",
+    "original_url": "https://images.pexels.com/photos/7550308/pexels-photo-7550308.jpeg",
+    "download_url": "https://images.pexels.com/photos/7550308/pexels-photo-7550308.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by MART PRODUCTION",
+    "photographer": "MART PRODUCTION",
+    "photographer_url": "https://www.pexels.com/@mart-production/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3995,
+      "height": 5992
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-group-brainstorm-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 72918,
+        "sha256": "97e5e223c1163fdb36b9d25a31ed10e257f37df49fa965fb454662f84f4bca69"
+      },
+      "1920": {
+        "path": "photos/v3-group-brainstorm-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 245420,
+        "sha256": "ff9fad81417d96db0d0d504ba7395b36a216ff027bb4cf73bc6c46f19cddf53f"
+      },
+      "fallback": {
+        "path": "photos/v3-group-brainstorm-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 353423,
+        "sha256": "34c684357bafe4d88977b5cae1ba446b445646783d6e973f32190bb40ebb9ac1"
+      }
+    },
+    "sha256": "7e8c56615bf6ed25f45372ddde4e0f7975af9830b1204a03d3bbbbddf4b73a49",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-group-meeting",
+    "key": "v3-group-meeting",
+    "pexels_id": "5466283",
+    "theme": "group",
+    "alt": "Cuộc trao đổi nhóm trong không gian sáng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/colleagues-having-a-discussion-5466283/",
+    "original_url": "https://images.pexels.com/photos/5466283/pexels-photo-5466283.jpeg",
+    "download_url": "https://images.pexels.com/photos/5466283/pexels-photo-5466283.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Antoni Shkraba",
+    "photographer": "Antoni Shkraba",
+    "photographer_url": "https://www.pexels.com/@shkrabaanthony/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 2667
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-group-meeting-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 36042,
+        "sha256": "950c50ba8b5c005658ad272009fc3edc0f6ff674f90411a94796d446bf6dcd2a"
+      },
+      "1920": {
+        "path": "photos/v3-group-meeting-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 99370,
+        "sha256": "ccf26d7b0d53f059a8aa02a1cec7d0b11ae0d39ba8e62214671c18a1d793d6b1"
+      },
+      "fallback": {
+        "path": "photos/v3-group-meeting-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 158400,
+        "sha256": "89fd05935d4a7a2a2869baada88c6b00f54a813825b277f5336dac735bb41142"
+      }
+    },
+    "sha256": "64feef8ba48a0a3c4169db756c7222f44a03ac0496f0f46869ae5390774080e1",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-group-sharing",
+    "key": "v3-group-sharing",
+    "pexels_id": "8117462",
+    "theme": "group",
+    "alt": "Chia sẻ thông tin trong một cuộc gặp nhóm",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/colleagues-having-a-discussion-8117462/",
+    "original_url": "https://images.pexels.com/photos/8117462/pexels-photo-8117462.jpeg",
+    "download_url": "https://images.pexels.com/photos/8117462/pexels-photo-8117462.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Ivan S",
+    "photographer": "Ivan S",
+    "photographer_url": "https://www.pexels.com/@ivan-s/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4700,
+      "height": 3135
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-group-sharing-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 72696,
+        "sha256": "6d90f89cd5e91a936a98e4acccbea4d0a9ffd2b18d5e3023058bee18f9009629"
+      },
+      "1920": {
+        "path": "photos/v3-group-sharing-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 210778,
+        "sha256": "1e8301c44527d1b538fda114a9d4307da97b554d589969bbc94794a969f009e4"
+      },
+      "fallback": {
+        "path": "photos/v3-group-sharing-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 270306,
+        "sha256": "178f6e1617e53759bab03de6a9f24be02f5a22c881ae31613b51b990c8a4ddf2"
+      }
+    },
+    "sha256": "9a6a06c3125a26ec84afc48255eadc2a580092babf378f034e3b351fee6080cd",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-online-asian",
+    "key": "v3-online-asian",
+    "pexels_id": "4474047",
+    "theme": "online",
+    "alt": "Trao đổi trực tuyến trong góc làm việc tại nhà",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-working-at-home-and-making-video-call-on-laptop-4474047/",
+    "original_url": "https://images.pexels.com/photos/4474047/pexels-photo-4474047.jpeg",
+    "download_url": "https://images.pexels.com/photos/4474047/pexels-photo-4474047.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Ketut Subiyanto",
+    "photographer": "Ketut Subiyanto",
+    "photographer_url": "https://www.pexels.com/@ketut-subiyanto/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5899,
+      "height": 3933
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-online-asian-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 22650,
+        "sha256": "4cab2640ae5c5d6b179abf85e42e90e7e6e53c7ed1511f98a633ed11c801b5ac"
+      },
+      "1920": {
+        "path": "photos/v3-online-asian-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 79836,
+        "sha256": "5ee90bc9c42b2428c5817167c0481c41945296a464f1ebdf12935e228186f8e2"
+      },
+      "fallback": {
+        "path": "photos/v3-online-asian-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 134832,
+        "sha256": "fe1d26c617268b4d7d974ca153cacb037db8cb8bd6a8fcbca66a9663787cf378"
+      }
+    },
+    "sha256": "aa4c7259d29f5398fb61e4727daa19a8ba314387db34b757d36ca83f2e508124",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-online-headphones",
+    "key": "v3-online-headphones",
+    "pexels_id": "7690315",
+    "theme": "online",
+    "alt": "Trò chuyện trực tuyến bằng laptop và tai nghe",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-woman-having-a-video-call-on-a-laptop-7690315/",
+    "original_url": "https://images.pexels.com/photos/7690315/pexels-photo-7690315.jpeg",
+    "download_url": "https://images.pexels.com/photos/7690315/pexels-photo-7690315.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Jep Gambardella",
+    "photographer": "Jep Gambardella",
+    "photographer_url": "https://www.pexels.com/@jep-gambardella/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6720,
+      "height": 4480
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-online-headphones-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 48698,
+        "sha256": "7a889359ba66ec28f4f8f5badf92352ad9899de8f79caa59429928b9f9bbab2c"
+      },
+      "1920": {
+        "path": "photos/v3-online-headphones-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 175074,
+        "sha256": "aca1ac0c36ab122261bdc2423c3b3b26fd49999508ee8072a6fce3db0ef0aeab"
+      },
+      "fallback": {
+        "path": "photos/v3-online-headphones-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 228125,
+        "sha256": "369981e2d23722de0c839ee335d32efadff7c0c0909ad23648990cd8f2616ae2"
+      }
+    },
+    "sha256": "7a64e3ef30ba5e574c0096922b6beb55c2782cdc5a30bdd90aeb4244d1980a5d",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-online-welcome",
+    "key": "v3-online-welcome",
+    "pexels_id": "12912121",
+    "theme": "online",
+    "alt": "Lời chào mở đầu trong cuộc trò chuyện trực tuyến",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/smiling-woman-sitting-in-an-office-and-waving-to-a-laptop-screen-12912121/",
+    "original_url": "https://images.pexels.com/photos/12912121/pexels-photo-12912121.jpeg",
+    "download_url": "https://images.pexels.com/photos/12912121/pexels-photo-12912121.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Mizuno K",
+    "photographer": "Mizuno K",
+    "photographer_url": "https://www.pexels.com/@mizunokozuki/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 6000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-online-welcome-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 86440,
+        "sha256": "db1c388a29ba5c3ed287dc509ced4c147ab6770ecb7e580fc68a307922e5fcca"
+      },
+      "1920": {
+        "path": "photos/v3-online-welcome-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 352048,
+        "sha256": "63ba1d3c41c1f8f56e9c2cba5627db341925203bc0969771e3218788c44295f6"
+      },
+      "fallback": {
+        "path": "photos/v3-online-welcome-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 454808,
+        "sha256": "c480c871d117a027abe5d427814a2233d05f4c318b2817b5e5f9f9ecf7634102"
+      }
+    },
+    "sha256": "dbd62a1214406d9772f451f4052b25bb453510ec8e0adc858be6e1d67ded1398",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-online-friends",
+    "key": "v3-online-friends",
+    "pexels_id": "5876377",
+    "theme": "online",
+    "alt": "Kết nối với những người ở xa qua màn hình",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/crop-woman-making-video-call-on-laptop-5876377/",
+    "original_url": "https://images.pexels.com/photos/5876377/pexels-photo-5876377.jpeg",
+    "download_url": "https://images.pexels.com/photos/5876377/pexels-photo-5876377.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Monstera Production",
+    "photographer": "Monstera Production",
+    "photographer_url": "https://www.pexels.com/@gabby-k/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3648,
+      "height": 5472
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-online-friends-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 44026,
+        "sha256": "64ac17a79d2db3ce173234193432fdbf0403de6475e182b2b30ba36c03266dd2"
+      },
+      "1920": {
+        "path": "photos/v3-online-friends-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 148380,
+        "sha256": "0baee8a6884fd78f5f2a21630702a60eb373d3ae3e290fc288d1e7040d73e7f1"
+      },
+      "fallback": {
+        "path": "photos/v3-online-friends-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 283559,
+        "sha256": "77b960df75b6ab967f5170773df82b3e50a468af2288d7cdc936bbb703352032"
+      }
+    },
+    "sha256": "c41350abc5cd479b3d806c28f5431f66dc299051a96bc0cb08c7aff20b0643af",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-online-notes",
+    "key": "v3-online-notes",
+    "pexels_id": "7606041",
+    "theme": "online",
+    "alt": "Trò chuyện qua máy tính và ghi điều muốn nhớ",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-woman-having-a-video-call-on-her-laptop-7606041/",
+    "original_url": "https://images.pexels.com/photos/7606041/pexels-photo-7606041.jpeg",
+    "download_url": "https://images.pexels.com/photos/7606041/pexels-photo-7606041.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by MART PRODUCTION",
+    "photographer": "MART PRODUCTION",
+    "photographer_url": "https://www.pexels.com/@mart-production/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3834,
+      "height": 5751
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-online-notes-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 49060,
+        "sha256": "5d0b5885b05271a07479a79cdcffc0a6c0e2519517f23712bd7b99a42f2cfac5"
+      },
+      "1920": {
+        "path": "photos/v3-online-notes-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 147448,
+        "sha256": "86536439627be69f34f277341df7379226db58b328d4806dfa87af5fb34b025e"
+      },
+      "fallback": {
+        "path": "photos/v3-online-notes-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 272827,
+        "sha256": "34c15b195ae033bcbf4533e65b8545870977cc97d2a7d2eefd10ab250448b404"
+      }
+    },
+    "sha256": "51f8242479c760afc7fd668c441b91a05f5f04e52ac4818fc7904c66d8a5c5d0",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-online-homeoffice",
+    "key": "v3-online-homeoffice",
+    "pexels_id": "6779309",
+    "theme": "online",
+    "alt": "Cuộc gọi trực tuyến từ góc làm việc riêng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-woman-using-a-laptop-6779309/",
+    "original_url": "https://images.pexels.com/photos/6779309/pexels-photo-6779309.jpeg",
+    "download_url": "https://images.pexels.com/photos/6779309/pexels-photo-6779309.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Artem Podrez",
+    "photographer": "Artem Podrez",
+    "photographer_url": "https://www.pexels.com/@artempodrez/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 2160,
+      "height": 3840
+    },
+    "download_dimensions": {
+      "width": 2160,
+      "height": 3840
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-online-homeoffice-960.webp",
+        "width": 960,
+        "height": 1707,
+        "bytes": 40574,
+        "sha256": "7df6a5076e773b828573e094c4f5d71322ed4072fc5a8402a894be14b529a905"
+      },
+      "1920": {
+        "path": "photos/v3-online-homeoffice-1920.webp",
+        "width": 1920,
+        "height": 3413,
+        "bytes": 141788,
+        "sha256": "1fd37ebb5e1b2102f4c4a73cc3509625b4aaa6ce1c7ff2d67ba0e5903c533823"
+      },
+      "fallback": {
+        "path": "photos/v3-online-homeoffice-1920.jpg",
+        "width": 1920,
+        "height": 3413,
+        "bytes": 298565,
+        "sha256": "8a14dd0ad3389ca2c94418e5247edc63c4d441e23a863fe730665928dc2e1d02"
+      }
+    },
+    "sha256": "5cbd7fab26aa0c25c9388006e5d3bfaa090dce70bb7d40c8d92e90db81c5db3a",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-space-plants",
+    "key": "v3-space-plants",
+    "pexels_id": "32774605",
+    "theme": "interior",
+    "alt": "Góc ghế đọc sách giữa những chậu cây xanh",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/cozy-reading-nook-with-armchair-and-plants-32774605/",
+    "original_url": "https://images.pexels.com/photos/32774605/pexels-photo-32774605/free-photo-of-cozy-reading-nook-with-armchair-and-plants.jpeg",
+    "download_url": "https://images.pexels.com/photos/32774605/pexels-photo-32774605/free-photo-of-cozy-reading-nook-with-armchair-and-plants.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Đan Thy Nguyễn Mai",
+    "photographer": "Đan Thy Nguyễn Mai",
+    "photographer_url": "https://www.pexels.com/@peterdanthy/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 5304,
+      "height": 7952
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3298
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-space-plants-960.webp",
+        "width": 960,
+        "height": 1439,
+        "bytes": 199228,
+        "sha256": "2d7071d333c5af6405d17206f16e3aa5f9f83da742df3af3db8452d6125ba001"
+      },
+      "1920": {
+        "path": "photos/v3-space-plants-1920.webp",
+        "width": 1920,
+        "height": 2878,
+        "bytes": 616512,
+        "sha256": "5c1e48e66a5df7751b9889a0fae792f9843aad17a0a6a06ba5c77ed6954d6a44"
+      },
+      "fallback": {
+        "path": "photos/v3-space-plants-1920.jpg",
+        "width": 1920,
+        "height": 2878,
+        "bytes": 733544,
+        "sha256": "765e2cb14deb73b4f2dba0aa7877048d901bd6379d284d988469735c8deb1d4c"
+      }
+    },
+    "sha256": "1d4b1cf36ca8f4d0f166eaca6e9817b3a29dde756f41fbc22ec6251ff451ff71",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-space-armchair",
+    "key": "v3-space-armchair",
+    "pexels_id": "16015336",
+    "theme": "interior",
+    "alt": "Chiếc ghế trong căn phòng đón ánh sáng tự nhiên",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/interior-of-a-modern-room-with-an-armchair-and-a-monstera-plant-16015336/",
+    "original_url": "https://images.pexels.com/photos/16015336/pexels-photo-16015336/free-photo-of-interior-of-a-modern-room-with-an-armchair-and-a-monstera-plant.jpeg",
+    "download_url": "https://images.pexels.com/photos/16015336/pexels-photo-16015336/free-photo-of-interior-of-a-modern-room-with-an-armchair-and-a-monstera-plant.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Iuliia Pilipeichenko",
+    "photographer": "Iuliia Pilipeichenko",
+    "photographer_url": "https://www.pexels.com/@pilipeichenko/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3024,
+      "height": 4032
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 2933
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-space-armchair-960.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 104422,
+        "sha256": "dd5cff0d4594aa0043a127012d6f1c50262ea81820ceede4d62d7bff3e45d662"
+      },
+      "1920": {
+        "path": "photos/v3-space-armchair-1920.webp",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 481198,
+        "sha256": "732c130ba05e4cac4ee52b644e5a626711aa13f6cf8e6dbaff0bd015babe89d6"
+      },
+      "fallback": {
+        "path": "photos/v3-space-armchair-1920.jpg",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 537885,
+        "sha256": "dc5c68c77642aac925814b7d85f6ba4ea3e2ff19a750c64104f09c1e2df3772f"
+      }
+    },
+    "sha256": "95c9f677649c00687260a22ae7a473fab8122df6bc1c96204b1bf13bdc7f4f3a",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-space-books",
+    "key": "v3-space-books",
+    "pexels_id": "36051516",
+    "theme": "interior",
+    "alt": "Góc đọc với sách và ánh sáng bên cửa sổ",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/cozy-reading-nook-with-natural-light-and-plants-36051516/",
+    "original_url": "https://images.pexels.com/photos/36051516/pexels-photo-36051516/free-photo-of-cozy-reading-nook-with-natural-light-and-plants.jpeg",
+    "download_url": "https://images.pexels.com/photos/36051516/pexels-photo-36051516/free-photo-of-cozy-reading-nook-with-natural-light-and-plants.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Laxman Khadka",
+    "photographer": "Laxman Khadka",
+    "photographer_url": "https://www.pexels.com/@laxman-khadka-850490/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4096,
+      "height": 3072
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1650
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-space-books-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 91546,
+        "sha256": "fa1579be8173df0bcb643feab42de987578dc50dacf7447ebc40075c7ba7042d"
+      },
+      "1920": {
+        "path": "photos/v3-space-books-1920.webp",
+        "width": 1920,
+        "height": 1440,
+        "bytes": 378050,
+        "sha256": "86991c10a133ab22fe0511e5b53e6c0eb4a119df6adfbdaafe95fa304e3c16a7"
+      },
+      "fallback": {
+        "path": "photos/v3-space-books-1920.jpg",
+        "width": 1920,
+        "height": 1440,
+        "bytes": 389397,
+        "sha256": "6899543bfc8355935b9f3f3e79e9b37d5e5aed98ccdae1f780232b0f9795b234"
+      }
+    },
+    "sha256": "dc99a333a911de116ee46faf52b7214014c718da1f2fb880f5d7affa3b037c73",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-space-sunlight",
+    "key": "v3-space-sunlight",
+    "pexels_id": "34652531",
+    "theme": "interior",
+    "alt": "Ánh sáng ấm trong một góc ngồi yên tĩnh",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/cozy-sunlit-reading-nook-with-armchair-34652531/",
+    "original_url": "https://images.pexels.com/photos/34652531/pexels-photo-34652531/free-photo-of-cozy-sunlit-reading-nook-with-armchair.jpeg",
+    "download_url": "https://images.pexels.com/photos/34652531/pexels-photo-34652531/free-photo-of-cozy-sunlit-reading-nook-with-armchair.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Betül Aydın",
+    "photographer": "Betül Aydın",
+    "photographer_url": "https://www.pexels.com/@betul-aydin-2149111436/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3024,
+      "height": 4064
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 2957
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-space-sunlight-960.webp",
+        "width": 960,
+        "height": 1290,
+        "bytes": 135452,
+        "sha256": "f5883da93e033ef29e62c0abfe3885da3918a4a33534fb9dda7673f6b2a27fcc"
+      },
+      "1920": {
+        "path": "photos/v3-space-sunlight-1920.webp",
+        "width": 1920,
+        "height": 2581,
+        "bytes": 571876,
+        "sha256": "464d0084f0326edd2808df73a3577ff1aa2dfb7e029b5308e8c62251e313e0bd"
+      },
+      "fallback": {
+        "path": "photos/v3-space-sunlight-1920.jpg",
+        "width": 1920,
+        "height": 2581,
+        "bytes": 629997,
+        "sha256": "e1dfa6354f85748b0f7092014ce8f2d674357e4224a8c7dcfe72ac9965277da8"
+      }
+    },
+    "sha256": "6448893e20c788ab8101ce3d7ea1ad20a50ad2d64386481b28d6fe2a90bea813",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-space-corner",
+    "key": "v3-space-corner",
+    "pexels_id": "9078031",
+    "theme": "interior",
+    "alt": "Một góc riêng với ghế ngồi và cây xanh",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/armchair-in-cozy-living-room-9078031/",
+    "original_url": "https://images.pexels.com/photos/9078031/pexels-photo-9078031.jpeg",
+    "download_url": "https://images.pexels.com/photos/9078031/pexels-photo-9078031.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Novirina",
+    "photographer": "Novirina",
+    "photographer_url": "https://www.pexels.com/@novirina-ru/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3981,
+      "height": 6043
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3340
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-space-corner-960.webp",
+        "width": 960,
+        "height": 1457,
+        "bytes": 51700,
+        "sha256": "bace792b41af78f76adbbec9daf68e94aa11f81d7c5eba497092bcfc39dc9249"
+      },
+      "1920": {
+        "path": "photos/v3-space-corner-1920.webp",
+        "width": 1920,
+        "height": 2915,
+        "bytes": 191174,
+        "sha256": "cb4f978cc014471c81a04ce813f52683eb4e846e2268ee07325dd93822c53951"
+      },
+      "fallback": {
+        "path": "photos/v3-space-corner-1920.jpg",
+        "width": 1920,
+        "height": 2915,
+        "bytes": 349764,
+        "sha256": "260a97ab3b5550c21a7c61b013d1b1ef53311d16b0e0a2e05bf592f871ccd9ae"
+      }
+    },
+    "sha256": "dde6e0afb68257b0905e7c3f16fa03d048bde2b6d20032f5906aaafe827647a6",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-reading-sunlight",
+    "key": "v3-reading-sunlight",
+    "pexels_id": "4769493",
+    "theme": "reading",
+    "alt": "Đọc sách trong khoảng thời gian yên tĩnh bên cửa sổ",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-in-white-shirt-reading-book-4769493/",
+    "original_url": "https://images.pexels.com/photos/4769493/pexels-photo-4769493.jpeg",
+    "download_url": "https://images.pexels.com/photos/4769493/pexels-photo-4769493.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by cottonbro studio",
+    "photographer": "cottonbro studio",
+    "photographer_url": "https://www.pexels.com/@cottonbro/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 2890,
+      "height": 1927
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-reading-sunlight-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 22800,
+        "sha256": "fdc0255bf856e0b1211b884d611880f53cb8ff47d4a82cf24975d9bd29a2c295"
+      },
+      "1920": {
+        "path": "photos/v3-reading-sunlight-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 143590,
+        "sha256": "2c59d203abd27e18d9024d13831265d7e3d3b4d4abaff6e17b195552d846a8fa"
+      },
+      "fallback": {
+        "path": "photos/v3-reading-sunlight-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 202875,
+        "sha256": "d11fabb8042161a616b2de4fd325d4564e96bea2abc7404de2699a526245132f"
+      }
+    },
+    "sha256": "1cf292b8e2cb78297cf8a9b2a0aa9c7d1d0583118d3f40678e3553cbde44a455",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-reading-tea",
+    "key": "v3-reading-tea",
+    "pexels_id": "6874091",
+    "theme": "reading",
+    "alt": "Một cuốn sách và tách trà trong khoảng nghỉ",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-drinking-tea-while-reading-book-at-home-6874091/",
+    "original_url": "https://images.pexels.com/photos/6874091/pexels-photo-6874091.jpeg",
+    "download_url": "https://images.pexels.com/photos/6874091/pexels-photo-6874091.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Teona Swift",
+    "photographer": "Teona Swift",
+    "photographer_url": "https://www.pexels.com/@teona-swift/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 6000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-reading-tea-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 61674,
+        "sha256": "1e49075af06a38a6d440c5e43fdc998fd827153ce36152cae4f6aad85fdb4eec"
+      },
+      "1920": {
+        "path": "photos/v3-reading-tea-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 225682,
+        "sha256": "aec1e5022a25b2137bde4f5e9e68afbcd2a93c45a4d345058b824b2821297d05"
+      },
+      "fallback": {
+        "path": "photos/v3-reading-tea-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 341355,
+        "sha256": "65735eb59ecddb4db18666278c7aec5d0bd0f59c47593ace9263d70d89046262"
+      }
+    },
+    "sha256": "66979e04010489fe84d184d79f20b9dcd164686c823761472c483edfe96bb496",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-reading-window",
+    "key": "v3-reading-window",
+    "pexels_id": "18053944",
+    "theme": "reading",
+    "alt": "Đọc sách trong ánh sáng tự nhiên bên cửa sổ",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-reading-a-book-by-a-sunlit-window-18053944/",
+    "original_url": "https://images.pexels.com/photos/18053944/pexels-photo-18053944/free-photo-of-woman-reading-a-book-by-a-sunlit-window.jpeg",
+    "download_url": "https://images.pexels.com/photos/18053944/pexels-photo-18053944/free-photo-of-woman-reading-a-book-by-a-sunlit-window.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Büşra Bakış",
+    "photographer": "Büşra Bakış",
+    "photographer_url": "https://www.pexels.com/@busra-bakis-328303731/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 6000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-reading-window-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 40990,
+        "sha256": "53a8417e1dae5e694c0ee259632ae895bf9e77f429fc40da2f2b78ef0597d5ab"
+      },
+      "1920": {
+        "path": "photos/v3-reading-window-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 170678,
+        "sha256": "22a74049ef1502d5e9c2bc9c66f98ba6c8a58f25d61629d198e958d539d8aa43"
+      },
+      "fallback": {
+        "path": "photos/v3-reading-window-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 299065,
+        "sha256": "31c49dcde341996b04002855ba060e1e7c1531d94334fb3da87a6f69ffe61fdb"
+      }
+    },
+    "sha256": "11b6ea71d60a1ca93a25debcb8e2caf430b04acb5d8e60e315721db5a4dfb00a",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-work-waterbreak",
+    "key": "v3-work-waterbreak",
+    "pexels_id": "7710236",
+    "theme": "work",
+    "alt": "Một khoảng nghỉ uống nước khi làm việc ở nhà",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-man-by-the-laptop-drinking-water-7710236/",
+    "original_url": "https://images.pexels.com/photos/7710236/pexels-photo-7710236.jpeg",
+    "download_url": "https://images.pexels.com/photos/7710236/pexels-photo-7710236.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Alena Darmel",
+    "photographer": "Alena Darmel",
+    "photographer_url": "https://www.pexels.com/@a-darmel/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 3199,
+      "height": 4798
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-work-waterbreak-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 44912,
+        "sha256": "978c0bf8cd5f418849908e4ce67a8bf9b1e0ee76c128207b7a2032c6a486aa83"
+      },
+      "1920": {
+        "path": "photos/v3-work-waterbreak-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 115530,
+        "sha256": "b2d23b9338ebd78010de64344393fb3c80cd78ce01000c8d8d2430637fb38dcd"
+      },
+      "fallback": {
+        "path": "photos/v3-work-waterbreak-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 235472,
+        "sha256": "2bab8fd868c00e5d2c46d4a64697cb531fc30661f9600d9191425497790a2d5d"
+      }
+    },
+    "sha256": "ed0b076a62593b9e666c258f3d6380bf31c0b021942c95e0080e1d1303349d6b",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-work-home",
+    "key": "v3-work-home",
+    "pexels_id": "10132489",
+    "theme": "work",
+    "alt": "Góc làm việc cá nhân gọn gàng với máy tính",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/computer-laptop-on-working-table-10132489/",
+    "original_url": "https://images.pexels.com/photos/10132489/pexels-photo-10132489.jpeg",
+    "download_url": "https://images.pexels.com/photos/10132489/pexels-photo-10132489.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Max Statnykh",
+    "photographer": "Max Statnykh",
+    "photographer_url": "https://www.pexels.com/@max-statnykh-91516851/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4160,
+      "height": 6240
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-work-home-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 112950,
+        "sha256": "7859a8332f17964729307c44db02d8c2869bafee9823ca732499a711cf41b805"
+      },
+      "1920": {
+        "path": "photos/v3-work-home-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 282936,
+        "sha256": "1bcd5b469cb955666c640c6b7e8887260c3e480b17f50b5835d9f343de6801b5"
+      },
+      "fallback": {
+        "path": "photos/v3-work-home-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 417032,
+        "sha256": "5145775a52f9c2e360d7416ddc88a6e64b11a667bc784a557c60a14a8b78a491"
+      }
+    },
+    "sha256": "e0bb778b67817382dd35fe85261ae49f7028f13d07bcecb6f593942d75d59753",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-work-casual",
+    "key": "v3-work-casual",
+    "pexels_id": "4050337",
+    "theme": "work",
+    "alt": "Làm việc thoải mái trong một góc riêng ở nhà",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/young-businesswoman-using-laptop-and-drinking-tea-at-home-4050337/",
+    "original_url": "https://images.pexels.com/photos/4050337/pexels-photo-4050337.jpeg",
+    "download_url": "https://images.pexels.com/photos/4050337/pexels-photo-4050337.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Vlada Karpovich",
+    "photographer": "Vlada Karpovich",
+    "photographer_url": "https://www.pexels.com/@vlada-karpovich/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4480,
+      "height": 6720
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-work-casual-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 92396,
+        "sha256": "5e97654cd3d5b8269028e4332e7d27c9cbacf6e7e4ac481dec091fa5a0ec770a"
+      },
+      "1920": {
+        "path": "photos/v3-work-casual-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 235764,
+        "sha256": "50ddd0015c91973f467cdfc0c7f8029dcf977ce0e43621cb75e7a291b64d3017"
+      },
+      "fallback": {
+        "path": "photos/v3-work-casual-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 368172,
+        "sha256": "05d6dac0d21fbf9dc3eb4037edec9a8179afe16657e5d2b098285679aa8f8b44"
+      }
+    },
+    "sha256": "4f0b1cab406f877f347f9e57482ab53c193b56945767a3e0b82186499cf7f314",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-work-together",
+    "key": "v3-work-together",
+    "pexels_id": "8061974",
+    "theme": "work",
+    "alt": "Hai người làm việc tại nhà trong không gian sáng",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/a-man-using-a-laptop-in-a-home-office-8061974/",
+    "original_url": "https://images.pexels.com/photos/8061974/pexels-photo-8061974.jpeg",
+    "download_url": "https://images.pexels.com/photos/8061974/pexels-photo-8061974.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Ron Lach",
+    "photographer": "Ron Lach",
+    "photographer_url": "https://www.pexels.com/@ron-lach/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 6606,
+      "height": 4404
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 1467
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-work-together-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 41874,
+        "sha256": "a779239b341f988fd45748a565f997aefc937fc7b969bcb0dd5260c1cc5f08d7"
+      },
+      "1920": {
+        "path": "photos/v3-work-together-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 112702,
+        "sha256": "59d3b9a674a27e361382839d3db7a909a4e53572c904dac0c6e8abe136f0d592"
+      },
+      "fallback": {
+        "path": "photos/v3-work-together-1920.jpg",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 175564,
+        "sha256": "83892902805c53c5dda746d3a5de59f0bacb05f82557a695827a0af7ec238ad1"
+      }
+    },
+    "sha256": "8338adf62df2e4fe396508d0c235cb24e4a1e30e6867c1e6f09de102235d4178",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  },
+  {
+    "id": "v3-work-reflection",
+    "key": "v3-work-reflection",
+    "pexels_id": "7282652",
+    "theme": "work",
+    "alt": "Khoảnh khắc suy nghĩ khi làm việc tại nhà",
+    "illustrative_people": true,
+    "source_page": "https://www.pexels.com/photo/woman-looking-at-laptop-screen-while-working-at-home-7282652/",
+    "original_url": "https://images.pexels.com/photos/7282652/pexels-photo-7282652.jpeg",
+    "download_url": "https://images.pexels.com/photos/7282652/pexels-photo-7282652.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    "credit": "Photo by Sarah Chai",
+    "photographer": "Sarah Chai",
+    "photographer_url": "https://www.pexels.com/@sarah-chai/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "original_dimensions": {
+      "width": 4000,
+      "height": 6000
+    },
+    "download_dimensions": {
+      "width": 2200,
+      "height": 3300
+    },
+    "variants": {
+      "960": {
+        "path": "photos/v3-work-reflection-960.webp",
+        "width": 960,
+        "height": 1440,
+        "bytes": 44656,
+        "sha256": "b7d1117a5cb58259083d2281f9c99fe1c20142382f84a57b9913750329f610cd"
+      },
+      "1920": {
+        "path": "photos/v3-work-reflection-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 279986,
+        "sha256": "dfe0261fce8f8ec18467dfd65943f7a809951f0c84d02486c319c9479fab7f3d"
+      },
+      "fallback": {
+        "path": "photos/v3-work-reflection-1920.jpg",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 331440,
+        "sha256": "2230d376e1505c2b27fe5ed7375f499e038e272ea29bec361dd4c7c94e08f49b"
+      }
+    },
+    "sha256": "e669e4fc5d23a669a9c4eba5c3d1cf1dc7f81a5627a24f150a452347f501285b",
+    "status": "ok",
+    "usage_note": "Ảnh minh hoạ, không xác nhận danh tính hoặc nghề nghiệp của người trong ảnh."
+  }
+]

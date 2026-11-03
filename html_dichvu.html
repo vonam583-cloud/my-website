@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Phiên 50 phút, gói 6 buổi và các chương trình hỗ trợ."><meta name="theme-color" content="#0077b6"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Dịch vụ &amp; Bảng giá | Kể Nè</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/fontawesome.min.css"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css_trangchu.css"><style>
+        
+
+
+        
+        .dv-hero {
+            background: linear-gradient(135deg,#1a1f6e 0%,#0077b6 55%,#00b4d8 100%);
+            padding: 48px 0 36px; position: relative; overflow: hidden;
+        }
+        .dv-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('img/scene-care.svg') center/cover;
+            opacity: .13;
+        }
+        .dv-hero-inner { position: relative; z-index: 1; }
+
+        
+        .dv-search-bar {
+            max-width: 600px; margin: 0 auto;
+            background: #fff; border-radius: 50px;
+            padding: 5px 7px 5px 22px;
+            display: flex; align-items: center;
+            box-shadow: 0 12px 44px rgba(0,0,0,.2);
+        }
+        .dv-search-bar input { flex:1; border:none; outline:none; font-size:14px; font-weight:600; color:#1a1f6e; background:transparent; }
+        .dv-search-bar input::placeholder { color:#aab4c0; }
+        .dv-search-btn {
+            background: linear-gradient(135deg,#1a1f6e,#0077b6);
+            color:#fff; border:none; border-radius:40px;
+            padding: 10px 22px; font-size:12.5px; font-weight:900; cursor:pointer; white-space:nowrap;
+            transition: all .25s;
+        }
+        .dv-search-btn:hover { opacity:.9; transform:scale(1.04); }
+
+        
+        .dv-cate-wrap { display:flex; flex-wrap:wrap; justify-content:center; gap:10px 18px; padding:24px 0 12px; }
+        .dv-cate-item {
+            display:flex; flex-direction:column; align-items:center; gap:8px;
+            padding:12px 16px; border-radius:16px; cursor:pointer;
+            border:2px solid transparent; transition:all .3s cubic-bezier(.34,1.2,.64,1); min-width:86px;
+        }
+        .dv-cate-item:hover, .dv-cate-item.active {
+            background:rgba(0,119,182,.08); border-color:rgba(0,119,182,.28); transform:translateY(-5px);
+        }
+        .dv-cate-icon { width:62px; height:62px; border-radius:15px; overflow:hidden; border:2px solid #fff; box-shadow:0 6px 18px rgba(0,0,0,.1); }
+        .dv-cate-icon img { width:100%; height:100%; object-fit:cover; }
+        .dv-cate-label { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; color:#1a1f6e; }
+        .dv-cate-item.active .dv-cate-label { color:#0077b6; }
+
+        
+        .dv-city-row { display:flex; flex-wrap:wrap; justify-content:center; gap:7px; padding:12px 0 22px; border-top:1px solid #eef2f8; margin-top:4px; }
+        .dv-chip {
+            padding:7px 16px; border-radius:100px;
+            border:1.5px solid #dde4ef; font-size:10.5px; font-weight:800;
+            text-transform:uppercase; letter-spacing:.8px;
+            transition:all .2s; color:#6c757d; cursor:pointer; background:#fff;
+        }
+        .dv-chip:hover { border-color:#0077b6; color:#0077b6; background:rgba(0,119,182,.05); }
+        .dv-chip.active { background:#1a1f6e; border-color:#1a1f6e; color:#fff; box-shadow:0 4px 14px rgba(26,31,110,.25); }
+
+        
+        .dv-card {
+            border-radius:20px; overflow:hidden; border:1px solid rgba(0,0,0,.05);
+            background:#fff; transition:all .4s cubic-bezier(.34,1.1,.64,1);
+            height:100%; display:flex; flex-direction:column; cursor:pointer;
+        }
+        .dv-card:hover { transform:translateY(-9px) scale(1.016); box-shadow:0 28px 56px rgba(26,31,110,.1); }
+        .dv-card-img { overflow:hidden; height:200px; }
+        .dv-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .7s ease; }
+        .dv-card:hover .dv-card-img img { transform:scale(1.08); }
+        .dv-card-body { padding:16px 18px; flex:1; display:flex; flex-direction:column; }
+        .dv-card-meta { font-size:10px; font-weight:900; color:#0077b6; text-transform:uppercase; letter-spacing:1px; margin-bottom:5px; }
+        .dv-card-title { font-size:14.5px; font-weight:800; color:#1a1f6e; line-height:1.35; flex:1; margin-bottom:8px; }
+        .dv-card-foot { display:flex; justify-content:space-between; align-items:center; padding-top:10px; border-top:1px solid #f0f4f8; }
+        .dv-card-price { font-size:16px; font-weight:900; color:#ff4d4d; }
+
+        
+        .dv-gallery {
+            display:grid; grid-template-columns:2fr 1fr; gap:12px;
+            height:460px; border-radius:26px; overflow:hidden;
+            box-shadow:0 20px 56px rgba(26,31,110,.1); margin-bottom:28px;
+        }
+        .dv-gallery-main { overflow:hidden; position:relative; }
+        .dv-gallery-main img { width:100%; height:100%; object-fit:cover; transition:transform .7s ease; }
+        .dv-gallery-main:hover img { transform:scale(1.04); }
+        .dv-gallery-side { display:grid; grid-template-rows:1fr 1fr; gap:12px; }
+        .dv-gallery-thumb { overflow:hidden; }
+        .dv-gallery-thumb img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+        .dv-gallery-thumb:hover img { transform:scale(1.06); }
+        @media(max-width:767px){
+            .dv-gallery { grid-template-columns:1fr; height:auto; }
+            .dv-gallery-side { grid-template-columns:1fr 1fr; grid-template-rows:none; height:130px; }
+            .dv-gallery-main { height:220px; }
+        }
+
+        
+        .dv-desc { font-size:1.05rem; line-height:1.88; color:#5a6780; border-left:5px solid rgba(0,119,182,.2); padding:11px 22px; margin-bottom:30px; background:linear-gradient(to right,rgba(0,119,182,.03),transparent); border-radius:0 9px 9px 0; }
+
+        
+        .dv-highlight { background:#f7f9ff; border:1px solid #dde4ef; border-radius:13px; padding:14px 12px; text-align:center; }
+
+        
+        .dv-acc { border:1px solid #edf2f7; border-radius:14px; margin-bottom:10px; overflow:hidden; background:#fff; transition:.25s; }
+        .dv-acc:hover { border-color:rgba(0,119,182,.22); box-shadow:0 4px 18px rgba(0,119,182,.06); }
+        .dv-acc-hd { padding:16px 22px; display:flex; align-items:center; cursor:pointer; gap:12px; }
+        .dv-acc-time { font-size:13px; font-weight:900; color:#0077b6; min-width:52px; }
+        .dv-acc-title { font-size:14px; font-weight:800; color:#1a1f6e; flex:1; }
+        .dv-acc-icon { color:#c0ccd8; transition:transform .28s; flex-shrink:0; }
+        .dv-acc-body { max-height:0; overflow:hidden; transition:max-height .5s cubic-bezier(.4,0,.2,1); background:#fafbff; }
+        .dv-acc-body.open { max-height:600px; border-top:1px solid #edf2f7; }
+        .dv-acc-inner { padding:16px 22px; }
+        .dv-tip { background:linear-gradient(135deg,#e8f4fd,#f0f9ff); padding:11px 15px; border-radius:11px; border-left:3px solid #0077b6; margin-top:11px; }
+
+        
+        .dv-inc { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:16px; padding:20px; }
+        .dv-exc { background:#fff7f7; border:1px solid #fecaca; border-radius:16px; padding:20px; }
+
+        
+        .dv-review { background:#f8faff; border:1px solid #edf2f7; border-radius:18px; padding:20px; margin-bottom:12px; }
+        .dv-avatar { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#1a1f6e,#0077b6); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:900; font-size:13px; flex-shrink:0; }
+        .dv-stars { color:#f59e0b; font-size:12px; letter-spacing:1px; }
+        .dv-verified { display:inline-flex; align-items:center; gap:3px; font-size:9.5px; font-weight:800; color:#16a34a; background:#dcfce7; border-radius:20px; padding:2px 7px; }
+        .dv-rbar-row { display:flex; align-items:center; gap:7px; margin-bottom:6px; }
+        .dv-rbar-lbl { font-size:11px; font-weight:700; color:#6c757d; width:14px; text-align:right; }
+        .dv-rbar-track { flex:1; height:5px; background:#edf2f7; border-radius:5px; overflow:hidden; }
+        .dv-rbar-fill { height:100%; background:linear-gradient(90deg,#f59e0b,#fbbf24); border-radius:5px; transition:width 1s ease; width:0%; }
+        .dv-rbar-cnt { font-size:11px; font-weight:700; color:#6c757d; width:18px; }
+
+        
+        .dv-booking {
+            background:#fff; border:1px solid #edf2f7; border-radius:22px;
+            padding:24px 22px; position:sticky; top:88px;
+            box-shadow:0 14px 44px rgba(26,31,110,.07);
+        }
+        .dv-booking-price { font-size:36px; font-weight:900; color:#ff4d4d; letter-spacing:-1px; line-height:1; }
+        .dv-form-group { margin-bottom:11px; }
+        .dv-label { font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; color:#6c757d; margin-bottom:5px; display:block; }
+        .dv-input { width:100%; border:1.5px solid #edf2f7; border-radius:11px; padding:10px 13px; font-size:13px; font-weight:600; color:#1a1f6e; background:#fafbff; outline:none; transition:.2s; font-family:inherit; }
+        .dv-input:focus { border-color:#0077b6; background:#fff; box-shadow:0 0 0 3px rgba(0,119,182,.08); }
+        .dv-select { width:100%; border:1.5px solid #edf2f7; border-radius:11px; padding:10px 13px; font-size:13px; font-weight:600; color:#1a1f6e; background:#fafbff; outline:none; transition:.2s; appearance:none; cursor:pointer; font-family:inherit; }
+        .dv-select:focus { border-color:#0077b6; box-shadow:0 0 0 3px rgba(0,119,182,.08); }
+        .dv-counter { display:flex; align-items:center; border:1.5px solid #edf2f7; border-radius:11px; overflow:hidden; background:#fafbff; }
+        .dv-ctr-btn { width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700; color:#6c757d; cursor:pointer; background:none; border:none; transition:.18s; }
+        .dv-ctr-btn:hover { background:#edf2f7; color:#0077b6; }
+        .dv-ctr-val { flex:1; text-align:center; font-weight:900; font-size:15px; color:#1a1f6e; }
+        .dv-breakdown { background:#f7f9ff; border-radius:13px; padding:14px 16px; margin:12px 0; }
+        .dv-bdr { display:flex; justify-content:space-between; font-size:12px; font-weight:700; color:#6c757d; margin-bottom:6px; }
+        .dv-bdr.total { border-top:1px solid #dde4ef; padding-top:8px; margin-top:4px; color:#1a1f6e; font-size:14px; font-weight:900; }
+        .dv-bdr.total .v { color:#ff4d4d; }
+        .dv-btn-book { width:100%; padding:14px; border:none; border-radius:15px; background:linear-gradient(135deg,#1a1f6e,#0077b6,#00b4d8); color:#fff; font-size:12.5px; font-weight:900; letter-spacing:1px; text-transform:uppercase; cursor:pointer; transition:all .26s; display:flex; align-items:center; justify-content:center; gap:8px; }
+        .dv-btn-book:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(26,31,110,.3); }
+        .dv-btn-consult { width:100%; padding:11px; border:1.5px solid #dde4ef; border-radius:15px; background:transparent; color:#6c757d; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; cursor:pointer; transition:all .2s; margin-top:7px; font-family:inherit; }
+        .dv-btn-consult:hover { border-color:#0077b6; color:#0077b6; }
+        .dv-info-item { display:flex; align-items:center; gap:9px; font-size:12px; font-weight:700; color:#6c757d; margin-bottom:7px; }
+        .dv-info-icon { width:34px; height:34px; border-radius:9px; background:rgba(0,119,182,.07); display:flex; align-items:center; justify-content:center; color:#0077b6; flex-shrink:0; font-size:13px; }
+
+        
+        .dv-modal { position:fixed; inset:0; background:rgba(26,31,110,.52); backdrop-filter:blur(8px); z-index:3000; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity .3s; }
+        .dv-modal.open { opacity:1; pointer-events:auto; }
+        .dv-modal-box { background:#fff; border-radius:26px; width:100%; max-width:450px; padding:34px; box-shadow:0 36px 96px rgba(26,31,110,.22); transform:translateY(18px) scale(.97); transition:transform .32s cubic-bezier(.34,1.2,.64,1); position:relative; }
+        .dv-modal.open .dv-modal-box { transform:translateY(0) scale(1); }
+        .dv-modal-icon { width:68px; height:68px; border-radius:18px; background:linear-gradient(135deg,#1a1f6e,#0077b6); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+
+        
+        .dv-divider { width:44px; height:3px; background:linear-gradient(135deg,#1a1f6e,#0077b6); border-radius:4px; margin-bottom:18px; }
+
+        
+        @media(max-width:991px){ .dv-booking { position:static; margin-top:24px; } }
+        @media(max-width:575px){ .dv-cate-wrap { gap:8px 14px; } }
+
+        .hd-dropdown {
+            position: absolute; top: calc(100% - 1px); left: 0; right: 0;
+            background: #fff;
+            border-radius: 0 0 18px 18px;
+            border: 1.5px solid rgba(0,119,182,.5); border-top: none;
+            box-shadow: 0 20px 56px rgba(26,31,110,.14);
+            z-index: 9200; display: none; max-height: 440px; overflow-y: auto;
+        }
+        .hd-dropdown.hd-open { display: block; animation: hdSlide .22s ease; }
+        @keyframes hdSlide { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+        .hd-item {
+            padding: 10px 16px; display: flex; align-items: center; gap: 12px;
+            cursor: pointer; border-bottom: 1px solid #f0f4f8;
+        }
+        .hd-item:hover { background: #f7f9ff; }
+        .hd-item img { width: 44px; height: 44px; border-radius: 9px; object-fit: cover; flex-shrink:0; }
+        .hd-item-title { font-size: 13px; font-weight: 800; color: #1a1f6e; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .hd-item-meta { font-size: 11px; font-weight: 700; color: #6c757d; }
+        .hd-footer {
+            padding: 10px 18px; text-align: center; font-size: 12px;
+            font-weight: 800; color: #0077b6; cursor: pointer;
+        }
+        .hd-footer:hover { background: #f7f9ff; }
+    
+        
+        .dv-btn-cart {
+            width:100%; padding:12px; border:2px solid #0077b6;
+            border-radius:15px; background:transparent; color:#0077b6;
+            font-size:12px; font-weight:900; text-transform:uppercase;
+            letter-spacing:1px; cursor:pointer; transition:all .22s;
+            margin-top:7px; font-family:inherit;
+            display:flex; align-items:center; justify-content:center; gap:8px;
+        }
+        .dv-btn-cart:hover { background:#0077b6; color:#fff; transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,119,182,.25); }
+        
+        .cart-badge-wrap { position:relative; display:inline-flex; }
+        .cart-badge {
+            position:absolute; top:-7px; right:-9px;
+            background:#ff4d4d; color:#fff; border-radius:50%;
+            width:17px; height:17px; font-size:10px; font-weight:900;
+            display:none; align-items:center; justify-content:center;
+            border:2px solid #fff; line-height:1;
+        }
+        
+        #cart-toast {
+            position:fixed; bottom:28px; right:28px; z-index:9999;
+            background:#1a1f6e; color:#fff; border-radius:14px;
+            padding:14px 20px; font-size:13px; font-weight:700;
+            box-shadow:0 12px 36px rgba(26,31,110,.25);
+            display:flex; align-items:center; gap:10px;
+            transform:translateY(80px); opacity:0;
+            transition:all .35s cubic-bezier(.34,1.2,.64,1);
+            pointer-events:none;
+        }
+        #cart-toast.show { transform:translateY(0); opacity:1; }
+        #cart-toast i { font-size:16px; color:#00d4aa; }
+
+        
+        .dv-voucher-wrap { margin-top: 8px; }
+        .dv-voucher-row { display: flex; gap: 8px; align-items: center; }
+        .dv-voucher-input {
+            flex: 1; height: 40px; padding: 0 12px;
+            border: 1.5px solid #dde4ef; border-radius: 10px;
+            font-size: 13px; font-weight: 700; letter-spacing: 1px;
+            color: #1a1f6e; background: #f7f9ff;
+            transition: border-color .2s; font-family: inherit;
+        }
+        .dv-voucher-input:focus {
+            outline: none; border-color: #0077b6;
+            background: #fff; box-shadow: 0 0 0 3px rgba(0,119,182,.08);
+        }
+        .dv-voucher-btn {
+            height: 40px; padding: 0 14px; background: #1a1f6e; color: #fff;
+            border: none; border-radius: 10px; font-size: 12px; font-weight: 800;
+            cursor: pointer; transition: background .2s, transform .15s; white-space: nowrap;
+        }
+        .dv-voucher-btn:hover { background: #0077b6; transform: scale(1.04); }
+        .dv-voucher-msg { margin-top: 5px; font-size: 11.5px; font-weight: 700; min-height: 16px; }
+        .dv-voucher-msg.ok  { color: #10b981; }
+        .dv-voucher-msg.err { color: #ef4444; }
+
+
+</style><link rel="stylesheet" href="css/kene-experience.css"><link rel="manifest" href="manifest.webmanifest"><meta name="color-scheme" content="light"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="img/brand/icon-32.png"><link rel="apple-touch-icon" href="img/brand/icon-180.png"><link rel="stylesheet" href="css/kene-brand.css"></head><body data-page="services"><header class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 border-bottom">
+        <div class="container">
+
+            
+            <a class="navbar-brand" href="html_trangchu.html">
+                <img src="img/logo.svg" alt="Kể Nè — Không gian lắng nghe" height="46" class=" logo-header" width="142">
+            </a>
+
+            
+            <div class="header-search-wrap mx-lg-4 d-none d-md-flex">
+<div class="input-group header-search">
+                    <div class="input-group-prepend border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" id="header-search-inp" class="form-control border-0 bg-transparent" placeholder="Tìm dịch vụ, chuyên gia, bài viết…" autocomplete="off" aria-label="Tìm kiếm toàn website">
+                    
+                    <span class="hs-shortcut d-none d-lg-inline-flex align-items-center">⌘K</span>
+                </div>
+                <div id="header-dropdown" class="search-dropdown"></div>
+            </div>
+
+            
+            <div class="navbar-nav ml-auto align-items-center">
+                <a class="nav-item nav-link mr-3 d-none d-xl-block small-text" href="html_trangchu.html">Trang chủ</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_gioithieu.html">Về Kể Nè</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_lienhe_chinhsach.html">Liên hệ &amp; Tin cậy</a>
+                <a class="nav-item nav-link mr-3 d-none d-md-block small-text" href="html_blog.html">Góc đọc</a>
+
+                
+                <a class="nav-item nav-link mr-3 text-dark" href="html_giohang.html" style="position:relative;" aria-label="Giỏ dịch vụ">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-badge" style="position:absolute;top:-4px;right:-8px;background:#ff4d4d;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;line-height:1;">0</span>
+                </a>
+
+                
+                <div class="auth-buttons" id="auth-zone">
+                    <a class="nav-item nav-link mr-3 font-weight-bold" href="html_dangnhap_dangky.html">Đăng ký</a>
+                    <a class="btn btn-login font-weight-bold" href="html_dangnhap_dangky.html">Đăng nhập</a>
+                    <a class="nav-item nav-link ml-2 d-none d-sm-block" href="html_thongtin.html">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="sub-nav bg-white border-bottom" aria-label="Dịch vụ"><div class="container"><div class="nav kn-subnav"><a class="nav-link" href="html_dichvu.html">Dịch vụ &amp; Bảng giá</a><a class="nav-link" href="html_diadiem.html">Chuyên gia &amp; Ghép nối</a><a class="nav-link" href="html_diadiem.html#sang-loc">Sàng lọc miễn phí</a><a class="nav-link ml-auto sub-voucher-link" href="html_khuyenmaivatiepthi.html"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Ưu đãi</a></div></div></nav><a class="kn-skip" href="#main-content">Bỏ qua điều hướng</a><main id="main-content"><div class="dv-hero ke-photo-hero"><div class="ke-hero-photo-panel"><picture class="ke-picture " data-ke-image="care-notes"><source type="image/webp" srcset="img/photos/care-notes-960.webp 960w, img/photos/care-notes-1920.webp 1920w" sizes="100vw"><img src="img/photos/care-notes-1920.jpg" alt="Lắng nghe và ghi chú trong cuộc trò chuyện" width="1920" height="2880" loading="eager" decoding="async" fetchpriority="high" data-ke-photo="care-notes"></picture></div><div class="container"><span class="kn-eyebrow">DỊCH VỤ KỂ NÈ</span><h1>Dịch vụ &amp; Gói đồng hành</h1><p>Thời lượng, giá tham khảo và điều kiện được hiển thị trước khi bạn quyết định.</p><div class="kn-search-line"><label class="sr-only" for="service-search">Tìm dịch vụ</label><input id="service-search" placeholder="Tìm theo dịch vụ hoặc nhu cầu…"><button class="kn-btn" data-action="search-services">Tìm kiếm</button></div></div></div><div id="home-view"><div class="container"><div id="dv-cate-wrap" class="dv-cate-wrap"></div><div id="dv-city-row" class="dv-city-row"></div><div class="kn-filter-extra"><label>Sắp xếp <select id="service-sort"><option value="default">Gợi ý</option><option value="price">Giá tăng dần</option><option value="duration">Thời lượng</option></select></label><button class="kn-link" data-action="reset-services">Xoá bộ lọc</button></div></div><section class="container py-4"><div class="d-flex justify-content-between mb-4"><h2 id="grid-title" class="ke-reveal">Tất cả lựa chọn</h2><span id="grid-count" aria-live="polite"></span></div><div id="dv-grid" class="row"></div></section></div><div id="detail-view" class="d-none"><div class="container py-4"><button class="kn-btn kn-btn-light mb-4" data-action="service-back">← Quay lại danh sách</button><div class="dv-gallery" id="dv-gallery"></div><div class="row"><div class="col-lg-8"><div id="dv-detail-tags" class="mb-3"></div><h1 id="dv-detail-title"></h1><div class="dv-desc" id="dv-detail-desc"></div><div id="dv-highlights" class="row mb-4"></div><h2 class="kn-h3 ke-reveal">Quy trình đồng hành</h2><div id="dv-itinerary"></div><div id="dv-include-section" class="row my-4"></div><div class="kn-white-card mb-4"><h2 class="kn-h3 ke-reveal">Phản hồi và độ phù hợp</h2><p>Hãy xem chuyên môn, cách đồng hành và mức độ phù hợp trước khi quyết định. Phản hồi chỉ có ý nghĩa khi phản ánh trải nghiệm thực tế.</p><a href="html_diadiem.html">Xem tiêu chí ghép nối →</a></div></div><div class="col-lg-4"><div id="dv-booking-box" class="dv-booking"></div></div></div></div></div></main><footer class="kene-footer"><div class="footer-bg-layer"></div><div class="container position-relative" style="z-index:2"><div class="row footer-main-row pt-5 pb-4"><div class="col-lg-4 col-md-6 mb-4"><a href="html_trangchu.html" class="footer-brand d-inline-block mb-3" aria-label="Kể Nè — Trang chủ"><img class="footer-logo" src="img/logo-white.svg" width="150" height="49" alt="Kể Nè"></a><p class="footer-desc">Chuyện khó nói, có người nghe. Kể Nè đồng hành cùng bạn tìm hiểu nhu cầu và lựa chọn cách chăm sóc sức khoẻ tinh thần phù hợp.</p><a class="footer-sitemap-btn" href="html_sitemap.html">Sơ đồ website</a></div><div class="col-lg-4 col-md-6 mb-4"><h2 class="footer-heading">Khám phá Kể Nè</h2><ul class="ke-footer-links"><li><a href="html_gioithieu.html">Câu chuyện &amp; Con người</a></li><li><a href="html_dichvu.html">Dịch vụ &amp; Mức giá tham khảo</a></li><li><a href="html_diadiem.html">Tìm cách đồng hành phù hợp</a></li><li><a href="html_blog.html">Góc đọc mỗi ngày</a></li><li><a href="html_khuyenmaivatiepthi.html">Ưu đãi &amp; Điều kiện áp dụng</a></li></ul></div><div class="col-lg-4 col-md-12 mb-4"><h2 class="footer-heading">Bạn luôn có quyền lựa chọn</h2><p class="ke-footer-promise">♡ Chia sẻ theo nhịp của bạn. Hiểu rõ điều kiện trước khi bắt đầu.</p><ul class="ke-footer-links"><li><a href="html_lienhe_chinhsach.html#du-lieu">Quyền riêng tư</a></li><li><a href="html_lienhe_chinhsach.html#doi-lich">Đổi lịch &amp; Hỗ trợ</a></li><li><a href="html_lienhe_chinhsach.html">Liên hệ &amp; Trung tâm tin cậy</a></li><li><a href="html_lienhe_chinhsach.html?topic=to-chuc">Dành cho tổ chức</a></li><li><a href="html_lienhe_chinhsach.html?topic=chuyen-gia">Hợp tác chuyên gia</a></li></ul></div></div><div class="footer-divider"></div><div class="ke-footer-tools"><button type="button" data-ke-motion aria-pressed="false">Chuyển động: Êm dịu</button><button type="button" data-ke-credits>Nguồn ảnh</button><button type="button" data-ke-saved-articles>Bài viết đã lưu</button><span id="ke-offline-state" class="ke-offline-state">Ảnh cục bộ · Không cần Internet</span></div><div class="footer-bottom py-3 d-flex flex-wrap justify-content-between"><p class="footer-copy mb-0">© 2026 Kể Nè. Mọi quyền được bảo lưu.</p><p class="footer-copy mb-0">Tư vấn, tham vấn tâm lý · Không thay thế cấp cứu</p></div></div></footer><div id="kn-toast" class="kn-toast" hidden role="status" aria-live="polite"></div><div class="kn-tools"><button class="kn-sos-btn" data-action="sos">Cần giúp ngay</button><button class="kn-help-btn" data-action="help" aria-label="Mở trợ giúp thao tác">?</button><button class="kn-exit-btn" data-action="quick-exit">Thoát nhanh ↗</button></div><div id="kn-modal" class="kn-modal" hidden role="dialog" aria-modal="true" aria-labelledby="kn-modal-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-modal-title"></h2><div><button class="kn-link" data-action="sos">Cần giúp ngay</button><button class="kn-modal-close" data-action="close-modal" aria-label="Đóng cửa sổ">×</button></div></div><div id="kn-modal-body"></div></div></div><div id="kn-sos" class="kn-modal kn-sos-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="kn-sos-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-sos-title">Ưu tiên sự an toàn của bạn</h2><button class="kn-modal-close" data-action="close-sos" aria-label="Đóng hướng dẫn">×</button></div><p>Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế hoặc đến cơ sở cấp cứu gần nhất. Nếu có thể, nhờ một người tin cậy ở cạnh bạn.</p><a class="kn-btn kn-btn-full" href="tel:115">Gọi cấp cứu y tế 115</a><p class="kn-note mt-3">115 là cấp cứu y tế, không phải đường dây tư vấn của Kể Nè.</p><div class="kn-white-card my-3"><h3 class="kn-h4">Website không có người trực</h3><p>Kể Nè không phải kênh cấp cứu và không gửi cảnh báo từ nút này. Đừng chờ phản hồi trên website khi bạn đang không an toàn.</p><p id="kn-support-hours"></p></div><button class="kn-btn kn-btn-light" data-action="quick-exit">Thoát nhanh khỏi website</button></div></div><button id="back-to-top" class="kn-back-top" aria-label="Lên đầu trang" hidden>↑</button><script src="js/jquery.min.js" defer></script><script src="js/bootstrap.bundle.min.js" defer></script><script src="js/kene-data.js" defer></script><script src="js/kene-engine.js" defer></script><script src="js/kene-core.js" defer></script><script src="js/kene-media-data.js" defer></script><script src="js/kene-media.js" defer></script><script src="js/kene-runtime.js" defer></script><script src="js/kene-pages.js" defer></script><script src="js/kene-offline-version.js" defer></script><script src="js/kene-experience.js" defer></script><script src="js/kene-scenes.js" defer></script></body></html>

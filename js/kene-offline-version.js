@@ -1,0 +1,1 @@
+window.KENE_OFFLINE_VERSION = 'c25605ce7b9f0803';

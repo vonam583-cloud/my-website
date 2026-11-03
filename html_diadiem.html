@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Sàng lọc, tiêu chí, ba gợi ý và khung giờ mong muốn."><meta name="theme-color" content="#0077b6"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Chuyên gia &amp; Ghép nối | Kể Nè</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/fontawesome.min.css"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css_trangchu.css"><style>
+        
+        :root {
+            --primary-blue:   #0077b6;
+            --dark-blue:      #1a1f6e;
+            --accent-red:     #ff4d4d;
+            --teal-light:     #00b4d8;
+            --gradient-brand: linear-gradient(135deg, #1a1f6e 0%, #0077b6 55%, #00b4d8 100%);
+            --bg-light:       #f0f4f8;
+            --text-dark:      #1a1f6e;
+            --text-muted:     #6c757d;
+        }
+
+
+        
+        .dest-hero {
+            background: var(--gradient-brand);
+            padding: 80px 0 64px;
+            position: relative; overflow: hidden;
+        }
+        
+        .dest-hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: url('img/scene-care.svg') center/cover;
+            opacity: .12;
+        }
+        
+        .dest-hero-dots {
+            position: absolute; inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,.07) 1.5px, transparent 1.5px);
+            background-size: 26px 26px; pointer-events: none;
+        }
+        
+        .dest-hero::after {
+            content: '';
+            position: absolute; bottom: -1px; left: 0; right: 0; height: 52px;
+            background: var(--bg-light);
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+        .dest-hero-inner { position: relative; z-index: 1; }
+        .dest-hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase;
+            color: rgba(255,255,255,.8);
+            background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22);
+            padding: 6px 18px; border-radius: 30px; margin-bottom: 16px;
+        }
+        .dest-hero-title {
+            font-size: clamp(28px, 4.5vw, 56px); font-weight: 900; color: #fff;
+            line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 12px;
+        }
+        .dest-hero-title span { color: #00e5ff; }
+        .dest-hero-sub { font-size: 14px; color: rgba(255,255,255,.78); line-height: 1.75; max-width: 460px; }
+        
+        .dest-hero-stats { display: flex; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+        .dhs-num { font-size: 28px; font-weight: 900; color: #fff; line-height: 1; }
+        .dhs-lbl { font-size: 11px; color: rgba(255,255,255,.65); margin-top: 2px; }
+
+        
+        .dest-filter-bar {
+            background: #fff; border-bottom: 1px solid #eee;
+            padding: 10px 0 10px;
+            position: sticky; top: 68px; z-index: 200;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+            overflow: visible; 
+        }
+        .dest-filter-inner {
+            display: flex; align-items: center; gap: 8px;
+            overflow-x: auto; scrollbar-width: none;
+            padding: 4px 16px; 
+            -webkit-overflow-scrolling: touch;
+            width: 100%; box-sizing: border-box;
+        }
+        .dest-filter-inner::-webkit-scrollbar { display: none; }
+        .dest-filter-bar .container {
+            overflow: visible;
+        }
+        
+        .dest-chip {
+            padding: 8px 18px; border-radius: 100px;
+            border: 1.5px solid #dde4ef;
+            font-size: 12px; font-weight: 700;
+            color: var(--text-muted); white-space: nowrap;
+            background: #fff; transition: all .25s;
+            flex-shrink: 0;
+        }
+        .dest-chip:hover { border-color: var(--primary-blue); color: var(--primary-blue); }
+        .dest-chip.active {
+            background: var(--dark-blue); border-color: var(--dark-blue);
+            color: #fff; box-shadow: 0 4px 14px rgba(26,31,110,.22);
+        }
+
+        
+        .dest-main { background: var(--bg-light); padding: 56px 0 80px; }
+
+        
+        .dest-section {
+            margin-bottom: 72px;
+            scroll-margin-top: 120px; 
+        }
+
+        
+        .dest-section-header {
+            display: flex; align-items: flex-end; justify-content: space-between;
+            margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+        }
+        .dest-section-name {
+            font-size: 26px; font-weight: 900;
+            color: var(--dark-blue); margin: 0;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .dest-section-name span { font-size: 28px; }
+        .dest-section-tag {
+            display: inline-block;
+            background: rgba(0,119,182,.1); color: var(--primary-blue);
+            font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .8px;
+            padding: 3px 10px; border-radius: 20px; margin-left: 6px;
+        }
+        .dest-section-tagline {
+            font-size: 13px; color: var(--text-muted); margin: 4px 0 0;
+            max-width: 520px; line-height: 1.6;
+        }
+        .dest-see-all-btn {
+            font-size: 13px; font-weight: 700; color: var(--primary-blue);
+            text-decoration: none !important;
+            display: flex; align-items: center; gap: 5px;
+            transition: gap .2s;
+        }
+        .dest-see-all-btn:hover { gap: 8px; }
+
+        
+        .dest-section-body {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 992px) { .dest-section-body { grid-template-columns: 1fr; } }
+
+        
+        .dest-hero-card {
+            border-radius: 22px; overflow: hidden;
+            position: relative; height: 340px;
+            box-shadow: 0 10px 40px rgba(0,0,0,.12);
+            flex-shrink: 0;
+        }
+        .dest-hero-img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform .7s ease;
+        }
+        .dest-hero-card:hover .dest-hero-img { transform: scale(1.06); }
+        
+        .dest-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(26,31,110,.75) 0%, transparent 50%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 22px;
+        }
+        .dest-hero-label {
+            color: #fff; font-size: 20px; font-weight: 900; margin: 0;
+        }
+        .dest-hero-sub-label {
+            color: rgba(255,255,255,.8); font-size: 12px; margin: 4px 0 12px;
+        }
+        
+        .dest-hero-cta {
+            display: inline-flex; align-items: center; gap: 7px;
+            background: rgba(255,255,255,.18); border: 1.5px solid rgba(255,255,255,.35);
+            color: #fff !important; text-decoration: none !important;
+            font-size: 12px; font-weight: 800;
+            padding: 8px 16px; border-radius: 100px;
+            transition: background .22s, gap .2s;
+        }
+        .dest-hero-cta:hover { background: rgba(255,255,255,.3); gap: 10px; }
+
+        
+        .dest-right-col { display: flex; flex-direction: column; gap: 16px; }
+
+        
+        .dest-sub-label {
+            font-size: 12px; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--primary-blue);
+            display: flex; align-items: center; gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        
+        .blog-mini-row {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+        }
+        @media (max-width: 768px) { .blog-mini-row { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 480px) { .blog-mini-row { grid-template-columns: 1fr; } }
+
+        .blog-mini-card {
+            border-radius: 14px; overflow: hidden; background: #fff;
+            box-shadow: 0 3px 14px rgba(0,119,182,.07);
+            border: 1px solid rgba(0,119,182,.08);
+            transition: all .35s cubic-bezier(.34,1.2,.64,1);
+            cursor: pointer;
+        }
+        .blog-mini-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0,119,182,.15);
+        }
+        .bmc-img {
+            height: 100px; overflow: hidden; position: relative;
+            background: linear-gradient(135deg, #1a1f6e, #0077b6);
+        }
+        .bmc-img img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform .5s ease;
+        }
+        .blog-mini-card:hover .bmc-img img { transform: scale(1.08); }
+        .bmc-cat {
+            position: absolute; top: 7px; left: 8px;
+            background: var(--gradient-brand); color: #fff;
+            font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .4px;
+            padding: 2px 8px; border-radius: 20px; z-index: 2;
+        }
+        .bmc-body { padding: 10px 11px 11px; }
+        .bmc-title {
+            font-size: 12.5px; font-weight: 800; color: var(--dark-blue);
+            line-height: 1.4; margin: 0 0 5px;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+            transition: color .2s;
+        }
+        .blog-mini-card:hover .bmc-title { color: var(--primary-blue); }
+        .bmc-meta {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 10px; color: #9baab8; font-weight: 500;
+        }
+        .bmc-meta i { color: var(--teal-light); }
+        .bmc-read-more {
+            display: inline-flex; align-items: center; gap: 4px;
+            color: var(--primary-blue); font-size: 10.5px; font-weight: 800;
+            margin-top: 5px; transition: gap .2s;
+        }
+        .blog-mini-card:hover .bmc-read-more { gap: 7px; }
+
+        
+        .service-mini-row {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+        }
+        @media (max-width: 768px) { .service-mini-row { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 480px) { .service-mini-row { grid-template-columns: 1fr; } }
+
+        .service-mini-card {
+            border-radius: 14px; overflow: hidden; background: #fff;
+            box-shadow: 0 3px 14px rgba(0,0,0,.06);
+            border: 1px solid rgba(0,0,0,.04);
+            transition: all .35s cubic-bezier(.34,1.1,.64,1);
+            cursor: pointer; display: flex; flex-direction: column;
+        }
+        .service-mini-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 36px rgba(26,31,110,.12);
+        }
+        .tmc-img { height: 90px; overflow: hidden; position: relative; }
+        .tmc-img img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform .5s ease;
+        }
+        .service-mini-card:hover .tmc-img img { transform: scale(1.08); }
+        .tmc-body { padding: 10px 11px 11px; flex: 1; display: flex; flex-direction: column; }
+        .tmc-cat {
+            font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: .8px;
+            color: var(--primary-blue); margin-bottom: 3px;
+        }
+        .tmc-name {
+            font-size: 12px; font-weight: 800; color: var(--dark-blue);
+            line-height: 1.35; margin: 0; flex: 1;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .tmc-footer {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-top: 7px; padding-top: 7px; border-top: 1px solid #f0f4f8;
+        }
+        .tmc-price { font-size: 13px; font-weight: 900; color: var(--accent-red); }
+        .tmc-rating { font-size: 10.5px; color: #f59e0b; font-weight: 700; }
+
+        
+        .dest-section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,119,182,.15), transparent);
+            margin-bottom: 72px;
+        }
+
+        
+        #back-to-top {
+            position: fixed; bottom: 28px; right: 28px;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--gradient-brand);
+            color: #fff; border: none;
+            box-shadow: 0 4px 20px rgba(0,119,182,.4);
+            font-size: 16px;
+            opacity: 0; pointer-events: none;
+            transition: all .3s ease;
+            z-index: 9000;
+            display: flex; align-items: center; justify-content: center;
+        }
+        #back-to-top.show { opacity: 1; pointer-events: all; }
+        #back-to-top:hover { transform: translateY(-3px); }
+
+        
+        @media (max-width: 768px) {
+            .dest-section-body { grid-template-columns: 1fr; }
+            .dest-hero-card { height: 240px; }
+            .blog-mini-row, .service-mini-row { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .blog-mini-row, .service-mini-row { grid-template-columns: 1fr; }
+        }
+    
+
+
+        
+        .btn-login {
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            color:#fff !important; border:none; border-radius:10px;
+            padding:7px 16px; font-size:13px; transition:all .2s;
+        }
+        .btn-login:hover { opacity:.88; transform:translateY(-1px); }
+        
+        .user-avatar-btn {
+            width:38px; height:38px; border-radius:50%;
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            display:flex; align-items:center; justify-content:center;
+            color:#fff; font-weight:800; font-size:15px;
+            cursor:pointer; border:none; transition:all .2s;
+        }
+        .user-avatar-btn:hover { box-shadow:0 4px 14px rgba(0,119,182,.35); }
+        .user-profile-dropdown .dropdown-menu {
+            border-radius:14px; padding:8px 0;
+            box-shadow:0 8px 30px rgba(0,0,0,.12);
+        }
+
+        </style><link rel="stylesheet" href="css/kene-experience.css"><link rel="manifest" href="manifest.webmanifest"><meta name="color-scheme" content="light"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="img/brand/icon-32.png"><link rel="apple-touch-icon" href="img/brand/icon-180.png"><link rel="stylesheet" href="css/kene-brand.css"></head><body data-page="experts"><header class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 border-bottom">
+        <div class="container">
+
+            
+            <a class="navbar-brand" href="html_trangchu.html">
+                <img src="img/logo.svg" alt="Kể Nè — Không gian lắng nghe" height="46" class=" logo-header" width="142">
+            </a>
+
+            
+            <div class="header-search-wrap mx-lg-4 d-none d-md-flex">
+<div class="input-group header-search">
+                    <div class="input-group-prepend border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" id="header-search-inp" class="form-control border-0 bg-transparent" placeholder="Tìm dịch vụ, chuyên gia, bài viết…" autocomplete="off" aria-label="Tìm kiếm toàn website">
+                    
+                    <span class="hs-shortcut d-none d-lg-inline-flex align-items-center">⌘K</span>
+                </div>
+                <div id="header-dropdown" class="search-dropdown"></div>
+            </div>
+
+            
+            <div class="navbar-nav ml-auto align-items-center">
+                <a class="nav-item nav-link mr-3 d-none d-xl-block small-text" href="html_trangchu.html">Trang chủ</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_gioithieu.html">Về Kể Nè</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_lienhe_chinhsach.html">Liên hệ &amp; Tin cậy</a>
+                <a class="nav-item nav-link mr-3 d-none d-md-block small-text" href="html_blog.html">Góc đọc</a>
+
+                
+                <a class="nav-item nav-link mr-3 text-dark" href="html_giohang.html" style="position:relative;" aria-label="Giỏ dịch vụ">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-badge" style="position:absolute;top:-4px;right:-8px;background:#ff4d4d;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;line-height:1;">0</span>
+                </a>
+
+                
+                <div class="auth-buttons" id="auth-zone">
+                    <a class="nav-item nav-link mr-3 font-weight-bold" href="html_dangnhap_dangky.html">Đăng ký</a>
+                    <a class="btn btn-login font-weight-bold" href="html_dangnhap_dangky.html">Đăng nhập</a>
+                    <a class="nav-item nav-link ml-2 d-none d-sm-block" href="html_thongtin.html">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="sub-nav bg-white border-bottom" aria-label="Dịch vụ"><div class="container"><div class="nav kn-subnav"><a class="nav-link" href="html_dichvu.html">Dịch vụ &amp; Bảng giá</a><a class="nav-link" href="html_diadiem.html">Chuyên gia &amp; Ghép nối</a><a class="nav-link" href="html_diadiem.html#sang-loc">Sàng lọc miễn phí</a><a class="nav-link ml-auto sub-voucher-link" href="html_khuyenmaivatiepthi.html"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Ưu đãi</a></div></div></nav><a class="kn-skip" href="#main-content">Bỏ qua điều hướng</a><main id="main-content"><section class="dest-hero ke-photo-hero"><div class="ke-hero-photo-panel"><picture class="ke-picture " data-ke-image="friends-listen"><source type="image/webp" srcset="img/photos/friends-listen-960.webp 960w, img/photos/friends-listen-1920.webp 1920w" sizes="100vw"><img src="img/photos/friends-listen-1920.jpg" alt="Hai người ngồi lắng nghe nhau bên tách cà phê" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high" data-ke-photo="friends-listen"></picture></div><div class="container"><span class="kn-hero-eyebrow">CHUYÊN GIA &amp; GHÉP NỐI</span><h1>Chọn người phù hợp<br>với điều bạn muốn kể</h1><p>Bắt đầu từ chủ đề, hình thức và phong cách bạn mong muốn. Cùng chuẩn bị một yêu cầu ghép nối rõ ràng.</p><a href="#sang-loc" class="kn-btn kn-btn-white">Bắt đầu sàng lọc miễn phí</a></div></section><div class="dest-filter-bar"><div class="container"><div id="expert-topics" class="kn-chips"></div></div></div><section class="container py-5" id="ghep-noi"><div class="kn-white-card mb-4"><h2 class="ke-reveal">Tiêu chí ghép nối</h2><form id="match-form" class="kn-form-grid"><label>Chủ đề chính<select id="match-topic"></select></label><label>Hình thức<select id="match-channel"><option value="">Tất cả</option><option value="video">Video</option><option value="audio">Âm thanh</option><option value="text">Nhắn tin</option></select></label><label>Phong cách<select id="match-style"><option value="">Không ưu tiên</option><option>Nhẹ nhàng</option><option>Có cấu trúc</option><option>Thẳng thắn</option></select></label><label>Giới tính chuyên gia<select id="match-gender"><option value="">Không ưu tiên</option><option>Nữ</option><option>Nam</option></select></label><label>Khung giờ<select id="match-period"><option value="">Linh hoạt</option><option value="day">Ban ngày 8–17 giờ</option><option value="evening">Buổi tối 19–23 giờ</option></select></label><label>Ngân sách/phiên<select id="match-budget"><option value="500000">Đến 500.000đ</option><option value="400000">Đến 400.000đ</option><option value="300000">Đến 300.000đ</option></select></label><button class="kn-btn" type="submit">Xem 3 gợi ý có lý do</button><button class="kn-btn kn-btn-light" type="button" data-action="compare">So sánh gợi ý</button></form></div><div id="match-summary" aria-live="polite"></div><div class="kn-grid-3" id="expert-grid"></div><div id="expert-compare" class="my-4"></div><div class="kn-note mt-3">Hồ sơ chuyên gia và lịch trực tuyến đang được cập nhật. Các gợi ý dưới đây mô tả tiêu chí đồng hành; chưa phải lịch nhận tư vấn đã xác nhận.</div></section><section id="sang-loc" class="kn-screen-section"><div class="container"><div class="kn-screen-shell"><div class="kn-screen-side"><span class="kn-eyebrow">MIỄN PHÍ · KHÔNG CẦN TÀI KHOẢN</span><h2 class="ke-reveal">Hiểu thêm về<br>hai tuần vừa qua</h2><p>PHQ-9, GAD-7 và câu hỏi an toàn giúp mở đầu trao đổi. Kết quả không phải chẩn đoán.</p><p>Bạn có thể tạm dừng. Chỉ dùng dữ liệu trên thiết bị trong website.</p><a href="html_lienhe_chinhsach.html#bao-mat">Xem cách dữ liệu được dùng →</a><figure class="ke-photo-frame ke-tilt "><picture class="ke-picture " data-ke-image="journal-planning"><source type="image/webp" srcset="img/photos/journal-planning-960.webp 960w, img/photos/journal-planning-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/journal-planning-1920.jpg" alt="Bạn quyết định phần muốn chia sẻ" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="journal-planning"></picture><button type="button" class="ke-photo-zoom" data-ke-lightbox="journal-planning" data-ke-gallery="screening" aria-label="Xem ảnh lớn: Bạn quyết định phần muốn chia sẻ"><span aria-hidden="true">⤢</span></button><figcaption><strong>Bạn quyết định phần muốn chia sẻ</strong></figcaption></figure></div><div id="screen-app" class="kn-screen-app" aria-live="polite"></div></div></div></section><section class="container py-5"><div class="kn-white-card"><h2 class="ke-reveal">Chưa tìm được khung giờ phù hợp?</h2><p>Ghi lại mong muốn vào danh sách chờ của website. Không có thông báo thật được gửi.</p><form id="waitlist-form" class="kn-form-grid"><label>Ngày mong muốn<input type="date" id="wait-date" required></label><label>Khung giờ<select id="wait-period"><option>Ban ngày 8–17 giờ</option><option>Buổi tối 19–23 giờ</option></select></label><button type="submit" class="kn-btn">Lưu mong muốn</button></form><div id="waitlist-result" aria-live="polite"></div></div></section></main><footer class="kene-footer"><div class="footer-bg-layer"></div><div class="container position-relative" style="z-index:2"><div class="row footer-main-row pt-5 pb-4"><div class="col-lg-4 col-md-6 mb-4"><a href="html_trangchu.html" class="footer-brand d-inline-block mb-3" aria-label="Kể Nè — Trang chủ"><img class="footer-logo" src="img/logo-white.svg" width="150" height="49" alt="Kể Nè"></a><p class="footer-desc">Chuyện khó nói, có người nghe. Kể Nè đồng hành cùng bạn tìm hiểu nhu cầu và lựa chọn cách chăm sóc sức khoẻ tinh thần phù hợp.</p><a class="footer-sitemap-btn" href="html_sitemap.html">Sơ đồ website</a></div><div class="col-lg-4 col-md-6 mb-4"><h2 class="footer-heading">Khám phá Kể Nè</h2><ul class="ke-footer-links"><li><a href="html_gioithieu.html">Câu chuyện &amp; Con người</a></li><li><a href="html_dichvu.html">Dịch vụ &amp; Mức giá tham khảo</a></li><li><a href="html_diadiem.html">Tìm cách đồng hành phù hợp</a></li><li><a href="html_blog.html">Góc đọc mỗi ngày</a></li><li><a href="html_khuyenmaivatiepthi.html">Ưu đãi &amp; Điều kiện áp dụng</a></li></ul></div><div class="col-lg-4 col-md-12 mb-4"><h2 class="footer-heading">Bạn luôn có quyền lựa chọn</h2><p class="ke-footer-promise">♡ Chia sẻ theo nhịp của bạn. Hiểu rõ điều kiện trước khi bắt đầu.</p><ul class="ke-footer-links"><li><a href="html_lienhe_chinhsach.html#du-lieu">Quyền riêng tư</a></li><li><a href="html_lienhe_chinhsach.html#doi-lich">Đổi lịch &amp; Hỗ trợ</a></li><li><a href="html_lienhe_chinhsach.html">Liên hệ &amp; Trung tâm tin cậy</a></li><li><a href="html_lienhe_chinhsach.html?topic=to-chuc">Dành cho tổ chức</a></li><li><a href="html_lienhe_chinhsach.html?topic=chuyen-gia">Hợp tác chuyên gia</a></li></ul></div></div><div class="footer-divider"></div><div class="ke-footer-tools"><button type="button" data-ke-motion aria-pressed="false">Chuyển động: Êm dịu</button><button type="button" data-ke-credits>Nguồn ảnh</button><button type="button" data-ke-saved-articles>Bài viết đã lưu</button><span id="ke-offline-state" class="ke-offline-state">Ảnh cục bộ · Không cần Internet</span></div><div class="footer-bottom py-3 d-flex flex-wrap justify-content-between"><p class="footer-copy mb-0">© 2026 Kể Nè. Mọi quyền được bảo lưu.</p><p class="footer-copy mb-0">Tư vấn, tham vấn tâm lý · Không thay thế cấp cứu</p></div></div></footer><div id="kn-toast" class="kn-toast" hidden role="status" aria-live="polite"></div><div class="kn-tools"><button class="kn-sos-btn" data-action="sos">Cần giúp ngay</button><button class="kn-help-btn" data-action="help" aria-label="Mở trợ giúp thao tác">?</button><button class="kn-exit-btn" data-action="quick-exit">Thoát nhanh ↗</button></div><div id="kn-modal" class="kn-modal" hidden role="dialog" aria-modal="true" aria-labelledby="kn-modal-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-modal-title"></h2><div><button class="kn-link" data-action="sos">Cần giúp ngay</button><button class="kn-modal-close" data-action="close-modal" aria-label="Đóng cửa sổ">×</button></div></div><div id="kn-modal-body"></div></div></div><div id="kn-sos" class="kn-modal kn-sos-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="kn-sos-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-sos-title">Ưu tiên sự an toàn của bạn</h2><button class="kn-modal-close" data-action="close-sos" aria-label="Đóng hướng dẫn">×</button></div><p>Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế hoặc đến cơ sở cấp cứu gần nhất. Nếu có thể, nhờ một người tin cậy ở cạnh bạn.</p><a class="kn-btn kn-btn-full" href="tel:115">Gọi cấp cứu y tế 115</a><p class="kn-note mt-3">115 là cấp cứu y tế, không phải đường dây tư vấn của Kể Nè.</p><div class="kn-white-card my-3"><h3 class="kn-h4">Website không có người trực</h3><p>Kể Nè không phải kênh cấp cứu và không gửi cảnh báo từ nút này. Đừng chờ phản hồi trên website khi bạn đang không an toàn.</p><p id="kn-support-hours"></p></div><button class="kn-btn kn-btn-light" data-action="quick-exit">Thoát nhanh khỏi website</button></div></div><button id="back-to-top" class="kn-back-top" aria-label="Lên đầu trang" hidden>↑</button><script src="js/jquery.min.js" defer></script><script src="js/bootstrap.bundle.min.js" defer></script><script src="js/kene-data.js" defer></script><script src="js/kene-engine.js" defer></script><script src="js/kene-core.js" defer></script><script src="js/kene-media-data.js" defer></script><script src="js/kene-media.js" defer></script><script src="js/kene-runtime.js" defer></script><script src="js/kene-pages.js" defer></script><script src="js/kene-offline-version.js" defer></script><script src="js/kene-experience.js" defer></script><script src="js/kene-scenes.js" defer></script></body></html>

@@ -1,0 +1,134 @@
+{
+  "passed": 32,
+  "total": 32,
+  "results": [
+    {
+      "name": "PHQ-9/GAD-7: zero and maximum scores; missing answers rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Any positive PHQ item 9 blocks ordinary booking, including low total",
+      "status": "PASS"
+    },
+    {
+      "name": "Review thresholds do not silently diagnose or allow high scores",
+      "status": "PASS"
+    },
+    {
+      "name": "Vietnam time boundaries for 15% discount",
+      "status": "PASS"
+    },
+    {
+      "name": "No booking without adult/current safe intake; flags cannot pass checkout",
+      "status": "PASS"
+    },
+    {
+      "name": "Prices come from service data, not cart injection",
+      "status": "PASS"
+    },
+    {
+      "name": "Unsupported service, expert, channel, date and non-hour start are rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "A hold blocks another user and lasts exactly 10 minutes",
+      "status": "PASS"
+    },
+    {
+      "name": "Expired holds cannot become confirmed orders",
+      "status": "PASS"
+    },
+    {
+      "name": "Confirmed appointment blocks later holds; different expert can serve another user",
+      "status": "PASS"
+    },
+    {
+      "name": "All-or-nothing hold creation and own conflicting cart appointments",
+      "status": "PASS"
+    },
+    {
+      "name": "Coupon discounts eligible appointments only; package and evening excluded",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown, ineligible and previously used coupons rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Confirmation is idempotent and hold ownership is enforced",
+      "status": "PASS"
+    },
+    {
+      "name": "Safety flag rechecked at confirmation, not only during hold",
+      "status": "PASS"
+    },
+    {
+      "name": "Reschedule is free before cutoff, collision-safe and owner-scoped",
+      "status": "PASS"
+    },
+    {
+      "name": "Rescheduling cannot change a paid individual session into an unpaid package",
+      "status": "PASS"
+    },
+    {
+      "name": "Daytime-discount booking cannot silently become an evening-discount booking",
+      "status": "PASS"
+    },
+    {
+      "name": "Early cancellation releases slot; late cancellation awaits review",
+      "status": "PASS"
+    },
+    {
+      "name": "Prepaid six-session package cannot be charged again or overbooked",
+      "status": "PASS"
+    },
+    {
+      "name": "Feedback requires elapsed appointment time and valid score",
+      "status": "PASS"
+    },
+    {
+      "name": "Deleting one demo account data does not delete another account orders",
+      "status": "PASS"
+    },
+    {
+      "name": "Expert weekly capacity never exceeds 25 confirmed or held sessions",
+      "status": "PASS"
+    },
+    {
+      "name": "Valid hold can confirm inside final five minutes before appointment",
+      "status": "PASS"
+    },
+    {
+      "name": "Demo registration uses salted password derivation; no plaintext password stored",
+      "status": "PASS"
+    },
+    {
+      "name": "Registration validates age, consent, password confirmation and duplicate email",
+      "status": "PASS"
+    },
+    {
+      "name": "Login rejects wrong passwords and isolates saved items and carts by account",
+      "status": "PASS"
+    },
+    {
+      "name": "Open redirects and HTML injection in user strings are prevented",
+      "status": "PASS"
+    },
+    {
+      "name": "Password change checks existing secret; reset rotates recovery token",
+      "status": "PASS"
+    },
+    {
+      "name": "Clearing sensitive data removes saved scores and draft without bypassing the safety flag",
+      "status": "PASS"
+    },
+    {
+      "name": "Quiet mode restores the page title when disabled",
+      "status": "PASS"
+    },
+    {
+      "name": "Eight real team members and thirty unique mental-health/service articles",
+      "status": "PASS"
+    }
+  ]
+}

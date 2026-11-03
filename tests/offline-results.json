@@ -1,0 +1,42 @@
+{
+  "passed": 9,
+  "total": 9,
+  "results": [
+    {
+      "name": "Every precached public file exists and matches its recorded checksum",
+      "status": "PASS"
+    },
+    {
+      "name": "Installation caches the complete public bundle before activation",
+      "status": "PASS"
+    },
+    {
+      "name": "All twelve HTML pages remain readable when the simulated network is unavailable",
+      "status": "PASS"
+    },
+    {
+      "name": "Navigation parameters and the project root resolve to the correct cached HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "All 258 photo variants are available from cache without another network request",
+      "status": "PASS"
+    },
+    {
+      "name": "POST, external resources and future private APIs are not intercepted",
+      "status": "PASS"
+    },
+    {
+      "name": "Activation only clears older caches for this project scope",
+      "status": "PASS"
+    },
+    {
+      "name": "A missing required asset aborts installation and removes the partial cache",
+      "status": "PASS"
+    },
+    {
+      "name": "Responsive photo markup escapes alt text and provides an offline local fallback",
+      "status": "PASS"
+    }
+  ]
+}

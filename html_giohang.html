@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Kiểm tra lịch dự kiến, ưu đãi và tổng tiền."><meta name="theme-color" content="#0077b6"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Giỏ dịch vụ | Kể Nè</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/fontawesome.min.css"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css_trangchu.css"><style>
+        
+        :root {
+            --primary-blue:   #0077b6;
+            --dark-blue:      #1a1f6e;
+            --accent-red:     #ff4d4d;
+            --teal-light:     #00b4d8;
+            --gradient-brand: linear-gradient(135deg, #1a1f6e 0%, #0077b6 55%, #00b4d8 100%);
+            --bg-light:       #f0f4f8;
+            --text-dark:      #1a1f6e;
+            --text-muted:     #6c757d;
+            --white:          #ffffff;
+        }
+
+
+        
+        body { background: var(--bg-light); }
+
+        
+        .cart-breadcrumb {
+            background: #fff;
+            border-bottom: 1px solid rgba(0,119,182,0.1);
+            padding: 12px 0;
+        }
+        .cart-breadcrumb .breadcrumb {
+            background: transparent;
+            margin: 0; padding: 0;
+            font-size: 13px;
+        }
+        .cart-breadcrumb .breadcrumb-item a { color: var(--primary-blue); text-decoration: none; }
+        .cart-breadcrumb .breadcrumb-item.active { color: var(--text-muted); }
+
+        
+        #cart-skeleton {
+            display: none; 
+        }
+        .skeleton-block {
+            background: linear-gradient(90deg, #e8edf3 25%, #f4f7fc 50%, #e8edf3 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.4s infinite;
+            border-radius: 12px;
+        }
+        @keyframes shimmer {
+            0%   { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .skel-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+        .skel-img  { width: 120px; height: 90px; flex-shrink: 0; }
+        .skel-body { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+        .skel-line { height: 14px; }
+        .skel-line.w-70 { width: 70%; }
+        .skel-line.w-50 { width: 50%; }
+        .skel-line.w-30 { width: 30%; }
+        .skel-summary {
+            background: #fff;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+        .skel-summary .skel-line { margin-bottom: 14px; }
+
+        
+        .cart-page-title {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--dark-blue);
+            margin-bottom: 4px;
+        }
+        .cart-page-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        
+        .gift-progress-bar-wrap {
+            background: #fff;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0,119,182,0.08);
+            border: 1px solid rgba(0,119,182,0.1);
+        }
+        .gift-progress-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .gift-progress-track {
+            height: 8px;
+            background: #e8edf3;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .gift-progress-fill {
+            height: 100%;
+            background: var(--gradient-brand);
+            border-radius: 8px;
+            width: 0%;
+            transition: width 0.5s cubic-bezier(0.34,1.2,0.64,1);
+        }
+        
+        .gift-progress-bar-wrap.achieved .gift-progress-fill {
+            background: linear-gradient(90deg, #00b894, #00cec9);
+        }
+        .gift-achieved-msg {
+            display: none;
+            font-size: 13px;
+            font-weight: 700;
+            color: #00b894;
+            margin-top: 6px;
+            animation: bounceIn 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .gift-progress-bar-wrap.achieved .gift-achieved-msg { display: block; }
+        .gift-progress-bar-wrap.achieved .gift-remaining-msg { display: none; }
+        @keyframes bounceIn {
+            0%   { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1);   opacity: 1; }
+        }
+
+        
+        .cart-item-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 18px;
+            box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,119,182,0.08);
+            
+            transition: transform 0.3s ease, box-shadow 0.3s ease,
+                        max-height 0.45s ease, opacity 0.35s ease,
+                        padding 0.35s ease, margin 0.35s ease;
+            overflow: hidden;
+            max-height: 400px;
+            position: relative;
+        }
+        
+        .cart-item-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,119,182,0.15);
+        }
+        
+        .cart-item-card.removing {
+            transform: translateX(120px);
+            opacity: 0;
+        }
+        
+        .cart-item-card.collapsed {
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border: none;
+        }
+
+        
+        .cart-item-img-wrap {
+            width: 120px;
+            height: 90px;
+            border-radius: 14px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--gradient-brand);
+        }
+        .cart-item-img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease; 
+        }
+        .cart-item-card:hover .cart-item-img { transform: scale(1.05); }
+
+        
+        .cart-item-body { flex: 1; min-width: 0; }
+        .cart-item-badge {
+            font-size: 10px; font-weight: 800;
+            background: var(--gradient-brand);
+            color: #fff; padding: 2px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+        .cart-item-title {
+            font-size: 15px; font-weight: 800;
+            color: var(--dark-blue);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .cart-item-meta {
+            font-size: 12px; color: var(--text-muted);
+            display: flex; flex-wrap: wrap; gap: 10px;
+            margin-bottom: 12px;
+        }
+        .cart-item-meta i { color: var(--teal-light); }
+
+        
+        .pax-group {
+            display: flex; align-items: center; gap: 16px;
+            flex-wrap: wrap;
+        }
+        .pax-label {
+            font-size: 12px; font-weight: 700; color: #6c757d;
+            min-width: 65px;
+        }
+        .pax-ctrl {
+            display: flex; align-items: center; gap: 8px;
+        }
+        .pax-btn {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0,119,182,0.3);
+            background: #f0f4f8;
+            color: var(--primary-blue);
+            font-size: 14px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.2s;
+            padding: 0;
+            line-height: 1;
+        }
+        .pax-btn:hover {
+            background: var(--primary-blue);
+            color: #fff;
+            border-color: var(--primary-blue);
+        }
+        .pax-btn:disabled {
+            opacity: 0.35;
+            pointer-events: none;
+        }
+        .pax-count {
+            font-size: 15px; font-weight: 800;
+            color: var(--dark-blue);
+            min-width: 20px; text-align: center;
+        }
+
+        
+        .cart-item-price-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+            min-width: 120px;
+        }
+        .cart-item-price {
+            font-size: 18px; font-weight: 900;
+            color: var(--accent-red);
+            white-space: nowrap;
+        }
+        .cart-item-price-per {
+            font-size: 11px; color: var(--text-muted);
+        }
+        
+        .cart-item-remove {
+            background: none; border: none;
+            color: #ccc; font-size: 14px;
+            padding: 4px; transition: color 0.2s, transform 0.2s;
+        }
+        .cart-item-remove:hover { color: var(--accent-red); transform: scale(1.2); }
+
+        
+        #empty-cart {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+        .empty-cart-icon { font-size: 72px; margin-bottom: 16px; opacity: 0.5; }
+        .empty-cart-title { font-size: 22px; font-weight: 800; color: var(--dark-blue); }
+        .empty-cart-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+
+        
+        .order-summary-wrap {
+            position: sticky;
+            top: 80px; 
+        }
+        .order-summary {
+            background: #fff;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,119,182,0.1);
+            border: 1px solid rgba(0,119,182,0.1);
+        }
+        .order-summary-title {
+            font-size: 18px; font-weight: 900;
+            color: var(--dark-blue); margin-bottom: 20px;
+        }
+
+        
+        .order-row {
+            display: flex; justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(0,119,182,0.1);
+        }
+        .order-row:last-of-type { border-bottom: none; }
+        .order-row .label { color: var(--text-muted); }
+        .order-row .value { font-weight: 700; color: var(--dark-blue); }
+        .order-row .value.red  { color: var(--accent-red); }
+        .order-row .value.green { color: #00b894; }
+
+        
+        #discount-row {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+        #discount-row.show {
+            max-height: 60px;
+            opacity: 1;
+        }
+
+        
+        .order-total-row {
+            display: flex; justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 2px solid rgba(0,119,182,0.15);
+        }
+        .order-total-label { font-size: 16px; font-weight: 900; color: var(--dark-blue); }
+        .order-total-value {
+            font-size: 22px; font-weight: 900;
+            color: var(--accent-red);
+        }
+
+        
+        .coupon-section { margin-top: 20px; }
+        .coupon-title {
+            font-size: 13px; font-weight: 700;
+            color: var(--dark-blue); margin-bottom: 10px;
+        }
+        .coupon-row {
+            display: flex; gap: 8px;
+        }
+        .coupon-input {
+            flex: 1; border: 1.5px solid rgba(0,119,182,0.2);
+            border-radius: 10px; padding: 10px 14px;
+            font-size: 13px; color: var(--dark-blue);
+            outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            text-transform: uppercase;
+        }
+        .coupon-input:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0,119,182,0.12);
+        }
+        .coupon-btn {
+            background: var(--gradient-brand);
+            color: #fff; border: none;
+            border-radius: 10px; padding: 10px 16px;
+            font-size: 13px; font-weight: 800;
+            white-space: nowrap;
+            transition: opacity 0.2s, transform 0.15s;
+            min-width: 80px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .coupon-btn:hover { opacity: 0.88; transform: scale(1.02); }
+        
+        .coupon-spinner {
+            width: 16px; height: 16px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            display: none;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .coupon-tick {
+            display: none;
+            color: #fff;
+            animation: popIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        @keyframes popIn {
+            0%   { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+        .coupon-msg {
+            font-size: 12px; margin-top: 6px;
+            display: none;
+        }
+        .coupon-msg.success { color: #00b894; display: block; }
+        .coupon-msg.error   { color: var(--accent-red); display: block; }
+
+        
+        .checkout-btn {
+            width: 100%; padding: 14px;
+            background: var(--gradient-brand);
+            color: #fff; border: none;
+            border-radius: 14px;
+            font-size: 16px; font-weight: 900;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: opacity 0.2s, transform 0.2s, box-shadow 0.3s;
+        }
+        .checkout-btn:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 28px rgba(0,119,182,0.35);
+        }
+        
+        .checkout-btn::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            width: 0; height: 0;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+            opacity: 0;
+        }
+        .checkout-btn:active::after {
+            width: 300px; height: 300px; opacity: 0;
+        }
+
+        
+        .payment-accept {
+            margin-top: 14px;
+            display: flex; gap: 8px; flex-wrap: wrap;
+            align-items: center;
+        }
+        .payment-accept span { font-size: 11px; color: var(--text-muted); }
+        .pay-icon {
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            font-size: 11px; font-weight: 800;
+            color: #555;
+            background: #f8f9fa;
+        }
+
+        
+        #undo-toast {
+            position: fixed;
+            bottom: -120px; 
+            right: 24px;
+            background: #1a1f2e;
+            color: #fff;
+            border-radius: 16px;
+            padding: 16px 20px;
+            min-width: 300px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            z-index: 99999;
+            transition: bottom 0.4s cubic-bezier(0.34,1.2,0.64,1);
+        }
+        #undo-toast.show { bottom: 24px; }
+        .toast-row {
+            display: flex; align-items: center;
+            justify-content: space-between; gap: 12px;
+            margin-bottom: 10px;
+        }
+        .toast-msg { font-size: 13px; font-weight: 600; flex: 1; }
+        .toast-undo-btn {
+            background: var(--teal-light);
+            color: #fff; border: none;
+            border-radius: 8px; padding: 6px 14px;
+            font-size: 12px; font-weight: 800;
+            white-space: nowrap;
+            transition: opacity 0.2s;
+        }
+        .toast-undo-btn:hover { opacity: 0.85; }
+        
+        .toast-countdown {
+            height: 3px; background: rgba(255,255,255,0.15);
+            border-radius: 3px; overflow: hidden;
+        }
+        .toast-countdown-fill {
+            height: 100%;
+            background: var(--teal-light);
+            width: 100%;
+            
+        }
+
+        
+        @keyframes badgeBounce {
+            0%   { transform: scale(1); }
+            30%  { transform: scale(1.45); }
+            60%  { transform: scale(0.85); }
+            80%  { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+        .cart-badge-bounce {
+            animation: badgeBounce 0.5s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        
+        .cart-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-red);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 900;
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            position: absolute;
+            top: -4px; right: -6px;
+            line-height: 1;
+        }
+        .cart-icon-wrap {
+            position: relative;
+            display: inline-block;
+        }
+
+        
+        @media (max-width: 768px) {
+            .cart-item-card { flex-direction: column; }
+            .cart-item-img-wrap { width: 100%; height: 160px; }
+            .cart-item-price-wrap {
+                flex-direction: row;
+                align-items: center;
+                min-width: unset;
+            }
+            
+            .mobile-checkout-bar {
+                display: flex !important;
+            }
+        }
+        
+        .mobile-checkout-bar {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: #fff;
+            border-top: 1px solid rgba(0,119,182,0.15);
+            padding: 12px 16px;
+            z-index: 1000;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+        }
+        .mobile-total-label { font-size: 12px; color: var(--text-muted); }
+        .mobile-total-value { font-size: 18px; font-weight: 900; color: var(--accent-red); }
+        .mobile-checkout-btn {
+            background: var(--gradient-brand);
+            color: #fff; border: none;
+            border-radius: 12px; padding: 10px 20px;
+            font-size: 14px; font-weight: 800;
+        }
+
+        
+        .section-divider { height: 1px; background: rgba(0,119,182,0.08); margin: 16px 0; }
+
+        
+        @keyframes successTick {
+            0%   { transform: scale(0) rotate(-45deg); opacity: 0; }
+            60%  { transform: scale(1.2) rotate(5deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0); opacity: 1; }
+        }
+        .success-tick-anim { animation: successTick 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+
+        
+    
+
+
+        
+        .btn-login {
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            color:#fff !important; border:none; border-radius:10px;
+            padding:7px 16px; font-size:13px; transition:all .2s;
+        }
+        .btn-login:hover { opacity:.88; transform:translateY(-1px); }
+        
+        .user-avatar-btn {
+            width:38px; height:38px; border-radius:50%;
+            background:linear-gradient(135deg,#1a1f6e,#0077b6);
+            display:flex; align-items:center; justify-content:center;
+            color:#fff; font-weight:800; font-size:15px;
+            cursor:pointer; border:none; transition:all .2s;
+        }
+        .user-avatar-btn:hover { box-shadow:0 4px 14px rgba(0,119,182,.35); }
+        .user-profile-dropdown .dropdown-menu {
+            border-radius:14px; padding:8px 0;
+            box-shadow:0 8px 30px rgba(0,0,0,.12);
+        }
+
+        </style><link rel="stylesheet" href="css/kene-experience.css"><link rel="manifest" href="manifest.webmanifest"><meta name="color-scheme" content="light"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="img/brand/icon-32.png"><link rel="apple-touch-icon" href="img/brand/icon-180.png"><link rel="stylesheet" href="css/kene-brand.css"></head><body data-page="cart"><header class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 border-bottom">
+        <div class="container">
+
+            
+            <a class="navbar-brand" href="html_trangchu.html">
+                <img src="img/logo.svg" alt="Kể Nè — Không gian lắng nghe" height="46" class=" logo-header" width="142">
+            </a>
+
+            
+            <div class="header-search-wrap mx-lg-4 d-none d-md-flex">
+<div class="input-group header-search">
+                    <div class="input-group-prepend border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" id="header-search-inp" class="form-control border-0 bg-transparent" placeholder="Tìm dịch vụ, chuyên gia, bài viết…" autocomplete="off" aria-label="Tìm kiếm toàn website">
+                    
+                    <span class="hs-shortcut d-none d-lg-inline-flex align-items-center">⌘K</span>
+                </div>
+                <div id="header-dropdown" class="search-dropdown"></div>
+            </div>
+
+            
+            <div class="navbar-nav ml-auto align-items-center">
+                <a class="nav-item nav-link mr-3 d-none d-xl-block small-text" href="html_trangchu.html">Trang chủ</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_gioithieu.html">Về Kể Nè</a>
+                <a class="nav-item nav-link mr-3 d-none d-lg-block small-text" href="html_lienhe_chinhsach.html">Liên hệ &amp; Tin cậy</a>
+                <a class="nav-item nav-link mr-3 d-none d-md-block small-text" href="html_blog.html">Góc đọc</a>
+
+                
+                <a class="nav-item nav-link mr-3 text-dark" href="html_giohang.html" style="position:relative;" aria-label="Giỏ dịch vụ">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-badge" style="position:absolute;top:-4px;right:-8px;background:#ff4d4d;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;line-height:1;">0</span>
+                </a>
+
+                
+                <div class="auth-buttons" id="auth-zone">
+                    <a class="nav-item nav-link mr-3 font-weight-bold" href="html_dangnhap_dangky.html">Đăng ký</a>
+                    <a class="btn btn-login font-weight-bold" href="html_dangnhap_dangky.html">Đăng nhập</a>
+                    <a class="nav-item nav-link ml-2 d-none d-sm-block" href="html_thongtin.html">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="sub-nav bg-white border-bottom" aria-label="Dịch vụ"><div class="container"><div class="nav kn-subnav"><a class="nav-link" href="html_dichvu.html">Dịch vụ &amp; Bảng giá</a><a class="nav-link" href="html_diadiem.html">Chuyên gia &amp; Ghép nối</a><a class="nav-link" href="html_diadiem.html#sang-loc">Sàng lọc miễn phí</a><a class="nav-link ml-auto sub-voucher-link" href="html_khuyenmaivatiepthi.html"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Ưu đãi</a></div></div></nav><a class="kn-skip" href="#main-content">Bỏ qua điều hướng</a><main id="main-content" class="container py-5"><div class="container"><section class="ke-page-banner"><div><span class="ke-eyebrow">CHỌN ĐIỀU PHÙ HỢP</span><h2>Một bước nhỏ, được chuẩn bị kỹ</h2><p>Xem lại lựa chọn, thời gian và điều kiện trước khi bạn xác nhận.</p></div><figure class="ke-photo-frame ke-tilt "><picture class="ke-picture " data-ke-image="journal-planning"><source type="image/webp" srcset="img/photos/journal-planning-960.webp 960w, img/photos/journal-planning-1920.webp 1920w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"><img src="img/photos/journal-planning-1920.jpg" alt="Bàn tay viết ghi chú cá nhân trên bàn gỗ" width="1920" height="1280" loading="lazy" decoding="async" data-ke-photo="journal-planning"></picture><button type="button" class="ke-photo-zoom" data-ke-lightbox="journal-planning" data-ke-gallery="cart-banner" aria-label="Xem ảnh lớn: Bàn tay viết ghi chú cá nhân trên bàn gỗ"><span aria-hidden="true">⤢</span></button></figure></section></div><nav class="cart-breadcrumb" aria-label="Đường dẫn"><a href="html_trangchu.html">Trang chủ</a> / Giỏ dịch vụ</nav><h1 class="my-4">Giỏ dịch vụ của bạn</h1><p class="kn-note">Giỏ lưu các lịch dự kiến; khung giờ chỉ được giữ trong 10 phút khi vào thanh toán.</p><div class="row"><section class="col-lg-8"><div id="cart-items"></div><div class="kn-white-card mt-4"><h2 class="kn-h3 ke-reveal">Một bước phù hợp với bạn</h2><p>Không có quà tặng theo mức chi tiêu hoặc phí ưu tiên tiếp cận chuyên gia. Tổng tiền được tính từ dịch vụ và ưu đãi đủ điều kiện.</p><a href="html_dichvu.html">Tiếp tục xem dịch vụ →</a></div></section><aside class="col-lg-4"><div class="kn-summary dv-booking"><h2 class="kn-h3 ke-reveal">Tóm tắt lựa chọn</h2><div id="cart-summary"></div><form id="cart-coupon-form" class="kn-search-line mt-3"><label class="sr-only" for="cart-coupon">Mã ưu đãi</label><input id="cart-coupon" placeholder="Nhập mã ưu đãi" maxlength="30"><button class="kn-btn" type="submit">Áp dụng</button></form><div id="cart-coupon-result" aria-live="polite"></div><button class="kn-link my-2" data-action="best-coupon">Kiểm tra ưu đãi ban ngày</button><button class="kn-btn kn-btn-full" data-action="checkout">Xem lại yêu cầu</button><p class="kn-note mt-3">Thanh toán trực tuyến chưa mở. Lưu yêu cầu không phát sinh giao dịch.</p></div></aside></div></main><div id="undo-toast" class="kn-undo" hidden role="status"><span>Đã xoá lựa chọn.</span><button data-action="undo-cart">Hoàn tác</button></div><footer class="kene-footer"><div class="footer-bg-layer"></div><div class="container position-relative" style="z-index:2"><div class="row footer-main-row pt-5 pb-4"><div class="col-lg-4 col-md-6 mb-4"><a href="html_trangchu.html" class="footer-brand d-inline-block mb-3" aria-label="Kể Nè — Trang chủ"><img class="footer-logo" src="img/logo-white.svg" width="150" height="49" alt="Kể Nè"></a><p class="footer-desc">Chuyện khó nói, có người nghe. Kể Nè đồng hành cùng bạn tìm hiểu nhu cầu và lựa chọn cách chăm sóc sức khoẻ tinh thần phù hợp.</p><a class="footer-sitemap-btn" href="html_sitemap.html">Sơ đồ website</a></div><div class="col-lg-4 col-md-6 mb-4"><h2 class="footer-heading">Khám phá Kể Nè</h2><ul class="ke-footer-links"><li><a href="html_gioithieu.html">Câu chuyện &amp; Con người</a></li><li><a href="html_dichvu.html">Dịch vụ &amp; Mức giá tham khảo</a></li><li><a href="html_diadiem.html">Tìm cách đồng hành phù hợp</a></li><li><a href="html_blog.html">Góc đọc mỗi ngày</a></li><li><a href="html_khuyenmaivatiepthi.html">Ưu đãi &amp; Điều kiện áp dụng</a></li></ul></div><div class="col-lg-4 col-md-12 mb-4"><h2 class="footer-heading">Bạn luôn có quyền lựa chọn</h2><p class="ke-footer-promise">♡ Chia sẻ theo nhịp của bạn. Hiểu rõ điều kiện trước khi bắt đầu.</p><ul class="ke-footer-links"><li><a href="html_lienhe_chinhsach.html#du-lieu">Quyền riêng tư</a></li><li><a href="html_lienhe_chinhsach.html#doi-lich">Đổi lịch &amp; Hỗ trợ</a></li><li><a href="html_lienhe_chinhsach.html">Liên hệ &amp; Trung tâm tin cậy</a></li><li><a href="html_lienhe_chinhsach.html?topic=to-chuc">Dành cho tổ chức</a></li><li><a href="html_lienhe_chinhsach.html?topic=chuyen-gia">Hợp tác chuyên gia</a></li></ul></div></div><div class="footer-divider"></div><div class="ke-footer-tools"><button type="button" data-ke-motion aria-pressed="false">Chuyển động: Êm dịu</button><button type="button" data-ke-credits>Nguồn ảnh</button><button type="button" data-ke-saved-articles>Bài viết đã lưu</button><span id="ke-offline-state" class="ke-offline-state">Ảnh cục bộ · Không cần Internet</span></div><div class="footer-bottom py-3 d-flex flex-wrap justify-content-between"><p class="footer-copy mb-0">© 2026 Kể Nè. Mọi quyền được bảo lưu.</p><p class="footer-copy mb-0">Tư vấn, tham vấn tâm lý · Không thay thế cấp cứu</p></div></div></footer><div id="kn-toast" class="kn-toast" hidden role="status" aria-live="polite"></div><div class="kn-tools"><button class="kn-sos-btn" data-action="sos">Cần giúp ngay</button><button class="kn-help-btn" data-action="help" aria-label="Mở trợ giúp thao tác">?</button><button class="kn-exit-btn" data-action="quick-exit">Thoát nhanh ↗</button></div><div id="kn-modal" class="kn-modal" hidden role="dialog" aria-modal="true" aria-labelledby="kn-modal-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-modal-title"></h2><div><button class="kn-link" data-action="sos">Cần giúp ngay</button><button class="kn-modal-close" data-action="close-modal" aria-label="Đóng cửa sổ">×</button></div></div><div id="kn-modal-body"></div></div></div><div id="kn-sos" class="kn-modal kn-sos-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="kn-sos-title"><div class="kn-modal-dialog"><div class="kn-modal-header"><h2 id="kn-sos-title">Ưu tiên sự an toàn của bạn</h2><button class="kn-modal-close" data-action="close-sos" aria-label="Đóng hướng dẫn">×</button></div><p>Nếu có nguy cơ tức thời, hãy gọi cấp cứu y tế hoặc đến cơ sở cấp cứu gần nhất. Nếu có thể, nhờ một người tin cậy ở cạnh bạn.</p><a class="kn-btn kn-btn-full" href="tel:115">Gọi cấp cứu y tế 115</a><p class="kn-note mt-3">115 là cấp cứu y tế, không phải đường dây tư vấn của Kể Nè.</p><div class="kn-white-card my-3"><h3 class="kn-h4">Website không có người trực</h3><p>Kể Nè không phải kênh cấp cứu và không gửi cảnh báo từ nút này. Đừng chờ phản hồi trên website khi bạn đang không an toàn.</p><p id="kn-support-hours"></p></div><button class="kn-btn kn-btn-light" data-action="quick-exit">Thoát nhanh khỏi website</button></div></div><button id="back-to-top" class="kn-back-top" aria-label="Lên đầu trang" hidden>↑</button><script src="js/jquery.min.js" defer></script><script src="js/bootstrap.bundle.min.js" defer></script><script src="js/kene-data.js" defer></script><script src="js/kene-engine.js" defer></script><script src="js/kene-core.js" defer></script><script src="js/kene-media-data.js" defer></script><script src="js/kene-media.js" defer></script><script src="js/kene-runtime.js" defer></script><script src="js/kene-pages.js" defer></script><script src="js/kene-offline-version.js" defer></script><script src="js/kene-experience.js" defer></script><script src="js/kene-scenes.js" defer></script></body></html>

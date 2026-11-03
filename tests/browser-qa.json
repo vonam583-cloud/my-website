@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-03",
+  "desktop": {
+    "pages": 12,
+    "horizontalOverflow": 0,
+    "duplicatePhotographs": 0,
+    "brokenLoadedImages": 0,
+    "legacyAcademicOrTravelContent": 0
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "pages": 12,
+      "horizontalOverflow": 0,
+      "brokenLoadedImages": 0
+    },
+    {
+      "width": 390,
+      "pages": 12,
+      "horizontalOverflow": 0,
+      "brokenLoadedImages": 0
+    },
+    {
+      "width": 768,
+      "pages": 12,
+      "horizontalOverflow": 0,
+      "brokenLoadedImages": 0
+    },
+    {
+      "width": 1024,
+      "pages": 12,
+      "horizontalOverflow": 0,
+      "brokenLoadedImages": 0
+    }
+  ],
+  "interactions": [
+    "Image trail: pool6, active3 after click, active0 after completion",
+    "Introduction story changes with buttons and arrow keys, one visible panel",
+    "Value tabs respond to arrow keys",
+    "Mobile menu focus stays in search; emotion query returns topic and article",
+    "Daytime coupon:400000 to340000",
+    "Checkout saves local pending request and makes no payment claim",
+    "Account device dialog opens; nested SOS Escape restores room-trigger focus"
+  ],
+  "fixFromQA": "Global smooth scrolling could move controls during automatic focus/scroll. Native automatic scroll is immediate; deliberate same-page anchor links use motion-aware smooth scrolling. Consent controls increased to20px with44px labels.",
+  "limits": [
+    "Browser preview is HTTP. WebCrypto auth and ServiceWorker were validated in isolated runtime/VM; secure-browser end-to-end not claimed.",
+    "Protected pages use disposable local QA fixture data. No actual credential, patient record or payment used.",
+    "Not a live provider/payment/email/video backend."
+  ],
+  "applicationConsoleErrorsOrWarnings": 0,
+  "finalSmallChange": "A fourth illustration was added to the four parallel homepage journey cards; its local assets were already validated."
+}

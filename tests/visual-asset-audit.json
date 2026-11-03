@@ -1,0 +1,96 @@
+{
+  "pages": 12,
+  "photos": 86,
+  "variants": 258,
+  "baseCssUnchanged": true,
+  "team": 8,
+  "services": 8,
+  "articles": 30,
+  "errors": [],
+  "details": [
+    {
+      "page": "html_blog.html",
+      "staticPhotos": 7,
+      "ids": 27,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_dangnhap_dangky.html",
+      "staticPhotos": 1,
+      "ids": 17,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_diadiem.html",
+      "staticPhotos": 2,
+      "ids": 32,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_dichvu.html",
+      "staticPhotos": 1,
+      "ids": 31,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_giohang.html",
+      "staticPhotos": 1,
+      "ids": 20,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_gioithieu.html",
+      "staticPhotos": 10,
+      "ids": 23,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_khuyenmaivatiepthi.html",
+      "staticPhotos": 4,
+      "ids": 17,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_lienhe_chinhsach.html",
+      "staticPhotos": 3,
+      "ids": 36,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_sitemap.html",
+      "staticPhotos": 13,
+      "ids": 14,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_thanhtoan.html",
+      "staticPhotos": 1,
+      "ids": 27,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_thongtin.html",
+      "staticPhotos": 1,
+      "ids": 35,
+      "duplicateIds": []
+    },
+    {
+      "page": "html_trangchu.html",
+      "staticPhotos": 45,
+      "ids": 25,
+      "duplicateIds": []
+    },
+    {
+      "page": "index.html",
+      "staticPhotos": 45,
+      "ids": 25,
+      "duplicateIds": []
+    },
+    {
+      "page": "kene-intro.html",
+      "staticPhotos": 0,
+      "ids": 8,
+      "duplicateIds": []
+    }
+  ]
+}
